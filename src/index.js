@@ -11,6 +11,5 @@ root.render(
   </React.StrictMode>
 );
 
-// To start measuring performance in your app ->  reportWebVitals(console.log))
-// Learn more: https://bit.ly/CRA-vitals
+// To start measuring performance in app ->  reportWebVitals(console.log))
 reportWebVitals();

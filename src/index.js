@@ -1,5 +1,15 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import Header from "./header";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-ReactDOM.render(<Header />, document.getElementById("header-root"));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// To start measuring performance in app ->  reportWebVitals(console.log))
+reportWebVitals();

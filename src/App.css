@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:ital@0;1&family=Roboto:wght@400;700&family=Urbanist:wght@200;400;500;700&family=Work+Sans:wght@400;500;800&display=swap");
-
 :root {
   --dark-green: #166563;
   --medium-green: #61b9b6;
@@ -13,10 +11,6 @@
 
 a {
   text-decoration: none;
-}
-
-body {
-  font-family: Urbanist, sans-serif;
 }
 
 /* header ---->*/

@@ -2,14 +2,10 @@ import React from "react";
 
 function Header() {
   return (
-    <div>
+    <header className="header">
       <div className="logo">
         <a className="logo__link" href="index.html">
-          <img
-            alt="Logo proven recipes"
-            src="../images/logo.png"
-            className="logo__img"
-          />
+          <img alt="Logo proven recipes" src="logo.png" className="logo__img" />
         </a>
       </div>
       <div className="global-nav__container">
@@ -34,7 +30,7 @@ function Header() {
           </ul>
         </nav>
       </div>
-    </div>
+    </header>
   );
 }
 

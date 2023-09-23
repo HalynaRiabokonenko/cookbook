@@ -4,9 +4,13 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div className="footer-logo">
-          {/* Your logo or site name */}
-          <h2>Proven Recipes</h2>
+        <div className className="footer__brand">
+          <img
+            src="logo.png"
+            className="footer__brand-logo"
+            alt="Proven Recipes logo"
+          />
+          <h2 className="footer__brand-name">Proven Recipes</h2>
         </div>
         <div className="footer-links">
           {/* Links to various sections or pages */}
@@ -41,9 +45,8 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div className="footer-bottom">
-        {/* Additional footer information */}
-        <p>
+      <div className="footer__bottom">
+        <p class="footer__copy">
           &copy; {new Date().getFullYear()} Proven Recipes. All rights reserved.
         </p>
       </div>

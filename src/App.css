@@ -6,6 +6,8 @@
   --white: #ffffff;
   --dark-gray: #333333;
   --light-gray: #dddddd;
+  --header-hight: 180px;
+  --header-width: 100%;
 }
 
 * {
@@ -17,28 +19,35 @@ a {
 }
 
 /* header ---->*/
-.header {
-  display: flex;
-  height: 9rem;
+/* .header {
+} */
+
+.header__container {
+  height: var(--header-hight);
   background: var(--medium-green);
   border-bottom: solid 2px var(--orange);
-  position: fixed;
+  display: flex;
   top: 0;
   right: 0;
-  width: 100%;
+  align-items: center;
+  width: var(--header-width);
+  position: fixed;
 }
 
 .logo__img {
-  height: 9rem;
+  height: calc(var(--header-hight) * 0.9);
   margin: 0 16px;
 }
 
+/* Navigation */
 .global-nav {
   display: flex;
+  /* align-items: center; */
 }
 
 .global-nav__list {
   list-style-type: none;
+  display: flex;
 }
 
 .global-nav__list-item {
@@ -70,7 +79,7 @@ a {
 
 /* Main container */
 main {
-  margin-top: 9rem;
+  margin-top: var(--header-hight);
   background-color: var(--light-green);
   padding: 20px;
   text-align: center;
@@ -86,16 +95,28 @@ main {
 }
 
 .recipes h1 {
-  font-size: 24px;
+  font-size: 1.5em;
   margin-bottom: 20px;
 }
 
-.recipes ul {
+.recipes__list {
+  list-style: none;
+}
+
+.recipes__list--option {
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: baseline;
+}
+
+.recipes__items-list {
   list-style: none;
   padding: 0;
   border: 1px solid var(--light-green);
   border-radius: 4px;
   /* background-color: var(--orange); */
+  /* flex-grow: 1; */
+  flex-basis: 0;
 }
 
 .recipes li {
@@ -104,7 +125,7 @@ main {
 }
 
 .recipes h2 {
-  font-size: 20px;
+  font-size: 1.5em;
   margin-bottom: 10px;
   color: var(--dark-gray);
 }
@@ -114,15 +135,11 @@ main {
 }
 
 .recipes p {
-  font-size: 16px;
+  font-size: 1em;
 }
-
-/* Additional styling can be added based on your design preferences */
-
 /* <------ main*/
 
 /* footer ---->*/
-
 /* Footer container */
 .footer {
   border-top: solid 2px var(--orange);
@@ -142,7 +159,7 @@ main {
 
 /* Footer logo */
 .footer-logo h2 {
-  font-size: 24px;
+  font-size: 1.2em;
   margin-bottom: 10px;
 }
 
@@ -166,6 +183,15 @@ main {
 }
 
 /* Footer social media links */
+.footer__brand-logo {
+  width: 100px;
+}
+
+.footer__brand-name {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
 .footer-social ul {
   list-style: none;
   padding: 0;
@@ -178,7 +204,7 @@ main {
 
 .footer-social a {
   color: var(--white);
-  font-size: 20px;
+  font-size: 1.5em;
   transition: color 0.3s;
 }
 
@@ -192,9 +218,11 @@ img.footer__social-icon {
 }
 
 /* Footer copyright section */
-.footer-bottom {
+.footer__bottom {
   margin-top: 20px;
-  font-size: 14px;
 }
 
+.footer__copy {
+  font-size: 0.8rem;
+}
 /* <------ footer*/

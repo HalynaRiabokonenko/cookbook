@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div className className="footer__brand">
+        <div className="footer__brand">
           <img
             src="logo.png"
             className="footer__brand-logo"

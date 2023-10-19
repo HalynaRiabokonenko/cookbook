@@ -1,0 +1,242 @@
+{
+    "recipes": [
+      {
+        "id": 1,
+        "name": "Borscht",
+        "cuisine": "Ukrainian",
+        "ingredients": [
+          "4 beets, peeled and grated",
+          "1 onion, finely chopped",
+          "2 carrots, peeled and grated",
+          "1 small cabbage, shredded",
+          "4 potatoes, peeled and diced",
+          "1 can (14 oz) diced tomatoes",
+          "4 cups beef or vegetable broth",
+          "2 cloves garlic, minced",
+          "1/4 cup vinegar",
+          "Salt and pepper to taste",
+          "Sour cream and fresh dill for garnish"
+        ],
+        "instructions": [
+          "In a large pot, sauté onions, carrots, and beets until softened.",
+          "Add garlic, potatoes, cabbage, tomatoes, and broth. Simmer until vegetables are tender.",
+          "Season with vinegar, salt, and pepper. Adjust seasoning to taste.",
+          "Serve hot, garnished with a dollop of sour cream and a sprinkle of fresh dill."
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Pierogi",
+        "cuisine": "Ukrainian",
+        "ingredients": [
+          "2 cups all-purpose flour",
+          "1/2 cup warm water",
+          "1 egg",
+          "1/2 teaspoon salt",
+          "4 potatoes, boiled and mashed",
+          "1 onion, finely chopped and sautéed",
+          "Salt and pepper to taste",
+          "Sour cream for serving"
+        ],
+        "instructions": [
+          "In a bowl, mix flour, water, egg, and salt to form a dough. Knead until smooth, then roll out thinly.",
+          "Cut circles from the dough. Place a spoonful of mashed potatoes and sautéed onions in the center of each circle.",
+          "Fold the dough over the filling, sealing the edges to form a half-moon shape.",
+          "Boil pierogi in salted water until they float to the surface. Drain and serve hot with sour cream."
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Chicken Kyiv",
+        "cuisine": "Ukrainian",
+        "ingredients": [
+          "4 boneless, skinless chicken breasts",
+          "4 tablespoons butter, softened",
+          "2 cloves garlic, minced",
+          "2 tablespoons chopped fresh parsley",
+          "Salt and pepper to taste",
+          "1 cup bread crumbs",
+          "1/2 cup flour",
+          "2 eggs, beaten",
+          "Vegetable oil for frying"
+        ],
+        "instructions": [
+          "Preheat oven to 350°F (175°C).",
+          "In a bowl, mix together butter, garlic, parsley, salt, and pepper.",
+          "Cut a pocket into each chicken breast. Stuff with the butter mixture and seal the edges.",
+          "Dip each chicken breast in flour, then egg, and coat with bread crumbs.",
+          "Heat oil in a pan and fry chicken until golden brown on both sides.",
+          "Transfer to a baking dish and bake for 20-25 minutes or until cooked through.",
+          "Serve hot."
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Deruny (Potato Pancakes)",
+        "cuisine": "Ukrainian",
+        "ingredients": [
+          "4 potatoes, peeled and grated",
+          "1 onion, grated",
+          "2 eggs, beaten",
+          "1/4 cup all-purpose flour",
+          "Salt and pepper to taste",
+          "Vegetable oil for frying",
+          "Sour cream for serving"
+        ],
+        "instructions": [
+          "In a bowl, combine grated potatoes, onion, eggs, flour, salt, and pepper.",
+          "Heat oil in a pan over medium heat.",
+          "Drop spoonfuls of the potato mixture into the pan, flattening them with a spatula.",
+          "Fry until golden brown on both sides.",
+          "Serve hot with sour cream."
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Holubtsi (Stuffed Cabbage Rolls)",
+        "cuisine": "Ukrainian",
+        "ingredients": [
+          "1 large cabbage",
+          "1 lb ground beef",
+          "1/2 cup cooked rice",
+          "1 onion, finely chopped",
+          "1 can (14 oz) tomato sauce",
+          "1/2 cup beef broth",
+          "2 tablespoons tomato paste",
+          "1 teaspoon paprika",
+          "Salt and pepper to taste",
+          "Sour cream for serving"
+        ],
+        "instructions": [
+          "Boil the whole cabbage in a large pot of water until the leaves are soft. Remove and let cool.",
+          "In a bowl, mix ground beef, cooked rice, onion, salt, and pepper.",
+          "Carefully peel off cabbage leaves. Place a spoonful of the meat mixture on each leaf and roll up tightly.",
+          "In a separate bowl, mix tomato sauce, beef broth, tomato paste, paprika, salt, and pepper.",
+          "Place cabbage rolls in a baking dish and pour the tomato sauce mixture over them.",
+          "Bake at 350°F (175°C) for 45 minutes to 1 hour, until the rolls are cooked through.",
+          "Serve hot with sour cream."
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Syrniki (Ukrainian Cheese Pancakes)",
+        "cuisine": "Ukrainian",
+        "ingredients": [
+          "1 cup cottage cheese",
+          "1 egg",
+          "3 tablespoons sugar",
+          "1/2 teaspoon vanilla extract",
+          "1/2 cup all-purpose flour",
+          "1/2 teaspoon baking powder",
+          "Pinch of salt",
+          "Butter for frying",
+          "Sour cream and jam for serving"
+        ],
+        "instructions": [
+          "In a bowl, mix cottage cheese, egg, sugar, and vanilla extract until well combined.",
+          "Add flour, baking powder, and salt. Stir until a dough forms.",
+          "Heat butter in a pan over medium heat.",
+          "Drop spoonfuls of the dough into the pan, flattening them to form pancakes.",
+          "Fry until golden brown on both sides.",
+          "Serve hot with sour cream and jam."
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Ukrainian Cucumber Salad",
+        "cuisine": "Ukrainian",
+        "ingredients": [
+          "2 cucumbers, thinly sliced",
+          "1 onion, thinly sliced",
+          "1/4 cup chopped fresh dill",
+          "1/4 cup chopped fresh parsley",
+        "1/2 cup sour cream",
+        "1 tablespoon white vinegar",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "In a bowl, combine cucumbers, onion, dill, and parsley.",
+        "In a separate bowl, mix sour cream and vinegar. Season with salt and pepper.",
+        "Pour the dressing over the cucumber mixture and toss to combine.",
+        "Refrigerate for at least 30 minutes before serving."
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Ukrainian Beet Salad (Vinaigrette)",
+      "cuisine": "Ukrainian",
+      "ingredients": [
+        "2 beets, boiled, peeled, and diced",
+        "3 potatoes, boiled, peeled, and diced",
+        "2 carrots, boiled, peeled, and diced",
+        "1 onion, finely chopped",
+        "1/2 cup sauerkraut, drained and chopped",
+        "1/4 cup chopped fresh dill",
+        "3 tablespoons vegetable oil",
+        "2 tablespoons white vinegar",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "In a large bowl, combine beets, potatoes, carrots, onion, sauerkraut, and dill.",
+        "In a small bowl, whisk together vegetable oil, vinegar, salt, and pepper.",
+        "Pour the dressing over the salad and toss to combine.",
+        "Refrigerate for at least 1 hour before serving."
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Ukrainian Mushroom Soup",
+      "cuisine": "Ukrainian",
+      "ingredients": [
+        "1 lb fresh mushrooms, sliced",
+        "1 onion, finely chopped",
+        "2 potatoes, peeled and diced",
+        "4 cups vegetable or mushroom broth",
+        "1 cup milk",
+        "2 tablespoons butter",
+        "2 tablespoons all-purpose flour",
+        "Salt and pepper to taste",
+        "Chopped fresh parsley for garnish"
+      ],
+      "instructions": [
+        "In a pot, sauté mushrooms and onion in butter until tender.",
+        "Add potatoes and broth. Simmer until potatoes are cooked through.",
+        "In a separate saucepan, make a roux by melting butter and stirring in flour.",
+        "Gradually add milk, stirring constantly until the mixture thickens.",
+        "Add the milk mixture to the soup. Season with salt and pepper.",
+        "Simmer for a few minutes until the soup thickens.",
+        "Garnish with chopped parsley before serving."
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Ukrainian Apple Cake",
+      "cuisine": "Ukrainian",
+      "ingredients": [
+        "2 cups all-purpose flour",
+        "1 1/2 teaspoons baking powder",
+        "1/2 teaspoon baking soda",
+        "1/2 teaspoon salt",
+        "1/2 cup unsalted butter, softened",
+        "1 cup sugar",
+        "2 eggs",
+        "1 teaspoon vanilla extract",
+        "1/2 cup sour cream",
+        "2 cups peeled, cored, and sliced apples",
+        "1/2 teaspoon ground cinnamon",
+        "Powdered sugar for dusting"
+      ],
+      "instructions": [
+        "Preheat oven to 350°F (175°C). Grease and flour a 9-inch round cake pan.",
+        "In a bowl, whisk together flour, baking powder, baking soda, and salt.",
+        "In another bowl, cream together butter and sugar until light and fluffy.",
+        "Beat in eggs, one at a time. Stir in vanilla extract.",
+        "Gradually add the flour mixture, alternating with sour cream. Mix until just combined.",
+        "Spread half of the batter into the prepared pan. Layer apples over the batter and sprinkle with cinnamon.",
+        "Spread the remaining batter over the apples.",
+        "Bake for 45-50 minutes or until a toothpick inserted into the center comes out clean.",
+        "Cool in the pan on a wire rack. Dust with powdered sugar before serving."
+      ]
+    }
+  ]
+}

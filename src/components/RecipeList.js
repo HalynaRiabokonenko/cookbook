@@ -1,5 +1,5 @@
 import React from "react";
-import recipesData from "./recipes.json";
+import recipesData from "../recipes.json";
 
 const RecipeList = () => {
   return (

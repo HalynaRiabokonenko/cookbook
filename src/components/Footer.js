@@ -46,7 +46,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer__bottom">
-        <p class="footer__copy">
+        <p className="footer__copy">
           &copy; {new Date().getFullYear()} Proven Recipes. All rights reserved.
         </p>
       </div>

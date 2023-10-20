@@ -1,16 +1,13 @@
 import React from "react";
 import Header from "./Header";
+import RecipesContent from "./RecipesContent";
 import Footer from "./Footer";
-import RecipeList from "./RecipeList";
-import "../styles/App.css";
 
 function Recipes() {
   return (
     <div className="recipes">
       <Header />
-      <div className="recipes_all_list">
-        <RecipeList />
-      </div>
+      <RecipesContent />
       <Footer />
     </div>
   );

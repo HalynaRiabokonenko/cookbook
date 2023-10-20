@@ -1,3 +1,5 @@
+@import "./App.css";
+
 .header__container {
   height: var(--header-hight);
   background: var(--medium-green);

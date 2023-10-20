@@ -1,6 +1,5 @@
 import React from "react";
 import recipesData from "../recipes.json";
-import "../styles/App.css";
 
 const RecipeList = () => {
   return (

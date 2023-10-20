@@ -1,21 +1,21 @@
 import "./styles/App.css";
-import Header from "../src/components/Header";
-import Main from "../src/components/Main";
-import Footer from "../src/components/Footer";
-import { BrowserRouter as Router } from "react-router-dom";
-
-import AppRouter from "./components/AppRouter"; // Правильный импорт компонента маршрутизатора
+import Home from "../src/components/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Recipes from "../src/components/Recipes";
+import About from "../src/components/About";
+import Contact from "../src/components/Contact";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
-        {/* <div className="content">
-          <AppRouter />
-        </div> */}
-        <Main />
-        <Footer />
+        <Home />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/recipes" element={<Recipes />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
     </Router>
   );

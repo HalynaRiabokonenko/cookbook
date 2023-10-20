@@ -1,15 +1,23 @@
-import "./App.css";
-import Header from "./Header";
-import Main from "./Main";
-import Footer from "./Footer";
+import "./styles/App.css";
+import Header from "../src/components/Header";
+import Main from "../src/components/Main";
+import Footer from "../src/components/Footer";
+import { BrowserRouter as Router } from "react-router-dom";
+
+import AppRouter from "./components/AppRouter"; // Правильный импорт компонента маршрутизатора
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Main />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        {/* <div className="content">
+          <AppRouter />
+        </div> */}
+        <Main />
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

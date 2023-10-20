@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function Footer() {
   return (
@@ -16,16 +18,14 @@ function Footer() {
           {/* Links to various sections or pages */}
           <ul>
             <li>
-              <a href="/">Home</a>
+              <Link to="/">Home</Link>
+            </li>
+
+            <li>
+              <Link to="/about">About Us</Link>
             </li>
             <li>
-              <a href="/about">About Us</a>
-            </li>
-            <li>
-              <a href="/services">Services</a>
-            </li>
-            <li>
-              <a href="/contact">Contact Us</a>
+              <Link to="/contact">Contact Us </Link>
             </li>
           </ul>
         </div>
@@ -46,7 +46,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer__bottom">
-        <p class="footer__copy">
+        <p className="footer__copy">
           &copy; {new Date().getFullYear()} Proven Recipes. All rights reserved.
         </p>
       </div>

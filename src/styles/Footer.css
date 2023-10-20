@@ -1,0 +1,85 @@
+/* Footer container */
+.footer {
+  border-top: solid 2px var(--orange);
+  background-color: var(--dark-gray);
+  color: var(--light-green);
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Footer content wrapper */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Footer logo */
+.footer-logo h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* Footer navigation links */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 5px 0;
+}
+
+.footer-links a {
+  color: var(--white);
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--orange);
+}
+
+/* Footer social media links */
+.footer__brand-logo {
+  width: 100px;
+}
+
+.footer__brand-name {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-social li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-social a {
+  color: var(--white);
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: var(--orange);
+}
+
+img.footer__social-icon {
+  height: 25px;
+  margin: 10px;
+}
+
+/* Footer copyright section */
+.footer__bottom {
+  margin-top: 20px;
+}
+
+.footer__copy {
+  font-size: 0.8rem;
+}

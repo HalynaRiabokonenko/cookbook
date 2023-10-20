@@ -5,7 +5,7 @@ import "../styles/App.css";
 
 function About() {
   return (
-    <div className="App">
+    <div className="about">
       <Header />
       {/* /////// */}
 

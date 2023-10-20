@@ -1,14 +1,13 @@
 import React from "react";
 import Header from "./Header";
+import ContactContent from "./ContactContent";
 import Footer from "./Footer";
-import "../styles/App.css";
 
 function Contact() {
   return (
     <div className="contact">
       <Header />
-      {/* /////// */}
-
+      <ContactContent />
       <Footer />
     </div>
   );

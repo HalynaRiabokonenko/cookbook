@@ -1,9 +1,8 @@
 @import "./App.css";
 
 /* Main container */
-main {
+.contact-content {
   margin-top: var(--header-hight);
   background-color: var(--light-green);
   padding: 20px;
-  text-align: center;
 }

@@ -1,15 +1,10 @@
-@import "./App.css";
-
-/* Main container */
-main {
+.home-content {
   margin-top: var(--header-hight);
   background-color: var(--light-green);
   padding: 20px;
-  text-align: center;
 }
 
-/* Recipes section */
-.recipes {
+.home-content__container {
   background-color: var(--white);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -17,47 +12,52 @@ main {
   text-align: left;
 }
 
-.recipes h1 {
+.home-content__header {
   font-size: 1.5em;
   margin-bottom: 20px;
 }
 
-.recipes__list {
-  list-style: none;
+.home-content__recipes-list {
+  list-style-type: none;
+  flex-direction: column;
 }
 
-.recipes__list--option {
-  display: flex;
-  /* justify-content: space-around; */
+.home-content__recipes-list--option {
+  /* display: grid; */
   align-items: baseline;
-}
-
-.recipes__items-list {
-  list-style: none;
-  padding: 0;
+  list-style-type: none;
   border: 1px solid var(--light-green);
-  border-radius: 4px;
-  /* background-color: var(--orange); */
-  /* flex-grow: 1; */
-  flex-basis: 0;
+  border-radius: 8px;
 }
 
-.recipes li {
+.home-content__ingredients-list {
+  list-style-type: none;
+}
+
+.home-content__ingredients-list--option {
   margin-bottom: 10px;
   padding: 10px;
 }
 
-.recipes h2 {
+.home-content__recipes-name {
   font-size: 1.5em;
   margin-bottom: 10px;
   color: var(--dark-gray);
 }
 
-.recipes ul li {
+.home-content__recipes-ingredients {
+  text-transform: capitalize;
+}
+
+.home-content__recipes-instructions {
+  text-transform: capitalize;
+}
+
+.home-content__instructions-list {
   margin-left: 20px;
 }
 
-.recipes p {
-  font-size: 1em;
+.home-content__instructions-list--option {
+  margin-bottom: 10px;
+  padding: 10px;
 }
-/* <------ main*/

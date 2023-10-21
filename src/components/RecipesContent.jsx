@@ -4,9 +4,9 @@ import "../styles/Recipes.css";
 
 function RecipesContent() {
   return (
-    <main>
-      <section className="main">
-        <h1>Most popular recipes</h1>
+    <main className="recipes-content">
+      <section className="recipes-content__container">
+        <h1 className="recipes-content__header">Most popular recipes</h1>
         <p>
           “A recipe has no soul. You, as the cook, must bring soul to the
           recipe.” – Thomas Keller

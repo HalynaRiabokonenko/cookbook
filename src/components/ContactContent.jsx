@@ -3,8 +3,8 @@ import "../styles/Contact.css";
 
 function ContactContent() {
   return (
-    <main>
-      <section className="main">
+    <main className="contact-content">
+      <section>
         <h1>Contact us</h1>
       </section>
     </main>

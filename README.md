@@ -1,5 +1,11 @@
 # Getting Started with running App Cookbook
 
+## Download the installer from NodeJS WebSite
+
+### [Download Node.js](https://nodejs.org/en/download)
+
+
+
 ## Initialize a Node.js Project (if not already done)
 
 ### `npm init`

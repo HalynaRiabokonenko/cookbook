@@ -29,13 +29,11 @@
   align-items: baseline;
   list-style-type: none;
   border: 1px solid var(--light-green);
+  border-radius: 8px;
 }
 
 .recipes-content__ingredients-list {
   list-style-type: none;
-  padding: 0;
-  border-radius: 4px;
-  flex-basis: 0;
 }
 
 .recipes-content__ingredients-list--option {
@@ -49,10 +47,19 @@
   color: var(--dark-gray);
 }
 
-/*.recipes ul li {
+.recipes-content__recipes-ingredients {
+  text-transform: capitalize;
+}
+
+.recipes-content__recipes-instructions {
+  text-transform: capitalize;
+}
+
+.recipes-content__instructions-list {
   margin-left: 20px;
 }
 
-.recipes p {
-  font-size: 1em;
-} */
+.recipes-content__instructions-list--option {
+  margin-bottom: 10px;
+  padding: 10px;
+}

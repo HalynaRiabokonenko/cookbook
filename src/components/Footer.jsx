@@ -37,6 +37,7 @@ function Footer() {
               <a
                 href="https://www.instagram.com/proven.recipes"
                 target="_blank"
+                rel="noreferrer"
               >
                 <img
                   className="footer__social-icon"

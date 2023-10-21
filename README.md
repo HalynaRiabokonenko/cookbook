@@ -4,7 +4,7 @@
 
 ### [Download Node.js](https://nodejs.org/en/download)
 
-
+Download the Installer from NodeJs official website. Make sure you have downloaded the latest version of NodeJs. It includes the NPM package manager.
 
 ## Initialize a Node.js Project (if not already done)
 

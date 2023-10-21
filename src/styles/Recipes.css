@@ -1,9 +1,58 @@
 @import "./App.css";
 
-/* Main container */
-main {
+.recipes-content {
   margin-top: var(--header-hight);
   background-color: var(--light-green);
   padding: 20px;
-  text-align: center;
 }
+
+.recipes-content__container {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+}
+
+.recipes-content__header {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.recipes-content__recipes-list {
+  list-style-type: none;
+  flex-direction: column;
+}
+
+.recipes-content__recipes-list--option {
+  /* display: grid; */
+  align-items: baseline;
+  list-style-type: none;
+  border: 1px solid var(--light-green);
+}
+
+.recipes-content__ingredients-list {
+  list-style-type: none;
+  padding: 0;
+  border-radius: 4px;
+  flex-basis: 0;
+}
+
+.recipes-content__ingredients-list--option {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.recipes-content__recipes-name {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: var(--dark-gray);
+}
+
+/*.recipes ul li {
+  margin-left: 20px;
+}
+
+.recipes p {
+  font-size: 1em;
+} */

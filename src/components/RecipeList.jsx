@@ -1,18 +1,24 @@
 import React from "react";
 import recipesData from "../recipes.json";
+import "../styles/Recipes.css";
 
 const RecipeList = () => {
   return (
     <div>
       <h1>Recipes</h1>
-      <ul>
+      <ul className="recipes-content__recipes-list">
         {recipesData.recipes.map((recipe) => (
-          <li key={recipe.id}>
-            <h2>{recipe.name}</h2>
+          <li key={recipe.id} className="recipes-content__recipes-list--option">
+            <h2 className="recipes-content__recipes-name">{recipe.name}</h2>
             <h3>ingredients:</h3>
-            <ul>
+            <ul className="recipes-content__ingredients-list">
               {recipe.ingredients.map((ingredient, index) => (
-                <li key={index}>{ingredient}</li>
+                <li
+                  key={index}
+                  className="recipes-content__ingredients-list--option"
+                >
+                  {ingredient}
+                </li>
               ))}
             </ul>
             <h3>instructions:</h3>

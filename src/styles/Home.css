@@ -1,15 +1,14 @@
 @import "./App.css";
 
 /* Main container */
-main {
+.home-content {
   margin-top: var(--header-hight);
   background-color: var(--light-green);
   padding: 20px;
-  text-align: center;
 }
 
 /* Recipes section */
-.recipes {
+.home-content__container {
   background-color: var(--white);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -17,28 +16,25 @@ main {
   text-align: left;
 }
 
-.recipes h1 {
+.home-content__header {
   font-size: 1.5em;
   margin-bottom: 20px;
 }
 
-.recipes__list {
-  list-style: none;
+/* .recipes__list--popular {
+  list-style-type: none;
 }
 
 .recipes__list--option {
   display: flex;
-  /* justify-content: space-around; */
   align-items: baseline;
 }
 
 .recipes__items-list {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
   border: 1px solid var(--light-green);
   border-radius: 4px;
-  /* background-color: var(--orange); */
-  /* flex-grow: 1; */
   flex-basis: 0;
 }
 
@@ -59,5 +55,4 @@ main {
 
 .recipes p {
   font-size: 1em;
-}
-/* <------ main*/
+} */

@@ -3,8 +3,8 @@ import "../styles/About.css";
 
 function AboutContent() {
   return (
-    <main>
-      <section className="main">
+    <main className="about-content">
+      <section>
         <h1>About us</h1>
       </section>
     </main>

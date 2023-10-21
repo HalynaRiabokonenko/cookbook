@@ -34,7 +34,10 @@ function Footer() {
           <p>Let's be friends!</p>
           <ul>
             <li>
-              <a href="https://www.instagram.com/proven.recipes">
+              <a
+                href="https://www.instagram.com/proven.recipes"
+                target="_blank"
+              >
                 <img
                   className="footer__social-icon"
                   src="instagram-icon.png"

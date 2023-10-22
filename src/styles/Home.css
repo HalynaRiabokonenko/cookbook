@@ -17,6 +17,32 @@
   margin-bottom: 20px;
 }
 
+/* grid containers --->*/
+.home-content__recipes-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.home-content__recipes-photo-container {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.home-content__recipes-ingredients-container {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.home-content__recipes-instructions-container {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+}
+/*<--- grid containers*/
+
+.home-content__recipes-photo {
+  width: 70%;
+}
+
 .home-content__recipes-list {
   list-style-type: none;
   flex-direction: column;

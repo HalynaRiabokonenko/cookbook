@@ -24,6 +24,10 @@
   flex-direction: column;
 }
 
+.recipes-content__recipes-photo {
+  width: 30%;
+}
+
 .recipes-content__recipes-list--option {
   /* display: grid; */
   align-items: baseline;

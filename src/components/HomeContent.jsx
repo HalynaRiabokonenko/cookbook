@@ -36,32 +36,45 @@ function HomeContent() {
                     <h2 className="home-content__recipes-name">
                       {recipe.name}
                     </h2>
-                    <h3 className="home-content__recipes-ingredients">
-                      ingredients:
-                    </h3>
-                    <ul className="home-content__ingredients-list">
-                      {recipe.ingredients.map((ingredient, index) => (
-                        <li
-                          key={index}
-                          className="home-content__ingredients-list--option"
-                        >
-                          {ingredient}
-                        </li>
-                      ))}
-                    </ul>
-                    <h3 className="home-content__recipes-instructions">
-                      instructions:
-                    </h3>
-                    <ol className="home-content__instructions-list">
-                      {recipe.instructions.map((instruction, index) => (
-                        <li
-                          key={index}
-                          className="home-content__instructions-list--option"
-                        >
-                          {instruction}
-                        </li>
-                      ))}
-                    </ol>
+                    <div className="home-content__recipes-content">
+                      <div className="home-content__recipes-photo-container">
+                        <img
+                          src={recipe.photoPath}
+                          alt={recipe.name}
+                          className="home-content__recipes-photo"
+                        ></img>
+                      </div>
+                      <div className="home-content__recipes-ingredients-container">
+                        <h3 className="home-content__recipes-ingredients">
+                          ingredients:
+                        </h3>
+                        <ul className="home-content__ingredients-list">
+                          {recipe.ingredients.map((ingredient, index) => (
+                            <li
+                              key={index}
+                              className="home-content__ingredients-list--option"
+                            >
+                              {ingredient}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="home-content__recipes-instructions-container">
+                        <h3 className="home-content__recipes-instructions">
+                          instructions:
+                        </h3>
+                        <ol className="home-content__instructions-list">
+                          {recipe.instructions.map((instruction, index) => (
+                            <li
+                              key={index}
+                              className="home-content__instructions-list--option"
+                            >
+                              {instruction}
+                            </li>
+                          ))}
+                        </ol>
+                      </div>
+                    </div>
                   </li>
                 ))}
             </ul>

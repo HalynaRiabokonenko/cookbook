@@ -4,6 +4,7 @@
         "id": 1,
         "name": "Borscht",
         "cuisine": "Ukrainian",
+        "photoPath": "public/recipes_photo/borscht.jpeg",
         "ingredients": [
           "4 beets, peeled and grated",
           "1 onion, finely chopped",
@@ -26,8 +27,9 @@
       },
       {
         "id": 2,
-        "name": "Pierogi",
+        "name": "Varenyky",
         "cuisine": "Ukrainian",
+        "photoPath": "public/recipes_photo/varenyky.jpeg",
         "ingredients": [
           "2 cups all-purpose flour",
           "1/2 cup warm water",
@@ -42,13 +44,14 @@
           "In a bowl, mix flour, water, egg, and salt to form a dough. Knead until smooth, then roll out thinly.",
           "Cut circles from the dough. Place a spoonful of mashed potatoes and sautéed onions in the center of each circle.",
           "Fold the dough over the filling, sealing the edges to form a half-moon shape.",
-          "Boil pierogi in salted water until they float to the surface. Drain and serve hot with sour cream."
+          "Boil varenyky in salted water until they float to the surface. Drain and serve hot with sour cream."
         ]
       },
       {
         "id": 3,
         "name": "Chicken Kyiv",
         "cuisine": "Ukrainian",
+        "photoPath": "public/recipes_photo/chicken_kyiv.jpeg",
         "ingredients": [
           "4 boneless, skinless chicken breasts",
           "4 tablespoons butter, softened",
@@ -74,6 +77,7 @@
         "id": 4,
         "name": "Deruny (Potato Pancakes)",
         "cuisine": "Ukrainian",
+        "photoPath": "public/recipes_photo/deruny.jpeg",
         "ingredients": [
           "4 potatoes, peeled and grated",
           "1 onion, grated",
@@ -95,6 +99,7 @@
         "id": 5,
         "name": "Holubtsi (Stuffed Cabbage Rolls)",
         "cuisine": "Ukrainian",
+        "photoPath": "public/recipes_photo/holubtsi.jpeg",
         "ingredients": [
           "1 large cabbage",
           "1 lb ground beef",
@@ -119,8 +124,9 @@
       },
       {
         "id": 6,
-        "name": "Syrniki (Ukrainian Cheese Pancakes)",
+        "name": "Syrnyky (Ukrainian Cheese Pancakes)",
         "cuisine": "Ukrainian",
+        "photoPath": "public/recipes_photo/syrnyky.jpeg",
         "ingredients": [
           "1 cup cottage cheese",
           "1 egg",
@@ -145,6 +151,7 @@
         "id": 7,
         "name": "Ukrainian Cucumber Salad",
         "cuisine": "Ukrainian",
+        "photoPath": "public/recipes_photo/cucumber_salad.jpeg",
         "ingredients": [
           "2 cucumbers, thinly sliced",
           "1 onion, thinly sliced",
@@ -165,6 +172,7 @@
       "id": 8,
       "name": "Ukrainian Beet Salad (Vinaigrette)",
       "cuisine": "Ukrainian",
+      "photoPath": "public/recipes_photo/vinaigrette.jpeg",
       "ingredients": [
         "2 beets, boiled, peeled, and diced",
         "3 potatoes, boiled, peeled, and diced",
@@ -187,6 +195,7 @@
       "id": 9,
       "name": "Ukrainian Mushroom Soup",
       "cuisine": "Ukrainian",
+      "photoPath": "public/recipes_photo/mushroom_soup.webp",
       "ingredients": [
         "1 lb fresh mushrooms, sliced",
         "1 onion, finely chopped",
@@ -212,6 +221,7 @@
       "id": 10,
       "name": "Ukrainian Apple Cake",
       "cuisine": "Ukrainian",
+      "photoPath": "public/recipes_photo/apple_cake.jpeg",
       "ingredients": [
         "2 cups all-purpose flour",
         "1 1/2 teaspoons baking powder",

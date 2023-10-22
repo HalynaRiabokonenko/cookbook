@@ -17,6 +17,10 @@
   margin-bottom: 20px;
 }
 
+.home-content__recipes-photo {
+  width: 30%;
+}
+
 .home-content__recipes-list {
   list-style-type: none;
   flex-direction: column;

@@ -9,6 +9,11 @@ const RecipeList = () => {
         {recipesData.recipes.map((recipe) => (
           <li key={recipe.id} className="recipes-content__recipes-list--option">
             <h2 className="recipes-content__recipes-name">{recipe.name}</h2>
+            <img
+              src={recipe.photoPath}
+              alt={recipe.name}
+              className="recipes-content__recipes-photo"
+            ></img>
             <h3 className="recipes-content__recipes-ingredients">
               ingredients:
             </h3>

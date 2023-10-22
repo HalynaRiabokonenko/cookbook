@@ -36,6 +36,11 @@ function HomeContent() {
                     <h2 className="home-content__recipes-name">
                       {recipe.name}
                     </h2>
+                    <img
+                      src={recipe.photoPath}
+                      alt={recipe.name}
+                      className="home-content__recipes-photo"
+                    ></img>
                     <h3 className="home-content__recipes-ingredients">
                       ingredients:
                     </h3>

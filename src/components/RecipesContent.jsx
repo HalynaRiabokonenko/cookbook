@@ -7,7 +7,7 @@ function RecipesContent() {
     <main className="recipes-content">
       <section className="recipes-content__container">
         <h1 className="recipes-content__header">Most popular recipes</h1>
-        <p>
+        <p className="recipes-content__paragraph">
           “A recipe has no soul. You, as the cook, must bring soul to the
           recipe.” – Thomas Keller
         </p>

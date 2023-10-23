@@ -22,3 +22,7 @@
   letter-spacing: 0.3rem;
   word-spacing: 2rem;
 }
+
+.about-content__paragraph {
+  margin: 30px 0;
+}

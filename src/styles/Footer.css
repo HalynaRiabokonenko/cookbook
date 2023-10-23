@@ -1,7 +1,13 @@
 @import "./App.css";
 
+:root {
+  --footer-hight: 180px;
+  --footer-width: 100%;
+}
+
 /* Footer container */
 .footer {
+  height: var(--footer-hight);
   border-top: solid 2px var(--orange);
   background-color: var(--dark-gray);
   color: var(--light-green);

@@ -21,6 +21,10 @@
   word-spacing: 2rem;
 }
 
+.home-content__paragraph {
+  margin: 30px 0;
+}
+
 /* grid containers --->*/
 .home-content__recipes-content {
   display: grid;

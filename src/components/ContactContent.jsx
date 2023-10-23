@@ -11,7 +11,7 @@ function ContactContent() {
           <form
             action=""
             method="get"
-            id="myForm"
+            id="contact-content__form"
             className="contact-content__modal-form"
           >
             <label htmlFor="title" className="contact-content__form-label">

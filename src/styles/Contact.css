@@ -2,8 +2,7 @@
 
 :root {
   --modal-width: 500px;
-  --modal-height: 430px;
-  --modal-header-font-size: 1.5rem;
+  --modal-height: 380px;
   --modal-text-color: #777575;
   --modal-bg-color: #c8dedd;
   --modal-border-color: #ccc;
@@ -55,6 +54,10 @@
   word-spacing: 2rem;
 }
 
+.contact-content__paragraph {
+  margin: 30px 0;
+}
+
 .contact-content__modal {
   background-color: var(--modal-bg-color);
   color: var(--modal-text-color);
@@ -62,7 +65,7 @@
   width: var(--modal-width);
   border: 1px solid var(--modal-border-color);
   border-radius: 20px;
-  margin: 40px auto;
+  margin: 0 auto;
   padding-bottom: 20px;
 }
 
@@ -72,13 +75,6 @@
   justify-content: center;
   align-items: center;
   font-size: var(--modal-label-text-font-size);
-  margin-top: 20px;
-}
-
-.contact-content__modal-header {
-  text-transform: uppercase;
-  text-align: center;
-  font-size: var(--modal-header-font-size);
   margin-top: 30px;
 }
 
@@ -175,12 +171,6 @@
     );
   }
 
-  .contact-content__modal-header {
-    font-size: calc(
-      var(--modal-header-font-size) * var(--text-scale-value-768)
-    );
-  }
-
   .contact-content__modal-form {
     font-size: calc(
       var(--modal-label-text-font-size) * var(--text-scale-value-768)
@@ -211,12 +201,6 @@
     height: calc(var(--modal-height) * var(--modal-scale-height-value-480));
     left: calc(
       50% - var(--modal-width) * var(--modal-scale-with-value-480) / 2
-    );
-  }
-
-  .contact-content__modal-header {
-    font-size: calc(
-      var(--modal-header-font-size) * var(--text-scale-value-480)
     );
   }
 

@@ -6,8 +6,15 @@ function ContactContent() {
     <main className="contact-content">
       <section className="contact-content__container">
         <h1 className="contact-content__header">Contact us</h1>
+        <p className="contact-content__paragraph">
+          Dear visitors, your feedback is invaluable to us! If you have tried
+          any of our Ukrainian recipes and would like to share your thoughts, or
+          if you have any other information you'd like to send our way, please
+          feel free to use our contact form. Your input helps us improve and
+          ensures that our recipes continue to delight your taste buds. We
+          appreciate your participation and look forward to hearing from you!
+        </p>
         <div className="contact-content__modal">
-          <h2 className="contact-content__modal-header">Send message</h2>
           <form
             action=""
             method="get"

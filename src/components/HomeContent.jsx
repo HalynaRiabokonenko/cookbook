@@ -8,7 +8,7 @@ function HomeContent() {
     <main className="home-content">
       <section className="home-content__container">
         <h1 className="home-content__header">Delicious Ukrainian Cuisine</h1>
-        <p>
+        <p className="home-content__paragraph">
           Welcome to our website, where we have gathered a treasure trove of the
           most renowned recipes from Ukrainian cuisine. Here, you will embark on
           a culinary journey through the heart of Ukraine, exploring a diverse

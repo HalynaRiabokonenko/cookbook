@@ -5,7 +5,7 @@ function ContactContent() {
   return (
     <main className="contact-content">
       <section className="contact-content__container">
-        <h1>Contact us</h1>
+        <h1 className="contact-content__header">Contact us</h1>
         <div className="contact-content__modal">
           <h2 className="contact-content__modal-header">Send message</h2>
           <form

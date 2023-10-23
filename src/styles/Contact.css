@@ -46,6 +46,15 @@
   text-align: left;
 }
 
+.contact-content__header {
+  font-size: 1.5em;
+  margin: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.3rem;
+  word-spacing: 2rem;
+}
+
 .contact-content__modal {
   background-color: var(--modal-bg-color);
   color: var(--modal-text-color);

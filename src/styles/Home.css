@@ -14,7 +14,11 @@
 
 .home-content__header {
   font-size: 1.5em;
-  margin-bottom: 20px;
+  margin: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.3rem;
+  word-spacing: 2rem;
 }
 
 /* grid containers --->*/
@@ -68,7 +72,6 @@
 .home-content__recipes-name {
   font-size: 1.5em;
   margin-bottom: 10px;
-  color: var(--dark-gray);
 }
 
 .home-content__recipes-ingredients {

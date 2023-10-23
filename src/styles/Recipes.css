@@ -16,7 +16,11 @@
 
 .recipes-content__header {
   font-size: 1.5em;
-  margin-bottom: 20px;
+  margin: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.3rem;
+  word-spacing: 2rem;
 }
 
 .recipes-content__recipes-list {
@@ -48,7 +52,6 @@
 .recipes-content__recipes-name {
   font-size: 1.5em;
   margin-bottom: 10px;
-  color: var(--dark-gray);
 }
 
 .recipes-content__recipes-ingredients {

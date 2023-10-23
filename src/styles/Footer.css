@@ -50,6 +50,7 @@
 .footer__brand-name {
   font-size: 1.2rem;
   text-transform: uppercase;
+  color: var(--light-green);
 }
 
 .footer-social ul {
@@ -63,9 +64,13 @@
 }
 
 .footer-social a {
-  color: var(--white);
+  color: var(--light-green);
   font-size: 1.5em;
   transition: color 0.3s;
+}
+
+.footer-social p {
+  color: var(--light-green);
 }
 
 .footer-social a:hover {
@@ -75,6 +80,7 @@
 img.footer__social-icon {
   height: 25px;
   margin: 10px;
+  color: var(--light-green);
 }
 
 /* Footer copyright section */
@@ -84,4 +90,5 @@ img.footer__social-icon {
 
 .footer__copy {
   font-size: 0.8rem;
+  color: var(--light-green);
 }

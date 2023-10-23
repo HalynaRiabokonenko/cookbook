@@ -10,12 +10,14 @@
   --light-gray: #dddddd;
   --header-hight: 180px;
   --header-width: 100%;
+  --header-text-color: rgb(77, 77, 77);
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: var(--header-text-color);
 }
 
 a {

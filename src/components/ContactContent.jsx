@@ -4,11 +4,16 @@ import "../styles/Contact.css";
 function ContactContent() {
   return (
     <main className="contact-content">
-      <section>
+      <section className="contact-content__container">
         <h1>Contact us</h1>
         <div className="contact-content__modal">
           <h2 className="contact-content__modal-header">Send message</h2>
-          <form action="" method="get" className="contact-content__modal-form">
+          <form
+            action=""
+            method="get"
+            id="myForm"
+            className="contact-content__modal-form"
+          >
             <label htmlFor="title" className="contact-content__form-label">
               Title
             </label>

@@ -43,6 +43,11 @@
   text-align: center;
 }
 
+.home-content__recipes-description {
+  font-family: Cormorant, sans-serif;
+  font-size: 1.2rem;
+}
+
 .home-content__recipes-ingredients-container {
   margin: 30px;
   grid-column: 2/3;
@@ -84,10 +89,12 @@
 }
 
 .home-content__recipes-name {
-  font-size: 1.5em;
+  font-size: 1.4em;
   margin: 30px;
   text-align: center;
   padding: 20px;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 
 .home-content__recipes-ingredients {

@@ -19,10 +19,11 @@
   text-align: center;
   letter-spacing: 0.3rem;
   word-spacing: 2rem;
+  text-align: center;
 }
 
 .home-content__paragraph {
-  margin: 30px 0;
+  margin: 30px 20px;
 }
 
 /* grid containers --->*/
@@ -31,12 +32,19 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.home-content__recipes-info {
+  margin: 30px;
+}
+
 .home-content__recipes-photo-container {
+  margin: 30px 0px;
   grid-column: 1/2;
   grid-row: 1/2;
+  text-align: center;
 }
 
 .home-content__recipes-ingredients-container {
+  margin: 30px;
   grid-column: 2/3;
   grid-row: 1/2;
 }
@@ -58,10 +66,12 @@
 
 .home-content__recipes-list--option {
   /* display: grid; */
+  background-color: #ebf1f075;
   align-items: baseline;
   list-style-type: none;
   border: 1px solid var(--light-green);
   border-radius: 8px;
+  margin: 40px 20px;
 }
 
 .home-content__ingredients-list {
@@ -75,7 +85,9 @@
 
 .home-content__recipes-name {
   font-size: 1.5em;
-  margin-bottom: 10px;
+  margin: 30px;
+  text-align: center;
+  padding: 20px;
 }
 
 .home-content__recipes-ingredients {

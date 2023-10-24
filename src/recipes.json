@@ -1,162 +1,168 @@
 {
-    "recipes": [
-      {
-        "id": 1,
-        "name": "Borscht",
-        "cuisine": "Ukrainian",
-        "photoPath": "../recipes_photo/borscht.jpeg",
-        "ingredients": [
-          "4 beets, peeled and grated",
-          "1 onion, finely chopped",
-          "2 carrots, peeled and grated",
-          "1 small cabbage, shredded",
-          "4 potatoes, peeled and diced",
-          "1 can (14 oz) diced tomatoes",
-          "4 cups beef or vegetable broth",
-          "2 cloves garlic, minced",
-          "1/4 cup vinegar",
-          "Salt and pepper to taste",
-          "Sour cream and fresh dill for garnish"
-        ],
-        "instructions": [
-          "In a large pot, sauté onions, carrots, and beets until softened.",
-          "Add garlic, potatoes, cabbage, tomatoes, and broth. Simmer until vegetables are tender.",
-          "Season with vinegar, salt, and pepper. Adjust seasoning to taste.",
-          "Serve hot, garnished with a dollop of sour cream and a sprinkle of fresh dill."
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Varenyky",
-        "cuisine": "Ukrainian",
-        "photoPath": "../recipes_photo/varenyky.jpeg",
-        "ingredients": [
-          "2 cups all-purpose flour",
-          "1/2 cup warm water",
-          "1 egg",
-          "1/2 teaspoon salt",
-          "4 potatoes, boiled and mashed",
-          "1 onion, finely chopped and sautéed",
-          "Salt and pepper to taste",
-          "Sour cream for serving"
-        ],
-        "instructions": [
-          "In a bowl, mix flour, water, egg, and salt to form a dough. Knead until smooth, then roll out thinly.",
-          "Cut circles from the dough. Place a spoonful of mashed potatoes and sautéed onions in the center of each circle.",
-          "Fold the dough over the filling, sealing the edges to form a half-moon shape.",
-          "Boil varenyky in salted water until they float to the surface. Drain and serve hot with sour cream."
-        ]
-      },
-      {
-        "id": 3,
-        "name": "Chicken Kyiv",
-        "cuisine": "Ukrainian",
-        "photoPath": "../recipes_photo/chicken_kyiv.jpeg",
-        "ingredients": [
-          "4 boneless, skinless chicken breasts",
-          "4 tablespoons butter, softened",
-          "2 cloves garlic, minced",
-          "2 tablespoons chopped fresh parsley",
-          "Salt and pepper to taste",
-          "1 cup bread crumbs",
-          "1/2 cup flour",
-          "2 eggs, beaten",
-          "Vegetable oil for frying"
-        ],
-        "instructions": [
-          "Preheat oven to 175°C (350°F).",
-          "In a bowl, mix together butter, garlic, parsley, salt, and pepper.",
-          "Cut a pocket into each chicken breast. Stuff with the butter mixture and seal the edges.",
-          "Dip each chicken breast in flour, then egg, and coat with bread crumbs.",
-          "Heat oil in a pan and fry chicken until golden brown on both sides.",
-          "Transfer to a baking dish and bake for 20-25 minutes or until cooked through.",
-          "Serve hot."
-        ]
-      },
-      {
-        "id": 4,
-        "name": "Deruny (Potato Pancakes)",
-        "cuisine": "Ukrainian",
-        "photoPath": "../recipes_photo/deruny.jpeg",
-        "ingredients": [
-          "4 potatoes, peeled and grated",
-          "1 onion, grated",
-          "2 eggs, beaten",
-          "1/4 cup all-purpose flour",
-          "Salt and pepper to taste",
-          "Vegetable oil for frying",
-          "Sour cream for serving"
-        ],
-        "instructions": [
-          "In a bowl, combine grated potatoes, onion, eggs, flour, salt, and pepper.",
-          "Heat oil in a pan over medium heat.",
-          "Drop spoonfuls of the potato mixture into the pan, flattening them with a spatula.",
-          "Fry until golden brown on both sides.",
-          "Serve hot with sour cream."
-        ]
-      },
-      {
-        "id": 5,
-        "name": "Holubtsi (Stuffed Cabbage Rolls)",
-        "cuisine": "Ukrainian",
-        "photoPath": "../recipes_photo/holubtsi.jpeg",
-        "ingredients": [
-          "1 large cabbage",
-          "1 lb ground beef",
-          "1/2 cup cooked rice",
-          "1 onion, finely chopped",
-          "1 can (14 oz) tomato sauce",
-          "1/2 cup beef broth",
-          "2 tablespoons tomato paste",
-          "1 teaspoon paprika",
-          "Salt and pepper to taste",
-          "Sour cream for serving"
-        ],
-        "instructions": [
-          "Boil the whole cabbage in a large pot of water until the leaves are soft. Remove and let cool.",
-          "In a bowl, mix ground beef, cooked rice, onion, salt, and pepper.",
-          "Carefully peel off cabbage leaves. Place a spoonful of the meat mixture on each leaf and roll up tightly.",
-          "In a separate bowl, mix tomato sauce, beef broth, tomato paste, paprika, salt, and pepper.",
-          "Place cabbage rolls in a baking dish and pour the tomato sauce mixture over them.",
-          "Bake at 175°C (350°F) for 45 minutes to 1 hour, until the rolls are cooked through.",
-          "Serve hot with sour cream."
-        ]
-      },
-      {
-        "id": 6,
-        "name": "Syrnyky (Ukrainian Cheese Pancakes)",
-        "cuisine": "Ukrainian",
-        "photoPath": "../recipes_photo/syrnyky.jpeg",
-        "ingredients": [
-          "1 cup cottage cheese",
-          "1 egg",
-          "3 tablespoons sugar",
-          "1/2 teaspoon vanilla extract",
-          "1/2 cup all-purpose flour",
-          "1/2 teaspoon baking powder",
-          "Pinch of salt",
-          "Butter for frying",
-          "Sour cream and jam for serving"
-        ],
-        "instructions": [
-          "In a bowl, mix cottage cheese, egg, sugar, and vanilla extract until well combined.",
-          "Add flour, baking powder, and salt. Stir until a dough forms.",
-          "Heat butter in a pan over medium heat.",
-          "Drop spoonfuls of the dough into the pan, flattening them to form pancakes.",
-          "Fry until golden brown on both sides.",
-          "Serve hot with sour cream and jam."
-        ]
-      },
-      {
-        "id": 7,
-        "name": "Ukrainian Cucumber Salad",
-        "cuisine": "Ukrainian",
-        "photoPath": "../recipes_photo/cucumber_salad.jpeg",
-        "ingredients": [
-          "2 cucumbers, thinly sliced",
-          "1 onion, thinly sliced",
-          "1/4 cup chopped fresh dill",
-          "1/4 cup chopped fresh parsley",
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Borscht",
+      "cuisine": "Ukrainian",
+      "photoPath": "../recipes_photo/borscht.jpeg",
+      "ingredients": [
+        "4 beets, peeled and grated",
+        "1 onion, finely chopped",
+        "2 carrots, peeled and grated",
+        "1 small cabbage, shredded",
+        "4 potatoes, peeled and diced",
+        "1 can (14 oz) diced tomatoes",
+        "4 cups beef or vegetable broth",
+        "2 cloves garlic, minced",
+        "1/4 cup vinegar",
+        "Salt and pepper to taste",
+        "Sour cream and fresh dill for garnish"
+      ],
+      "instructions": [
+        "In a large pot, sauté onions, carrots, and beets until softened.",
+        "Add garlic, potatoes, cabbage, tomatoes, and broth. Simmer until vegetables are tender.",
+        "Season with vinegar, salt, and pepper. Adjust seasoning to taste.",
+        "Serve hot, garnished with a dollop of sour cream and a sprinkle of fresh dill."
+      ],
+      "description": "Borscht is a traditional Ukrainian beet soup known for its vibrant color and rich flavors. This hearty soup is made with a variety of vegetables including beets, carrots, potatoes, and cabbage. It is simmered to perfection in a savory broth and garnished with sour cream and fresh dill. Borscht is a beloved dish in Ukrainian cuisine, celebrated for its comforting taste and cultural significance."
+    },
+    {
+      "id": 2,
+      "name": "Varenyky",
+      "cuisine": "Ukrainian",
+      "photoPath": "../recipes_photo/varenyky.jpeg",
+      "ingredients": [
+        "2 cups all-purpose flour",
+        "1/2 cup warm water",
+        "1 egg",
+        "1/2 teaspoon salt",
+        "4 potatoes, boiled and mashed",
+        "1 onion, finely chopped and sautéed",
+        "Salt and pepper to taste",
+        "Sour cream for serving"
+      ],
+      "instructions": [
+        "In a bowl, mix flour, water, egg, and salt to form a dough. Knead until smooth, then roll out thinly.",
+        "Cut circles from the dough. Place a spoonful of mashed potatoes and sautéed onions in the center of each circle.",
+        "Fold the dough over the filling, sealing the edges to form a half-moon shape.",
+        "Boil varenyky in salted water until they float to the surface. Drain and serve hot with sour cream."
+      ],
+      "description": "Varenyky, also known as pierogi, are delightful Ukrainian dumplings stuffed with creamy mashed potatoes and sautéed onions. The tender dough envelopes the flavorful filling, creating a perfect harmony of textures. Varenyky are boiled to perfection and served hot, often accompanied by a dollop of sour cream. This classic Ukrainian dish is cherished for its comforting taste and versatility."
+    },
+    {
+      "id": 3,
+      "name": "Chicken Kyiv",
+      "cuisine": "Ukrainian",
+      "photoPath": "../recipes_photo/chicken_kyiv.jpeg",
+      "ingredients": [
+        "4 boneless, skinless chicken breasts",
+        "4 tablespoons butter, softened",
+        "2 cloves garlic, minced",
+        "2 tablespoons chopped fresh parsley",
+        "Salt and pepper to taste",
+        "1 cup bread crumbs",
+        "1/2 cup flour",
+        "2 eggs, beaten",
+        "Vegetable oil for frying"
+      ],
+      "instructions": [
+        "Preheat oven to 175°C (350°F).",
+        "In a bowl, mix together butter, garlic, parsley, salt, and pepper.",
+        "Cut a pocket into each chicken breast. Stuff with the butter mixture and seal the edges.",
+        "Dip each chicken breast in flour, then egg, and coat with bread crumbs.",
+        "Heat oil in a pan and fry chicken until golden brown on both sides.",
+        "Transfer to a baking dish and bake for 20-25 minutes or until cooked through.",
+        "Serve hot."
+      ],
+      "description": "Chicken Kyiv, a Ukrainian culinary masterpiece, features tender chicken breasts filled with a flavorful herb-infused butter. The chicken is coated in a crispy breadcrumb crust and fried to golden perfection. Baked to finish, the result is a succulent and aromatic dish that captivates the senses. Chicken Kyiv is a symbol of Ukrainian cuisine, celebrated for its exquisite taste and elegant presentation."
+    },
+    {
+      "id": 4,
+      "name": "Deruny (Potato Pancakes)",
+      "cuisine": "Ukrainian",
+      "photoPath": "../recipes_photo/deruny.jpeg",
+      "ingredients": [
+        "4 potatoes, peeled and grated",
+        "1 onion, grated",
+        "2 eggs, beaten",
+        "1/4 cup all-purpose flour",
+        "Salt and pepper to taste",
+        "Vegetable oil for frying",
+        "Sour cream for serving"
+      ],
+      "instructions": [
+        "In a bowl, combine grated potatoes, onion, eggs, flour, salt, and pepper.",
+        "Heat oil in a pan over medium heat.",
+        "Drop spoonfuls of the potato mixture into the pan, flattening them with a spatula.",
+        "Fry until golden brown on both sides.",
+        "Serve hot with sour cream."
+      ],
+      "description": "Deruny, beloved Ukrainian potato pancakes, are a delightful combination of grated potatoes, onions, and eggs, seasoned to perfection with salt and pepper. The mixture is skillfully fried to a golden crispness, resulting in pancakes that are both tender inside and wonderfully crunchy outside. Served hot with a dollop of sour cream, Deruny are a cherished comfort food in Ukrainian households."
+    },
+    {
+      "id": 5,
+      "name": "Holubtsi (Stuffed Cabbage Rolls)",
+      "cuisine": "Ukrainian",
+      "photoPath": "../recipes_photo/holubtsi.jpeg",
+      "ingredients": [
+        "1 large cabbage",
+        "1 lb ground beef",
+        "1/2 cup cooked rice",
+        "1 onion, finely chopped",
+        "1 can (14 oz) tomato sauce",
+        "1/2 cup beef broth",
+        "2 tablespoons tomato paste",
+        "1 teaspoon paprika",
+        "Salt and pepper to taste",
+        "Sour cream for serving"
+      ],
+      "instructions": [
+        "Boil the whole cabbage in a large pot of water until the leaves are soft. Remove and let cool.",
+        "In a bowl, mix ground beef, cooked rice, onion, salt, and pepper.",
+        "Carefully peel off cabbage leaves. Place a spoonful of the meat mixture on each leaf and roll up tightly.",
+        "In a separate bowl, mix tomato sauce, beef broth, tomato paste, paprika, salt, and pepper.",
+        "Place cabbage rolls in a baking dish and pour the tomato sauce mixture over them.",
+        "Bake at 175°C (350°F) for 45 minutes to 1 hour, until the rolls are cooked through.",
+        "Serve hot with sour cream."
+      ],
+      "description": "Holubtsi, or Ukrainian stuffed cabbage rolls, are a culinary masterpiece where tender cabbage leaves embrace a flavorful filling of ground beef, cooked rice, and aromatic seasonings. The rolls are bathed in a luscious tomato sauce, adding a rich and tangy dimension to the dish. Baked to perfection, these Holubtsi are a cherished Ukrainian delicacy, celebrated for their comforting taste and hearty nature."
+    },
+    {
+      "id": 6,
+      "name": "Syrnyky (Ukrainian Cheese Pancakes)",
+      "cuisine": "Ukrainian",
+      "photoPath": "../recipes_photo/syrnyky.jpeg",
+      "ingredients": [
+        "1 cup cottage cheese",
+        "1 egg",
+        "3 tablespoons sugar",
+        "1/2 teaspoon vanilla extract",
+        "1/2 cup all-purpose flour",
+        "1/2 teaspoon baking powder",
+        "Pinch of salt",
+        "Butter for frying",
+        "Sour cream and jam for serving"
+      ],
+      "instructions": [
+        "In a bowl, mix cottage cheese, egg, sugar, and vanilla extract until well combined.",
+        "Add flour, baking powder, and salt. Stir until a dough forms.",
+        "Heat butter in a pan over medium heat.",
+        "Drop spoonfuls of the dough into the pan, flattening them to form pancakes.",
+        "Fry until golden brown on both sides.",
+        "Serve hot with sour cream and jam."
+      ],
+      "description": "Syrnyky, delightful Ukrainian cheese pancakes, are a sweet treat made with creamy cottage cheese, eggs, and a touch of sugar. These pancakes are delicately flavored with vanilla and a hint of salt, creating a perfect balance of sweetness and richness. Pan-fried to a golden hue, Syrnyky are served hot, often accompanied by a dollop of sour cream and a spoonful of jam. These fluffy delights are adored for their heavenly taste and comforting texture."
+    },
+    {
+      "id": 7,
+      "name": "Ukrainian Cucumber Salad",
+      "cuisine": "Ukrainian",
+      "photoPath": "../recipes_photo/cucumber_salad.jpeg",
+      "ingredients": [
+        "2 cucumbers, thinly sliced",
+        "1 onion, thinly sliced",
+        "1/4 cup chopped fresh dill",
+        "1/4 cup chopped fresh parsley",
         "1/2 cup sour cream",
         "1 tablespoon white vinegar",
         "Salt and pepper to taste"
@@ -166,7 +172,8 @@
         "In a separate bowl, mix sour cream and vinegar. Season with salt and pepper.",
         "Pour the dressing over the cucumber mixture and toss to combine.",
         "Refrigerate for at least 30 minutes before serving."
-      ]
+      ],
+      "description": "Ukrainian Cucumber Salad is a refreshing and vibrant dish that showcases the essence of fresh ingredients. Thinly sliced cucumbers and onions are combined with fragrant dill and parsley, creating a crisp and flavorful base. The salad is elevated with a creamy dressing made of sour cream, vinegar, salt, and pepper, adding a delightful tanginess to every bite. Served chilled, this salad is a delightful accompaniment to any Ukrainian meal, celebrated for its simplicity and deliciousness."
     },
     {
       "id": 8,
@@ -189,7 +196,8 @@
         "In a small bowl, whisk together vegetable oil, vinegar, salt, and pepper.",
         "Pour the dressing over the salad and toss to combine.",
         "Refrigerate for at least 1 hour before serving."
-      ]
+      ],
+      "description": "Ukrainian Beet Salad, also known as Vinaigrette, is a colorful medley of boiled beets, potatoes, carrots, onions, and sauerkraut, elevated by the freshness of dill. The salad is dressed in a vibrant mixture of vegetable oil, vinegar, salt, and pepper, enhancing the natural flavors of the ingredients. This refreshing and nutritious salad is a staple in Ukrainian cuisine, celebrated for its balance of textures and delightful taste. Served chilled, it is a delightful addition to any meal, showcasing the wholesome essence of Ukrainian culinary traditions."
     },
     {
       "id": 9,
@@ -215,38 +223,40 @@
         "Add the milk mixture to the soup. Season with salt and pepper.",
         "Simmer for a few minutes until the soup thickens.",
         "Garnish with chopped parsley before serving."
-      ]
+      ],
+      "description": "Ukrainian Mushroom Soup is a warm and comforting dish that celebrates the earthy flavors of fresh mushrooms. Sautéed with onions and simmered with tender potatoes in a rich mushroom broth, this soup offers a hearty and satisfying experience. The soup is further enriched with a velvety roux-based sauce, creating a luxurious texture. Garnished with chopped parsley, this soup is a delightful balance of flavors and textures, making it a beloved dish in Ukrainian cuisine."
     },
     {
       "id": 10,
       "name": "Ukrainian Apple Cake",
       "cuisine": "Ukrainian",
       "photoPath": "../recipes_photo/apple_cake.jpeg",
-      "ingredients": [
-        "2 cups all-purpose flour",
-        "1 1/2 teaspoons baking powder",
-        "1/2 teaspoon baking soda",
-        "1/2 teaspoon salt",
-        "1/2 cup unsalted butter, softened",
-        "1 cup sugar",
-        "2 eggs",
-        "1 teaspoon vanilla extract",
-        "1/2 cup sour cream",
-        "2 cups peeled, cored, and sliced apples",
-        "1/2 teaspoon ground cinnamon",
-        "Powdered sugar for dusting"
-      ],
-      "instructions": [
-        "Preheat oven to 175°C (350°F). Grease and flour a 9-inch round cake pan.",
-        "In a bowl, whisk together flour, baking powder, baking soda, and salt.",
-        "In another bowl, cream together butter and sugar until light and fluffy.",
-        "Beat in eggs, one at a time. Stir in vanilla extract.",
-        "Gradually add the flour mixture, alternating with sour cream. Mix until just combined.",
-        "Spread half of the batter into the prepared pan. Layer apples over the batter and sprinkle with cinnamon.",
-        "Spread the remaining batter over the apples.",
-        "Bake for 45-50 minutes or until a toothpick inserted into the center comes out clean.",
-        "Cool in the pan on a wire rack. Dust with powdered sugar before serving."
-      ]
-    }
-  ]
+        "ingredients": [
+          "2 cups all-purpose flour",
+          "1 1/2 teaspoons baking powder",
+          "1/2 teaspoon baking soda",
+          "1/2 teaspoon salt",
+          "1/2 cup unsalted butter, softened",
+          "1 cup sugar",
+          "2 eggs",
+          "1 teaspoon vanilla extract",
+          "1/2 cup sour cream",
+          "2 cups peeled, cored, and sliced apples",
+          "1/2 teaspoon ground cinnamon",
+          "Powdered sugar for dusting"
+        ],
+        "instructions": [
+          "Preheat oven to 175°C (350°F). Grease and flour a 9-inch round cake pan.",
+          "In a bowl, whisk together flour, baking powder, baking soda, and salt.",
+          "In another bowl, cream together butter and sugar until light and fluffy.",
+          "Beat in eggs, one at a time. Stir in vanilla extract.",
+          "Gradually add the flour mixture, alternating with sour cream. Mix until just combined.",
+          "Spread half of the batter into the prepared pan. Layer apples over the batter and sprinkle with cinnamon.",
+          "Spread the remaining batter over the apples.",
+          "Bake for 45-50 minutes or until a toothpick inserted into the center comes out clean.",
+          "Cool in the pan on a wire rack. Dust with powdered sugar before serving."
+        ],
+        "description": "Ukrainian Apple Cake is a delectable dessert that captures the essence of fresh apples in every bite. This moist and flavorful cake features layers of tender cake batter intertwined with slices of sweet and tart apples, creating a delightful contrast of textures. The cake is subtly spiced with cinnamon, enhancing the natural sweetness of the apples. Baked to golden perfection, this cake is a testament to Ukrainian baking traditions, celebrated for its homely warmth and irresistible aroma. Dust with powdered sugar for a finishing touch and savor the comforting flavors of this Ukrainian classic."
+      }
+    ]
 }

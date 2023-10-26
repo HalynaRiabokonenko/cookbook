@@ -18,12 +18,14 @@
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.3rem;
-  word-spacing: 2rem;
+  word-spacing: 1rem;
   text-align: center;
 }
 
 .home-content__paragraph {
-  margin: 30px 20px;
+  margin: 30px 80px;
+  text-align: justify;
+  font-size: 1.1rem;
 }
 
 /* grid containers --->*/
@@ -33,7 +35,8 @@
 }
 
 .home-content__recipes-info {
-  margin: 30px;
+  margin: 30px 60px;
+  text-align: justify;
 }
 
 .home-content__recipes-photo-container {

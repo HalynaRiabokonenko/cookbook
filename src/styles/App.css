@@ -17,6 +17,10 @@
   color: var(--header-text-color);
 }
 
+body {
+  background-color: var(--light-green);
+}
+
 a {
   text-decoration: none;
 }

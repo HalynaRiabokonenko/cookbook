@@ -83,11 +83,15 @@ function HomeContent() {
                   </li>
                 ))}
             </ul>
-            <p>
-              See all recipes here:
-              <Link to="/recipes">Recipes</Link>
-            </p>
           </div>
+        </div>
+        <div className="home__all-recipes-container">
+          <p className="home__all-recipes-paragraph">
+            See all recipes{" "}
+            <Link to="/recipes" className="home__all-recipes-link">
+              here
+            </Link>
+          </p>
         </div>
       </section>
     </main>

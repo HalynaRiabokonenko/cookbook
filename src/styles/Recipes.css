@@ -21,6 +21,8 @@
   text-align: center;
   letter-spacing: 0.3rem;
   word-spacing: 1rem;
+  padding: 20px;
+  border-bottom: 2px solid var(--header-text-color);
 }
 
 .recipes-content__paragraph {

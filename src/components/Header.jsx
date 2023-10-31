@@ -20,6 +20,14 @@ function Header() {
             <ul className="global-nav__list">
               <li className="global-nav__list-item">
                 <Link
+                  className="global-nav__list-item-link global-nav__list-item-link--home"
+                  to="/"
+                >
+                  Home
+                </Link>
+              </li>
+              <li className="global-nav__list-item">
+                <Link
                   className="global-nav__list-item-link global-nav__list-item-link--contact"
                   to="/recipes"
                 >

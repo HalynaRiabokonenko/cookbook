@@ -24,20 +24,32 @@
 }
 
 /* Navigation */
+.global-nav__container {
+  width: 80%;
+}
+
 .global-nav {
   display: flex;
-  /* align-items: center; */
+  width: 100%;
 }
 
 .global-nav__list {
   list-style-type: none;
   display: flex;
+  width: 100%;
 }
 
 .global-nav__list-item {
-  margin: 20px 30px;
+  padding: 20px 30px;
   text-transform: uppercase;
   font-weight: bold;
+  border-left: 1.5px solid var(--light-green);
+  width: 180px;
+  text-align: center;
+}
+
+.global-nav__list-item:last-child {
+  border-right: 1.5px solid var(--light-green);
 }
 
 /* link ---> */

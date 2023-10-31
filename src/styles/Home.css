@@ -18,12 +18,28 @@
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.3rem;
-  word-spacing: 2rem;
+  word-spacing: 1rem;
   text-align: center;
+  padding: 20px;
+  border-bottom: 2px solid var(--header-text-color);
 }
 
 .home-content__paragraph {
-  margin: 30px 20px;
+  margin: 30px 80px;
+  text-align: justify;
+  font-size: 1.1rem;
+}
+
+.home__all-recipes-paragraph {
+  margin: 20px 40px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.home__all-recipes-link {
+  color: var(--medium-green);
+  text-decoration: underline;
 }
 
 /* grid containers --->*/
@@ -33,7 +49,8 @@
 }
 
 .home-content__recipes-info {
-  margin: 30px;
+  margin: 30px 60px;
+  text-align: justify;
 }
 
 .home-content__recipes-photo-container {
@@ -41,6 +58,11 @@
   grid-column: 1/2;
   grid-row: 1/2;
   text-align: center;
+}
+
+.home-content__recipes-description {
+  font-family: Cormorant, sans-serif;
+  font-size: 1.2rem;
 }
 
 .home-content__recipes-ingredients-container {
@@ -56,7 +78,7 @@
 /*<--- grid containers*/
 
 .home-content__recipes-photo {
-  width: 70%;
+  width: 25vw;
 }
 
 .home-content__recipes-list {
@@ -79,15 +101,16 @@
 }
 
 .home-content__ingredients-list--option {
-  margin-bottom: 10px;
-  padding: 10px;
+  margin: 10px 0;
 }
 
 .home-content__recipes-name {
-  font-size: 1.5em;
+  font-size: 1.4em;
   margin: 30px;
   text-align: center;
   padding: 20px;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 
 .home-content__recipes-ingredients {
@@ -103,6 +126,5 @@
 }
 
 .home-content__instructions-list--option {
-  margin-bottom: 10px;
-  padding: 10px;
+  margin: 10px 0;
 }

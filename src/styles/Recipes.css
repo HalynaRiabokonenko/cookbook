@@ -20,11 +20,15 @@
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.3rem;
-  word-spacing: 2rem;
+  word-spacing: 1rem;
+  padding: 20px;
+  border-bottom: 2px solid var(--header-text-color);
 }
 
 .recipes-content__paragraph {
-  margin: 30px 0;
+  margin: 30px 80px;
+  text-align: justify;
+  font-size: 1.1rem;
 }
 
 .recipes-content__recipes-list {

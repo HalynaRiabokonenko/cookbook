@@ -39,18 +39,20 @@
 }
 
 .recipes-content__recipes-photo {
-  width: 30%;
+  margin-top: 40px;
+  height: 60%;
 }
 
 .recipes-content__recipes-list--option {
   width: 380px;
-  height: 40vh;
-  align-items: baseline;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
   border: 1px solid var(--light-green);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background-color: #ebf1f075;
 }
 
 .recipes-content__ingredients-list {
@@ -63,9 +65,12 @@
 }
 
 .recipes-content__recipes-name {
-  font-size: 1.5em;
+  font-size: 1.1em;
   margin-bottom: 10px;
-  /* justify-self: end; */
+  text-align: center;
+  text-transform: uppercase;
+  margin: 20px;
+  font-weight: 500;
 }
 
 .recipes-content__recipes-ingredients {

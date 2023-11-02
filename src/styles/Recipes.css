@@ -65,7 +65,7 @@
 .recipes-content__recipes-name {
   font-size: 1.5em;
   margin-bottom: 10px;
-  justify-self: end;
+  /* justify-self: end; */
 }
 
 .recipes-content__recipes-ingredients {

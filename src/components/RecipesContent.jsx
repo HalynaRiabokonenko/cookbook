@@ -1,8 +1,7 @@
 import React from "react";
-import RecipeList from "./RecipeList";
-import "../styles/Recipes.css";
-import recipesData from "../recipes.json";
 import { Link } from "react-router-dom";
+import recipesData from "../recipes.json";
+import "../styles/Recipes.css";
 
 function RecipesContent() {
   return (
@@ -14,27 +13,22 @@ function RecipesContent() {
           recipe.” – Thomas Keller
         </p>
         <div className="recipes_all_list">
-          <div>
-            <div className="recipes-content__recipes-list">
-              {recipesData.recipes.map((recipe) => (
-                <Link to="/">
-                  <div
-                    key={recipe.id}
-                    className="recipes-content__recipes-list--option"
-                  >
-                    <img
-                      src={recipe.photoPath}
-                      alt={recipe.name}
-                      className="recipes-content__recipes-photo"
-                    ></img>
-                    <h2 className="recipes-content__recipes-name">
-                      {recipe.name}
-                    </h2>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>{" "}
+          <div className="recipes-content__recipes-list">
+            {recipesData.recipes.map((recipe) => (
+              <Link to={`/recipe/${recipe.id}`} key={recipe.id}>
+                <div className="recipes-content__recipes-list--option">
+                  <img
+                    src={recipe.photoPath}
+                    alt={recipe.name}
+                    className="recipes-content__recipes-photo"
+                  ></img>
+                  <h2 className="recipes-content__recipes-name">
+                    {recipe.name}
+                  </h2>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </main>

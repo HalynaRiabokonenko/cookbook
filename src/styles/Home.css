@@ -86,7 +86,6 @@
 }
 
 .home-content__recipes-list--option {
-  /* display: grid; */
   background-color: #ebf1f075;
   align-items: baseline;
   list-style-type: none;

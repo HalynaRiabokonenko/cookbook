@@ -8,7 +8,7 @@ function Footer() {
       <div className="footer-content">
         <div className="footer__brand">
           <img
-            src="logo.png"
+            src="/logo.png"
             className="footer__brand-logo"
             alt="Proven Recipes logo"
           />
@@ -41,7 +41,7 @@ function Footer() {
               >
                 <img
                   className="footer__social-icon"
-                  src="instagram-icon.png"
+                  src="/instagram-icon.png"
                   alt="Instagram icon"
                 />
               </a>

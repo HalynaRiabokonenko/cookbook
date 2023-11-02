@@ -10,7 +10,7 @@ function Header() {
           <Link className="logo__link" to="/">
             <img
               alt="Logo proven recipes"
-              src="logo.png"
+              src="/logo.png"
               className="logo__img"
             />
           </Link>

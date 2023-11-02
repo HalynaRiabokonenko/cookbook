@@ -2,7 +2,6 @@
 
 .recipes-content {
   margin-top: var(--header-hight);
-  background-color: var(--light-green);
   padding: 20px;
 }
 
@@ -32,8 +31,11 @@
 }
 
 .recipes-content__recipes-list {
-  list-style-type: none;
-  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  /* flex-direction: column; */
 }
 
 .recipes-content__recipes-photo {
@@ -41,11 +43,14 @@
 }
 
 .recipes-content__recipes-list--option {
-  /* display: grid; */
+  width: 380px;
+  height: 40vh;
   align-items: baseline;
-  list-style-type: none;
   border: 1px solid var(--light-green);
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .recipes-content__ingredients-list {
@@ -60,6 +65,7 @@
 .recipes-content__recipes-name {
   font-size: 1.5em;
   margin-bottom: 10px;
+  justify-self: end;
 }
 
 .recipes-content__recipes-ingredients {

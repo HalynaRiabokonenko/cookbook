@@ -12,7 +12,7 @@
 }
 
 .home-content__header {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   margin: 30px;
   text-transform: uppercase;
   text-align: center;
@@ -103,7 +103,7 @@
 }
 
 .home-content__recipes-name {
-  font-size: 1.4em;
+  font-size: 1.4rem;
   margin: 30px;
   text-align: center;
   padding: 20px;

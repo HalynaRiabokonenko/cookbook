@@ -30,3 +30,17 @@
   text-align: justify;
   font-size: 1.1rem;
 }
+
+.about-content__paragraph--italic {
+  font-family: Cormorant, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.about-content__subheader {
+  margin: 30px 80px;
+  text-align: center;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  text-decoration: underline;
+}

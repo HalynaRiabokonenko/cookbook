@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/About.css";
+import "./About.css";
 
-function AboutContent() {
+function About() {
   return (
     <main className="about-content">
       <section className="about-content__container">
@@ -56,4 +56,4 @@ function AboutContent() {
   );
 }
 
-export default AboutContent;
+export default About;

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Contact.css";
+import "./Contact.css";
 
 function ContactContent() {
   return (
@@ -30,7 +30,7 @@ function ContactContent() {
               id="title"
               name="title"
               className="contact-content__form-input contact-content__form-input--text"
-              minLength="3"
+              minLength={3}
               required
             />
             <label htmlFor="email" className="contact-content__form-label">
@@ -52,10 +52,10 @@ function ContactContent() {
               id="message"
               className="contact-content__form-input contact-content__form-input--textarea"
               name="message"
-              rows="4"
-              cols="50"
-              minLength="3"
-              maxLength="500"
+              rows={4}
+              cols={50}
+              minLength={3}
+              maxLength={500}
               required
             ></textarea>
             <input

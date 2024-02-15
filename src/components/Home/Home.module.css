@@ -1,0 +1,128 @@
+.home-content {
+  margin-top: var(--header-hight);
+  padding: 20px;
+}
+
+.home-content__container {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+}
+
+.home-content__header {
+  font-size: 1.5rem;
+  margin: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.3rem;
+  word-spacing: 1rem;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 2px solid var(--header-text-color);
+}
+
+.home-content__paragraph {
+  margin: 30px 80px;
+  text-align: justify;
+  font-size: 1.1rem;
+}
+
+.home__all-recipes-paragraph {
+  margin: 20px 40px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.home__all-recipes-link {
+  color: var(--medium-green);
+  text-decoration: underline;
+}
+
+/* grid containers --->*/
+.home-content__recipes-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.home-content__recipes-info {
+  margin: 30px 60px;
+  text-align: justify;
+}
+
+.home-content__recipes-photo-container {
+  margin: 30px 0px;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  text-align: center;
+}
+
+.home-content__recipes-description {
+  font-family: Cormorant, sans-serif;
+  font-size: 1.2rem;
+}
+
+.home-content__recipes-ingredients-container {
+  margin: 30px;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.home-content__recipes-instructions-container {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+}
+/*<--- grid containers*/
+
+.home-content__recipes-photo {
+  width: 25vw;
+}
+
+.home-content__recipes-list {
+  list-style-type: none;
+  flex-direction: column;
+}
+
+.home-content__recipes-list--option {
+  background-color: #ebf1f075;
+  align-items: baseline;
+  list-style-type: none;
+  border: 1px solid var(--light-green);
+  border-radius: 8px;
+  margin: 40px 20px;
+}
+
+.home-content__ingredients-list {
+  list-style-type: none;
+}
+
+.home-content__ingredients-list--option {
+  margin: 10px 0;
+}
+
+.home-content__recipes-name {
+  font-size: 1.4rem;
+  margin: 30px;
+  text-align: center;
+  padding: 20px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.home-content__recipes-ingredients {
+  text-transform: capitalize;
+}
+
+.home-content__recipes-instructions {
+  text-transform: capitalize;
+}
+
+.home-content__instructions-list {
+  margin-left: 20px;
+}
+
+.home-content__instructions-list--option {
+  margin: 10px 0;
+}

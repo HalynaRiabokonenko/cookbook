@@ -1,5 +1,5 @@
 import React, { ReactElement, useState, useEffect, useContext } from "react";
-import RecipesDataInterface from "../../interface/recipesInterface.types";
+import RecipesDataInterface from "./Home.types";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";

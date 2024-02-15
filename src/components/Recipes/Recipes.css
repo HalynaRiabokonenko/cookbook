@@ -1,5 +1,3 @@
-@import "./App.css";
-
 .recipes-content {
   margin-top: var(--header-hight);
   padding: 20px;

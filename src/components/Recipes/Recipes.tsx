@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/Recipes.css";
-import RecipesDataInterface  from "../interface/recipesInterface.types";
+import "./Recipes.css";
+import RecipesDataInterface  from "./Recipes.types";
 
-function RecipesContent() {
+function Recipes() {
 
  const [recipesData, setRecipesData] = useState<RecipesDataInterface | null>(null);
  
@@ -44,4 +44,4 @@ function RecipesContent() {
   );
 }
 
-export default RecipesContent;
+export default Recipes;

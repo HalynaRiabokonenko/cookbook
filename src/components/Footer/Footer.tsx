@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/Footer.css";
+import "./Footer.css";
 
 function Footer() {
   return (
@@ -15,7 +15,6 @@ function Footer() {
           <h2 className="footer__brand-name">Proven Recipes</h2>
         </div>
         <div className="footer-links">
-          {/* Links to various sections or pages */}
           <ul>
             <li>
               <Link to="/">Home</Link>

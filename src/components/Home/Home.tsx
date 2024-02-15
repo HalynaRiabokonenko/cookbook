@@ -1,10 +1,24 @@
-import React from "react";
-import recipesData from "../../recipes.json";
+import React, { ReactElement, useState, useEffect, useContext } from "react";
+import RecipesDataInterface from "./Home.types";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import styles from "./Home.module.css";
+import { ModeContext } from "../../providers/mode";
 
-function HomeContent() {
-  return (
+function Home() {
+    const { mode } = useContext(ModeContext);
+    const [recipesData, setRecipesData] = useState<RecipesDataInterface | null>(null);
+
+    useEffect(() => {
+        fetch("/recipes.json")
+          .then((res) => res.json())
+          .then((data) => 
+          setRecipesData(data)
+          );
+      }, []);
+
+
+  return recipesData && (
     <div className="home">
       <main className="home-content">
         <section className="home-content__container">
@@ -101,4 +115,4 @@ function HomeContent() {
   );
 }
 
-export default HomeContent;
+export default Home;

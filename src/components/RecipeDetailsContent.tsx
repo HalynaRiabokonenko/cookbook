@@ -15,8 +15,11 @@ function RecipeDetailsContent() {
 
       
   const { recipeId } = useParams();
+  if (!recipeId) {
+    return <div>No recipeId provided</div>;
+  }
   
-  const recipe = recipesData.recipes.find(
+  const recipe = recipesData?.recipes.find(
     (recipe) => recipe.id === parseInt(recipeId)
   );
 

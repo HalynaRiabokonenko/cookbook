@@ -8,5 +8,5 @@
     "strict": true,
     "jsx": "react"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/components/Recipes/Recipes.jsx"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

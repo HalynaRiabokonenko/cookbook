@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import recipesData from "../recipes.json";
 import "../styles/Recipes.css";
+import RecipesDataInterface  from "../interface/recipesInterface.types";
 
 function RecipesContent() {
-  return (
+
+ const [recipesData, setRecipesData] = useState<RecipesDataInterface | null>(null);
+ 
+  useEffect(() => {
+    fetch("/recipes.json")
+      .then((res) => res.json())
+      .then((data) => setRecipesData(data));
+  }, []);
+
+  return recipesData && (
     <main className="recipes-content">
       <section className="recipes-content__container">
         <h1 className="recipes-content__header">Most popular recipes</h1>

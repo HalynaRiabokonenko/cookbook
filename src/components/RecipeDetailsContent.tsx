@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import recipesData from "../recipes.json";
 import "../styles/RecipeDetails.css";
+import RecipesDataInterface from "../interface/recipesInterface.types";
 
-function RecipeDetails() {
+function RecipeDetailsContent() {
+
+    const [recipesData, setRecipesData] = useState<RecipesDataInterface | null>(null);
+
+    useEffect(() => {
+        fetch("/recipes.json")
+          .then((res) => res.json())
+          .then((data) => setRecipesData(data));
+      }, []);
+
+      
   const { recipeId } = useParams();
+  
   const recipe = recipesData.recipes.find(
     (recipe) => recipe.id === parseInt(recipeId)
   );
@@ -13,7 +24,7 @@ function RecipeDetails() {
     return <div>Recipe not found</div>;
   }
 
-  return (
+  return recipesData && (
     <main className="recipe-details-content">
       <section className="recipe-details-content__container">
         <h1 className="recipe-details-content__header">{recipe.name}</h1>
@@ -64,4 +75,4 @@ function RecipeDetails() {
   );
 }
 
-export default RecipeDetails;
+export default RecipeDetailsContent;

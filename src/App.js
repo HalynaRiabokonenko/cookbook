@@ -5,7 +5,7 @@ import About from "./components/AboutPage";
 import Contact from "./components/ContactPage";
 import RecipeDetails from "./components/RecipeDetailsPage";
 import MainContent from "./components/MainContent";
-import HomeContent from "./components/Home/Home";
+import Home from "./components/Home/Home.tsx";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<MainContent />}>
-            <Route path="/" element={<HomeContent />} />
+            <Route path="/" element={<Home />} />
             <Route path="/recipes" element={<Recipes />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

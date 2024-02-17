@@ -1,20 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Footer.css";
+import styles from "./Footer.module.css";
 
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <div className="footer__brand">
+    <footer className={styles["footer"]}>
+      <div className={styles["footer-content"]}>
+        <div className={styles["footer__brand"]}>
           <img
             src="/logo.png"
-            className="footer__brand-logo"
+            className={styles["footer__brand-logo"]}
             alt="Proven Recipes logo"
           />
-          <h2 className="footer__brand-name">Proven Recipes</h2>
+          <h2 className={styles["footer__brand-name"]}>Proven Recipes</h2>
         </div>
-        <div className="footer-links">
+        <div className={styles["footer-links"]}>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -28,8 +28,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="footer-social">
-          {/* Social media links */}
+        <div className={styles["footer-social"]}>
           <p>Let's be friends!</p>
           <ul>
             <li>
@@ -39,7 +38,7 @@ function Footer() {
                 rel="noreferrer"
               >
                 <img
-                  className="footer__social-icon"
+                className={styles["footer__social-icon"]}
                   src="/instagram-icon.png"
                   alt="Instagram icon"
                 />
@@ -48,8 +47,8 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div className="footer__bottom">
-        <p className="footer__copy">
+      <div className={styles["footer__bottom"]}>
+        <p className={styles["footer__copy"]}>
           &copy; {new Date().getFullYear()} Proven Recipes. All rights reserved.
         </p>
       </div>

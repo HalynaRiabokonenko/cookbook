@@ -6,8 +6,8 @@ interface RecipeInterface {
     ingredients: string[];
     instructions: string[];
     description: string;
-  }
+}
 
 export default interface RecipesDataInterface {
-  recipes: Array<RecipeInterface>;
+    recipes: Array<RecipeInterface>;
 }

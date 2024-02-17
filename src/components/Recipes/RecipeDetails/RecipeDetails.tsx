@@ -5,20 +5,20 @@ import RecipesDataInterface from "./RecipeDetails.types";
 
 function RecipeDetails() {
 
-    const [recipesData, setRecipesData] = useState<RecipesDataInterface | null>(null);
+  const [recipesData, setRecipesData] = useState<RecipesDataInterface | null>(null);
 
-    useEffect(() => {
-        fetch("/recipes.json")
-          .then((res) => res.json())
-          .then((data) => setRecipesData(data));
-      }, []);
+  useEffect(() => {
+    fetch("/recipes.json")
+      .then((res) => res.json())
+      .then((data) => setRecipesData(data));
+  }, []);
 
-      
+
   const { recipeId } = useParams();
   if (!recipeId) {
     return <div>No recipeId provided</div>;
   }
-  
+
   const recipe = recipesData?.recipes.find(
     (recipe) => recipe.id === parseInt(recipeId)
   );

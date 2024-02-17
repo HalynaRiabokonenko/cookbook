@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Recipes.css";
 import RecipesDataInterface  from "./Recipes.types";
+import styles from "./Recipes.module.css";
 
 function Recipes() {
 
@@ -14,24 +14,24 @@ function Recipes() {
   }, []);
 
   return recipesData && (
-    <main className="recipes-content">
-      <section className="recipes-content__container">
-        <h1 className="recipes-content__header">Most popular recipes</h1>
-        <p className="recipes-content__paragraph">
+    <main className={styles["recipes-content"]}>
+      <section className={styles["recipes-content__container"]}>
+        <h1 className={styles["recipes-content__header"]}>Most popular recipes</h1>
+        <p className={styles["recipes-content__paragraph"]}>
           “A recipe has no soul. You, as the cook, must bring soul to the
           recipe.” – Thomas Keller
         </p>
-        <div className="recipes_all_list">
-          <div className="recipes-content__recipes-list">
+        <div className={styles["recipes_all_list"]}>
+          <div className={styles["recipes-content__recipes-list"]}>
             {recipesData.recipes.map((recipe) => (
               <Link to={`/recipe/${recipe.id}`} key={recipe.id}>
-                <div className="recipes-content__recipes-list--option">
+                <div className={styles["recipes-content__recipes-list--option"]}>
                   <img
                     src={recipe.photoPath}
                     alt={recipe.name}
-                    className="recipes-content__recipes-photo"
+                    className={styles["recipes-content__recipes-photo"]}
                   ></img>
-                  <h2 className="recipes-content__recipes-name">
+                  <h2 className={styles["recipes-content__recipes-name"]}>
                     {recipe.name}
                   </h2>
                 </div>

@@ -1,12 +1,13 @@
 import React from "react";
-import "./Contact.css";
+import styles from "./Contact.module.css";
+import classnames from "classnames";
 
 function ContactContent() {
   return (
-    <main className="contact-content">
-      <section className="contact-content__container">
-        <h1 className="contact-content__header">Contact us</h1>
-        <p className="contact-content__paragraph">
+    <main className={styles["contact-content"]}>
+      <section className={styles["contact-content__container"]}>
+        <h1 className={styles["contact-content__header"]}>Contact us</h1>
+        <p className={styles["contact-content__paragraph"]}>
           Dear visitors, your feedback is invaluable to us! If you have tried
           any of our Ukrainian recipes and would like to share your thoughts, or
           if you have any other information you'd like to send our way, please
@@ -14,14 +15,14 @@ function ContactContent() {
           ensures that our recipes continue to delight your taste buds. We
           appreciate your participation and look forward to hearing from you!
         </p>
-        <div className="contact-content__modal">
+        <div className={styles["contact-content__modal"]}>
           <form
             action=""
             method="get"
             id="contact-content__form"
-            className="contact-content__modal-form"
+            className={styles["contact-content__modal-form"]}
           >
-            <label htmlFor="title" className="contact-content__form-label">
+            <label htmlFor="title"className={styles["contact-content__form-label"]}>
               Title
             </label>
             <input
@@ -29,11 +30,14 @@ function ContactContent() {
               type="text"
               id="title"
               name="title"
-              className="contact-content__form-input contact-content__form-input--text"
+              className={classnames(
+                styles["contact-content__form-input"],
+                styles["contact-content__form-input--text"]
+              )}
               minLength={3}
               required
             />
-            <label htmlFor="email" className="contact-content__form-label">
+            <label htmlFor="email" className={styles["contact-content__form-label"]}>
               Email
             </label>
             <input
@@ -41,16 +45,22 @@ function ContactContent() {
               type="email"
               id="email"
               name="email"
-              className="contact-content__form-input contact-content__form-input--email"
+              className={classnames(
+                styles["contact-content__form-input"],
+                styles["contact-content__form-input--email"]
+              )}
               required
             />
-            <label htmlFor="message" className="contact-content__form-label">
+            <label htmlFor="message" className={styles["contact-content__form-label"]}>
               Message
             </label>
             <textarea
               placeholder=""
               id="message"
-              className="contact-content__form-input contact-content__form-input--textarea"
+              className={classnames(
+                styles["contact-content__form-input"],
+                styles["contact-content__form-input--textarea"]
+              )}
               name="message"
               rows={4}
               cols={50}
@@ -61,7 +71,10 @@ function ContactContent() {
             <input
               type="submit"
               value="Send"
-              className="contact-content__form-input contact-content__form-input--submit"
+              className={classnames(
+                styles["contact-content__form-input"],
+                styles["contact-content__form-input--submit"]
+              )}
             />
           </form>
         </div>

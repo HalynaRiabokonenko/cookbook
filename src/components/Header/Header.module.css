@@ -66,3 +66,20 @@
 .global-nav__list-item-link:active {
   color: var(--orange);
 }
+
+.global-mode__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.global-mode__button {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.global-mode__icon {
+  height: 40px;
+  width: 40px;
+}

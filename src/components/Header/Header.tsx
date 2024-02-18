@@ -6,11 +6,13 @@ import { ModeContext } from "../../providers/mode";
 
 function Header() {
     const { mode, toggleMode } = useContext(ModeContext);
-    console.log(mode);
 
     return (
         <header className={styles["header"]}>
-            <div className={styles["header__container"]}>
+            <div className={classnames(
+                styles["header__container"],
+                styles[mode]
+            )}>
                 <div className={styles["logo"]}>
                     <Link className={styles["logo__link"]} to="/">
                         <img

@@ -6,7 +6,7 @@
 .home-content__container {
   background-color: var(--white);
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px #0000001a;
   padding: 20px;
   text-align: left;
 }
@@ -125,4 +125,9 @@
 
 .home-content__instructions-list--option {
   margin: 10px 0;
+}
+
+.home-content__container.dark {
+  background-color: var(--medium-green--dark);
+  box-shadow: 0 0 10px #0000001a;
 }

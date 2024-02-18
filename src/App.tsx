@@ -8,22 +8,24 @@ import RecipeDetails from "./components/Recipes/RecipeDetails/RecipeDetails";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
+import { ModeProvider } from "./providers/mode";
 
 function App() {
     return (
-        <BrowserRouter>
-            <div className="App">
-                <Header />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/recipes" element={<Recipes />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
-                </Routes>
-                <Footer />
-            </div>
-        </BrowserRouter>
+        <ModeProvider>
+            <BrowserRouter>
+                <div className="App">
+                    <Header />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/recipes" element={<Recipes />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
+                    </Routes>
+                    <Footer />
+                </div>
+            </BrowserRouter></ModeProvider>
     );
 }
 

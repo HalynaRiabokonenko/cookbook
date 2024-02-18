@@ -9,13 +9,13 @@ type ContextType = {
 
 export const ModeContext = createContext<ContextType>({
   mode: "light",
-  toggleMode: () => {},
+  toggleMode: () => { },
 });
 
-export const ModeProvider: FC = ({ children }: PropsWithChildren<{}>) => {
+export const ModeProvider = ({ children }: PropsWithChildren): React.JSX.Element => {
   const [mode, setMode] = useState<Mode>("light");
 
-  const toggleMode = () => {
+  const toggleMode = (): void => {
     setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
   };
 

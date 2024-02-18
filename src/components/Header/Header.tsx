@@ -6,6 +6,7 @@ import { ModeContext } from "../../providers/mode";
 
 function Header() {
     const { mode, toggleMode } = useContext(ModeContext);
+    console.log(mode);
 
     return (
         <header className={styles["header"]}>
@@ -73,15 +74,15 @@ function Header() {
                     {mode === "light" ? (
                         <button
 
-                            onClick={toggleMode}
+                            onClick={toggleMode} className={styles["global-mode__button"]}
                         >
-                            <img src="./recipes_photo/mode/dark-mode.png" />
+                            <img src="./recipes_photo/mode/dark-mode.png" className={styles["global-mode__icon"]} />
                         </button>
                     ) : (
                         <button
-                            onClick={toggleMode}
+                            onClick={toggleMode} className={styles["global-mode__button"]}
                         >
-                            <img src="./recipes_photo/mode/light-mode.png" />
+                            <img src="./recipes_photo/mode/light-mode.png" className={styles["global-mode__icon"]} />
                         </button>
                     )}
                 </div>

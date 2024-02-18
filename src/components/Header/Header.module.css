@@ -1,7 +1,6 @@
 :root {
   --header-hight: 120px;
   --header-width: 100%;
-  --header-text-color: rgb(77, 77, 77);
 }
 
 .header__container {
@@ -82,4 +81,9 @@
 .global-mode__icon {
   height: 40px;
   width: 40px;
+}
+
+.header__container.dark {
+  background: var(--medium-green--dark);
+  border-bottom: solid 2px var(--orange--dark);
 }

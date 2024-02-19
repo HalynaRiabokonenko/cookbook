@@ -96,3 +96,13 @@ img.footer__social-icon {
   font-size: 0.8rem;
   color: var(--light-green);
 }
+
+.footer.dark {
+  border-top: solid 2px var(--orange--dark);
+  background: var(--medium-green--dark);
+  color: var(--light-green--dark);
+}
+
+.footer-links.dark a:hover {
+  color: var(--orange--dark);
+}

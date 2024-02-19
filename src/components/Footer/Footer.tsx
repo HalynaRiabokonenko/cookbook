@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
+import classnames from "classnames";
+import { ModeContext } from "../../providers/mode";
 
 function Footer() {
+    const { mode } = useContext(ModeContext);
+
     return (
-        <footer className={styles["footer"]}>
+        <footer className={classnames(
+            styles["footer"],
+            styles[mode]
+        )}>
             <div className={styles["footer-content"]}>
                 <div className={styles["footer__brand"]}>
                     <img
@@ -14,7 +21,10 @@ function Footer() {
                     />
                     <h2 className={styles["footer__brand-name"]}>Proven Recipes</h2>
                 </div>
-                <div className={styles["footer-links"]}>
+                <div className={classnames(
+                    styles["footer-links"],
+                    styles[mode]
+                )}>
                     <ul>
                         <li>
                             <Link to="/">Home</Link>
@@ -28,7 +38,7 @@ function Footer() {
                         </li>
                     </ul>
                 </div>
-                <div className={styles["footer-social"]}>
+                <div className={styles["footer-social"]} >
                     <p>Let's be friends!</p>
                     <ul>
                         <li>

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./About.module.css";
 import classnames from "classnames";
+import { ModeContext } from "../../providers/mode";
 
 function About() {
+    const { mode } = useContext(ModeContext);
+
     return (
         <main className={styles["about-content"]}>
             <section className={styles["about-content__container"]}>

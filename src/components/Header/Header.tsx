@@ -29,7 +29,8 @@ function Header() {
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
-                                        styles["global-nav__list-item-link--home"]
+                                        styles["global-nav__list-item-link--home"],
+                                        styles[mode]
                                     )}
                                     to="/"
                                 >
@@ -40,7 +41,8 @@ function Header() {
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
-                                        styles["global-nav__list-item-link--contact"]
+                                        styles["global-nav__list-item-link--contact"],
+                                        styles[mode]
                                     )}
                                     to="/recipes"
                                 >
@@ -51,7 +53,8 @@ function Header() {
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
-                                        styles["global-nav__list-item-link--about"]
+                                        styles["global-nav__list-item-link--about"],
+                                        styles[mode]
                                     )}
                                     to="/about"
                                 >
@@ -62,7 +65,8 @@ function Header() {
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
-                                        styles["global-nav__list-item-link--contact"]
+                                        styles["global-nav__list-item-link--contact"],
+                                        styles[mode]
                                     )}
                                     to="/contact"
                                 >

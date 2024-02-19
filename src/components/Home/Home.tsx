@@ -25,7 +25,10 @@ function Home() {
                     styles["home-content__container"],
                     styles[mode]
                 )}>
-                    <h1 className={styles["home-content__header"]}>Delicious Ukrainian Cuisine</h1>
+                    <h1 className={classnames(
+                        styles["home-content__header"],
+                        styles[mode]
+                    )}>Delicious Ukrainian Cuisine</h1>
                     <p className={styles["home-content__paragraph"]}>
                         Welcome to our website, where we have gathered a treasure trove of
                         the most renowned recipes from Ukrainian cuisine. Here, you will
@@ -50,7 +53,10 @@ function Home() {
                                     .map((recipe) => (
                                         <li
                                             key={recipe.id}
-                                            className={styles["home-content__recipes-list--option"]}
+                                            className={classnames(
+                                                styles["home-content__recipes-list--option"],
+                                                styles[mode]
+                                            )}
                                         >
                                             <h2 className={styles["home-content__recipes-name"]}>
                                                 {recipe.name}

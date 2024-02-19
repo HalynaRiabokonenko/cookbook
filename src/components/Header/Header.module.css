@@ -87,3 +87,7 @@
   background: var(--medium-green--dark);
   border-bottom: solid 2px var(--orange--dark);
 }
+
+.global-nav__list-item-link.dark:hover {
+  color: var(--orange--dark);
+}

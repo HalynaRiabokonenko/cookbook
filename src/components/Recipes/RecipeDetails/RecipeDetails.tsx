@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./RecipeDetails.module.css";
 import RecipesDataInterface from "./RecipeDetails.types";
+import { ModeContext } from "../../../providers/mode";
 
 function RecipeDetails() {
-
+  const { mode } = useContext(ModeContext);
   const [recipesData, setRecipesData] = useState<RecipesDataInterface | null>(null);
 
   useEffect(() => {

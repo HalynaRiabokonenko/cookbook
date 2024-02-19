@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import RecipesDataInterface from "./Recipes.types";
 import styles from "./Recipes.module.css";
+import classnames from "classnames";
+import { ModeContext } from "../../providers/mode";
 
 function Recipes() {
-
+    const { mode } = useContext(ModeContext);
     const [recipesData, setRecipesData] = useState<RecipesDataInterface | null>(null);
 
     useEffect(() => {
@@ -24,7 +26,7 @@ function Recipes() {
                 <div className={styles["recipes_all_list"]}>
                     <div className={styles["recipes-content__recipes-list"]}>
                         {recipesData.recipes.map((recipe) => (
-                            <Link to={`/recipe/${recipe.id}`} key={recipe.id}>
+                            <Link to={`/recipe/${recipe.id}`} key={recipe.id} className={styles["recipes-content__recipes-link"]}>
                                 <div className={styles["recipes-content__recipes-list--option"]}>
                                     <img
                                         src={recipe.photoPath}

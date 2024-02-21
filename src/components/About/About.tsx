@@ -8,7 +8,10 @@ function About() {
 
     return (
         <main className={styles["about-content"]}>
-            <section className={styles["about-content__container"]}>
+            <section className={classnames(
+                styles["about-content__container"],
+                styles[mode]
+            )}>
                 <h1 className={styles["about-content__header"]}>About us</h1>
                 <p className={classnames(
                     styles["about-content__paragraph"],

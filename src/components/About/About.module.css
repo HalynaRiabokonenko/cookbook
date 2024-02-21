@@ -42,3 +42,8 @@
   text-transform: uppercase;
   text-decoration: underline;
 }
+
+.about-content__container.dark {
+  background-color: var(--medium-green--dark);
+  box-shadow: 0 0 10px #0000001a;
+}

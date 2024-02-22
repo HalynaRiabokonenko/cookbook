@@ -17,7 +17,10 @@ function Recipes() {
 
     return recipesData && (
         <main className={styles["recipes-content"]}>
-            <section className={styles["recipes-content__container"]}>
+            <section className={classnames(
+                styles["recipes-content__container"],
+                styles[mode]
+            )}>
                 <h1 className={styles["recipes-content__header"]}>Most popular recipes</h1>
                 <p className={styles["recipes-content__paragraph"]}>
                     “A recipe has no soul. You, as the cook, must bring soul to the
@@ -26,8 +29,14 @@ function Recipes() {
                 <div className={styles["recipes_all_list"]}>
                     <div className={styles["recipes-content__recipes-list"]}>
                         {recipesData.recipes.map((recipe) => (
-                            <Link to={`/recipe/${recipe.id}`} key={recipe.id} className={styles["recipes-content__recipes-link"]}>
-                                <div className={styles["recipes-content__recipes-list--option"]}>
+                            <Link to={`/recipe/${recipe.id}`} key={recipe.id} className={classnames(
+                                styles["recipes-content__recipes-link"],
+                                styles[mode]
+                            )}>
+                                <div className={classnames(
+                                    styles["recipes-content__recipes-list--option"],
+                                    styles[mode]
+                                )}>
                                     <img
                                         src={recipe.photoPath}
                                         alt={recipe.name}

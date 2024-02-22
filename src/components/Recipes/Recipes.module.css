@@ -94,3 +94,19 @@
   margin-bottom: 10px;
   padding: 10px;
 }
+
+.recipes-content__container.dark {
+  background-color: var(--medium-green--dark);
+  box-shadow: 0 0 10px #0000001a;
+}
+
+.recipes-content__recipes-list--option.dark {
+  background-color: #252927;
+  border: 1px solid var(--light-green--dark);
+}
+
+.recipes-content__recipes-link.dark,
+.recipes-content__recipes-link.dark:link,
+.recipes-content__recipes-link.dark:visited {
+  color: var(--header-text-color--dark);
+}

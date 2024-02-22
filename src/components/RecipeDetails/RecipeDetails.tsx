@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./RecipeDetails.module.css";
 import RecipesDataInterface from "./RecipeDetails.types";
-import { ModeContext } from "../../../providers/mode";
+import { ModeContext } from "../../providers/mode";
+import classnames from "classnames";
 
 function RecipeDetails() {
   const { mode } = useContext(ModeContext);
@@ -30,12 +31,18 @@ function RecipeDetails() {
 
   return recipesData && (
     <main className={styles["recipe-details-content"]}>
-      <section className={styles["recipe-details-content__container"]}>
+      <section className={classnames(
+        styles["recipe-details-content__container"],
+        styles[mode]
+      )}>
         <h1 className={styles["recipe-details-content__header"]}>{recipe.name}</h1>
         <p className={styles["recipe-details-content__description"]}>
           {recipe.description}
         </p>
-        <div className={styles["recipe-details-content__container-recipe-details"]}>
+        <div className={classnames(
+          styles["recipe-details-content__container-recipe-details"],
+          styles[mode]
+        )}>
           <div className={styles["recipe-details-content__photo-container"]}>
             <img
               src={recipe.photoPath}

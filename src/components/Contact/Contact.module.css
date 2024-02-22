@@ -1,14 +1,16 @@
 :root {
   --modal-width: 500px;
   --modal-height: 380px;
-  --modal-text-color: #777575;
-  --modal-bg-color: #c8dedd;
+  --modal-text-color: #9f9d9d;
+  --modal-bg-color: #adc6c4;
+  --modal-bg-color--dark: #294d4e;
   --modal-border-color: #ccc;
   --modal-label-text-font-size: 1.1rem;
   --modal-input-bg-focus-color: #eff6f6fc;
   --modal-input-border-focus-color: #a5adb5;
   --modal-input-valid-color: #70ceab;
   --modal-input-invalid-color: #e98f8f;
+  --modal-input-invalid-color--dark: #9c0404;
   --modal-button-text-font-size: 1.1rem;
   --modal-button-bg-color--hover: #93bcbb;
   --modal-button-shadow-color: #617d7c;
@@ -60,11 +62,11 @@
 }
 
 .contact-content__modal {
-  background-color: var(--modal-bg-color);
-  color: var(--modal-text-color);
+  background-color: var(--medium-green);
+  color: var(--white);
   height: var(--modal-height);
   width: var(--modal-width);
-  border: 1px solid var(--modal-border-color);
+  border: 1px solid var(--medium-green);
   border-radius: 20px;
   margin: 0 auto;
   padding-bottom: 20px;
@@ -136,22 +138,29 @@
 }
 
 .contact-content__form-input--submit {
-  background-color: var(button-background-color);
-  color: var(--modal-button-text-color);
+  background-color: var(--medium-green);
+  color: var(--white);
   margin: 20px;
   padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  border: 2px solid var(--white);
+  border-radius: 10px;
   cursor: pointer;
   font-size: var(--modal-button-text-font-size);
   width: 40%;
-  box-shadow: 0 0 4px var(--modal-button-shadow-color);
 }
 
 .contact-content__form-input--submit:hover {
-  background-color: var(--modal-button-bg-color--hover);
-  color: var(--modal-button-text-color-hover);
-  text-shadow: 0px 0px 6px var(--modal-button-shadow-color);
+  background-color: var(--white);
+  color: var(--medium-green);
+  border: 2px solid var(--white);
+}
+
+.contact-content__form-input--submit:active {
+  box-shadow: none;
+  color: var(--white);
+  text-shadow: none;
+  background-color: var(--modal-border-color);
+  border: 1.5px solid var(--modal-border-color);
 }
 
 @media (max-width: 1024px) {
@@ -227,4 +236,85 @@
     );
     box-shadow: 0 0 3px var(--modal-button-shadow-color);
   }
+}
+
+.contact-content__container.dark {
+  background-color: var(--medium-green--dark);
+  box-shadow: 0 0 10px #0000001a;
+}
+
+.contact-content__modal.dark {
+  background-color: #252927;
+  color: var(--modal-text-color);
+  border: 1px solid #252927;
+}
+
+.contact-content__form-input--text.dark,
+.contact-content__form-input--email.dark,
+.contact-content__form-input--textarea.dark {
+  background-color: var(--medium-green--dark);
+  border: 1.5px solid #252927;
+}
+
+.contact-content__form-input--submit.dark {
+  box-shadow: none;
+  color: var(--modal-text-color);
+  background-color: #252927;
+  border: 1.5px solid var(--modal-text-color);
+}
+
+.contact-content__form-input--submit.dark:hover {
+  box-shadow: none;
+  color: var(--medium-green--dark);
+  text-shadow: none;
+  background-color: var(--header-text-color--dark);
+  border: 1.5px solid var(--header-text-color--dark);
+}
+
+.contact-content__form-input--submit.dark:active {
+  box-shadow: none;
+  color: var(--white);
+  text-shadow: none;
+  background-color: var(--orange--dark);
+  border: 1.5px solid var(--orange--dark);
+}
+
+.contact-content__form-input--text.dark:focus,
+.contact-content__form-input--email.dark:focus,
+.contact-content__form-input--textarea.dark:focus {
+  background-color: var(--modal-input-bg-focus-color);
+  /* border: 1.5px solid var(--modal-input-border-focus-color); */
+  outline: none;
+  box-shadow: none;
+}
+
+.contact-content__form-input--text.dark:valid,
+.contact-content__form-input--email.dark:valid,
+.contact-content__form-input--textarea.dark:valid {
+  border: 1.5px solid var(--modal-input-valid-color);
+  box-shadow: none;
+}
+
+/* invalid when not focused */
+.contact-content__form-input--text.dark:invalid:not(:focus):not(
+    :placeholder-shown
+  ),
+.contact-content__form-input--email.dark:invalid:not(:focus):not(
+    :placeholder-shown
+  ),
+.contact-content__form-input--textarea.dark:invalid:not(:focus):not(
+    :placeholder-shown
+  ) {
+  /* border: 1.5px solid var(--modal-input-invalid-color--dark); */
+  box-shadow: none;
+}
+
+/* invalid when click submit  */
+.contact-content__form-input--text.dark:invalid:focus:not(:placeholder-shown),
+.contact-content__form-input--email.dark:invalid:focus:not(:placeholder-shown),
+.contact-content__form-input--textarea.dark:invalid:focus:not(
+    :placeholder-shown
+  ) {
+  /* border: 1.5px solid var(--modal-input-invalid-color--dark); */
+  box-shadow: none;
 }

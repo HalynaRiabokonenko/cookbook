@@ -87,3 +87,13 @@
 .recipe-details-content__instructions-list--option {
   margin: 10px 0;
 }
+
+.recipe-details-content__container.dark {
+  background-color: var(--medium-green--dark);
+  box-shadow: 0 0 10px #0000001a;
+}
+
+.recipe-details-content__container-recipe-details.dark {
+  background-color: #252927;
+  border: 1px solid var(--light-green--dark);
+}

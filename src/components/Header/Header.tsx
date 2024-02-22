@@ -82,13 +82,13 @@ function Header() {
 
                             onClick={toggleMode} className={styles["global-mode__button"]}
                         >
-                            <img src="./recipes_photo/mode/dark-mode.png" className={styles["global-mode__icon"]} />
+                            <img src="./recipes_photo/mode/dark.png" className={styles["global-mode__icon"]} />
                         </button>
                     ) : (
                         <button
                             onClick={toggleMode} className={styles["global-mode__button"]}
                         >
-                            <img src="./recipes_photo/mode/light-mode.png" className={styles["global-mode__icon"]} />
+                            <img src="./recipes_photo/mode/light.png" className={styles["global-mode__icon"]} />
                         </button>
                     )}
                 </div>

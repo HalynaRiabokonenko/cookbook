@@ -8,7 +8,10 @@ function ContactContent() {
 
     return (
         <main className={styles["contact-content"]}>
-            <section className={styles["contact-content__container"]}>
+            <section className={classnames(
+                styles["contact-content__container"],
+                styles[mode]
+            )}>
                 <h1 className={styles["contact-content__header"]}>Contact us</h1>
                 <p className={styles["contact-content__paragraph"]}>
                     Dear visitors, your feedback is invaluable to us! If you have tried
@@ -18,7 +21,10 @@ function ContactContent() {
                     ensures that our recipes continue to delight your taste buds. We
                     appreciate your participation and look forward to hearing from you!
                 </p>
-                <div className={styles["contact-content__modal"]}>
+                <div className={classnames(
+                    styles["contact-content__modal"],
+                    styles[mode]
+                )}>
                     <form
                         action=""
                         method="get"
@@ -35,7 +41,8 @@ function ContactContent() {
                             name="title"
                             className={classnames(
                                 styles["contact-content__form-input"],
-                                styles["contact-content__form-input--text"]
+                                styles["contact-content__form-input--text"],
+                                styles[mode]
                             )}
                             minLength={3}
                             required
@@ -50,7 +57,8 @@ function ContactContent() {
                             name="email"
                             className={classnames(
                                 styles["contact-content__form-input"],
-                                styles["contact-content__form-input--email"]
+                                styles["contact-content__form-input--email"],
+                                styles[mode]
                             )}
                             required
                         />
@@ -62,7 +70,8 @@ function ContactContent() {
                             id="message"
                             className={classnames(
                                 styles["contact-content__form-input"],
-                                styles["contact-content__form-input--textarea"]
+                                styles["contact-content__form-input--textarea"],
+                                styles[mode]
                             )}
                             name="message"
                             rows={4}
@@ -76,7 +85,8 @@ function ContactContent() {
                             value="Send"
                             className={classnames(
                                 styles["contact-content__form-input"],
-                                styles["contact-content__form-input--submit"]
+                                styles["contact-content__form-input--submit"],
+                                styles[mode]
                             )}
                         />
                     </form>

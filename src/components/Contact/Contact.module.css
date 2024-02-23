@@ -147,6 +147,7 @@
   cursor: pointer;
   font-size: var(--modal-button-text-font-size);
   width: 40%;
+  font-weight: 600;
 }
 
 .contact-content__form-input--submit:hover {
@@ -159,8 +160,8 @@
   box-shadow: none;
   color: var(--white);
   text-shadow: none;
-  background-color: var(--modal-border-color);
-  border: 1.5px solid var(--modal-border-color);
+  background-color: var(--light-gray);
+  border: 1.5px solid var(--light-gray);
 }
 
 @media (max-width: 1024px) {

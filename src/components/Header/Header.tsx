@@ -15,11 +15,13 @@ function Header() {
             )}>
                 <div className={styles["logo"]}>
                     <Link className={styles["logo__link"]} to="/">
-                        <img
-                            alt="Logo proven recipes"
-                            src="/logo.png"
-                            className={styles["logo__img"]}
-                        />
+                        <div className={styles["global-mode__container"]}>
+                            {mode === "light" ? (
+                                <img src="/logo-light.png" className={styles["logo__img"]} alt="Logo proven recipes" />
+                            ) : (
+                                <img src="/logo-dark.png" className={styles["logo__img"]} alt="Logo proven recipes" />
+                            )}
+                        </div>
                     </Link>
                 </div>
                 <div className={styles["global-nav__container"]}>
@@ -82,13 +84,13 @@ function Header() {
 
                             onClick={toggleMode} className={styles["global-mode__button"]}
                         >
-                            <img src="./recipes_photo/mode/dark.png" className={styles["global-mode__icon"]} />
+                            <img src="/dark.png" className={styles["global-mode__icon"]} />
                         </button>
                     ) : (
                         <button
                             onClick={toggleMode} className={styles["global-mode__button"]}
                         >
-                            <img src="./recipes_photo/mode/light.png" className={styles["global-mode__icon"]} />
+                            <img src="/light.png" className={styles["global-mode__icon"]} />
                         </button>
                     )}
                 </div>

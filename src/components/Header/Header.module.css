@@ -16,7 +16,7 @@
 }
 
 .logo__img {
-  height: calc(var(--header-hight) * 0.9);
+  height: calc(var(--header-hight) * 0.6);
   margin: 0 16px;
 }
 

@@ -4,32 +4,43 @@ import styles from "./RecipeDetails.module.css";
 import RecipesDataInterface from "./RecipeDetails.types";
 import { ModeContext } from "../../providers/mode";
 import classnames from "classnames";
+import { db } from "../../api/firebaseConfig.js";
+import { doc, getDoc } from "firebase/firestore";
 
 function RecipeDetails() {
   const { mode } = useContext(ModeContext);
-  const [recipesData, setRecipesData] = useState<RecipesDataInterface | null>(null);
+  const [recipe, setRecipe] = useState(null);
+  const { recipeId } = useParams();
 
   useEffect(() => {
-    fetch("/recipes.json")
-      .then((res) => res.json())
-      .then((data) => setRecipesData(data));
-  }, []);
+    const fetchData = async () => {
+      if (!recipeId) {
+        return;
+      }
 
+      const docRef = doc(db, "recipes", recipeId);
 
-  const { recipeId } = useParams();
-  if (!recipeId) {
-    return <div>No recipeId provided</div>;
-  }
+      try {
+        const docSnap = await getDoc(docRef);
 
-  const recipe = recipesData?.recipes.find(
-    (recipe) => recipe.id === parseInt(recipeId)
-  );
+        if (docSnap.exists()) {
+          setRecipe(docSnap.data());
+        } else {
+          console.log("No such document!");
+        }
+      } catch (error) {
+        console.error("Error fetching recipe:", error);
+      }
+    };
+
+    fetchData();
+  }, [recipeId]);
 
   if (!recipe) {
-    return <div>Recipe not found</div>;
+    return <div>Loading...</div>;
   }
 
-  return recipesData && (
+  return (
     <main className={styles["recipe-details-content"]}>
       <section className={classnames(
         styles["recipe-details-content__container"],
@@ -52,7 +63,7 @@ function RecipeDetails() {
           </div>
           <div className={styles["recipe-details-content__ingredients-container"]}>
             <h3 className={styles["recipe-details-content__recipes-ingredients"]}>
-              ingredients:
+              Ingredients:
             </h3>
             <ul className={styles["recipe-details-content__ingredients-list"]}>
               {recipe.ingredients.map((ingredient, index) => (
@@ -67,7 +78,7 @@ function RecipeDetails() {
           </div>
           <div className={styles["recipe-details-content__instructions-container"]}>
             <h3 className={styles["recipe-details-content__recipes-instructions"]}>
-              instructions:
+              Instructions:
             </h3>
             <ol className={styles["recipe-details-content__instructions-list"]}>
               {recipe.instructions.map((instruction, index) => (

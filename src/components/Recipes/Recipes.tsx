@@ -5,7 +5,7 @@ import styles from "./Recipes.module.css";
 import classnames from "classnames";
 import { ModeContext } from "../../providers/mode";
 import { collection, onSnapshot } from 'firebase/firestore';
-import { db } from "../../api/firebase-config.js";
+import { db } from "../../api/firebaseConfig.js";
 
 function Recipes() {
     const { mode } = useContext(ModeContext);
@@ -23,19 +23,11 @@ function Recipes() {
 
             setRecipesData(recipes)
         })
-
     }
+
     useEffect(() => {
         getData()
     }, [])
-
-
-
-    // useEffect(() => {
-    //     fetch("/recipes.json")
-    //         .then((res) => res.json())
-    //         .then((data) => setRecipesData(data));
-    // }, []);
 
     return recipesData && (
         <main className={styles["recipes-content"]}>

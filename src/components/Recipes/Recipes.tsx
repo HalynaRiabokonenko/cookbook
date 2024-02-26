@@ -50,7 +50,7 @@ function Recipes() {
                 </p>
                 <div className={styles["recipes_all_list"]}>
                     <div className={styles["recipes-content__recipes-list"]}>
-                        {recipesData.recipes.map((recipe) => (
+                        {recipesData.map((recipe) => (
                             <Link to={`/recipe/${recipe.id}`} key={recipe.id} className={classnames(
                                 styles["recipes-content__recipes-link"],
                                 styles[mode]

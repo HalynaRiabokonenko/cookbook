@@ -1,4 +1,8 @@
 interface RecipeInterface {
+
+}
+
+export default interface RecipesDataInterface {
     id: number;
     name: string;
     cuisine: string;
@@ -6,8 +10,4 @@ interface RecipeInterface {
     ingredients: string[];
     instructions: string[];
     description: string;
-}
-
-export default interface RecipesDataInterface {
-    recipes: Array<RecipeInterface>;
 }

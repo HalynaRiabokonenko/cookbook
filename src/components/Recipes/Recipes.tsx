@@ -4,16 +4,38 @@ import RecipesDataInterface from "./Recipes.types";
 import styles from "./Recipes.module.css";
 import classnames from "classnames";
 import { ModeContext } from "../../providers/mode";
+import { collection, onSnapshot } from 'firebase/firestore';
+import { db } from "../../api/firebase-config.js";
 
 function Recipes() {
     const { mode } = useContext(ModeContext);
-    const [recipesData, setRecipesData] = useState<RecipesDataInterface | null>(null);
 
+    const [recipesData, setRecipesData] = useState(null);
+
+    const getData = () => {
+        const recipesCollection = collection(db, "recipes")
+        onSnapshot(recipesCollection, res => {
+            const recipes = res.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+
+            }))
+
+            setRecipesData(recipes)
+        })
+
+    }
     useEffect(() => {
-        fetch("/recipes.json")
-            .then((res) => res.json())
-            .then((data) => setRecipesData(data));
-    }, []);
+        getData()
+    }, [])
+
+
+
+    // useEffect(() => {
+    //     fetch("/recipes.json")
+    //         .then((res) => res.json())
+    //         .then((data) => setRecipesData(data));
+    // }, []);
 
     return recipesData && (
         <main className={styles["recipes-content"]}>
@@ -28,7 +50,7 @@ function Recipes() {
                 </p>
                 <div className={styles["recipes_all_list"]}>
                     <div className={styles["recipes-content__recipes-list"]}>
-                        {recipesData.recipes.map((recipe) => (
+                        {recipesData.map((recipe) => (
                             <Link to={`/recipe/${recipe.id}`} key={recipe.id} className={classnames(
                                 styles["recipes-content__recipes-link"],
                                 styles[mode]

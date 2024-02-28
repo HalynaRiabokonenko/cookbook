@@ -5,7 +5,7 @@ import styles from "./Recipes.module.css";
 import classnames from "classnames";
 import { ModeContext } from "../../providers/mode";
 import { collection, onSnapshot } from 'firebase/firestore';
-import { db } from "../../api/firebaseConfig.js";
+import { db } from "../../api/firebaseConfig";
 
 function Recipes() {
     const { mode } = useContext(ModeContext);

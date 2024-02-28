@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./RecipeDetails.module.css";
-import RecipesDataInterface from "./RecipeDetails.types";
 import { ModeContext } from "../../providers/mode";
 import classnames from "classnames";
-import { db } from "../../api/firebaseConfig.js";
+import { db } from "../../api/firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
 
 function RecipeDetails() {
@@ -37,7 +36,7 @@ function RecipeDetails() {
   }, [recipeId]);
 
   if (!recipe) {
-    return <div>Loading...</div>;
+    return <div>Recipe not found</div>;
   }
 
   return (

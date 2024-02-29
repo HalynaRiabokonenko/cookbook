@@ -18,6 +18,15 @@ const NotFound = () => {
                         styles["not-found__header"],
                         styles[mode]
                     )}>Not found</h1>
+
+                    <div className={styles["not-found__image-container"]}>
+                        {mode === "light" ? (
+                            <img src="/recipes_photo/not_found/not-found--light.png" className={styles["not-found__image"]} alt="Not found image" />
+                        ) : (
+                            <img src="/recipes_photo/not_found/not-found--dark.png" className={styles["not-found__image"]} alt="Not found image" />
+                        )}
+                    </div>
+
                     <div className={styles["not-found__link-container"]}>
                         <Link to="/" className={classnames(
                             styles["not-found__home-link"],
@@ -26,7 +35,6 @@ const NotFound = () => {
                             Home Page
                         </Link>
                     </div>
-
                 </section>
             </div>
         </div>

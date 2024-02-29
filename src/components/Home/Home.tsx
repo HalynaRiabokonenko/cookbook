@@ -5,7 +5,7 @@ import styles from "./Home.module.css";
 import { ModeContext } from "../../providers/mode";
 import classnames from "classnames";
 
-function Home() {
+const Home = () => {
     const { mode } = useContext(ModeContext);
     const [recipesData, setRecipesData] = useState<RecipesDataInterface | null>(null);
 

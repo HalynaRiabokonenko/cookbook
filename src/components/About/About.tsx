@@ -3,7 +3,7 @@ import styles from "./About.module.css";
 import classnames from "classnames";
 import { ModeContext } from "../../providers/mode";
 
-function About() {
+const About = () => {
     const { mode } = useContext(ModeContext);
 
     return (

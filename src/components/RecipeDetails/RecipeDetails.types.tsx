@@ -1,13 +1,9 @@
-interface RecipeInterface {
-  id: number;
+export default interface RecipeInterface {
+  id: string;
   name: string;
   cuisine: string;
   photoPath: string;
   ingredients: string[];
   instructions: string[];
   description: string;
-}
-
-export default interface RecipesDataInterface {
-  recipes: Array<RecipeInterface>;
 }

@@ -9,6 +9,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import { ModeProvider } from "./providers/mode";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
                     <Footer />
                 </div>

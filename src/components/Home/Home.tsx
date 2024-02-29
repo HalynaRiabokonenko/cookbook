@@ -112,9 +112,11 @@ const Home = () => {
                     </div>
                     <div className={styles["home__all-recipes-container"]}>
                         <p className={styles["home__all-recipes-paragraph"]}>
-                            See all recipes{" "}
-                            <Link to="/recipes" className={styles["home__all-recipes-link"]}>
-                                here
+                            <Link to="/recipes" className={classnames(
+                                styles["home__all-recipes-link"],
+                                styles[mode]
+                            )}>
+                                All recipes
                             </Link>
                         </p>
                     </div>

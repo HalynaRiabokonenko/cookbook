@@ -1,14 +1,6 @@
 import { getFirestore } from "firebase/firestore";
 import { initializeApp, FirebaseApp } from "firebase/app";
-
-export interface FirebaseConfig {
-  apiKey: string;
-  authDomain: string;
-  projectId: string;
-  storageBucket: string;
-  messagingSenderId: string;
-  appId: string;
-}
+import { FirebaseConfig } from "./firebaseConfig.types"
 
 export const firebaseConfig: FirebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY || "",

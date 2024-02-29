@@ -1,9 +1,5 @@
-interface RecipeInterface {
-
-}
-
-export default interface RecipesDataInterface {
-    id: number;
+export default interface RecipeInterface {
+    id: string;
     name: string;
     cuisine: string;
     photoPath: string;

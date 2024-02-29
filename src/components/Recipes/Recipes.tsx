@@ -1,35 +1,34 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import RecipesDataInterface from "./Recipes.types";
+import RecipeInterface from "./Recipes.types";
 import styles from "./Recipes.module.css";
 import classnames from "classnames";
 import { ModeContext } from "../../providers/mode";
-import { collection, onSnapshot } from 'firebase/firestore';
+import { DocumentData, collection, onSnapshot } from 'firebase/firestore';
 import { db } from "../../api/firebaseConfig";
 
 function Recipes() {
     const { mode } = useContext(ModeContext);
 
-    const [recipesData, setRecipesData] = useState(null);
+    const [recipesData, setRecipesData] = useState<RecipeInterface[]>([]);
 
-    const getData = () => {
+    const getData = (): void => {
         const recipesCollection = collection(db, "recipes")
-        onSnapshot(recipesCollection, res => {
-            const recipes = res.docs.map(doc => ({
+        onSnapshot(recipesCollection, (res: { docs: DocumentData[] }) => {
+            const recipes: RecipeInterface[] = res.docs.map(doc => ({
                 id: doc.id,
                 ...doc.data()
+            }));
 
-            }))
-
-            setRecipesData(recipes)
-        })
-    }
+            setRecipesData(recipes);
+        });
+    };
 
     useEffect(() => {
-        getData()
-    }, [])
+        getData();
+    }, []);
 
-    return recipesData && (
+    return (
         <main className={styles["recipes-content"]}>
             <section className={classnames(
                 styles["recipes-content__container"],
@@ -55,7 +54,7 @@ function Recipes() {
                                         src={recipe.photoPath}
                                         alt={recipe.name}
                                         className={styles["recipes-content__recipes-photo"]}
-                                    ></img>
+                                    />
                                     <h2 className={styles["recipes-content__recipes-name"]}>
                                         {recipe.name}
                                     </h2>

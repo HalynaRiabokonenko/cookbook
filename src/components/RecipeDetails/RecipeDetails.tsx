@@ -4,12 +4,14 @@ import styles from "./RecipeDetails.module.css";
 import { ModeContext } from "../../providers/mode";
 import classnames from "classnames";
 import { db } from "../../api/firebaseConfig";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, DocumentSnapshot } from "firebase/firestore";
+import RecipeInterface from "./RecipeDetails.types";
 
 function RecipeDetails() {
   const { mode } = useContext(ModeContext);
-  const [recipe, setRecipe] = useState(null);
-  const { recipeId } = useParams();
+  const [recipe, setRecipe] = useState<RecipeInterface | null>(null);
+
+  const { recipeId } = useParams<{ recipeId: string }>();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,10 +22,10 @@ function RecipeDetails() {
       const docRef = doc(db, "recipes", recipeId);
 
       try {
-        const docSnap = await getDoc(docRef);
+        const docSnap: DocumentSnapshot = await getDoc(docRef);
 
         if (docSnap.exists()) {
-          setRecipe(docSnap.data());
+          setRecipe(docSnap.data() as RecipeInterface);
         } else {
           console.log("No such document!");
         }

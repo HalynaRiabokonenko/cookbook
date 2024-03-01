@@ -2,8 +2,9 @@ import React, { useState, useEffect, useContext } from "react";
 import RecipesDataInterface from "./Home.types";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
-import { ModeContext } from "../../providers/mode";
+import { ModeContext } from "../../../providers/mode";
 import classnames from "classnames";
+import Button from "../../share_atomic/Button/Button";
 
 const Home = () => {
     const { mode } = useContext(ModeContext);
@@ -110,15 +111,13 @@ const Home = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className={styles["home__all-recipes-container"]}>
-                        <p className={styles["home__all-recipes-paragraph"]}>
-                            <Link to="/recipes" className={classnames(
-                                styles["home__all-recipes-link"],
-                                styles[mode]
-                            )}>
+                    <div className={styles["home-content__all-recipes-link-container"]}>
+                        <Link to="/recipes" >
+                            <Button mode={mode}>
                                 All recipes
-                            </Link>
-                        </p>
+                            </Button>
+
+                        </Link>
                     </div>
                 </section>
             </main>

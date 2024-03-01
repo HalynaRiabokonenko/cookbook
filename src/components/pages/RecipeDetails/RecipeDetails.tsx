@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./RecipeDetails.module.css";
-import { ModeContext } from "../../providers/mode";
+import { ModeContext } from "../../../providers/mode";
 import classnames from "classnames";
-import { db } from "../../api/firebaseConfig";
+import { db } from "../../../api/firebaseConfig";
 import { doc, getDoc, DocumentSnapshot } from "firebase/firestore";
 import RecipeInterface from "./RecipeDetails.types";
 

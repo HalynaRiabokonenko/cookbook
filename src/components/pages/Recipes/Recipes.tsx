@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import RecipeInterface from "./Recipes.types";
 import styles from "./Recipes.module.css";
 import classnames from "classnames";
-import { ModeContext } from "../../providers/mode";
+import { ModeContext } from "../../../providers/mode";
 import { DocumentData, collection, onSnapshot } from 'firebase/firestore';
-import { db } from "../../api/firebaseConfig";
+import { db } from "../../../api/firebaseConfig";
 
 function Recipes() {
     const { mode } = useContext(ModeContext);

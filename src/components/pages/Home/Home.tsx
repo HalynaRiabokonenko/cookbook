@@ -27,10 +27,6 @@ const Home = () => {
                     styles["home-content__container"],
                     styles[mode]
                 )}>
-                    {/* <h1 className={classnames(
-                        styles["home-content__header"],
-                        styles[mode]
-                    )}>Delicious Ukrainian Cuisine</h1> */}
                     <PageHeader mode={mode}>
                         Delicious Ukrainian Cuisine
                     </PageHeader>

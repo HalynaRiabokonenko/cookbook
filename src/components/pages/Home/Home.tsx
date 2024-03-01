@@ -5,6 +5,7 @@ import styles from "./Home.module.css";
 import { ModeContext } from "../../../providers/mode";
 import classnames from "classnames";
 import Button from "../../share_atomic/Button/Button";
+import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 
 const Home = () => {
     const { mode } = useContext(ModeContext);
@@ -26,10 +27,9 @@ const Home = () => {
                     styles["home-content__container"],
                     styles[mode]
                 )}>
-                    <h1 className={classnames(
-                        styles["home-content__header"],
-                        styles[mode]
-                    )}>Delicious Ukrainian Cuisine</h1>
+                    <PageHeader mode={mode}>
+                        Delicious Ukrainian Cuisine
+                    </PageHeader>
                     <p className={styles["home-content__paragraph"]}>
                         Welcome to our website, where we have gathered a treasure trove of
                         the most renowned recipes from Ukrainian cuisine. Here, you will

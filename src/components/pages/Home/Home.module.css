@@ -12,7 +12,7 @@
 }
 
 .home-content__header {
-  font-size: 1.5rem;
+  /* font-size: 1.5rem;
   margin: 30px 80px;
   text-transform: uppercase;
   text-align: center;
@@ -20,12 +20,18 @@
   word-spacing: 1rem;
   text-align: center;
   padding: 20px;
-  border-bottom: 1px solid var(--header-text-color--dark);
+  border-bottom: 1px solid var(--header-text-color--dark); */
 }
 
 .home-content__all-recipes-link-container {
   display: flex;
   justify-content: center;
+}
+
+.home-content__paragraph {
+  margin: 30px 80px;
+  text-align: justify;
+  font-size: 1.1rem;
 }
 
 /* grid containers --->*/

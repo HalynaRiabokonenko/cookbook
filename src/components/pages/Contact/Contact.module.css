@@ -44,17 +44,6 @@
   text-align: left;
 }
 
-.contact-content__header {
-  font-size: 1.5em;
-  margin: 30px 80px;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 0.3rem;
-  word-spacing: 1rem;
-  padding: 20px;
-  border-bottom: 1px solid var(--header-text-color--dark);
-}
-
 .contact-content__paragraph {
   margin: 30px 80px;
   text-align: justify;

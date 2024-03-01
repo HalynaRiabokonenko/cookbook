@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import styles from "./About.module.css";
 import classnames from "classnames";
 import { ModeContext } from "../../../providers/mode";
+import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 
 const About = () => {
     const { mode } = useContext(ModeContext);
@@ -12,7 +13,9 @@ const About = () => {
                 styles["about-content__container"],
                 styles[mode]
             )}>
-                <h1 className={styles["about-content__header"]}>About us</h1>
+                <PageHeader mode={mode}>
+                    About us
+                </PageHeader>
                 <p className={classnames(
                     styles["about-content__paragraph"],
                     styles["about-content__paragraph--italic"]

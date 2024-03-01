@@ -6,6 +6,7 @@ import classnames from "classnames";
 import { ModeContext } from "../../../providers/mode";
 import { DocumentData, collection, onSnapshot } from 'firebase/firestore';
 import { db } from "../../../api/firebaseConfig";
+import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 
 function Recipes() {
     const { mode } = useContext(ModeContext);
@@ -34,7 +35,9 @@ function Recipes() {
                 styles["recipes-content__container"],
                 styles[mode]
             )}>
-                <h1 className={styles["recipes-content__header"]}>Most popular recipes</h1>
+                <PageHeader mode={mode}>
+                    Most popular recipes
+                </PageHeader>
                 <p className={styles["recipes-content__paragraph"]}>
                     “A recipe has no soul. You, as the cook, must bring soul to the
                     recipe.” – Thomas Keller

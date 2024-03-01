@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import styles from "./Contact.module.css";
 import classnames from "classnames";
 import { ModeContext } from "../../../providers/mode";
+import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 
 function ContactContent() {
     const { mode } = useContext(ModeContext);
@@ -12,7 +13,9 @@ function ContactContent() {
                 styles["contact-content__container"],
                 styles[mode]
             )}>
-                <h1 className={styles["contact-content__header"]}>Contact us</h1>
+                <PageHeader mode={mode}>
+                    Contact us
+                </PageHeader>
                 <p className={styles["contact-content__paragraph"]}>
                     Dear visitors, your feedback is invaluable to us! If you have tried
                     any of our Ukrainian recipes and would like to share your thoughts, or

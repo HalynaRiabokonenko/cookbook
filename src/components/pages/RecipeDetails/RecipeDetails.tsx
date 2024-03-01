@@ -6,6 +6,7 @@ import classnames from "classnames";
 import { db } from "../../../api/firebaseConfig";
 import { doc, getDoc, DocumentSnapshot } from "firebase/firestore";
 import RecipeInterface from "./RecipeDetails.types";
+import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 
 function RecipeDetails() {
   const { mode } = useContext(ModeContext);
@@ -47,7 +48,9 @@ function RecipeDetails() {
         styles["recipe-details-content__container"],
         styles[mode]
       )}>
-        <h1 className={styles["recipe-details-content__header"]}>{recipe.name}</h1>
+        <PageHeader mode={mode}>
+          {recipe.name}
+        </PageHeader>
         <p className={styles["recipe-details-content__description"]}>
           {recipe.description}
         </p>

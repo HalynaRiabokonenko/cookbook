@@ -4,6 +4,7 @@ import { ModeContext } from "../../../providers/mode";
 import { Link } from "react-router-dom";
 import styles from "./NotFound.module.css";
 import Button from "../../share_atomic/Button/Button";
+import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 
 const NotFound = () => {
     const { mode } = useContext(ModeContext);
@@ -15,11 +16,9 @@ const NotFound = () => {
                     styles["not-found__container"],
                     styles[mode]
                 )}>
-                    <h1 className={classnames(
-                        styles["not-found__header"],
-                        styles[mode]
-                    )}>Not found</h1>
-
+                    <PageHeader mode={mode}>
+                        Not found
+                    </PageHeader>
                     <div className={styles["not-found__image-container"]}>
                         {mode === "light" ? (
                             <img src="/recipes_photo/not_found/not-found--light.png" className={styles["not-found__image"]} alt="Not found image" />

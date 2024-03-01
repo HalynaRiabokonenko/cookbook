@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./Contact.module.css";
 import classnames from "classnames";
-import { ModeContext } from "../../providers/mode";
+import { ModeContext } from "../../../providers/mode";
 
 function ContactContent() {
     const { mode } = useContext(ModeContext);

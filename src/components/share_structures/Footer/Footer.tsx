@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 import classnames from "classnames";
-import { ModeContext } from "../../providers/mode";
+import { ModeContext } from "../../../providers/mode";
 
 function Footer() {
     const { mode } = useContext(ModeContext);

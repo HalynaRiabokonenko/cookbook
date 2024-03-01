@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import classnames from "classnames";
-import { ModeContext } from "../../providers/mode";
+import { ModeContext } from "../../../providers/mode";
 import { Link } from "react-router-dom";
 import styles from "./NotFound.module.css";
+import Button from "../../share_atomic/Button/Button";
 
 const NotFound = () => {
     const { mode } = useContext(ModeContext);
@@ -28,11 +29,10 @@ const NotFound = () => {
                     </div>
 
                     <div className={styles["not-found__link-container"]}>
-                        <Link to="/" className={classnames(
-                            styles["not-found__home-link"],
-                            styles[mode]
-                        )}>
-                            Home Page
+                        <Link to="/">
+                            <Button mode={mode}>
+                                Home Page
+                            </Button>
                         </Link>
                     </div>
                 </section>

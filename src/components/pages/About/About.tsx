@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./About.module.css";
 import classnames from "classnames";
-import { ModeContext } from "../../providers/mode";
+import { ModeContext } from "../../../providers/mode";
 
 const About = () => {
     const { mode } = useContext(ModeContext);

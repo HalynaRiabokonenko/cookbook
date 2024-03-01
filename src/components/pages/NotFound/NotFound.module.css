@@ -1,0 +1,36 @@
+.not-found__content {
+  margin-top: var(--header-hight);
+  padding: 20px;
+}
+
+.not-found__container {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 0 10px #0000001a;
+  padding: 20px;
+  text-align: left;
+  min-height: 80vh;
+}
+
+.not-found__header {
+  font-size: 1.5rem;
+  margin: 30px 80px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.3rem;
+  word-spacing: 1rem;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--header-text-color--dark);
+}
+
+.not-found__link-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found__container.dark {
+  background-color: var(--medium-green--dark);
+  box-shadow: 0 0 10px #0000001a;
+}

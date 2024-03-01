@@ -23,19 +23,6 @@
   border-bottom: 1px solid var(--header-text-color--dark);
 }
 
-/* .home-content__paragraph {
-  margin: 30px 80px;
-  text-align: justify;
-  font-size: 1.1rem;
-} */
-
-/* .home__all-recipes-paragraph {
-  margin: 20px 40px;
-  text-transform: uppercase;
-  font-weight: bolder;
-  text-align: center;
-} */
-
 .home-content__all-recipes-link-container {
   display: flex;
   justify-content: center;

@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, HashRouter } from "react-router-dom";
 import Recipes from "./components/pages/Recipes/Recipes";
 import About from "./components/pages/About/About";
 import Contact from "./components/pages/Contact/Contact";
@@ -16,7 +16,7 @@ import Login from "./components/pages/Authentication/Login";
 function App() {
     return (
         <ModeProvider>
-            <BrowserRouter>
+            <HashRouter>
                 <div className="App">
                     <Header />
                     <Routes>
@@ -31,7 +31,8 @@ function App() {
                     </Routes>
                     <Footer />
                 </div>
-            </BrowserRouter>
+            </HashRouter>
+
         </ModeProvider>
     );
 }

@@ -19,7 +19,7 @@ const Registration = () => {
             Register
         </PageHeader>
         <AuthForm submitText="Register" handleSubmit={handleSubmit} ></AuthForm>
-
+        <div> {auth?.currentUser?.uid}</div>
     </div>)
 };
 

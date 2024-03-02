@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import classnames from "classnames";
 import { ModeContext } from "../../../providers/mode";
+import { signOut } from "firebase/auth";
+import { auth } from "../../../api/firebaseConfig";
 
 function Header() {
     const { mode, toggleMode } = useContext(ModeContext);
@@ -75,6 +77,12 @@ function Header() {
                                     Contact us
                                 </Link>
                             </li>
+                            <li onClick={() => signOut(auth)} className={styles["global-nav__list-item"]}>
+                                <p className={classnames(
+                                    styles["global-nav__list-item-link"],
+                                    styles["global-nav__list-item-link--contact"],
+                                    styles[mode]
+                                )}>Log out</p></li>
                         </ul>
                     </nav>
                 </div>
@@ -95,7 +103,7 @@ function Header() {
                     )}
                 </div>
             </div>
-        </header>
+        </header >
     );
 }
 

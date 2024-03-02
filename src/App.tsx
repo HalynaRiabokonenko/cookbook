@@ -10,6 +10,8 @@ import Footer from "./components/share_structures/Footer/Footer";
 import Home from "./components/pages/Home/Home";
 import { ModeProvider } from "./providers/mode";
 import NotFound from "./components/pages/NotFound/NotFound";
+import Registration from "./components/pages/Authentication/Registration";
+import Login from "./components/pages/Authentication/Login";
 
 function App() {
     return (
@@ -23,6 +25,8 @@ function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
+                        <Route path="/auth/registration" element={<Registration />} />
+                        <Route path="/auth/login" element={<Login />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                     <Footer />

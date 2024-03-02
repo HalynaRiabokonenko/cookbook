@@ -1,6 +1,8 @@
 import { getFirestore } from "firebase/firestore";
 import { initializeApp, FirebaseApp } from "firebase/app";
 import { FirebaseConfig } from "./firebaseConfig.types"
+import { getAuth } from 'firebase/auth'
+
 
 export const firebaseConfig: FirebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY || "",
@@ -13,3 +15,4 @@ export const firebaseConfig: FirebaseConfig = {
 
 const app: FirebaseApp = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
+export const auth = getAuth(app)

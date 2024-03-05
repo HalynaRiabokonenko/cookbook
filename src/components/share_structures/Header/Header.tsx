@@ -77,6 +77,30 @@ function Header() {
                                     Contact us
                                 </Link>
                             </li>
+                            <li className={styles["global-nav__list-item"]}>
+                                <Link
+                                    className={classnames(
+                                        styles["global-nav__list-item-link"],
+                                        styles["global-nav__list-item-link--contact"],
+                                        styles[mode]
+                                    )}
+                                    to="/login"
+                                >
+                                    Log in
+                                </Link>
+                            </li>
+                            <li className={styles["global-nav__list-item"]}>
+                                <Link
+                                    className={classnames(
+                                        styles["global-nav__list-item-link"],
+                                        styles["global-nav__list-item-link--contact"],
+                                        styles[mode]
+                                    )}
+                                    to="/sign-up"
+                                >
+                                    Sign up
+                                </Link>
+                            </li>
                             <li onClick={() => signOut(auth)} className={styles["global-nav__list-item"]}>
                                 <p className={classnames(
                                     styles["global-nav__list-item-link"],

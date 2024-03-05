@@ -25,8 +25,8 @@ function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
-                        <Route path="/auth/registration" element={<Registration />} />
-                        <Route path="/auth/login" element={<Login />} />
+                        <Route path="/sign-up" element={<Registration />} />
+                        <Route path="/login" element={<Login />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                     <Footer />

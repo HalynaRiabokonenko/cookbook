@@ -1,5 +1,7 @@
-import { ReactElement, useState } from "react";
+import { ReactElement, useContext, useState } from "react";
 import React from "react";
+import Button from "../../share_atomic/Button/Button";
+import { ModeContext } from "../../../providers/mode";
 
 interface Props {
     submitText: string;
@@ -14,6 +16,7 @@ const AuthForm = ({
 }: Props): ReactElement => {
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
+    const { mode } = useContext(ModeContext);
     const onSubmit = (e) => {
         e.preventDefault();
         return handleSubmit({ login, password });
@@ -47,7 +50,7 @@ const AuthForm = ({
                     />
                 </div>
             )}
-            <button>{submitText}</button>
+            <Button mode={mode}>{submitText}</Button>
         </form>
     );
 };

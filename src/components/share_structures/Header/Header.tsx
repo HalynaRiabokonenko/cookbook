@@ -6,7 +6,7 @@ import { ModeContext } from "../../../providers/mode";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../api/firebaseConfig";
 
-function Header() {
+function Header({ user }) {
     const { mode, toggleMode } = useContext(ModeContext);
 
     return (
@@ -41,7 +41,7 @@ function Header() {
                                     Home
                                 </Link>
                             </li>
-                            <li className={styles["global-nav__list-item"]}>
+                            {user && <li className={styles["global-nav__list-item"]}>
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
@@ -52,8 +52,8 @@ function Header() {
                                 >
                                     Recipes
                                 </Link>
-                            </li>
-                            <li className={styles["global-nav__list-item"]}>
+                            </li>}
+                            {user && <li className={styles["global-nav__list-item"]}>
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
@@ -64,8 +64,8 @@ function Header() {
                                 >
                                     About us
                                 </Link>
-                            </li>
-                            <li className={styles["global-nav__list-item"]}>
+                            </li>}
+                            {user && <li className={styles["global-nav__list-item"]}>
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
@@ -76,8 +76,8 @@ function Header() {
                                 >
                                     Contact us
                                 </Link>
-                            </li>
-                            <li className={styles["global-nav__list-item"]}>
+                            </li>}
+                            {!user && <li className={styles["global-nav__list-item"]}>
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
@@ -88,8 +88,8 @@ function Header() {
                                 >
                                     Log in
                                 </Link>
-                            </li>
-                            <li className={styles["global-nav__list-item"]}>
+                            </li>}
+                            {!user && <li className={styles["global-nav__list-item"]}>
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
@@ -100,13 +100,14 @@ function Header() {
                                 >
                                     Sign up
                                 </Link>
-                            </li>
-                            <li onClick={() => signOut(auth)} className={styles["global-nav__list-item"]}>
+                            </li>}
+                            {user && <li onClick={() => signOut(auth)} className={styles["global-nav__list-item"]}>
                                 <p className={classnames(
                                     styles["global-nav__list-item-link"],
                                     styles["global-nav__list-item-link--contact"],
                                     styles[mode]
-                                )}>Log out</p></li>
+                                )}>Log out</p>
+                            </li>}
                         </ul>
                     </nav>
                 </div>

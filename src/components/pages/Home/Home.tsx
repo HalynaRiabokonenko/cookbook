@@ -7,7 +7,7 @@ import classnames from "classnames";
 import Button from "../../share_atomic/Button/Button";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 
-const Home = () => {
+const Home = ({ user }) => {
     const { mode } = useContext(ModeContext);
     const [recipesData, setRecipesData] = useState<RecipesDataInterface | null>(null);
 
@@ -111,14 +111,24 @@ const Home = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className={styles["home-content__all-recipes-link-container"]}>
+                    {user && <div className={styles["home-content__all-recipes-link-container"]}>
                         <Link to="/recipes" >
                             <Button mode={mode}>
                                 All recipes
                             </Button>
-
                         </Link>
-                    </div>
+                    </div>}
+                    {!user &&
+                        <div>
+                            <p>Login to see all recipes</p>
+                            <div className={styles["home-content__all-recipes-link-container"]}>
+                                <Link to="/login" >
+                                    <Button mode={mode}>
+                                        Login
+                                    </Button>
+                                </Link>
+                            </div>
+                        </div>}
                 </section>
             </main>
         </div>

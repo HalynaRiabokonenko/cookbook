@@ -6,8 +6,14 @@ import { ModeContext } from "../../../providers/mode";
 import classnames from "classnames";
 import Button from "../../share_atomic/Button/Button";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
+import { User } from "firebase/auth";
 
-const Home = ({ user }) => {
+interface Props {
+    user: User | null;
+}
+
+
+const Home = ({ user }: Props) => {
     const { mode } = useContext(ModeContext);
     const [recipesData, setRecipesData] = useState<RecipesDataInterface | null>(null);
 

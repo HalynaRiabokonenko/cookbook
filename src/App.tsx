@@ -1,6 +1,6 @@
-import "./App.css";
 import React, { useState } from "react";
 import { Routes, Route, HashRouter } from "react-router-dom";
+import "./App.css";
 import Recipes from "./components/pages/Recipes/Recipes";
 import About from "./components/pages/About/About";
 import Contact from "./components/pages/Contact/Contact";
@@ -14,9 +14,10 @@ import Registration from "./components/pages/Authentication/Registration";
 import Login from "./components/pages/Authentication/Login";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../src/api/firebaseConfig";
+import { User } from "firebase/auth";
 
 function App() {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState<User | null>(null);
     onAuthStateChanged(auth, (res) => {
         setUser(res);
     });

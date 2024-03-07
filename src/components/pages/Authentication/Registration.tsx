@@ -8,10 +8,8 @@ import AuthForm from "../../share_structures/AuthForm/AuthForm";
 const Registration = () => {
     const { mode } = useContext(ModeContext);
     const handleSubmit = ({ login, password }) => {
-        console.log(password);
-        createUserWithEmailAndPassword(auth, login, password).then((e) =>
-            console.log(e)
-        );
+        createUserWithEmailAndPassword(auth, login, password)
+            .then((e) => console.log(e))
     };
 
     return (<div>

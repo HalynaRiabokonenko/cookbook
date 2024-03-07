@@ -6,7 +6,6 @@
 .header__container {
   height: var(--header-hight);
   background: var(--medium-green);
-  border-bottom: solid 1px var(--orange);
   display: flex;
   flex-direction: row;
   top: 0;
@@ -50,6 +49,16 @@
   justify-self: center;
 }
 
+.global-nav__list-user {
+  color: var(--dark-green);
+  margin: 0 25px;
+}
+
+.global-nav__list-user--detail {
+  color: var(--light-green);
+  font-weight: bold;
+}
+
 .global-nav__list-item:last-child {
   border-right: 1px solid var(--light-green);
 }
@@ -88,7 +97,6 @@
 
 .header__container.dark {
   background: var(--medium-green--dark);
-  border-bottom: solid 1px var(--orange--dark);
 }
 
 .global-nav__list-item-link.dark:hover {

@@ -6,7 +6,6 @@
 /* Footer container */
 .footer {
   height: var(--footer-hight);
-  border-top: solid 1px var(--orange);
   background-color: var(--dark-gray);
   color: var(--light-green);
   padding: 20px 0;
@@ -98,7 +97,6 @@ img.footer__social-icon {
 }
 
 .footer.dark {
-  border-top: solid 1px var(--orange--dark);
   background: var(--medium-green--dark);
   color: var(--light-green--dark);
 }

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import classnames from "classnames";
 import { ModeContext } from "../../../providers/mode";
@@ -8,6 +8,18 @@ import { auth } from "../../../api/firebaseConfig";
 
 function Header({ user }) {
     const { mode, toggleMode } = useContext(ModeContext);
+    const navigate = useNavigate()
+
+    const handlerSignOut = () => {
+        signOut(auth)
+            .then(() => {
+                console.log("User signed out successfully");
+                navigate("/login");
+            })
+            .catch(error => {
+                console.error("Sign out failed:", error.message);
+            });
+    }
 
     return (
         <header className={styles["header"]}>
@@ -65,7 +77,7 @@ function Header({ user }) {
                                     About us
                                 </Link>
                             </li>}
-                            {user && <li className={styles["global-nav__list-item"]}>
+                            <li className={styles["global-nav__list-item"]}>
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
@@ -76,7 +88,7 @@ function Header({ user }) {
                                 >
                                     Contact us
                                 </Link>
-                            </li>}
+                            </li>
                             {!user && <li className={styles["global-nav__list-item"]}>
                                 <Link
                                     className={classnames(
@@ -101,12 +113,17 @@ function Header({ user }) {
                                     Sign up
                                 </Link>
                             </li>}
-                            {user && <li onClick={() => signOut(auth)} className={styles["global-nav__list-item"]}>
-                                <p className={classnames(
-                                    styles["global-nav__list-item-link"],
-                                    styles["global-nav__list-item-link--contact"],
-                                    styles[mode]
-                                )}>Log out</p>
+                            {user && <li onClick={handlerSignOut} className={styles["global-nav__list-item"]}>
+                                <div
+                                    onClick={handlerSignOut}
+                                >
+                                    <p className={classnames(
+                                        styles["global-nav__list-item-link"],
+                                        styles["global-nav__list-item-link--contact"],
+                                        styles[mode]
+                                    )}>Sign out</p>
+                                </div>
+
                             </li>}
                         </ul>
                     </nav>

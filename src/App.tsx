@@ -13,7 +13,7 @@ import NotFound from "./components/pages/NotFound/NotFound";
 import Registration from "./components/pages/Authentication/Registration";
 import Login from "./components/pages/Authentication/Login";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./api/firebaseConfig";
+import { auth } from "../src/api/firebaseConfig";
 
 function App() {
     const [user, setUser] = useState(null);
@@ -30,14 +30,13 @@ function App() {
                         {user ? (<>
                             <Route path="/recipes" element={<Recipes />} />
                             <Route path="/about" element={<About />} />
-                            <Route path="/contact" element={<Contact />} />
                             <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
                         </>) : (<>
                             <Route path="/sign-up" element={<Registration />} />
                             <Route path="/login" element={<Login />} />
                         </>)}
                         <Route path="*" element={<NotFound />} />
-
+                        <Route path="/contact" element={<Contact />} />
                         <Route path="/" element={<Home user={user} />} />
                     </Routes>
                     <Footer />

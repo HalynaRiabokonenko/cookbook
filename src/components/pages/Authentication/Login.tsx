@@ -21,8 +21,6 @@ const Login = () => {
             Register
         </PageHeader>
         <AuthForm submitText="Log in" handleSubmit={handleSubmit} ></AuthForm>
-        {/* <div> {auth?.currentUser?.uid}</div> */}
-
     </div>)
 };
 

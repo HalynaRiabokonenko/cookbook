@@ -5,8 +5,13 @@ import classnames from "classnames";
 import { ModeContext } from "../../../providers/mode";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../api/firebaseConfig";
+import { User } from "firebase/auth";
 
-function Header({ user }) {
+interface Props {
+    user: User | null;
+}
+
+function Header({ user }: Props) {
     const { mode, toggleMode } = useContext(ModeContext);
     const navigate = useNavigate()
 

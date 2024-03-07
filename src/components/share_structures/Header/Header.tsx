@@ -41,6 +41,15 @@ function Header({ user }) {
                 <div className={styles["global-nav__container"]}>
                     <nav className={styles["global-nav"]}>
                         <ul className={styles["global-nav__list"]}>
+                            {user && <li className={classnames(
+                                styles["global-nav__list-user"],
+                                styles[mode]
+                            )}>
+                                Hello, <div className={classnames(
+                                    styles["global-nav__list-user--detail"],
+                                    styles[mode]
+                                )}>{auth?.currentUser?.email}</div>
+                            </li>}
                             <li className={styles["global-nav__list-item"]}>
                                 <Link
                                     className={classnames(

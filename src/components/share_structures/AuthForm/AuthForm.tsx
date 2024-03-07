@@ -1,12 +1,12 @@
-import { ReactElement, useContext, useState } from "react";
-import React from "react";
-import Button from "../../share_atomic/Button/Button";
+import React, { ReactElement, useContext, useState } from "react";
 import { ModeContext } from "../../../providers/mode";
+import styles from "./AuthForm.module.css";
+import classNames from "classnames";
 
 interface Props {
     submitText: string;
-    isPasswordHidden: boolean;
-    handleSubmit: () => {};
+    isPasswordHidden?: boolean;
+    handleSubmit: (data: { login: string; password: string }) => void;
 }
 
 const AuthForm = ({
@@ -17,9 +17,9 @@ const AuthForm = ({
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
     const { mode } = useContext(ModeContext);
-    const onSubmit = (e) => {
+    const onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        return handleSubmit({ login, password });
+        handleSubmit({ login, password });
     };
 
     return (
@@ -50,7 +50,10 @@ const AuthForm = ({
                     />
                 </div>
             )}
-            <Button mode={mode}>{submitText}</Button>
+            <button className={classNames(
+                styles["auth__form-button"],
+                styles[mode]
+            )}>{submitText}</button>
         </form>
     );
 };

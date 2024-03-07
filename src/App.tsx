@@ -17,9 +17,11 @@ import { auth } from "../src/api/firebaseConfig";
 
 function App() {
     const [user, setUser] = useState(null);
+    console.log("App user", user);
     onAuthStateChanged(auth, (res) => {
         setUser(res);
     });
+    console.log("App user auth", user);
 
     return (
         <ModeProvider>

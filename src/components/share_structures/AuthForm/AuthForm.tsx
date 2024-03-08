@@ -23,7 +23,7 @@ const AuthForm = ({
     };
 
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className={styles["auth__form"]}>
             <div>
                 <label htmlFor="email">Login</label>
                 <input

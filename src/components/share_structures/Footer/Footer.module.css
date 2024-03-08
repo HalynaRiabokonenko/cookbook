@@ -47,13 +47,14 @@
 
 /* Footer social media links */
 .footer__brand-logo {
-  width: 100px;
+  height: 80px;
 }
 
 .footer__brand-name {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   color: var(--light-green);
+  margin-top: 10px;
 }
 
 .footer-social ul {

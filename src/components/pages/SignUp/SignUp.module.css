@@ -20,7 +20,7 @@
 .sign-up__content-modal {
   background-color: var(--medium-green);
   color: var(--white);
-  height: var(--modal-height);
+  min-height: 280px;
   width: var(--modal-width);
   border: 1px solid var(--medium-green);
   border-radius: 20px;

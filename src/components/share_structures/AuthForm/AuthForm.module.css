@@ -7,10 +7,26 @@
   margin-top: 30px;
 }
 
+.auth__form-input {
+  width: 80%;
+  padding: 10px;
+  margin: 0 10px 6px;
+  border: 1.5px solid var(--modal-border-color);
+  border-radius: 5px;
+  cursor: text;
+}
+
+.auth__form-label {
+  display: block;
+  margin: 15px 60px 5px;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
 .auth__form-button {
   background-color: var(--medium-green);
   color: var(--white);
-  margin: 20px;
+  margin: 30px 20px;
   padding: 10px 20px;
   border: 2px solid var(--white);
   border-radius: 10px;

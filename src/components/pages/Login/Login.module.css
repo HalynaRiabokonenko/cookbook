@@ -17,10 +17,27 @@
   font-size: 1.1rem;
 }
 
+.login__navigate-link {
+  color: var(--dark-green);
+  font-weight: bold;
+}
+
+.login__navigate-link:visited {
+  color: var(--dark-green);
+}
+
+.login__navigate-link:hover {
+  color: var(--orange);
+}
+
+.login__navigate-link:active {
+  color: var(--orange);
+}
+
 .login__content-modal {
   background-color: var(--medium-green);
   color: var(--white);
-  height: var(--modal-height);
+  min-height: 280px;
   width: var(--modal-width);
   border: 1px solid var(--medium-green);
   border-radius: 20px;

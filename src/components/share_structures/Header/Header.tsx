@@ -112,10 +112,10 @@ function Header({ user }: Props) {
                                     )}
                                     to="/login"
                                 >
-                                    Log in
+                                    Login
                                 </Link>
                             </li>}
-                            {!user && <li className={styles["global-nav__list-item"]}>
+                            {/* {!user && <li className={styles["global-nav__list-item"]}>
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
@@ -126,7 +126,7 @@ function Header({ user }: Props) {
                                 >
                                     Sign up
                                 </Link>
-                            </li>}
+                            </li>} */}
                             {user && <li onClick={handlerSignOut} className={styles["global-nav__list-item"]}>
                                 <div
                                     onClick={handlerSignOut}

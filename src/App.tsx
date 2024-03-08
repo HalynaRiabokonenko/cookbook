@@ -10,11 +10,12 @@ import Footer from "./components/share_structures/Footer/Footer";
 import Home from "./components/pages/Home/Home";
 import { ModeProvider } from "./providers/mode";
 import NotFound from "./components/pages/NotFound/NotFound";
-import Registration from "./components/pages/Authentication/Registration";
-import Login from "./components/pages/Authentication/Login";
+import Registration from "./components/pages/SignUp/SignUp";
+import Login from "./components/pages/Login/Login";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../src/api/firebaseConfig";
 import { User } from "firebase/auth";
+import SignUp from "./components/pages/SignUp/SignUp";
 
 function App() {
     const [user, setUser] = useState<User | null>(null);
@@ -33,14 +34,14 @@ function App() {
                             <Route path="/about" element={<About />} />
                             <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
                         </>) : (<>
-                            <Route path="/sign-up" element={<Registration />} />
+                            <Route path="/sign-up" element={<SignUp />} />
                             <Route path="/login" element={<Login />} />
                         </>)}
                         <Route path="*" element={<NotFound />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/" element={<Home user={user} />} />
                     </Routes>
-                    <Footer />
+                    <Footer user={user} />
                 </div>
             </HashRouter>
 

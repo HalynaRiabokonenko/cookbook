@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 import classnames from "classnames";
 import { ModeContext } from "../../../providers/mode";
+import { User } from "firebase/auth";
 
-function Footer() {
+interface Props {
+    user: User | null;
+}
+
+function Footer({ user }: Props) {
     const { mode } = useContext(ModeContext);
 
     return (
@@ -29,12 +34,12 @@ function Footer() {
                         <li>
                             <Link to="/">Home</Link>
                         </li>
-                        <li>
+                        {user && <li>
                             <Link to="/about">About Us</Link>
-                        </li>
-                        <li>
+                        </li>}
+                        {user && <li>
                             <Link to="/recipes">Recipes</Link>
-                        </li>
+                        </li>}
                         <li>
                             <Link to="/contact">Contact Us</Link>
                         </li>

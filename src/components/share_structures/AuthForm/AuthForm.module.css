@@ -1,15 +1,4 @@
-.auth__modal {
-  background-color: var(--medium-green);
-  color: var(--white);
-  height: var(--modal-height);
-  width: var(--modal-width);
-  border: 1px solid var(--medium-green);
-  border-radius: 20px;
-  margin: 0 auto;
-  padding-bottom: 20px;
-}
-
-.auth__modal-form {
+.auth__form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,34 +8,30 @@
 }
 
 .auth__form-button {
-  color: var(--medium-green);
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  background-color: var(--white);
+  background-color: var(--medium-green);
+  color: var(--white);
   margin: 20px;
   padding: 10px 20px;
-  border: 2px solid var(--medium-green);
+  border: 2px solid var(--white);
   border-radius: 10px;
   cursor: pointer;
   font-size: var(--modal-button-text-font-size);
+  width: 40%;
+  font-weight: 600;
 }
 
 .auth__form-button:hover {
-  color: var(--white);
-  background-color: var(--medium-green);
-  border: 2px solid var(--medium-green);
+  background-color: var(--white);
+  color: var(--medium-green);
+  border: 2px solid var(--white);
 }
 
 .auth__form-button:active {
+  box-shadow: none;
   color: var(--white);
+  text-shadow: none;
   background-color: var(--light-gray);
   border: 1.5px solid var(--light-gray);
-}
-
-.auth__form-button.dark {
-  background-color: var(--medium-green--dark);
-  box-shadow: 0 0 10px #0000001a;
 }
 
 .auth__form-button.dark {

@@ -98,7 +98,6 @@
   background-color: var(--modal-input-bg-focus-color);
   border: 1.5px solid var(--medium-green);
   outline: none;
-  /* box-shadow: 0 0 5px var(--modal-input-border-focus-color); */
 }
 
 .contact-content__form-input--text:valid,

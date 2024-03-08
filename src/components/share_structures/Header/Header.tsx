@@ -34,11 +34,17 @@ function Header({ user }: Props) {
             )}>
                 <div className={styles["logo"]}>
                     <Link className={styles["logo__link"]} to="/">
-                        <div className={styles["global-mode__container"]}>
+                        <div className={styles["logo__link__container"]}>
                             {mode === "light" ? (
-                                <img src="/logo-light.png" className={styles["logo__img"]} alt="Logo proven recipes" />
+                                <img src="/logo-grey.png" alt="Proven Recipes logo" className={classnames(
+                                    styles["logo__img"],
+                                    styles[mode]
+                                )} />
                             ) : (
-                                <img src="/logo-dark.png" className={styles["logo__img"]} alt="Logo proven recipes" />
+                                <img src="/logo-dark.png" alt="Proven Recipes logo" className={classnames(
+                                    styles["logo__img"],
+                                    styles[mode]
+                                )} />
                             )}
                         </div>
                     </Link>
@@ -115,18 +121,6 @@ function Header({ user }: Props) {
                                     Login
                                 </Link>
                             </li>}
-                            {/* {!user && <li className={styles["global-nav__list-item"]}>
-                                <Link
-                                    className={classnames(
-                                        styles["global-nav__list-item-link"],
-                                        styles["global-nav__list-item-link--contact"],
-                                        styles[mode]
-                                    )}
-                                    to="/sign-up"
-                                >
-                                    Sign up
-                                </Link>
-                            </li>} */}
                             {user && <li onClick={handlerSignOut} className={styles["global-nav__list-item"]}>
                                 <div
                                     onClick={handlerSignOut}

@@ -19,11 +19,11 @@ function Footer({ user }: Props) {
         )}>
             <div className={styles["footer-content"]}>
                 <div className={styles["footer__brand"]}>
-                    <img
-                        src="/logo.png"
-                        className={styles["footer__brand-logo"]}
-                        alt="Proven Recipes logo"
-                    />
+                    {mode === "light" ? (
+                        <img src="/logo-white.png" alt="Proven Recipes logo" className={styles["footer__brand-logo"]} />
+                    ) : (
+                        <img src="/logo-dark.png" alt="Proven Recipes logo" className={styles["footer__brand-logo"]} />
+                    )}
                     <h2 className={styles["footer__brand-name"]}>Proven Recipes</h2>
                 </div>
                 <div className={classnames(

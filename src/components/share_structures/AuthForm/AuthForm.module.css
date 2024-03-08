@@ -11,9 +11,26 @@
   width: 80%;
   padding: 10px;
   margin: 0 10px 6px;
-  border: 1.5px solid var(--modal-border-color);
-  border-radius: 5px;
+  border: none;
+  border-radius: 8px;
   cursor: text;
+}
+
+.auth__form-input:focus {
+  outline: none;
+}
+
+.auth__form-input.dark {
+  border: none;
+  color: var(--light-gray--dark);
+  background-color: var(--medium-green--dark);
+}
+
+.auth__form-input.dark:focus {
+  border: none;
+  color: var(--light-gray--dark);
+  background-color: var(--medium-green--dark);
+  outline: none;
 }
 
 .auth__form-label {

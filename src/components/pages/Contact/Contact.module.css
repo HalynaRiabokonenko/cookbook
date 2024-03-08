@@ -56,7 +56,7 @@
   height: var(--modal-height);
   width: var(--modal-width);
   border: 1px solid var(--medium-green);
-  border-radius: 20px;
+  border-radius: 25px;
   margin: 0 auto;
   padding-bottom: 20px;
 }
@@ -83,8 +83,8 @@
   width: 80%;
   padding: 10px;
   margin: 0 10px 6px;
-  border: 1.5px solid var(--modal-border-color);
-  border-radius: 5px;
+  border: 1.5px solid var(--medium-green);
+  border-radius: 8px;
   cursor: text;
 }
 
@@ -96,9 +96,9 @@
 .contact-content__form-input--email:focus,
 .contact-content__form-input--textarea:focus {
   background-color: var(--modal-input-bg-focus-color);
-  border: 1.5px solid var(--modal-input-border-focus-color);
+  border: 1.5px solid var(--medium-green);
   outline: none;
-  box-shadow: 0 0 5px var(--modal-input-border-focus-color);
+  /* box-shadow: 0 0 5px var(--modal-input-border-focus-color); */
 }
 
 .contact-content__form-input--text:valid,
@@ -269,11 +269,17 @@
   border: 1.5px solid var(--orange--dark);
 }
 
+.contact-content__form-input--text.dark,
+.contact-content__form-input--email.dark,
+.contact-content__form-input--textarea.dark {
+  outline: none;
+  box-shadow: none;
+  color: var(--light-gray--dark);
+}
+
 .contact-content__form-input--text.dark:focus,
 .contact-content__form-input--email.dark:focus,
 .contact-content__form-input--textarea.dark:focus {
-  background-color: var(--modal-input-bg-focus-color);
-  /* border: 1.5px solid var(--modal-input-border-focus-color); */
   outline: none;
   box-shadow: none;
 }

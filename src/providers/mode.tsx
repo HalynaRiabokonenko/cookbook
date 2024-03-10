@@ -12,7 +12,11 @@ export const ModeContext = createContext<ContextType>({
   toggleMode: () => { },
 });
 
-export const ModeProvider = ({ children }: PropsWithChildren): React.JSX.Element => {
+type ModeProviderProps = {
+  children: React.ReactNode;
+};
+
+export const ModeProvider: FC<ModeProviderProps> = ({ children }: PropsWithChildren<ModeProviderProps>): React.ReactElement => {
   const [mode, setMode] = useState<Mode>("light");
 
   const toggleMode = (): void => {

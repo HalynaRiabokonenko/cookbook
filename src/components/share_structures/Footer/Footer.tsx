@@ -9,7 +9,7 @@ interface Props {
     user: User | null;
 }
 
-function Footer({ user }: Props) {
+const Footer: React.FC<Props> = ({ user }: Props) => {
     const { mode } = useContext(ModeContext);
 
     return (

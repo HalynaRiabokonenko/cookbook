@@ -26,10 +26,9 @@
 
 .about-content__subheader {
   margin: 30px 80px;
-  text-align: center;
+  text-align: left;
   font-size: 1.4rem;
   text-transform: uppercase;
-  text-decoration: underline;
 }
 
 .about-content__container.dark {

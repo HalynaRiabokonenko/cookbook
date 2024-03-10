@@ -61,7 +61,7 @@ function Header({ user }: Props) {
                                     styles[mode]
                                 )}>{auth?.currentUser?.email}</div>
                             </li>}
-                            <li className={styles["global-nav__list-item"]}>
+                            <li>
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
@@ -70,22 +70,21 @@ function Header({ user }: Props) {
                                     )}
                                     to="/"
                                 >
-                                    Home
+                                    <div className={styles["global-nav__list-item"]}>Home</div>
                                 </Link>
                             </li>
-                            {user && <li className={styles["global-nav__list-item"]}>
+                            {user && <li>
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
-                                        styles["global-nav__list-item-link--contact"],
                                         styles[mode]
                                     )}
                                     to="/recipes"
                                 >
-                                    Recipes
+                                    <div className={styles["global-nav__list-item"]}>Recipes</div>
                                 </Link>
                             </li>}
-                            {user && <li className={styles["global-nav__list-item"]}>
+                            {user && <li >
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
@@ -94,42 +93,38 @@ function Header({ user }: Props) {
                                     )}
                                     to="/about"
                                 >
-                                    About us
+                                    <div className={styles["global-nav__list-item"]}>About us</div>
                                 </Link>
                             </li>}
-                            <li className={styles["global-nav__list-item"]}>
+                            <li>
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
-                                        styles["global-nav__list-item-link--contact"],
                                         styles[mode]
                                     )}
                                     to="/contact"
                                 >
-                                    Contact us
+                                    <div className={styles["global-nav__list-item"]}>Contact us</div>
                                 </Link>
                             </li>
-                            {!user && <li className={styles["global-nav__list-item"]}>
+                            {!user && <li>
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
-                                        styles["global-nav__list-item-link--contact"],
                                         styles[mode]
                                     )}
                                     to="/login"
                                 >
-                                    Login
+                                    <div className={styles["global-nav__list-item"]}>Login</div>
                                 </Link>
                             </li>}
-                            {user && <li onClick={handlerSignOut} className={styles["global-nav__list-item"]}>
+                            {user && <li onClick={handlerSignOut}>
                                 <div
-                                    onClick={handlerSignOut}
-                                >
-                                    <p className={classnames(
+                                    onClick={handlerSignOut} className={classnames(
                                         styles["global-nav__list-item-link"],
-                                        styles["global-nav__list-item-link--contact"],
                                         styles[mode]
-                                    )}>Sign out</p>
+                                    )}
+                                > <div className={styles["global-nav__list-item"]}>Sign out</div>
                                 </div>
 
                             </li>}

@@ -16,9 +16,15 @@
   position: fixed;
 }
 
+.logo__link__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .logo__img {
   height: calc(var(--header-hight) * 0.6);
-  margin: 0 70px 0 20px;
+  margin: 0 50px;
   border-radius: 50%;
 }
 
@@ -29,34 +35,47 @@
 /* Navigation */
 .global-nav__container {
   width: 80%;
+  height: 100%;
 }
 
 .global-nav {
   display: flex;
   width: 100%;
+  height: 100%;
+  justify-content: right;
+  align-items: center;
 }
 
 .global-nav__list {
   list-style-type: none;
   display: flex;
-  height: 50px;
+  height: 100%;
 }
 
 .global-nav__list-item {
-  padding: 20px 30px;
   text-transform: uppercase;
   font-weight: bold;
-  border-left: 1px solid var(--light-green);
-  width: 180px;
-  text-align: center;
+  min-width: 180px;
+  height: 100%;
   display: flex;
   justify-content: center;
-  justify-self: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.global-nav__list-item:hover {
+  background-color: rgba(240, 248, 255, 0.224);
+  color: var(--white);
 }
 
 .global-nav__list-user {
+  height: 100%;
   color: var(--dark-green);
   margin: 0 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .global-nav__list-user--detail {
@@ -64,12 +83,8 @@
   font-weight: bold;
 }
 
-.global-nav__list-item:last-child {
-  border-right: 1px solid var(--light-green);
-}
-
-/* link ---> */
 .global-nav__list-item-link {
+  height: 100%;
   color: var(--light-green);
 }
 
@@ -78,7 +93,7 @@
 }
 
 .global-nav__list-item-link:hover {
-  color: var(--orange);
+  color: var(--white);
 }
 
 .global-nav__list-item-link:active {
@@ -87,6 +102,9 @@
 
 .global-mode__container {
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .global-mode__button {

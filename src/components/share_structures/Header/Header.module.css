@@ -63,7 +63,7 @@
   cursor: pointer;
 }
 
-.global-nav__list-item:hover {
+.global-nav__list-item:active {
   background-color: rgba(240, 248, 255, 0.224);
   color: var(--white);
 }
@@ -124,4 +124,9 @@
 
 .global-nav__list-item-link.dark:hover {
   color: var(--orange--dark);
+}
+
+.active {
+  background-color: rgba(240, 248, 255, 0.224);
+  color: var(--white);
 }

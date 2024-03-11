@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import classnames from "classnames";
 import { ModeContext } from "../../../providers/mode";
@@ -13,7 +13,8 @@ interface Props {
 
 function Header({ user }: Props) {
     const { mode, toggleMode } = useContext(ModeContext);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const handlerSignOut = () => {
         signOut(auth)
@@ -38,8 +39,7 @@ function Header({ user }: Props) {
                             {mode === "light" ? (
                                 <img src="/logo-grey.png" alt="Proven Recipes logo" className={classnames(
                                     styles["logo__img"],
-                                    styles[mode]
-                                )} />
+                                    styles[mode])} />
                             ) : (
                                 <img src="/logo-dark.png" alt="Proven Recipes logo" className={classnames(
                                     styles["logo__img"],
@@ -66,11 +66,13 @@ function Header({ user }: Props) {
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
                                         styles["global-nav__list-item-link--home"],
-                                        styles[mode]
-                                    )}
+                                        styles[mode])}
                                     to="/"
                                 >
-                                    <div className={styles["global-nav__list-item"]}>Home</div>
+                                    <div className={classnames(
+                                        styles["global-nav__list-item"],
+                                        { [styles.active]: location.pathname === '/' }
+                                    )}>Home</div>
                                 </Link>
                             </li>
                             {user && <li>
@@ -81,7 +83,10 @@ function Header({ user }: Props) {
                                     )}
                                     to="/recipes"
                                 >
-                                    <div className={styles["global-nav__list-item"]}>Recipes</div>
+                                    <div className={classnames(
+                                        styles["global-nav__list-item"],
+                                        { [styles.active]: location.pathname === '/recipes' }
+                                    )}>Recipes</div>
                                 </Link>
                             </li>}
                             {user && <li >
@@ -93,7 +98,10 @@ function Header({ user }: Props) {
                                     )}
                                     to="/about"
                                 >
-                                    <div className={styles["global-nav__list-item"]}>About us</div>
+                                    <div className={classnames(
+                                        styles["global-nav__list-item"],
+                                        { [styles.active]: location.pathname === '/about' }
+                                    )}>About us</div>
                                 </Link>
                             </li>}
                             <li>
@@ -104,7 +112,10 @@ function Header({ user }: Props) {
                                     )}
                                     to="/contact"
                                 >
-                                    <div className={styles["global-nav__list-item"]}>Contact us</div>
+                                    <div className={classnames(
+                                        styles["global-nav__list-item"],
+                                        { [styles.active]: location.pathname === '/contact' }
+                                    )}>Contact us</div>
                                 </Link>
                             </li>
                             {!user && <li>
@@ -115,7 +126,10 @@ function Header({ user }: Props) {
                                     )}
                                     to="/login"
                                 >
-                                    <div className={styles["global-nav__list-item"]}>Login</div>
+                                    <div className={classnames(
+                                        styles["global-nav__list-item"],
+                                        { [styles.active]: location.pathname === '/login' }
+                                    )}>Login</div>
                                 </Link>
                             </li>}
                             {user && <li onClick={handlerSignOut}>

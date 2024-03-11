@@ -85,7 +85,8 @@ function Header({ user }: Props) {
                                 >
                                     <div className={classnames(
                                         styles["global-nav__list-item"],
-                                        { [styles.active]: location.pathname === '/recipes' }
+                                        { [styles.active]: location.pathname === '/recipes' || location.pathname.includes('/recipe/') }
+
                                     )}>Recipes</div>
                                 </Link>
                             </li>}

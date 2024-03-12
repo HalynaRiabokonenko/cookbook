@@ -7,6 +7,7 @@ import classnames from "classnames";
 import Button from "../../share_atomic/Button/Button";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import { User } from "firebase/auth";
+import { UpButton } from "../../share_atomic/UpButton/UppButton";
 
 interface Props {
     user: User | null;
@@ -137,6 +138,7 @@ const Home = ({ user }: Props) => {
                         </div>}
                 </section>
             </main>
+            <UpButton />
         </div>
     );
 }

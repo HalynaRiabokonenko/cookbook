@@ -1,0 +1,37 @@
+.up-button-container {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.up-button-container.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.up-button {
+  background-color: rgba(0, 0, 0, 0.144);
+  border: none;
+  border-radius: 10px;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
+.up-button.dark {
+  background-color: rgba(189, 189, 189, 0.546);
+}
+
+.up-button.dark:hover {
+  background-color: rgba(189, 189, 189, 0.722);
+}
+
+.up-button:hover {
+  background-color: rgba(0, 0, 0, 0.372);
+}
+
+.up-button__img {
+  height: 20px;
+}

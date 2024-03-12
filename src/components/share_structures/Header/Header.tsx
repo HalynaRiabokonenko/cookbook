@@ -129,7 +129,7 @@ function Header({ user }: Props) {
                                 >
                                     <div className={classnames(
                                         styles["global-nav__list-item"],
-                                        { [styles.active]: location.pathname === '/login' }
+                                        { [styles.active]: location.pathname === '/login' || location.pathname === '/sign-up' }
                                     )}>Login</div>
                                 </Link>
                             </li>}
@@ -152,13 +152,13 @@ function Header({ user }: Props) {
 
                             onClick={toggleMode} className={styles["global-mode__button"]}
                         >
-                            <img src="/dark.png" className={styles["global-mode__icon"]} />
+                            <img src="/images/mode/dark.png" className={styles["global-mode__icon"]} />
                         </button>
                     ) : (
                         <button
                             onClick={toggleMode} className={styles["global-mode__button"]}
                         >
-                            <img src="/light.png" className={styles["global-mode__icon"]} />
+                            <img src="/images/mode/light.png" className={styles["global-mode__icon"]} />
                         </button>
                     )}
                 </div>

@@ -13,7 +13,12 @@ const Login = () => {
     const { mode } = useContext(ModeContext);
     const navigate = useNavigate()
 
-    const handleSubmit = ({ login, password }: { login: string, password: string }) => {
+    interface handleSubmitTypes {
+        login: string;
+        password: string;
+    }
+
+    const handleSubmit = ({ login, password }: handleSubmitTypes) => {
         signInWithEmailAndPassword(auth, login, password)
             .then((e) => console.log(e))
             .then(() => navigate("/"))

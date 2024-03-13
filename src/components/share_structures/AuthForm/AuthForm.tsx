@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext, useState } from "react";
+import React, { FormEvent, ReactElement, useContext, useState } from "react";
 import { ModeContext } from "../../../providers/mode";
 import styles from "./AuthForm.module.css";
 import classNames from "classnames";
@@ -19,7 +19,7 @@ const AuthForm = ({
     const [login, setLogin] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const { mode } = useContext(ModeContext);
-    const onSubmit = (e: React.FormEvent) => {
+    const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault();
         handleSubmit({ login, password });
     };

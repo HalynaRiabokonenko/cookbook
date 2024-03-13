@@ -22,7 +22,6 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-around;
-  /* flex-direction: column; */
 }
 
 .recipes-content__recipes-photo {

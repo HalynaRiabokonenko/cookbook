@@ -16,6 +16,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../src/api/firebaseConfig";
 import { User } from "firebase/auth";
 import SignUp from "./components/pages/SignUp/SignUp";
+import { UpButton } from "./components/share_atomic/UpButton/UppButton";
 
 function App() {
     const [user, setUser] = useState<User | null>(null);
@@ -42,6 +43,7 @@ function App() {
                         <Route path="/" element={<Home user={user} />} />
                     </Routes>
                     <Footer user={user} />
+                    <UpButton />
                 </div>
             </HashRouter>
 

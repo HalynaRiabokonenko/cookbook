@@ -16,7 +16,7 @@ const PageHeader = (props: PropsWithChildren<Props>): ReactElement => {
                 styles["header-text"],
                 styles[props.mode]
             )}>
-                {props.children}
+                <span>{props.children}</span>
             </h1>
         </div>
     );

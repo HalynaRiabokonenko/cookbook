@@ -1,11 +1,34 @@
 .header-text {
+  color: var(--header-text-color);
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0.3em;
   font-size: 1.5rem;
-  margin: 30px 80px;
+  margin: 30px 60px 10px;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.3rem;
   word-spacing: 1rem;
   text-align: center;
   padding: 20px;
-  border-bottom: 1px solid var(--header-text-color--dark);
+}
+
+.header-text span {
+  background-color: var(--white);
+  padding: 0 25px;
+}
+
+.header-text::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid var(--header-text-color);
+  margin: -12px 0 35px;
+}
+
+.header-text.dark {
+  color: var(--header-text-color--dark);
+}
+
+.header-text.dark span {
+  background-color: var(--medium-green--dark);
 }

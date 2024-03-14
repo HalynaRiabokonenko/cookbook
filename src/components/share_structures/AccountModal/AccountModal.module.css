@@ -1,0 +1,33 @@
+.account-modal__container {
+  position: absolute;
+  z-index: 100;
+  background-color: var(--white);
+  top: 80px;
+  right: 40px;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: 0 0 60px rgba(14, 42, 71, 0.25);
+}
+
+.account-modal__list-container {
+  width: 240px;
+  min-height: 200px;
+}
+
+.account-modal__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.account-modal__list-option {
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+
+.account-modal__list-option:hover {
+  background-color: rgba(0, 0, 0, 0.064);
+}

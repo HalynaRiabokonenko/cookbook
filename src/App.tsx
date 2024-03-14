@@ -17,6 +17,7 @@ import { auth } from "../src/api/firebaseConfig";
 import { User } from "firebase/auth";
 import SignUp from "./components/pages/SignUp/SignUp";
 import { UpButton } from "./components/share_atomic/UpButton/UppButton";
+import { Account } from "./components/pages/Account/Account";
 
 function App() {
     const [user, setUser] = useState<User | null>(null);
@@ -34,6 +35,7 @@ function App() {
                             <Route path="/recipes" element={<Recipes />} />
                             <Route path="/about" element={<About />} />
                             <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
+                            <Route path="/account" element={<Account />} />
                         </>) : (<>
                             <Route path="/sign-up" element={<SignUp />} />
                             <Route path="/login" element={<Login />} />

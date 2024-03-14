@@ -1,0 +1,12 @@
+.account__content {
+  margin-top: var(--header-hight);
+  padding: 20px;
+}
+
+.account__content-container {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+}

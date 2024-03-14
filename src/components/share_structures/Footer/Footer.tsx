@@ -20,9 +20,9 @@ const Footer: React.FC<Props> = ({ user }: Props) => {
             <div className={styles["footer-content"]}>
                 <div className={styles["footer__brand"]}>
                     {mode === "light" ? (
-                        <img src="/logo-white.png" alt="Proven Recipes logo" className={styles["footer__brand-logo"]} />
+                        <img src="/images/logo/logo-white.png" alt="Proven Recipes logo" className={styles["footer__brand-logo"]} />
                     ) : (
-                        <img src="/logo-dark.png" alt="Proven Recipes logo" className={styles["footer__brand-logo"]} />
+                        <img src="/images/logo/logo-dark.png" alt="Proven Recipes logo" className={styles["footer__brand-logo"]} />
                     )}
                     <h2 className={styles["footer__brand-name"]}>Proven Recipes</h2>
                 </div>
@@ -56,7 +56,7 @@ const Footer: React.FC<Props> = ({ user }: Props) => {
                             >
                                 <img
                                     className={styles["footer__social-icon"]}
-                                    src="/instagram-icon.png"
+                                    src="/images/social/instagram-icon.png"
                                     alt="Instagram icon"
                                 />
                             </a>

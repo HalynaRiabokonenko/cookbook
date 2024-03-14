@@ -29,11 +29,11 @@ function Header({ user }: HeaderProps) {
                     <Link className={styles["logo__link"]} to="/">
                         <div className={styles["logo__link__container"]}>
                             {mode === "light" ? (
-                                <img src="/logo-grey.png" alt="Proven Recipes logo" className={classnames(
+                                <img src="/images/logo/logo-grey.png" alt="Proven Recipes logo" className={classnames(
                                     styles["logo__img"],
                                     styles[mode])} />
                             ) : (
-                                <img src="/logo-dark.png" alt="Proven Recipes logo" className={classnames(
+                                <img src="/images/logo/logo-dark.png" alt="Proven Recipes logo" className={classnames(
                                     styles["logo__img"],
                                     styles[mode]
                                 )} />

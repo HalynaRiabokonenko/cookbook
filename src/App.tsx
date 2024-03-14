@@ -10,7 +10,6 @@ import Footer from "./components/share_structures/Footer/Footer";
 import Home from "./components/pages/Home/Home";
 import { ModeProvider } from "./providers/mode";
 import NotFound from "./components/pages/NotFound/NotFound";
-import Registration from "./components/pages/SignUp/SignUp";
 import Login from "./components/pages/Login/Login";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../src/api/firebaseConfig";

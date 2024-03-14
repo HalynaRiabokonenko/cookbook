@@ -100,20 +100,23 @@
   color: var(--orange);
 }
 
-.global-mode__container {
+.global-mode__container,
+.header__account-container {
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.global-mode__button {
+.global-mode__button,
+.header__account-button {
   padding: 0;
   border: none;
   background: none;
 }
 
-.global-mode__icon {
+.global-mode__icon,
+.header__account-icon {
   height: 30px;
   width: 30px;
 }

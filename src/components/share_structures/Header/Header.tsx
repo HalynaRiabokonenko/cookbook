@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import classnames from "classnames";
@@ -6,15 +6,22 @@ import { ModeContext } from "../../../providers/mode";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../api/firebaseConfig";
 import { User } from "firebase/auth";
+import { AccountModal } from "../AccountModal/AccountModal";
 
 interface Props {
     user: User | null;
 }
 
 function Header({ user }: Props) {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const { mode, toggleMode } = useContext(ModeContext);
     const navigate = useNavigate();
     const location = useLocation();
+
+    const toggleAccountModal = (): void => {
+        setIsModalOpen((prevState) => (prevState === false ? true : false));
+    };
+
 
     const handlerSignOut = () => {
         signOut(auth)
@@ -134,18 +141,26 @@ function Header({ user }: Props) {
                                 </div>
 
                             </li>}
-                            {user && <li className={classnames(
-                                styles["global-nav__list-user"],
-                                styles[mode]
-                            )}>
-                                Hello, <div className={classnames(
-                                    styles["global-nav__list-user--detail"],
-                                    styles[mode]
-                                )}>{auth?.currentUser?.email}</div>
-                            </li>}
                         </ul>
                     </nav>
                 </div>
+                {user && <div className={styles["header__account-container"]} onClick={toggleAccountModal}
+                >
+                    {mode === "light" ? (
+                        <div
+
+                            className={styles["header__account-button"]}
+                        >
+                            <img src="/images/account/account-light.png" className={styles["header__account-icon"]} />
+                        </div>
+                    ) : (
+                        <div
+                            className={styles["header__account-button"]}
+                        >
+                            <img src="/images/account/account-dark.png" className={styles["header__account-icon"]} />
+                        </div>
+                    )}
+                </div>}
                 <div className={styles["global-mode__container"]}>
                     {mode === "light" ? (
                         <button
@@ -162,6 +177,7 @@ function Header({ user }: Props) {
                         </button>
                     )}
                 </div>
+                {isModalOpen && <AccountModal></AccountModal>}
             </div>
         </header >
     );

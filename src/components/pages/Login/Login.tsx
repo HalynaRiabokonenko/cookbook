@@ -7,7 +7,6 @@ import AuthForm from "../../share_structures/AuthForm/AuthForm";
 import { Link, useNavigate } from "react-router-dom";
 import classnames from "classnames";
 import styles from "./Login.module.css";
-import Button from "../../share_atomic/Button/Button";
 
 const Login = () => {
     const { mode } = useContext(ModeContext);
@@ -35,7 +34,8 @@ const Login = () => {
             <p className={classnames(
                 styles["login__content-paragraph"],
                 styles[mode]
-            )}>Hi there! Welcome to Proven Recipes, so happy to see you!</p>
+            )}>Hi there! Welcome to Proven Recipes, so happy to see you!
+            </p>
             <div className={classnames(
                 styles["login__content-modal"],
                 styles[mode]

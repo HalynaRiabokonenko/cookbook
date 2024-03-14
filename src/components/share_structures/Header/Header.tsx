@@ -52,15 +52,6 @@ function Header({ user }: Props) {
                 <div className={styles["global-nav__container"]}>
                     <nav className={styles["global-nav"]}>
                         <ul className={styles["global-nav__list"]}>
-                            {user && <li className={classnames(
-                                styles["global-nav__list-user"],
-                                styles[mode]
-                            )}>
-                                Hello, <div className={classnames(
-                                    styles["global-nav__list-user--detail"],
-                                    styles[mode]
-                                )}>{auth?.currentUser?.email}</div>
-                            </li>}
                             <li>
                                 <Link
                                     className={classnames(
@@ -142,6 +133,15 @@ function Header({ user }: Props) {
                                 > <div className={styles["global-nav__list-item"]}>Sign out</div>
                                 </div>
 
+                            </li>}
+                            {user && <li className={classnames(
+                                styles["global-nav__list-user"],
+                                styles[mode]
+                            )}>
+                                Hello, <div className={classnames(
+                                    styles["global-nav__list-user--detail"],
+                                    styles[mode]
+                                )}>{auth?.currentUser?.email}</div>
                             </li>}
                         </ul>
                     </nav>

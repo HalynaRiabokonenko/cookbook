@@ -10,3 +10,8 @@
   padding: 20px;
   text-align: left;
 }
+
+.account__content-container.dark {
+  background-color: var(--medium-green--dark);
+  box-shadow: 0 0 10px #0000001a;
+}

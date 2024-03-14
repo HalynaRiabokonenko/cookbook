@@ -6,8 +6,8 @@
   right: 40px;
   border: 1px solid #e5e5e5;
   border-top: none;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   box-shadow: 0 0 60px rgba(14, 42, 71, 0.25);
 }
 
@@ -25,9 +25,23 @@
 .account-modal__list-option {
   margin: 5px;
   padding: 5px 10px;
-  border-radius: 2px;
+  border-radius: 5px;
+}
+
+.account-modal__list-option.dark {
+  color: var(--light-green);
 }
 
 .account-modal__list-option:hover {
-  background-color: rgba(0, 0, 0, 0.064);
+  background-color: rgba(68, 68, 68, 0.069);
+}
+
+.account-modal__list-option.dark:hover {
+  background-color: rgba(190, 190, 190, 0.113);
+}
+
+.account-modal__container.dark {
+  background-color: #252927;
+  border: 1px solid #252927;
+  box-shadow: 0 0 60px rgba(91, 105, 118, 0.138);
 }

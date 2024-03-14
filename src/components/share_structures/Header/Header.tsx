@@ -1,38 +1,23 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
 import classnames from "classnames";
 import { ModeContext } from "../../../providers/mode";
-import { signOut } from "firebase/auth";
-import { auth } from "../../../api/firebaseConfig";
 import { User } from "firebase/auth";
 import { AccountModal } from "../AccountModal/AccountModal";
 
-interface Props {
+interface HeaderProps {
     user: User | null;
 }
 
-function Header({ user }: Props) {
+function Header({ user }: HeaderProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { mode, toggleMode } = useContext(ModeContext);
-    const navigate = useNavigate();
     const location = useLocation();
 
     const toggleAccountModal = (): void => {
         setIsModalOpen((prevState) => (prevState === false ? true : false));
     };
-
-
-    const handlerSignOut = () => {
-        signOut(auth)
-            .then(() => {
-                console.log("User signed out successfully");
-                navigate("/login");
-            })
-            .catch(error => {
-                console.error("Sign out failed:", error.message);
-            });
-    }
 
     return (
         <header className={styles["header"]}>
@@ -131,16 +116,6 @@ function Header({ user }: Props) {
                                     )}>Login</div>
                                 </Link>
                             </li>}
-                            {user && <li onClick={handlerSignOut}>
-                                <div
-                                    onClick={handlerSignOut} className={classnames(
-                                        styles["global-nav__list-item-link"],
-                                        styles[mode]
-                                    )}
-                                > <div className={styles["global-nav__list-item"]}>Sign out</div>
-                                </div>
-
-                            </li>}
                         </ul>
                     </nav>
                 </div>
@@ -177,7 +152,7 @@ function Header({ user }: Props) {
                         </button>
                     )}
                 </div>
-                {isModalOpen && <AccountModal></AccountModal>}
+                {isModalOpen && <AccountModal setIsModalOpen={setIsModalOpen}></AccountModal>}
             </div>
         </header >
     );

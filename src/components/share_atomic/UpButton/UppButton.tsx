@@ -44,8 +44,8 @@ export const UpButton = () => {
                         styles[mode])} />
                 ) : (
                     <img src="/images/up-button/up-dark.png" alt="Up icon" className={classNames(
-                        styles[mode]
-                    )} />
+                        styles["up-button__img"],
+                        styles[mode])} />
                 )}</button>
         </div >
     )

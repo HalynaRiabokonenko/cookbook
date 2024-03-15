@@ -24,7 +24,7 @@ const Home = ({ user }: HomeProps) => {
     }, []);
 
 
-    return recipesData && (
+    return (
         <div className={styles["home"]}>
             <main className={styles["home-content"]}>
                 <section className={classnames(
@@ -50,7 +50,7 @@ const Home = ({ user }: HomeProps) => {
                         and discover the magic of Ukrainian cuisine right here on our
                         website.
                     </p>
-                    <div className={styles["container-home__list--popular"]}>
+                    {recipesData && <div className={styles["container-home__list--popular"]}>
                         <div>
                             <ul className={styles["home__list--popular"]}>
                                 {recipesData.recipes
@@ -114,7 +114,8 @@ const Home = ({ user }: HomeProps) => {
                                     ))}
                             </ul>
                         </div>
-                    </div>
+                    </div>}
+
                     {user && <div className={styles["home-content__all-recipes-link-container"]}>
                         <Link to="/recipes" >
                             <Button mode={mode}>

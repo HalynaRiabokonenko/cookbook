@@ -1,0 +1,17 @@
+.page-content {
+  margin-top: var(--header-hight);
+  padding: 20px;
+}
+
+.page-content__container {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 0 10px #0000001a;
+  padding: 20px;
+  text-align: left;
+}
+
+.page-content__container.dark {
+  background-color: var(--medium-green--dark);
+  box-shadow: 0 0 10px #0000001a;
+}

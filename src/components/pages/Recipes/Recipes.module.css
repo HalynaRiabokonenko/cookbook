@@ -24,14 +24,22 @@
   justify-content: space-around;
 }
 
+.recipes-content__recipes-photo-container {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
 .recipes-content__recipes-photo {
-  margin-top: 40px;
-  height: 60%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin: 0;
+  width: 100%;
 }
 
 .recipes-content__recipes-list--option {
   width: 380px;
-  height: 50vh;
+  height: 380px;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--light-green);

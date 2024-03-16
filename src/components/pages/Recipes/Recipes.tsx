@@ -53,14 +53,20 @@ function Recipes() {
                                     styles["recipes-content__recipes-list--option"],
                                     styles[mode]
                                 )}>
-                                    <img
-                                        src={recipe.photoPath}
-                                        alt={recipe.name}
-                                        className={styles["recipes-content__recipes-photo"]}
-                                    />
-                                    <h2 className={styles["recipes-content__recipes-name"]}>
-                                        {recipe.name}
-                                    </h2>
+                                    <div className={styles["recipes-content__recipes-photo-container"]}>
+                                        <img
+                                            src={recipe.photoPath}
+                                            alt={recipe.name}
+                                            className={styles["recipes-content__recipes-photo"]}
+                                        />
+                                    </div>
+                                    <div className={styles["recipes-content__recipes-container"]}>
+                                        <h2 className={styles["recipes-content__recipes-name"]}>
+                                            {recipe.name}
+                                        </h2>
+                                    </div>
+
+
                                 </div>
                             </Link>
                         ))}

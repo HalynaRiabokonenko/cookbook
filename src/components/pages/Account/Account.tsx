@@ -4,15 +4,13 @@ import classnames from "classnames";
 import styles from "./Account.module.css";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import { auth } from "../../../api/firebaseConfig";
+import { Page } from "../../share_structures/Page/Page";
 
 export const Account = () => {
     const { mode } = useContext(ModeContext);
 
-    return (<main className={styles["account__content"]}>
-        <section className={classnames(
-            styles["account__content-container"],
-            styles[mode]
-        )}>
+    return (
+        <Page>
             <PageHeader mode={mode}>
                 My account
             </PageHeader>
@@ -27,7 +25,6 @@ export const Account = () => {
                     )}>{auth?.currentUser?.email}</div>
                 </div>
             </div>
-        </section>
-
-    </main>)
+        </Page>
+    )
 }

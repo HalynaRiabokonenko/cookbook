@@ -7,6 +7,7 @@ import AuthForm from "../../share_structures/AuthForm/AuthForm";
 import { Link, useNavigate } from "react-router-dom";
 import classnames from "classnames";
 import styles from "./Login.module.css";
+import { Page } from "../../share_structures/Page/Page";
 
 const Login = () => {
     const { mode } = useContext(ModeContext);
@@ -23,11 +24,8 @@ const Login = () => {
             .then(() => navigate("/"))
     };
 
-    return (<main className={styles["login__content"]}>
-        <section className={classnames(
-            styles["login__content-container"],
-            styles[mode]
-        )}>
+    return (
+        <Page>
             <PageHeader mode={mode}>
                 Log in
             </PageHeader>
@@ -58,9 +56,8 @@ const Login = () => {
             </div>
             <div>
             </div>
-        </section>
-
-    </main>)
+        </Page>
+    )
 };
 
 export default Login;

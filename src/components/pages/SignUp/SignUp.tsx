@@ -7,6 +7,7 @@ import AuthForm from "../../share_structures/AuthForm/AuthForm";
 import { useNavigate } from "react-router-dom";
 import classnames from "classnames";
 import styles from "./SignUp.module.css";
+import { Page } from "../../share_structures/Page/Page";
 
 const SignUp = () => {
     const { mode } = useContext(ModeContext);
@@ -22,11 +23,8 @@ const SignUp = () => {
             .then((e) => console.log(e)).then(() => navigate("/"))
     };
 
-    return (<main className={styles["sign-up__content"]}>
-        <section className={classnames(
-            styles["sign-up__content-container"],
-            styles[mode]
-        )}>
+    return (
+        <Page>
             <PageHeader mode={mode}>
                 Register
             </PageHeader>
@@ -36,8 +34,8 @@ const SignUp = () => {
             )}>
                 <AuthForm submitText="Register" handleSubmit={handleSubmit} ></AuthForm>
             </div>
-        </section>
-    </main>)
+        </Page>
+    )
 };
 
 export default SignUp;

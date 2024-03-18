@@ -13,8 +13,8 @@ export const Page = ({ children }: PropsWithChildren) => {
                     styles["page-content__container"],
                     styles[mode]
                 )}>
+                    {children}
                 </section>
-                {children}
             </main>
         </div>
     );

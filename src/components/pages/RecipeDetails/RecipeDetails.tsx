@@ -7,6 +7,7 @@ import { db } from "../../../api/firebaseConfig";
 import { doc, getDoc, DocumentSnapshot } from "firebase/firestore";
 import RecipeInterface from "./RecipeDetails.types";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
+import { Page } from "../../share_structures/Page/Page";
 
 function RecipeDetails() {
   const { mode } = useContext(ModeContext);
@@ -43,61 +44,57 @@ function RecipeDetails() {
   }
 
   return (
-    <main className={styles["recipe-details-content"]}>
-      <section className={classnames(
-        styles["recipe-details-content__container"],
+    <Page>
+      <PageHeader mode={mode}>
+        {recipe.name}
+      </PageHeader>
+      <p className={styles["recipe-details-content__description"]}>
+        {recipe.description}
+      </p>
+      <div className={classnames(
+        styles["recipe-details-content__container-recipe-details"],
         styles[mode]
       )}>
-        <PageHeader mode={mode}>
-          {recipe.name}
-        </PageHeader>
-        <p className={styles["recipe-details-content__description"]}>
-          {recipe.description}
-        </p>
-        <div className={classnames(
-          styles["recipe-details-content__container-recipe-details"],
-          styles[mode]
-        )}>
-          <div className={styles["recipe-details-content__photo-container"]}>
-            <img
-              src={recipe.photoPath}
-              alt={recipe.name}
-              className={styles["recipe-details-content__photo"]}
-            />
-          </div>
-          <div className={styles["recipe-details-content__ingredients-container"]}>
-            <h3 className={styles["recipe-details-content__recipes-ingredients"]}>
-              Ingredients:
-            </h3>
-            <ul className={styles["recipe-details-content__ingredients-list"]}>
-              {recipe.ingredients.map((ingredient, index) => (
-                <li
-                  key={index}
-                  className={styles["recipe-details-content__ingredients-list--option"]}
-                >
-                  {ingredient}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className={styles["recipe-details-content__instructions-container"]}>
-            <h3 className={styles["recipe-details-content__recipes-instructions"]}>
-              Instructions:
-            </h3>
-            <ol className={styles["recipe-details-content__instructions-list"]}>
-              {recipe.instructions.map((instruction, index) => (
-                <li
-                  key={index}
-                  className={styles["recipe-details-content__instructions-list--option"]}
-                >
-                  {instruction}
-                </li>
-              ))}
-            </ol>
-          </div>
+        <div className={styles["recipe-details-content__photo-container"]}>
+          <img
+            src={recipe.photoPath}
+            alt={recipe.name}
+            className={styles["recipe-details-content__photo"]}
+          />
         </div>
-      </section>
-    </main>
+        <div className={styles["recipe-details-content__ingredients-container"]}>
+          <h3 className={styles["recipe-details-content__recipes-ingredients"]}>
+            Ingredients:
+          </h3>
+          <ul className={styles["recipe-details-content__ingredients-list"]}>
+            {recipe.ingredients.map((ingredient, index) => (
+              <li
+                key={index}
+                className={styles["recipe-details-content__ingredients-list--option"]}
+              >
+                {ingredient}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className={styles["recipe-details-content__instructions-container"]}>
+          <h3 className={styles["recipe-details-content__recipes-instructions"]}>
+            Instructions:
+          </h3>
+          <ol className={styles["recipe-details-content__instructions-list"]}>
+            {recipe.instructions.map((instruction, index) => (
+              <li
+                key={index}
+                className={styles["recipe-details-content__instructions-list--option"]}
+              >
+                {instruction}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </Page>
+
   );
 }
 

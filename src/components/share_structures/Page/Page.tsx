@@ -7,15 +7,15 @@ export const Page = ({ children }: PropsWithChildren) => {
     const { mode } = useContext(ModeContext);
 
     return (
-        <div className={styles["page"]}>
-            <main className={styles["page-content"]}>
+        <main className={styles["page"]}>
+            <div className={styles["page-content"]}>
                 <section className={classnames(
                     styles["page-content__container"],
                     styles[mode]
                 )}>
                     {children}
                 </section>
-            </main>
-        </div>
+            </div>
+        </main>
     );
 }

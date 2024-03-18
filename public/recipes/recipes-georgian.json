@@ -1,0 +1,305 @@
+{
+    "recipes": [
+      {
+        "id": 1,
+        "name": "Khachapuri",
+        "cuisine": "Georgian",
+        "photoPath": "../recipes_photo/khachapuri.jpeg",
+        "ingredients": [
+          "2 cups all-purpose flour",
+          "1 teaspoon active dry yeast",
+          "1 teaspoon sugar",
+          "1/2 teaspoon salt",
+          "1 cup plain yogurt",
+          "1 egg",
+          "2 cups shredded cheese (such as mozzarella and feta)",
+          "4 tablespoons butter, melted"
+        ],
+        "instructions": [
+          "In a bowl, combine flour, yeast, sugar, and salt.",
+          "Add yogurt and egg, and knead until a smooth dough forms.",
+          "Cover and let the dough rise in a warm place for about 1 hour.",
+          "Preheat oven to 200°C (400°F).",
+          "Divide the dough into 4 equal parts.",
+          "Roll out each part into an oval shape.",
+          "Spread shredded cheese over each oval, leaving the edges bare.",
+          "Fold the edges of the dough over the cheese to form a boat shape.",
+          "Brush the edges with melted butter.",
+          "Bake for 15-20 minutes, until golden brown and bubbly.",
+          "Serve hot, brushing with more melted butter if desired."
+        ],
+        "description": "Khachapuri is a traditional Georgian cheese-filled bread that is popular throughout the country. It is made with a yeasted dough that is filled with a mixture of shredded cheeses, typically including mozzarella and feta. The bread is baked until golden brown and bubbly, resulting in a deliciously cheesy and savory treat. Khachapuri is often enjoyed as a snack or as part of a meal in Georgia."
+      },
+      {
+        "id": 2,
+        "name": "Khinkali",
+        "cuisine": "Georgian",
+        "photoPath": "../recipes_photo/khinkali.jpeg",
+        "ingredients": [
+          "1 lb ground beef or pork",
+          "1 onion, finely chopped",
+          "2 cloves garlic, minced",
+          "1/4 cup chopped fresh cilantro",
+          "1 teaspoon ground coriander",
+          "1 teaspoon ground cumin",
+          "1 teaspoon salt",
+          "1/2 teaspoon black pepper",
+          "1/4 teaspoon cayenne pepper",
+          "Water",
+          "1 package dumpling wrappers (about 40 wrappers)"
+        ],
+        "instructions": [
+          "In a bowl, combine ground meat, onion, garlic, cilantro, coriander, cumin, salt, black pepper, and cayenne pepper.",
+          "Mix well, adding water as needed to create a moist filling.",
+          "Place a spoonful of the filling in the center of a dumpling wrapper.",
+          "Fold the wrapper in half and pinch the edges together to seal, leaving a small opening at the top.",
+          "Repeat with the remaining wrappers and filling.",
+          "Bring a large pot of salted water to a boil.",
+          "Carefully add the khinkali to the boiling water and cook for about 10 minutes, until they float to the surface.",
+          "Remove khinkali from the water with a slotted spoon and serve hot."
+        ],
+        "description": "Khinkali is a traditional Georgian dumpling filled with spiced ground meat. The filling is typically seasoned with onions, garlic, cilantro, and a blend of spices such as coriander, cumin, and cayenne pepper. The dumplings are boiled until cooked through, then served hot. Khinkali are often eaten as a main course or as a snack in Georgia, and they are typically enjoyed by hand, with the flavorful broth inside being sipped before eating the dumpling itself."
+      },
+      {
+        "id": 3,
+        "name": "Satsivi",
+        "cuisine": "Georgian",
+        "photoPath": "../recipes_photo/satsivi.jpeg",
+        "ingredients": [
+          "1 chicken, cut into pieces",
+          "2 onions, chopped",
+          "4 cloves garlic, minced",
+          "1 cup walnuts",
+          "1 tablespoon flour",
+          "1 teaspoon ground coriander",
+          "1 teaspoon ground fenugreek",
+          "1/2 teaspoon ground cinnamon",
+          "1/2 teaspoon ground cloves",
+          "1/2 teaspoon ground turmeric",
+          "1/2 teaspoon cayenne pepper",
+          "1/2 cup white wine vinegar",
+          "Salt and pepper to taste"
+        ],
+        "instructions": [
+          "In a large pot, combine chicken, onions, garlic, and enough water to cover.",
+          "Bring to a boil, then reduce heat and simmer until chicken is cooked through, about 45 minutes.",
+          "Remove chicken from the pot and let cool slightly. Reserve the cooking liquid.",
+          "In a blender or food processor, combine walnuts, flour, coriander, fenugreek, cinnamon, cloves, turmeric, cayenne pepper, and vinegar.",
+          "Blend until smooth, adding reserved cooking liquid as needed to achieve desired consistency.",
+          "Return the sauce to the pot and bring to a simmer.",
+          "Add chicken pieces to the sauce and simmer for 10-15 minutes.",
+          "Season with salt and pepper to taste.",
+          "Serve hot, garnished with chopped fresh cilantro or parsley."
+        ],
+        "description": "Satsivi is a traditional Georgian dish of chicken cooked in a rich walnut sauce. The chicken is simmered until tender in a flavorful broth along with onions and garlic. The sauce is made by blending walnuts with spices such as coriander, fenugreek, cinnamon, cloves, turmeric, and cayenne pepper, along with vinegar for tanginess. The chicken is then simmered in the sauce until fully cooked and infused with the nutty flavors. Satsivi is typically served hot, garnished with fresh herbs."
+      },
+      {
+        "id": 4,
+        "name": "Badrijani Nigvzit",
+        "cuisine": "Georgian",
+        "photoPath": "../recipes_photo/badrijani_nigvzit.jpeg",
+        "ingredients": [
+          "1 large eggplant",
+          "1/2 cup walnut halves",
+          "2 cloves garlic, minced",
+          "1 tablespoon red wine vinegar",
+          "1/2 teaspoon ground coriander",
+          "1/2 teaspoon ground fenugreek",
+          "1/4 teaspoon cayenne pepper",
+          "Salt to taste",
+          "Fresh parsley for garnish",
+          "Olive oil for frying"
+        ],
+        "instructions": [
+          "Slice eggplant lengthwise into 1/4-inch thick slices.",
+          "Season eggplant slices with salt and let sit for 15 minutes to release excess moisture.",
+          "Pat eggplant slices dry with paper towels.",
+          "Heat olive oil in a large skillet over medium heat.",
+          "Fry eggplant slices until golden brown on both sides, about 3-4 minutes per side.",
+          "Remove eggplant slices from skillet and let cool on a paper towel-lined plate.",
+          "In a blender or food processor, combine walnuts, garlic, vinegar, coriander, fenugreek, cayenne pepper, and salt.",
+          "Blend until smooth, adding water as needed to achieve desired consistency.",
+          "Spread walnut mixture onto eggplant slices.",
+          "Roll up eggplant slices and secure with toothpicks if needed.",
+          "Garnish with fresh parsley before serving."
+        ],
+        "description": "Badrijani Nigvzit is a classic Georgian appetizer consisting of fried eggplant slices filled with a flavorful walnut paste. The eggplant slices are fried until golden brown and tender, then spread with a mixture of ground walnuts, garlic, vinegar, and spices such as coriander, fenugreek, and cayenne pepper. The filled eggplant slices are rolled up and garnished with fresh parsley before serving. Badrijani Nigvzit is a delicious and satisfying dish that showcases the bold flavors of Georgian cuisine."
+      },
+      {
+        "id": 5,
+        "name": "Kharcho",
+        "cuisine": "Georgian",
+        "photoPath": "../recipes_photo/kharcho.jpeg",
+        "ingredients": [
+          "1 lb beef or lamb, cubed",
+          "1 onion, chopped",
+          "2 cloves garlic, minced",
+          "1/2 cup rice",
+          "1/4 cup tomato paste",
+          "1 tablespoon ground coriander",
+          "1 teaspoon ground fenugreek",
+          "1/2 teaspoon ground cinnamon",
+          "1/2 teaspoon ground cloves",
+          "1/4 teaspoon cayenne pepper",
+          "8 cups beef or vegetable broth",
+          "Salt and pepper to taste",
+          "Chopped fresh cilantro for garnish"
+        ],
+        "instructions": [
+          "In a large pot, combine beef or lamb, onion, garlic, rice, tomato paste, coriander, fenugreek, cinnamon, cloves, cayenne pepper, and broth.",
+          "Bring to a boil, then reduce heat and simmer until meat is tender and rice is cooked, about 1 hour.",
+          "Season with salt and pepper to taste.",
+          "Serve hot, garnished with chopped fresh cilantro."
+        ],
+        "description": "Kharcho is a traditional Georgian soup known for its rich and flavorful broth. It is made with tender pieces of beef or lamb simmered with onions, garlic, rice, tomato paste, and a blend of spices including coriander, fenugreek, cinnamon, cloves, and cayenne pepper. The soup is cooked until the meat is tender and the rice is cooked through, resulting in a hearty and satisfying dish. Kharcho is typically served hot, garnished with chopped fresh cilantro."
+      },
+      {
+        "id": 6,
+        "name": "Mtsvadi",
+        "cuisine": "Georgian",
+        "photoPath": "../recipes_photo/mtsvadi.jpeg",
+        "ingredients": [
+          "2 lbs pork loin, cut into 1-inch cubes",
+          "1 large onion, chopped",
+          "2 cloves garlic, minced",
+          "1/4 cup white wine vinegar",
+          "1/4 cup olive oil",
+          "1 tablespoon ground coriander",
+          "1 tablespoon ground fenugreek",
+          "1 teaspoon ground paprika",
+          "1 teaspoon ground cumin",
+          "Salt and pepper to taste",
+          "Skewers for grilling"
+        ],
+        "instructions": [
+          "In a bowl, combine pork cubes, onion, garlic, vinegar, olive oil, coriander, fenugreek, paprika, cumin, salt, and pepper.",
+          "Mix well to coat the pork evenly. Cover and refrigerate for at least 2 hours, or overnight for best flavor.",
+          "Preheat grill to medium-high heat.",
+          "Thread marinated pork cubes onto skewers.",
+          "Grill skewers for 10-15 minutes, turning occasionally, until pork is cooked through and slightly charred.",
+          "Serve hot, garnished with fresh herbs if desired."
+        ],
+        "description": "Mtsvadi is a traditional Georgian dish of skewered and grilled meat, typically made with pork. The pork cubes are marinated in a mixture of onions, garlic, vinegar, olive oil, and a blend of spices including coriander, fenugreek, paprika, and cumin. The skewers are then grilled over an open flame until the pork is cooked through and slightly charred, imparting a delicious smoky flavor. Mtsvadi is a popular dish in Georgia, often enjoyed at outdoor gatherings and celebrations."
+      },
+      {
+        "id": 7,
+        "name": "Adjika",
+        "cuisine": "Georgian",
+        "photoPath": "../recipes_photo/adjika.jpeg",
+        "ingredients": [
+          "10 red chili peppers, stemmed and seeded",
+          "5 cloves garlic",
+          "1/4 cup chopped fresh cilantro",
+          "1/4 cup chopped fresh parsley",
+          "1 tablespoon ground coriander",
+          "1 tablespoon ground fenugreek",
+          "1 tablespoon ground paprika",
+          "1 tablespoon ground cumin",
+          "1 teaspoon salt",
+          "1/4 cup olive oil",
+          "2 tablespoons white wine vinegar"
+        ],
+        "instructions": [
+          "In a food processor, combine red chili peppers, garlic, cilantro, parsley, coriander, fenugreek, paprika, cumin, and salt.",
+          "Pulse until finely chopped.",
+          "With the food processor running, slowly drizzle in olive oil and white wine vinegar.",
+          "Continue to process until the mixture forms a smooth paste.",
+          "Transfer adjika to a jar and refrigerate until ready to use."
+        ],
+        "description": "Adjika is a spicy and flavorful Georgian sauce made with red chili peppers, garlic, herbs, and spices. It is commonly used as a condiment or flavoring agent in Georgian cuisine, adding heat and depth of flavor to a variety of dishes. The sauce is made by blending together red chili peppers, garlic, cilantro, parsley, coriander, fenugreek, paprika, cumin, salt, olive oil, and white wine vinegar until smooth. Adjika can be stored in the refrigerator for several weeks and is typically served alongside grilled meats, stews, and other dishes."
+      },
+      {
+        "id": 8,
+        "name": " Lobio",
+        "cuisine": "Georgian",
+        "photoPath": "../recipes_photo/lobio.jpeg",
+        "ingredients": [
+          "2 cups dried red kidney beans",
+          "1 onion, chopped",
+          "3 cloves garlic, minced",
+          "1/4 cup chopped fresh cilantro",
+          "1/4 cup chopped fresh parsley",
+          "1 tablespoon ground coriander",
+          "1 tablespoon ground fenugreek",
+          "1 tablespoon ground paprika",
+          "1 tablespoon ground cumin",
+          "1 teaspoon salt",
+          "2 tablespoons olive oil",
+          "Water"
+        ],
+        "instructions": [
+          "Rinse dried kidney beans and soak them in water overnight.",
+          "Drain soaked beans and transfer them to a large pot.",
+          "Add enough water to cover the beans by a few inches.",
+          "Bring to a boil, then reduce heat and simmer until beans are tender, about 1-2 hours.",
+          "In a skillet, heat olive oil over medium heat.",
+          "Add onion and garlic, and sauté until softened and fragrant.",
+          "Stir in coriander, fenugreek, paprika, cumin, and salt.",
+          "Add cooked beans to the skillet along with some of the cooking liquid.",
+          "Simmer for 10-15 minutes, until flavors are well combined and beans are heated through.",
+          "Stir in fresh cilantro and parsley before serving."
+        ],
+        "description": "Lobio is a traditional Georgian dish made with red kidney beans cooked in a flavorful sauce. The beans are simmered until tender, then combined with sautéed onions, garlic, and a blend of herbs and spices including coriander, fenugreek, paprika, and cumin. The dish is typically served hot, garnished with fresh cilantro and parsley. Lobio can be enjoyed on its own as a hearty vegetarian meal, or as a side dish alongside other Georgian specialties."
+      },
+      {
+        "id": 9,
+        "name": "Chakhokhbili",
+        "cuisine": "Georgian",
+        "photoPath": "../recipes_photo/chakhokhbili.jpeg",
+        "ingredients": [
+          "2 lbs chicken, cut into pieces",
+          "2 onions, chopped",
+          "4 cloves garlic, minced",
+          "4 tomatoes, chopped",
+          "1 bell pepper, chopped",
+          "1/4 cup chopped fresh cilantro",
+          "1/4 cup chopped fresh parsley",
+          "1 teaspoon ground coriander",
+          "1 teaspoon ground fenugreek",
+          "1 teaspoon ground paprika",
+          "1/2 teaspoon ground cinnamon",
+          "1/2 teaspoon ground cloves",
+          "1/4 teaspoon cayenne pepper",
+          "Salt and pepper to taste",
+          "2 tablespoons olive oil"
+        ],
+        "instructions": [
+          "In a large pot, heat olive oil over medium heat.",
+          "Add chicken pieces and cook until browned on all sides.",
+          "Remove chicken from pot and set aside.",
+          "Add onions and garlic to the pot and sauté until softened.",
+          "Stir in tomatoes, bell pepper, cilantro, parsley, coriander, fenugreek, paprika, cinnamon, cloves, cayenne pepper, salt, and pepper.",
+          "Return chicken to the pot and stir to combine.",
+          "Cover and simmer for 30-40 minutes, until chicken is cooked through and flavors are well blended.",
+          "Serve hot, garnished with additional fresh herbs if desired."
+        ],
+        "description": "Chakhokhbili is a classic Georgian stew made with chicken, tomatoes, onions, and a variety of herbs and spices. The dish is cooked slowly until the chicken is tender and the flavors are well blended. Chakhokhbili is typically served hot, garnished with fresh cilantro and parsley. It is a hearty and satisfying dish that showcases the vibrant flavors of Georgian cuisine."
+      },
+      {
+        "id": 10,
+        "name": "Churchkhela",
+        "cuisine": "Georgian",
+        "photoPath": "../recipes_photo/churchkhela.jpeg",
+        "ingredients": [
+          "2 cups grape or fruit juice (such as grape or pomegranate)",
+          "1 cup flour",
+          "1 cup walnuts",
+          "1/4 cup sugar",
+          "1/2 teaspoon ground cinnamon"
+        ],
+        "instructions": [
+          "In a saucepan, heat fruit juice over medium heat until warm but not boiling.",
+          "In a bowl, combine flour with enough warm juice to form a thick paste.",
+          "Thread walnuts onto a string or skewer, leaving space between each walnut.",
+          "Dip the walnut string into the flour paste, coating evenly.",
+          "Hang the coated walnuts to dry for 1-2 hours, until the paste hardens.",
+          "Combine sugar and cinnamon in a shallow dish.",
+          "Roll the dried walnuts in the sugar mixture until evenly coated.",
+          "Repeat dipping and rolling process until desired thickness is achieved.",
+          "Allow Churchkhela to dry completely before serving."
+        ],
+        "description": "Churchkhela is a traditional Georgian sweet made by dipping strings of walnuts into a thickened fruit juice mixture and allowing them to dry. The result is a chewy and sweet treat that is often enjoyed as a snack or dessert. Churchkhela is typically made with grape or pomegranate juice, which gives it a unique and fruity flavor. It is often prepared during holidays and festivals in Georgia, and it is also popular among tourists as a souvenir."
+      }
+    ]
+  }
+  

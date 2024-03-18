@@ -1,0 +1,271 @@
+{
+    "recipes": [
+      {
+        "id": 1,
+        "name": "Pierogi Ruskie",
+        "cuisine": "Polish",
+        "photoPath": "../recipes_photo/pierogi_ruskie.jpeg",
+        "ingredients": [
+          "2 cups all-purpose flour",
+          "1/2 cup sour cream",
+          "1/2 cup water",
+          "1 egg",
+          "1 teaspoon salt",
+          "2 potatoes, boiled and mashed",
+          "1 onion, finely chopped and sautéed",
+          "1 cup cottage cheese",
+          "Salt and pepper to taste",
+          "Butter for serving"
+        ],
+        "instructions": [
+          "In a large bowl, mix together flour, sour cream, water, egg, and salt to form a dough.",
+          "Knead the dough until smooth, then cover and let it rest for 30 minutes.",
+          "Roll out the dough thinly on a floured surface, then cut out circles using a cookie cutter or glass.",
+          "Place a spoonful of mashed potatoes, sautéed onions, and cottage cheese in the center of each circle.",
+          "Fold the dough over the filling, sealing the edges to form a half-moon shape.",
+          "Boil pierogi in salted water until they float to the surface, then drain.",
+          "Serve hot with melted butter.",
+          "Enjoy these delicious Pierogi Ruskie as a traditional Polish treat!"
+        ],
+        "description": "Pierogi Ruskie are classic Polish dumplings filled with a savory mixture of mashed potatoes, sautéed onions, and cottage cheese. Encased in a tender dough, these pierogi are boiled until tender and served hot with melted butter. Loved for their comforting flavors and hearty texture, Pierogi Ruskie are a staple in Polish cuisine, perfect for any occasion."
+      },
+      {
+        "id": 2,
+        "name": "Bigos (Hunter's Stew)",
+        "cuisine": "Polish",
+        "photoPath": "../recipes_photo/bigos.jpeg",
+        "ingredients": [
+          "1 lb sauerkraut",
+          "1 lb cabbage, shredded",
+          "1 lb mixed meats (such as pork shoulder, bacon, and sausage), diced",
+          "1 onion, finely chopped",
+          "2 cloves garlic, minced",
+          "2 tablespoons tomato paste",
+          "1 cup beef or chicken broth",
+          "1 cup dry red wine",
+          "1 teaspoon caraway seeds",
+          "1 bay leaf",
+          "Salt and pepper to taste"
+        ],
+        "instructions": [
+          "In a large pot, combine sauerkraut, cabbage, mixed meats, onion, garlic, tomato paste, broth, red wine, caraway seeds, and bay leaf.",
+          "Bring the mixture to a simmer over medium heat, then reduce the heat to low and cover.",
+          "Let the stew cook slowly for at least 2 hours, stirring occasionally.",
+          "Season with salt and pepper to taste before serving.",
+          "Enjoy this hearty and flavorful Bigos, known as Hunter's Stew, as a comforting Polish dish!"
+        ],
+        "description": "Bigos, also known as Hunter's Stew, is a traditional Polish dish beloved for its rich and hearty flavors. Made with a combination of sauerkraut, cabbage, and mixed meats such as pork shoulder, bacon, and sausage, this stew is simmered slowly with onions, garlic, tomato paste, and aromatic spices. The result is a comforting and satisfying dish that's perfect for cold winter days or festive gatherings."
+      },
+      {
+        "id": 3,
+        "name": "Zurek (Sour Rye Soup)",
+        "cuisine": "Polish",
+        "photoPath": "../recipes_photo/zurek.jpeg",
+        "ingredients": [
+          "1 lb Polish sausage (kielbasa)",
+          "1 onion, finely chopped",
+          "2 cloves garlic, minced",
+          "6 cups water",
+          "1 cup rye flour",
+          "1 cup sour cream",
+          "2 hard-boiled eggs, chopped",
+          "1 tablespoon marjoram",
+          "Salt and pepper to taste"
+        ],
+        "instructions": [
+          "In a large pot, sauté Polish sausage, onion, and garlic until browned.",
+          "Add water to the pot and bring to a boil.",
+          "In a bowl, mix rye flour with enough water to form a slurry, then add it to the pot.",
+          "Reduce heat and simmer for 1-2 hours, stirring occasionally.",
+          "Stir in sour cream and marjoram, then season with salt and pepper to taste.",
+          "Serve hot, garnished with chopped hard-boiled eggs.",
+          "Enjoy this tangy and flavorful Zurek, a traditional Polish sour rye soup!"
+        ],
+        "description": "Zurek, also known as Sour Rye Soup, is a traditional Polish dish known for its tangy flavor and hearty ingredients. Made with Polish sausage, onions, garlic, and sour rye flour, this soup is simmered to perfection and enriched with creamy sour cream. Finished with aromatic marjoram and garnished with chopped hard-boiled eggs, Zurek is a comforting and satisfying dish that's perfect for any occasion."
+      },
+      {
+        "id": 4,
+        "name": "Kotlet Schabowy (Polish Breaded Pork Cutlet)",
+        "cuisine": "Polish",
+        "photoPath": "../recipes_photo/kotlet_schabowy.jpeg",
+        "ingredients": [
+          "4 boneless pork chops",
+          "1 cup all-purpose flour",
+          "2 eggs, beaten",
+          "1 cup breadcrumbs",
+          "Salt and pepper to taste",
+          "Vegetable oil for frying",
+          "Lemon wedges for serving"
+        ],
+        "instructions": [
+          "Season pork chops with salt and pepper.",
+          "Dredge each pork chop in flour, then dip in beaten eggs, and coat with breadcrumbs, pressing gently to adhere.",
+          "Heat vegetable oil in a large skillet over medium heat.",
+          "Fry pork chops until golden brown and cooked through, about 5-6 minutes per side.",
+          "Transfer to a plate lined with paper towels to drain excess oil.",
+          "Serve hot with lemon wedges.",
+          "Enjoy these crispy and flavorful Kotlet Schabowy, a classic Polish dish!"
+        ],
+        "description": "Kotlet Schabowy, also known as Polish Breaded Pork Cutlet, is a beloved dish in Polish cuisine known for its crispy exterior and tender, juicy pork. Seasoned pork chops are coated in flour, beaten eggs, and breadcrumbs, then fried until golden brown and delicious. Served with lemon wedges for a refreshing touch, Kotlet Schabowy is a comforting and satisfying meal that's perfect for any day of the week."
+      },
+      {
+        "id": 5,
+        "name": "Barszcz Czerwony (Polish Beet Soup)",
+        "cuisine": "Polish",
+        "photoPath": "../recipes_photo/barszcz_czerwony.jpeg",
+        "ingredients": [
+          "4 medium beets, peeled and grated",
+          "1 onion, finely chopped",
+          "2 cloves garlic, minced",
+          "6 cups vegetable or beef broth",
+          "2 tablespoons red wine vinegar",
+          "1 tablespoon granulated sugar",
+          "Salt and pepper to taste",
+          "Sour cream and fresh dill for serving"
+        ],
+        "instructions": [
+          "In a large pot, sauté onions and garlic until softened.",
+          "Add grated beets and cook for 5-7 minutes.",
+          "Pour in broth and bring to a boil. Reduce heat and simmer for 20-25 minutes.",
+          "Stir in red wine vinegar and sugar, then season with salt and pepper to taste.",
+          "Serve hot, garnished with a dollop of sour cream and a sprinkle of fresh dill.",
+          "Enjoy this vibrant and flavorful Barszcz Czerwony, a classic Polish beet soup!"
+        ],
+        "description": "Barszcz Czerwony, also known as Polish Beet Soup, is a vibrant and flavorful dish that's perfect for chilly days. Made with grated beets, onions, garlic, and broth, this soup is simmered to perfection and enriched with red wine vinegar and sugar for a sweet and tangy flavor. Served hot with a dollop of sour cream and a sprinkle of fresh dill, Barszcz Czerwony is a comforting and satisfying soup that's loved by many."
+      },
+      {
+        "id": 6,
+        "name": "Gołąbki (Stuffed Cabbage Rolls)",
+        "cuisine": "Polish",
+        "photoPath": "../recipes_photo/golabki.jpeg",
+        "ingredients": [
+          "1 large cabbage",
+          "1 lb ground pork",
+          "1 onion, finely chopped",
+          "1 cup cooked rice",
+          "1 can (14 oz) tomato sauce",
+          "1 cup beef broth",
+          "1 teaspoon paprika",
+          "Salt and pepper to taste",
+          "Sour cream for serving"
+        ],
+        "instructions": [
+          "Boil the whole cabbage in a large pot of water until the leaves are soft. Remove and let cool.",
+          "In a bowl, mix ground pork, onion, cooked rice, paprika, salt, and pepper.",
+          "Carefully peel off cabbage leaves. Place a spoonful of the meat mixture on each leaf and roll up tightly.",
+          "In a separate bowl, mix tomato sauce and beef broth.",
+          "Place cabbage rolls in a baking dish and pour the tomato sauce mixture over them.",
+          "Bake at 350°F (175°C) for 45 minutes to 1 hour, until the rolls are cooked through.",
+          "Serve hot with sour cream.",
+          "Enjoy these delicious Gołąbki, traditional Polish stuffed cabbage rolls!"
+        ],
+        "description": "Gołąbki, also known as Stuffed Cabbage Rolls, are a classic Polish dish loved for their hearty and comforting flavors. Tender cabbage leaves are filled with a savory mixture of ground pork, onion, cooked rice, and aromatic spices, then baked in a rich tomato sauce until tender and delicious. Served hot with a dollop of sour cream, Gołąbki are a satisfying and flavorful meal that's perfect for any occasion."
+      },
+      {
+        "id": 7,
+        "name": "Kielbasa and Sauerkraut",
+        "cuisine": "Polish",
+        "photoPath": "../recipes_photo/kielbasa_sauerkraut.jpeg",
+        "ingredients": [
+          "1 lb kielbasa sausage, sliced",
+          "1 lb sauerkraut, drained",
+          "1 onion, thinly sliced",
+          "1 apple, peeled, cored, and sliced",
+          "1/2 cup chicken broth",
+          "2 tablespoons brown sugar",
+          "1 teaspoon caraway seeds",
+          "Salt and pepper to taste"
+        ],
+        "instructions": [
+          "In a large skillet, sauté sliced kielbasa until browned on both sides.",
+          "Add sauerkraut, sliced onion, sliced apple, chicken broth, brown sugar, and caraway seeds to the skillet.",
+          "Stir to combine, then cover and simmer for 20-25 minutes, stirring occasionally.",
+          "Season with salt and pepper to taste before serving.",
+          "Enjoy this delicious and comforting Kielbasa and Sauerkraut, a classic Polish dish!"
+        ],
+        "description": "Kielbasa and Sauerkraut is a classic Polish dish known for its hearty and comforting flavors. Sliced kielbasa sausage is sautéed until browned and caramelized, then simmered with tangy sauerkraut, sliced onions, and sweet apple slices in a flavorful broth. Finished with aromatic caraway seeds and seasoned with salt and pepper, this dish is a satisfying and delicious meal that's perfect for any day of the week."
+      },
+      {
+        "id": 8,
+        "name": "Kotlety Mielone (Polish Meatballs)",
+        "cuisine": "Polish",
+        "photoPath": "../recipes_photo/kotlety_mielone.jpeg",
+        "ingredients": [
+          "1 lb ground beef",
+          "1 onion, finely chopped",
+          "1/2 cup breadcrumbs",
+          "1 egg",
+          "2 tablespoons milk",
+          "2 cloves garlic, minced",
+          "1 teaspoon paprika",
+          "1 teaspoon dried marjoram",
+          "Salt and pepper to taste",
+          "Vegetable oil for frying"
+        ],
+        "instructions": [
+          "In a large bowl, mix together ground beef, chopped onion, breadcrumbs, egg, milk, minced garlic, paprika, marjoram, salt, and pepper.",
+          "Shape the mixture into meatballs, about 1 inch in diameter.",
+          "Heat vegetable oil in a skillet over medium heat.",
+          "Add the meatballs to the skillet and cook until browned on all sides and cooked through, about 8-10 minutes.",
+          "Transfer the meatballs to a plate lined with paper towels to drain excess oil.",
+          "Serve hot with mashed potatoes or crusty bread.",
+          "Enjoy these flavorful Kotlety Mielone, classic Polish meatballs!"
+        ],
+        "description": "Kotlety Mielone, also known as Polish Meatballs, are a delicious and comforting dish loved by many. Made with ground beef, onions, breadcrumbs, and aromatic spices, these meatballs are flavorful and satisfying. Served hot with mashed potatoes or crusty bread, Kotlety Mielone are perfect for a cozy dinner at home or a festive gathering with friends and family."
+      },
+      {
+        "id": 9,
+        "name": "Placki Ziemniaczane (Potato Pancakes)",
+        "cuisine": "Polish",
+        "photoPath": "../recipes_photo/placki_ziemniaczane.jpeg",
+        "ingredients": [
+          "4 large potatoes, peeled",
+          "1 onion, grated",
+          "2 eggs",
+          "4 tablespoons all-purpose flour",
+          "1 teaspoon salt",
+          "1/2 teaspoon black pepper",
+          "Vegetable oil for frying",
+          "Sour cream and applesauce for serving"
+        ],
+        "instructions": [
+          "Grate the potatoes using a box grater or food processor. Place the grated potatoes in a clean kitchen towel and squeeze out excess moisture.",
+          "In a large bowl, mix together grated potatoes, grated onion, eggs, flour, salt, and pepper until well combined.",
+          "Heat vegetable oil in a large skillet over medium heat.",
+          "Drop spoonfuls of the potato mixture into the skillet and flatten with a spatula to form pancakes.",
+          "Fry until golden brown and crispy on both sides, about 3-4 minutes per side.",
+          "Transfer the potato pancakes to a plate lined with paper towels to drain excess oil.",
+          "Serve hot with sour cream and applesauce.",
+          "Enjoy these crispy and delicious Placki Ziemniaczane, traditional Polish potato pancakes!"
+        ],
+        "description": "Placki Ziemniaczane, also known as Potato Pancakes, are a classic Polish dish loved for their crispy exterior and tender interior. Made with grated potatoes, onions, eggs, and flour, these pancakes are fried until golden brown and delicious. Served hot with sour cream and applesauce, Placki Ziemniaczane are perfect for breakfast, brunch, or as a comforting side dish."
+      },
+      {
+        "id": 10,
+        "name": "Żurek na Zakwasie (Sour Rye Soup with Sausage and Egg)",
+        "cuisine": "Polish",
+        "photoPath": "../recipes_photo/zurek_na_zakwasie.jpeg",
+        "ingredients": [
+          "1 lb Polish sausage (kielbasa), sliced",
+          "1 onion, finely chopped",
+          "2 cloves garlic, minced",
+          "6 cups water",
+          "1 cup sour rye soup base (zakwas)",
+          "2 hard-boiled eggs, chopped",
+          "1/2 cup sour cream",
+          "1 tablespoon marjoram",
+          "Salt and pepper to taste"
+        ],
+        "instructions": [
+          "In a large pot, sauté sliced sausage, onion, and garlic until browned.",
+          "Add water to the pot and bring to a boil.",
+          "Stir in sour rye soup base (zakwas) and simmer for 30 minutes.",
+          "Stir in sour cream and marjoram, then season with salt and pepper to taste.",
+          "Serve hot, garnished with chopped hard-boiled eggs.",
+          "Enjoy this tangy and flavorful Żurek na Zakwasie, a traditional Polish sour rye soup!"
+        ],
+        "description": "Żurek na Zakwasie, also known as Sour Rye Soup with Sausage and Egg, is a classic Polish dish known for its tangy flavor and hearty ingredients. Made with sliced sausage, onions, garlic, and sour rye soup base (zakwas), this soup is simmered to perfection and enriched with creamy sour cream. Finished with aromatic marjoram and garnished with chopped hard-boiled eggs, Żurek na Zakwasie is a comforting and satisfying soup that's perfect for any occasion."
+      }
+    ]
+  }
+  

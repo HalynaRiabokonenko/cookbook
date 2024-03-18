@@ -1,0 +1,367 @@
+{
+    "recipes": [
+      {
+        "id": 1,
+        "name": "Schnitzel",
+        "cuisine": "German",
+        "photoPath": "../recipes_photo/schnitzel.jpeg",
+        "ingredients": [
+          "4 pork or veal cutlets",
+          "1 cup all-purpose flour",
+          "2 eggs, beaten",
+          "1 cup bread crumbs",
+          "Salt and pepper to taste",
+          "Vegetable oil for frying",
+          "Lemon wedges for serving"
+        ],
+        "instructions": [
+          "Pound the cutlets until thin, then season with salt and pepper.",
+          "Dredge each cutlet in flour, dip in beaten eggs, then coat with bread crumbs.",
+          "Heat oil in a skillet over medium heat.",
+          "Fry the cutlets until golden brown on both sides, about 4 minutes per side.",
+          "Serve hot with lemon wedges."
+        ],
+        "description": "Schnitzel is a classic German dish consisting of thinly pounded pork or veal cutlets coated in flour, egg, and bread crumbs, then fried until golden and crispy. This iconic dish is beloved for its simplicity and deliciousness, often served with lemon wedges for a refreshing tang."
+      },
+      {
+        "id": 2,
+        "name": "Bratwurst",
+        "cuisine": "German",
+        "photoPath": "../recipes_photo/bratwurst.jpeg",
+        "ingredients": [
+          "1 lb fresh bratwurst sausages",
+          "1 onion, thinly sliced",
+          "1 tablespoon vegetable oil",
+          "1 cup beer",
+          "Salt and pepper to taste",
+          "Mustard for serving",
+          "Buns for serving"
+        ],
+        "instructions": [
+          "Heat oil in a skillet over medium heat.",
+          "Add bratwurst sausages and onion slices. Cook until sausages are browned on all sides.",
+          "Pour beer into the skillet and bring to a simmer.",
+          "Cover and cook for 15-20 minutes, until sausages are cooked through.",
+          "Season with salt and pepper.",
+          "Serve hot in buns with mustard."
+        ],
+        "description": "Bratwurst, a traditional German sausage made from seasoned pork, is a staple of German cuisine. Typically grilled or pan-fried and served with onions and mustard, bratwurst is renowned for its juicy and flavorful taste, making it a favorite dish at festivals and gatherings."
+      },
+      {
+        "id": 3,
+        "name": "Sauerkraut",
+        "cuisine": "German",
+        "photoPath": "../recipes_photo/sauerkraut.jpeg",
+        "ingredients": [
+          "1 lb sauerkraut",
+          "1 onion, thinly sliced",
+          "2 tablespoons butter",
+          "1 apple, peeled, cored, and diced",
+          "1/2 cup dry white wine",
+          "1/2 cup chicken or vegetable broth",
+          "1 tablespoon sugar",
+          "Salt and pepper to taste"
+        ],
+        "instructions": [
+          "Heat butter in a skillet over medium heat.",
+          "Add onion and sauté until translucent.",
+          "Add sauerkraut, diced apple, white wine, broth, and sugar. Stir to combine.",
+          "Cover and simmer for 20-30 minutes, stirring occasionally.",
+          "Season with salt and pepper to taste.",
+          "Serve hot as a side dish."
+        ],
+        "description": "Sauerkraut, fermented cabbage, is a quintessential German side dish known for its tangy flavor and crisp texture. Often paired with sausages or served alongside hearty German fare, sauerkraut adds a delightful zing to any meal."
+      },
+      {
+        "id": 4,
+        "name": "German Potato Salad",
+        "cuisine": "German",
+        "photoPath": "../recipes_photo/german_potato_salad.jpeg",
+        "ingredients": [
+          "2 lbs potatoes, boiled and diced",
+          "1 onion, finely chopped",
+          "6 slices bacon, cooked and crumbled",
+          "1/2 cup chicken or vegetable broth",
+          "1/4 cup apple cider vinegar",
+          "2 tablespoons sugar",
+          "Salt and pepper to taste",
+          "Chopped fresh parsley for garnish"
+        ],
+        "instructions": [
+          "In a large bowl, combine potatoes, onion, and bacon.",
+          "In a small saucepan, heat broth, vinegar, sugar, salt, and pepper until sugar is dissolved.",
+          "Pour the warm dressing over the potato mixture and toss to coat.",
+          "Garnish with chopped parsley before serving."
+        ],
+        "description": "German Potato Salad is a classic dish featuring tender potatoes tossed in a tangy-sweet dressing with crispy bacon and onions. Served warm or at room temperature, this salad is a comforting and flavorful side dish that pairs perfectly with grilled meats or as part of a picnic spread."
+      },
+      {
+        "id": 5,
+        "name": "Sauerbraten",
+        "cuisine": "German",
+        "photoPath": "../recipes_photo/sauerbraten.jpeg",
+        "ingredients": [
+          "4 lbs beef roast (such as rump or chuck)",
+          "1 onion, sliced",
+          "2 carrots, sliced",
+          "2 celery stalks, sliced",
+          "4 cloves garlic, minced",
+          "1 cup red wine vinegar",
+          "1 cup beef broth",
+          "1/4 cup sugar",
+          "1 teaspoon salt",
+          "1/2 teaspoon black pepper",
+          "4 cloves",
+          "2 bay leaves",
+          "2 tablespoons vegetable oil",
+          "2 tablespoons all-purpose flour"
+        ],
+        "instructions": [
+          "In a large bowl, combine onion, carrots, celery, garlic, red wine vinegar, beef broth, sugar, salt, pepper, cloves, and bay leaves to make the marinade.",
+          "Add the beef roast to the marinade, cover, and refrigerate for at least 24 hours, turning occasionally.",
+          "Remove the beef from the marinade and pat dry with paper towels.",
+          "Heat vegetable oil in a Dutch oven over medium-high heat.",
+          "Sear the beef on all sides until browned.",
+          "Strain the marinade and add it to the Dutch oven.",
+          "Cover and cook over low heat for 3-4 hours, until the beef is tender.",
+          "Remove the beef from the pot and keep warm.",
+          "In a small bowl, mix flour with a bit of water to make a slurry.",
+          "Whisk the slurry into the cooking liquid to thicken the sauce.",
+          "Slice the beef and serve with the sauce."
+        ],
+        "description": "Sauerbraten is a traditional German pot roast marinated in a mixture of vinegar, broth, and spices for several days to tenderize the meat and infuse it with flavor. This hearty and flavorful dish is typically served with potato dumplings or spaetzle and red cabbage, making it a comforting and satisfying meal."
+      },
+      {
+        "idingredients": [
+          "1 lb pork sausage casings",
+          "1 tablespoon vegetable oil",
+          "1 onion, sliced",
+          "1 bell pepper, sliced",
+          "4 bratwurst buns",
+          "Mustard for serving"
+        ],
+        "instructions": [
+          "Heat oil in a skillet over medium heat.",
+          "Add bratwurst and cook until browned on all sides, about 10 minutes.",
+          "Add sliced onion and bell pepper to the skillet and cook until softened.",
+          "Serve bratwurst in buns with mustard."
+        ],
+        "description": "Bratwurst is a traditional German sausage made from seasoned pork and encased in natural casings. It is typically grilled or pan-fried until golden and served with mustard and sauerkraut. Bratwurst is a staple of German cuisine and a popular dish at festivals and gatherings."
+      },
+      {
+        "id": 3,
+        "name": "Sauerkraut",
+        "cuisine": "German",
+        "photoPath": "../recipes_photo/sauerkraut.jpeg",
+        "ingredients": [
+          "1 lb sauerkraut, drained",
+          "2 tablespoons bacon fat or butter",
+          "1 onion, chopped",
+          "1 apple, peeled and chopped",
+          "1/2 cup dry white wine",
+          "1 bay leaf",
+          "Salt and pepper to taste"
+        ],
+        "instructions": [
+          "Heat bacon fat or butter in a large skillet over medium heat.",
+          "Add onion and apple, and cook until softened.",
+          "Stir in sauerkraut, white wine, and bay leaf.",
+          "Reduce heat to low, cover, and simmer for 20-30 minutes.",
+          "Season with salt and pepper before serving."
+        ],
+        "description": "Sauerkraut is a fermented cabbage dish that is popular in German cuisine. It is made by fermenting finely shredded cabbage with salt and sometimes other seasonings. Sauerkraut has a tangy flavor and is often served as a side dish with sausages, pork, or potatoes."
+      },
+      {
+        "id": 4,
+        "name": "Kartoffelsalat (German Potato Salad)",
+        "cuisine": "German",
+        "photoPath": "../recipes_photo/kartoffelsalat.jpeg",
+        "ingredients": [
+          "2 lbs potatoes, boiled and sliced",
+          "1/2 cup vegetable broth",
+          "1/4 cup white vinegar",
+          "2 tablespoons vegetable oil",
+          "1 onion, finely chopped",
+          "2 tablespoons chopped fresh parsley",
+          "Salt and pepper to taste"
+        ],
+        "instructions": [
+          "In a large bowl, whisk together vegetable broth, white vinegar, vegetable oil, salt, and pepper.",
+          "Add sliced potatoes, chopped onion, and parsley to the bowl.",
+          "Toss until well combined.",
+          "Refrigerate for at least 1 hour before serving."
+        ],
+        "description": "Kartoffelsalat, or German potato salad, is a classic side dish made with boiled potatoes, onions, and a tangy dressing. Unlike American potato salad, German potato salad is typically served warm or at room temperature and is dressed with a vinegar-based dressing."
+      },
+      {
+        "id": 5,
+        "name": "Sauerbraten",
+        "cuisine": "German",
+        "photoPath": "../recipes_photo/sauerbraten.jpeg",
+        "ingredients": [
+          "3 lbs beef roast",
+          "1 onion, chopped",
+          "2 carrots, chopped",
+          "2 stalks celery, chopped",
+          "2 cups beef broth",
+          "1 cup red wine vinegar",
+          "1/2 cup brown sugar",
+          "1/4 cup mustard",
+          "10 whole cloves",
+          "2 bay leaves",
+          "Salt and pepper to taste"
+        ],
+        "instructions": [
+          "Place beef roast in a large bowl.",
+          "In a separate bowl, mix together chopped onion, carrots, celery, beef broth, red wine vinegar, brown sugar, mustard, cloves, bay leaves, salt, and pepper.",
+          "Pour the marinade over the beef roast, cover, and refrigerate for at least 24 hours.",
+          "Preheat oven to 325°F (165°C).",
+          "Transfer the beef roast and marinade to a roasting pan.",
+          "Cover and roast for 3-4 hours, or until beef is tender.",
+          "Serve hot, sliced thinly."
+        ],
+        "description": "Sauerbraten is a traditional German pot roast made with marinated beef, vinegar, and spices. The meat is marinated for several days to tenderize and flavor it, then slow-roasted until tender. Sauerbraten is typically served with potato dumplings, noodles, or potato pancakes."
+      },
+      {
+        "id": 6,
+        "name": "Spätzle",
+        "cuisine": "German",
+        "photoPath": "../recipes_photo/spatzle.jpeg",
+        "ingredients": [
+          "2 cups all-purpose flour",
+          "4 eggs",
+          "1/2 cup milk",
+          "1 teaspoon salt",
+          "1/2 teaspoon nutmeg",
+          "Water for boiling",
+          "Butter for serving"
+        ],
+        "instructions": [
+          "In a large bowl, whisk together flour, eggs, milk, salt, and nutmeg until smooth.",
+          "Bring a large pot of salted water to a boil.",
+          "Using a spätzle maker or a colander with large holes, press the dough through into the boiling water.",
+          "Cook for 2-3 minutes, or until spätzle floats to the surface.",
+          "Remove with a slotted spoon and transfer to a serving dish.",
+          "Serve hot with melted butter."
+        ],
+        "description": "Spätzle are traditional German egg noodles that are typically served as a side dish or used in soups and stews. The dough is made from flour, eggs, and milk, and is pressed through a spätzle maker or colander into boiling water. Once cooked, spätzle are often served with melted butter or used as a base for other dishes."
+      },
+      {
+        "id": 7,
+        "name": "Apfelstrudel (Apple Strudel)",
+        "cuisine": "German",
+        "photoPath": "../recipes_photo/apfelstrudel.jpeg",
+        "ingredients": [
+          "4 large apples, peeled, cored, and thinly sliced",
+          "1/2 cup sugar",
+          "1 teaspoon ground cinnamon",
+          "1/2 cup raisins",
+          "1/2 cup breadcrumbs",
+          "1/4 cup melted butter",
+          "6 sheets phyllo dough",
+          "Powdered sugar for dusting"
+        ],
+        "instructions": [
+          "Preheat oven to 375°F (190°C).",
+          "In a bowl, combine sliced apples, sugar, cinnamon, raisins, breadcrumbs, and melted butter.",
+          "Place one sheet of phyllo dough on a clean surface and brush with melted butter.",
+          "Repeat with remaining phyllo sheets, layering them on top of each other.",
+          "Spread the apple mixture evenly over the phyllo dough.",
+          "Roll up the dough to form a strudel, then place seam-side down on a baking sheet.",
+          "Brush the top with melted butter.",
+          "Bake for 30-35 minutes, or until golden brown.",
+          "Dust with powdered sugar before serving."
+        ],
+        "description": "Apfelstrudel, or apple strudel, is a traditional German dessert made with thinly sliced apples, sugar, cinnamon, and raisins, all wrapped in layers of delicate phyllo dough. The strudel is then baked until golden and crispy, and served warm with a dusting of powdered sugar. Apfelstrudel is a beloved dessert in Germany and is often enjoyed with a cup of coffee or tea."
+      },
+      {
+        "id": 8,
+        "name": "Rouladen",
+        "cuisine": "German",
+        "photoPath": "../recipes_photo/rouladen.jpeg",
+        "ingredients": [
+          "8 slices beef round steak",
+          "8 slices bacon",
+          "1 onion, chopped",
+          "2 dill pickles, sliced",
+          "2 tablespoons mustard",
+          "Salt and pepper to taste",
+          "2 tablespoons vegetable oil",
+          "2 cups beef broth",
+          "2 tablespoons all-purpose flour",
+          "2 tablespoons water"
+        ],
+        "instructions": [
+          "Season each slice of beef with salt and pepper.",
+          "Spread mustard over each slice, then top with a slice of bacon, chopped onion, and pickle slices.",
+          "Roll up each slice and secure with toothpicks.",
+          "Heat oil in a skillet over medium heat.",
+          "Brown the beef rolls on all sides.",
+          "Add beef broth to the skillet, cover, and simmer for 1-1.5 hours, or until beef is tender.",
+          "Remove the beef rolls from the skillet.",
+          "In a small bowl, mix together flour and water to make a slurry.",
+          "Whisk the slurry into the skillet to thicken the sauce.",
+          "Serve the beef rolls with the sauce."
+        ],
+        "description": "Rouladen is a classic German dish made with thinly sliced beef that is rolled up with bacon, onions, and pickles, then braised until tender in a flavorful broth. The dish is typically served with potato dumplings or mashed potatoes and red cabbage. Rouladen is a hearty and comforting dish that is perfect for a cozy meal."
+      },
+      {
+        "id": 9,
+        "name": "Brezel (Pretzel)",
+        "cuisine": "German",
+        "photoPath": "../recipes_photo/pretzel.jpeg",
+        "ingredients": [
+          "1 1/2 cups warm water",
+          "1 tablespoon sugar",
+          "2 teaspoons kosher salt",
+          "1 package active dry yeast",
+          "4 1/2 cups all-purpose flour",
+          "4 tablespoons unsalted butter, melted",
+          "10 cups water",
+          "2/3 cup baking soda",
+          "1 large egg yolk beaten with 1 tablespoon water",
+          "Coarse salt for sprinkling"
+        ],
+        "instructions": [
+          "In a bowl, combine warm water, sugar, and kosher salt.",
+          "Sprinkle yeast on top and let it sit for 5 minutes, until it foams.",
+          "Add flour and melted butter to the bowl, and knead until the dough is smooth and pulls away from the sides of the bowl.",
+          "Cover the bowl with a clean towel and let the dough rise in a warm place for 1 hour, until it doubles in size.",
+          "Preheat oven to 450°F (230°C).",
+          "In a large pot, bring 10 cups of water and baking soda to a boil.",
+          "Divide the dough into 8 equal pieces.",
+          "Roll each piece into a long rope, then shape into a pretzel.",
+          "Dip each pretzel into the boiling water mixture for 30 seconds, then place on a greased baking sheet.",
+          "Brush each pretzel with egg wash and sprinkle with coarse salt.",
+          "Bake for 12-15 minutes, until golden brown.",
+          "Serve warm."
+        ],
+        "description": "Brezel, or pretzel, is a traditional German baked snack made from dough that is twisted into a knot-like shape before being baked. The dough is typically brushed with egg wash and sprinkled with coarse salt before baking, giving the pretzel its characteristic flavor and texture. Pretzels are often enjoyed as a snack or appetizer and are popular at festivals and beer gardens."
+      },
+      {
+        "id": 10,
+        "name": "Schwarzwälder Kirschtorte (Black Forest Cake)",
+        "cuisine": "German",
+        "photoPath": "../recipes_photo/black_forest_cake.jpeg",
+        "ingredients": [
+          "1 chocolate sponge cake",
+          "1/2 cup Kirsch (cherry brandy)",
+          "2 cups heavy cream",
+          "1/2 cup powdered sugar",
+          "1 teaspoon vanilla extract",
+          "2 cups cherries, pitted",
+          "Chocolate shavings for garnish"
+        ],
+        "instructions": [
+          "Cut the chocolate sponge cake into three layers horizontally.",
+          "Drizzle each layer with Kirsch.",
+          "In a bowl, whip heavy cream, powdered sugar, and vanilla extract until stiff peaks form.",
+          "Spread whipped cream between each layer of cake, then cover the entire cake with whipped cream.",
+          "Decorate the top of the cake with cherries and chocolate shavings.",
+          "Refrigerate for at least 4 hours before serving."
+        ],
+        "description": "Schwarzwälder Kirschtorte, or Black Forest Cake, is a decadent German dessert made with layers of chocolate sponge cake soaked in cherry brandy, whipped cream, and cherries. The cake is typically decorated with additional whipped cream, cherries, and chocolate shavings. Black Forest Cake is a beloved dessert in Germany and is often enjoyed on special occasions and holidays."
+      }
+    ]
+  }
+  

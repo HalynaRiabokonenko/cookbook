@@ -1,0 +1,299 @@
+{
+    "recipes": [
+      {
+        "id": 1,
+        "name": "Paella",
+        "cuisine": "Spanish",
+        "photoPath": "../recipes_photo/paella.jpeg",
+        "ingredients": [
+          "2 cups Bomba or Calasparra rice",
+          "4 cups chicken broth",
+          "1/4 cup olive oil",
+          "1 onion, diced",
+          "4 cloves garlic, minced",
+          "1 red bell pepper, sliced",
+          "1 green bell pepper, sliced",
+          "1 tomato, diced",
+          "1 teaspoon saffron threads",
+          "1/2 teaspoon smoked paprika",
+          "1/2 teaspoon salt",
+          "1/4 teaspoon black pepper",
+          "1 lb chicken thighs, boneless and skinless, cut into bite-sized pieces",
+          "1/2 lb Spanish chorizo, sliced",
+          "1/2 lb shrimp, peeled and deveined",
+          "1/2 lb mussels, cleaned and debearded",
+          "1/2 cup frozen peas, thawed",
+          "Lemon wedges for serving"
+        ],
+        "instructions": [
+          "In a paella pan or large skillet, heat olive oil over medium heat.",
+          "Add diced onion, minced garlic, sliced bell peppers, and diced tomato. Cook until softened.",
+          "Stir in saffron threads, smoked paprika, salt, and black pepper.",
+          "Add chicken thighs and chorizo slices. Cook until chicken is browned.",
+          "Pour in Bomba or Calasparra rice and chicken broth. Bring to a simmer.",
+          "Arrange shrimp, mussels, and peas on top of the rice mixture.",
+          "Cover and simmer until the rice is cooked and the seafood is cooked through.",
+          "Remove from heat and let rest for a few minutes before serving.",
+          "Serve with lemon wedges."
+        ],
+        "description": "Paella is a traditional Spanish rice dish made with Bomba or Calasparra rice cooked in a flavorful broth with saffron, smoked paprika, and a variety of meats and seafood such as chicken, chorizo, shrimp, and mussels. It is typically cooked in a wide, shallow pan called a paella pan and served family-style. Paella is a festive and colorful dish that is perfect for sharing with friends and family."
+      },
+      {
+        "id": 2,
+        "name": "Gazpacho",
+        "cuisine": "Spanish",
+        "photoPath": "../recipes_photo/gazpacho.jpeg",
+        "ingredients": [
+          "6 ripe tomatoes, diced",
+          "1 cucumber, peeled and diced",
+          "1 red bell pepper, diced",
+          "1 green bell pepper, diced",
+          "1 small red onion, diced",
+          "2 cloves garlic, minced",
+          "1/4 cup extra virgin olive oil",
+          "2 tablespoons red wine vinegar",
+          "1 teaspoon salt",
+          "1/4 teaspoon black pepper",
+          "2 cups tomato juice",
+          "Croutons for serving"
+        ],
+        "instructions": [
+          "In a blender, combine diced tomatoes, cucumber, bell peppers, red onion, and garlic.",
+          "Add extra virgin olive oil, red wine vinegar, salt, and black pepper.",
+          "Blend until smooth.",
+          "Transfer the mixture to a large bowl and stir in tomato juice.",
+          "Cover and refrigerate for at least 2 hours or until chilled.",
+          "Serve cold with croutons on top."
+        ],
+        "description": "Gazpacho is a refreshing Spanish cold soup made with ripe tomatoes, cucumber, bell peppers, red onion, garlic, extra virgin olive oil, red wine vinegar, salt, black pepper, and tomato juice. It is blended until smooth and served chilled, making it perfect for hot summer days. Gazpacho is typically garnished with croutons for added texture and flavor."
+      },
+      {
+        "id": 3,
+        "name": "Tortilla Española",
+        "cuisine": "Spanish",
+        "photoPath": "../recipes_photo/tortilla_espanola.jpeg",
+        "ingredients": [
+          "4 large potatoes, peeled and thinly sliced",
+          "1 onion, thinly sliced",
+          "6 large eggs",
+          "1/4 cup olive oil",
+          "Salt and pepper to taste"
+        ],
+        "instructions": [
+          "In a large skillet, heat olive oil over medium heat.",
+          "Add thinly sliced potatoes and onions to the skillet. Cook until potatoes are tender.",
+          "In a large bowl, beat eggs and season with salt and pepper.",
+          "Add cooked potatoes and onions to the bowl and mix until well combined.",
+          "Heat olive oil in the skillet over medium heat.",
+          "Pour the egg mixture into the skillet and spread evenly.",
+          "Cook until the edges are set and the bottom is golden brown.",
+          "Carefully flip the tortilla using a large plate or lid.",
+          "Cook until the other side is golden brown and the eggs are cooked through.",
+          "Remove from heat and let cool slightly before slicing.",
+          "Serve warm or at room temperature."
+        ],
+        "description": "Tortilla Española, also known as Spanish omelette or Spanish tortilla, is a classic Spanish dish made with thinly sliced potatoes, onions, eggs, olive oil, salt, and pepper. It is cooked in a skillet until golden brown and crispy on the outside and soft and creamy on the inside. Tortilla Española is typically served as a tapa or appetizer, but it can also be enjoyed as a light meal with a salad."
+      },
+      {
+        "id": 4,
+        "name": "Patatas Bravas",
+        "cuisine": "Spanish",
+        "photoPath": "../recipes_photo/patatas_bravas.jpeg",
+        "ingredients": [
+          "2 lbs potatoes, peeled and cut into bite-sized cubes",
+          "1/4 cup olive oil",
+          "1 teaspoon smoked paprika",
+          "1/2 teaspoon garlic powder",
+          "1/2 teaspoon onion powder",
+          "1/2 teaspoon cayenne pepper",
+          "1/2 teaspoon salt",
+          "1/4 teaspoon black pepper",
+          "1 cup tomato sauce",
+          "1 tablespoon hot sauce",
+          "1 tablespoon white wine vinegar",
+          "1 tablespoon honey",
+          "Chopped fresh parsley for garnish"
+        ],
+        "instructions": [
+          "Preheat oven to 425°F (220°C).",
+          "In a large bowl, toss potato cubes with olive oil, smoked paprika, garlic powder, onion powder, cayenne pepper, salt, and black pepper until evenly coated.",
+          "Spread potatoes in a single layer on a baking sheet.",
+          "Roast in the preheated oven for 30-35 minutes, flipping halfway through, until golden brown and crispy.",
+          "In a small saucepan, combine tomato sauce, hot sauce, white wine vinegar, and honey. Bring to a simmer and cook for 5 minutes, stirring occasionally.",
+          "Transfer roasted potatoes to a serving platter and drizzle with the spicy tomato sauce.",
+          "Garnish with chopped fresh parsley before serving."
+        ],
+        "description": "Patatas Bravas are a classic Spanish tapa made with crispy fried potatoes served with a spicy tomato sauce. The potatoes are seasoned with smoked paprika, garlic powder, onion powder, cayenne pepper, salt, and black pepper, then roasted in the oven until golden brown and crispy. The spicy tomato sauce is made with tomato sauce, hot sauce, white wine vinegar, and honey, and adds a tangy and spicy kick to the dish. Patatas Bravas are typically served as an appetizer or side dish with drinks."
+      },
+      {
+        "id": 5,
+        "name": "Sangria",
+        "cuisine": "Spanish",
+        "photoPath": "../recipes_photo/sangria.jpeg",
+        "ingredients": [
+          "1 bottle red wine",
+          "1/4 cup brandy",
+          "1/4 cup orange liqueur",
+          "2 tablespoons sugar",
+          "1 orange, thinly sliced",
+          "1 lemon, thinly sliced",
+          "1 lime, thinly sliced",
+          "1 apple, cored and thinly sliced",
+          "1 cup orange juice",
+          "1 cup club soda",
+          "Ice cubes"
+        ],
+        "instructions": [
+          "In a large pitcher, combine red wine, brandy, orange liqueur, and sugar.",
+          "Stir until sugar is dissolved.",
+          "Add sliced orange, lemon, lime, and apple to the pitcher.",
+          "Cover and refrigerate for at least 4 hours or overnight.",
+          "Before serving, stir in orange juice and club soda.",
+          "Fill glasses with ice cubes and pour sangria over the top.",
+          "Garnish with additional fruit slices if desired."
+        ],
+        "description": "Sangria is a traditional Spanish beverage made with red wine, brandy, orange liqueur, sugar, sliced fruit, orange juice, and club soda. It is typically served chilled and is perfect for enjoying on a hot summer day. Sangria is a refreshing and festive drink that is popular at parties and gatherings throughout Spain and around the world."
+      },
+      {
+        "id": 6,
+        "name": "Tortilla de Patatas",
+        "cuisine": "Spanish",
+        "photoPath": "../recipes_photo/tortilla_de_patatas.jpeg",
+        "ingredients": [
+          "4 large potatoes, peeled and thinly sliced",
+          "1 onion, thinly sliced",
+          "6 large eggs",
+          "1/4 cup olive oil",
+          "Salt to taste"
+        ],
+        "instructions": [
+          "In a large skillet, heat olive oil over medium heat.",
+          "Add thinly sliced potatoes and onions to the skillet. Cook until potatoes are tender and onions are translucent.",
+          "In a large bowl, beat eggs and season with salt.",
+          "Add cooked potatoes and onions to the bowl and mix until well combined.",
+          "Heat olive oil in the skillet over medium heat.",
+          "Pour the egg mixture into the skillet and spread evenly.",
+          "Cook until the edges are set and the bottom is golden brown.",
+          "Carefully flip the tortilla using a large plate or lid.",
+          "Cook until the other side is golden brown and the eggs are cooked through.",
+          "Remove from heat and let cool slightly before slicing.",
+          "Serve warm or at room temperature."
+        ],
+        "description": "Tortilla de Patatas, also known as Spanish potato omelette, is a classic Spanish dish made with thinly sliced potatoes, onions, eggs, olive oil, and salt. It is cooked in a skillet until golden brown and crispy on the outside and soft and creamy on the inside. Tortilla de Patatas is typically served as a tapa or appetizer, but it can also be enjoyed as a light meal with a salad."
+      },
+      {
+        "id": 7,
+        "name": "Crema Catalana",
+        "cuisine": "Spanish",
+        "photoPath": "../recipes_photo/crema_catalana.jpeg",
+        "ingredients": [
+          "4 cups whole milk",
+          "1 cinnamon stick",
+          "Peel of 1 lemon",
+          "6 large egg yolks",
+          "3/4 cup granulated sugar",
+          "1/4 cup cornstarch",
+          "Cinnamon and sugar for caramelizing"
+        ],
+        "instructions": [
+          "In a saucepan, heat whole milk with cinnamon stick and lemon peel until just simmering.",
+          "In a large bowl, whisk together egg yolks, granulated sugar, and cornstarch until smooth.",
+          "Gradually whisk the hot milk into the egg mixture, then return the mixture to the saucepan.",
+          "Cook over medium heat, stirring constantly, until thickened.",
+          "Remove from heat and strain the mixture through a fine mesh sieve.",
+          "Divide the mixture among individual ramekins and refrigerate until set, at least 2 hours.",
+          "Before serving, sprinkle each ramekin with a thin layer of sugar and caramelize with a kitchen torch or under the broiler.",
+          "Serve immediately, garnished with cinnamon."
+        ],
+        "description": "Crema Catalana is a traditional Spanish dessert similar to crème brûlée. It is made with whole milk, egg yolks, granulated sugar, cornstarch, cinnamon, and lemon peel. The mixture is cooked on the stovetop until thickened, then poured into individual ramekins and chilled until set. Before serving, each ramekin is sprinkled with a thin layer of sugar and caramelized with a kitchen torch or under the broiler. Crema Catalana is creamy and rich with a caramelized sugar crust on top, making it a delicious and indulgent dessert."
+      },
+      {
+        "id": 8,
+        "name": "Pulpo a la Gallega",
+        "cuisine": "Spanish",
+        "photoPath": "../recipes_photo/pulpo_a_la_gallega.jpeg",
+        "ingredients": [
+          "2 lbs octopus, cleaned",
+          "2 tablespoons olive oil",
+          "1 teaspoon smoked paprika",
+          "1/2 teaspoon salt",
+          "1/4 teaspoon black pepper",
+          "2 tablespoons coarse sea salt",
+          "1 teaspoon Spanish paprika",
+          "1 teaspoon olive oil"
+        ],
+        "instructions": [
+          "Fill a large pot with water and bring to a boil.",
+          "Add octopus to the pot and cook until tender, about 45-60 minutes.",
+          "Remove octopus from the pot and let cool slightly.",
+          "Cut octopus into bite-sized pieces.",
+          "In a large skillet, heat olive oil over medium heat.",
+          "Add octopus pieces to the skillet and sprinkle with smoked paprika, salt, and black pepper.",
+          "Cook until lightly browned and crispy on the edges.",
+          "Transfer octopus to a serving platter and sprinkle with coarse sea salt and Spanish paprika.",
+          "Drizzle with olive oil before serving."
+        ],
+        "description": "Pulpo a la Gallega is a traditional Spanish dish from the Galicia region made with tender boiled octopus, olive oil, smoked paprika, salt, and black pepper. The octopus is cooked until tender, then sliced and sautéed in olive oil until lightly browned and crispy on the edges. It is typically served on a wooden platter sprinkled with coarse sea salt and Spanish paprika. Pulpo a la Gallega is a simple yet flavorful dish that is perfect for seafood lovers."
+      },
+      {
+        "id": 9,
+        "name": "Churros con Chocolate",
+        "cuisine": "Spanish",
+        "photoPath": "../recipes_photo/churros_con_chocolate.jpeg",
+        "ingredients": [
+          "1 cup water",
+          "2 tablespoons granulated sugar",
+          "1/2 teaspoon salt",
+          "2 tablespoons vegetable oil",
+          "1 cup all-purpose flour",
+          "Oil for frying",
+          "1/4 cup granulated sugar",
+          "1 teaspoon ground cinnamon",
+          "1 cup chopped dark chocolate",
+          "1 cup heavy cream"
+        ],
+        "instructions": [
+          "In a saucepan, combine water, granulated sugar, salt, and vegetable oil. Bring to a boil.",
+          "Remove from heat and stir in all-purpose flour until a smooth dough forms.",
+          "Transfer dough to a piping bag fitted with a star tip.",
+          "Heat oil for frying in a deep fryer or large pot to 375°F (190°C).",
+          "Pipe dough into hot oil, cutting with scissors into desired lengths.",
+          "Fry until golden brown and crispy, about 2-3 minutes per side.",
+          "Remove from oil and drain on paper towels.",
+          "In a shallow dish, combine granulated sugar and ground cinnamon.",
+          "Roll fried churros in the cinnamon sugar mixture.",
+          "In a saucepan, heat chopped dark chocolate and heavy cream over low heat until melted and smooth.",
+          "Serve churros warm with melted chocolate sauce for dipping."
+        ],
+        "description": "Churros con Chocolate is a classic Spanish dessert made with fried dough pastry strips coated in cinnamon sugar and served with a rich chocolate sauce for dipping. The dough is made with water, granulated sugar, salt, vegetable oil, and all-purpose flour, then piped into hot oil and fried until golden brown and crispy. The fried churros are rolled in a mixture of granulated sugar and ground cinnamon before serving. The chocolate sauce is made with chopped dark chocolate and heavy cream, melted together until smooth and creamy. Churros con Chocolate is a delicious and indulgent treat that is perfect for sharing with friends and family."
+      },
+      {
+        "id": 10,
+        "name": "Gambas al Ajillo",
+        "cuisine": "Spanish",
+        "photoPath": "../recipes_photo/gambas_al_ajillo.jpeg",
+        "ingredients": [
+          "1 lb large shrimp, peeled and deveined",
+          "6 cloves garlic, thinly sliced",
+          "1/4 cup olive oil",
+          "1 teaspoon red pepper flakes",
+          "1 teaspoon paprika",
+          "1/4 cup dry white wine",
+          "2 tablespoons chopped fresh parsley",
+          "Salt and black pepper to taste"
+        ],
+        "instructions": [
+          "Heat olive oil in a large skillet over medium heat.",
+          "Add thinly sliced garlic to the skillet and cook until golden brown and crispy.",
+          "Remove garlic from the skillet and set aside.",
+          "Add shrimp to the skillet and season with red pepper flakes, paprika, salt, and black pepper.",
+          "Cook until shrimp are pink and opaque, about 2-3 minutes per side.",
+          "Add dry white wine to the skillet and cook for an additional 1-2 minutes.",
+          "Remove from heat and stir in chopped fresh parsley.",
+          "Serve hot, garnished with crispy garlic slices."
+        ],
+        "description": "Gambas al Ajillo, also known as Spanish garlic shrimp, is a classic Spanish tapa made with large shrimp cooked in olive oil with garlic, red pepper flakes, paprika, dry white wine, chopped fresh parsley, salt, and black pepper. The shrimp are cooked until pink and opaque, then served hot with crispy garlic slices on top. Gambas al Ajillo is bursting with flavor and is perfect for serving as an appetizer or main course with crusty bread for dipping in the delicious garlic-infused olive oil."
+      }
+    ]
+  }
+  

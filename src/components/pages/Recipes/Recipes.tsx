@@ -35,18 +35,19 @@ function Recipes() {
             <PageHeader mode={mode}>
                 Most popular recipes
             </PageHeader>
-            <p className={styles["recipes-content__paragraph"]}>
-                “A recipe has no soul. You, as the cook, must bring soul to the
-                recipe.” – Thomas Keller
-            </p>
             <div className={styles["recipes__content"]}>
                 <aside className={styles["recipes__aside"]}>
-                    <h3 className={styles["recipes__aside-header"]}>Recipe categories</h3>
-                    <ul>
-                        <li><Link to="/recipes">All Recipes</Link></li>
-                        <li><Link to="/recipes/main-course">Main Course</Link></li>
-                        <li><Link to="/recipes/desserts">Desserts</Link></li>
-                        {/* Add more categories or filters as needed */}
+                    {/* <h3 className={styles["recipes__aside-header"]}>Recipe categories</h3> */}
+                    <ul className={styles["recipes__aside-list"]}>
+                        <li className={styles["recipes__aside-list-option"]}><Link className={styles["recipes__aside-list-option-link"]} to="/recipes/american">American Recipes</Link></li>
+                        <li className={styles["recipes__aside-list-option"]}><Link className={styles["recipes__aside-list-option-link"]} to="/recipes/georgian">Georgian Recipes</Link></li>
+                        <li className={styles["recipes__aside-list-option"]}><Link className={styles["recipes__aside-list-option-link"]} to="/recipes/german">German Recipes</Link></li>
+                        <li className={styles["recipes__aside-list-option"]}><Link className={styles["recipes__aside-list-option-link"]} to="/recipes/indian">Indian Recipes</Link></li>
+                        <li className={styles["recipes__aside-list-option"]}><Link className={styles["recipes__aside-list-option-link"]} to="/recipes/italian">Italian Recipes</Link></li>
+                        <li className={styles["recipes__aside-list-option"]}><Link className={styles["recipes__aside-list-option-link"]} to="/recipes/japanese">Japanese Recipes</Link></li>
+                        <li className={styles["recipes__aside-list-option"]}><Link className={styles["recipes__aside-list-option-link"]} to="/recipes/polish">Polish Recipes</Link></li>
+                        <li className={styles["recipes__aside-list-option"]}><Link className={styles["recipes__aside-list-option-link"]} to="/recipes/spanish">Spanish Recipes</Link></li>
+                        <li className={styles["recipes__aside-list-option"]}><Link className={styles["recipes__aside-list-option-link"]} to="/recipes/ukrainian">Ukrainian Recipes</Link></li>
                     </ul>
                 </aside>
                 <div className={styles["recipes_all_list"]}>

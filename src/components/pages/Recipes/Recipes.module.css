@@ -96,34 +96,36 @@
 }
 
 .recipes__aside {
-  flex: 0 0 auto; /* Это заставляет блок оставаться фиксированной ширины */
+  flex: 0 0 auto;
   width: 300px;
   margin: 0 20px 0 40px;
 }
 
-/* Навигационные стили */
 .recipes__aside-header {
+  margin: 5px 40px;
   text-transform: uppercase;
-  /* margin-top: 0; Убираем отступ сверху */
 }
 
-.recipes__aside ul {
+.recipes__aside-list {
   border: 1px solid var(--light-green);
   border-radius: 8px;
   background-color: #ebf1f075;
   list-style-type: none;
   padding: 0;
+  margin: 0px 25px;
 }
 
-.recipes__aside li {
-  margin-bottom: 10px;
+.recipes__aside-list-option {
+  font-size: 1.2rem;
+  padding: 15px 25px;
+  display: block;
 }
 
-.recipes__aside a {
+.recipes__aside-list-option-link {
   text-decoration: none;
-  color: #333; /* Цвет ссылок в навигации */
+  color: var(--header-text-color);
 }
 
-.recipes__aside a:hover {
-  text-decoration: underline;
+.recipes__aside-list-option:hover {
+  background-color: rgba(207, 207, 207, 0.255);
 }

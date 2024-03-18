@@ -17,7 +17,7 @@ const Home = ({ user }: HomeProps) => {
     const [recipesData, setRecipesData] = useState<RecipesDataInterface | null>(null);
 
     useEffect(() => {
-        fetch("/recipes.json")
+        fetch("/recipes/recipes-ukrainian.json")
             .then((res) => res.json())
             .then((data) =>
                 setRecipesData(data)
@@ -45,6 +45,10 @@ const Home = ({ user }: HomeProps) => {
                 savor the essence of Ukrainian culture one bite at a time. Dive in
                 and discover the magic of Ukrainian cuisine right here on our
                 website.
+            </p>
+            <p className={styles["home-content__paragraph"]}>
+                “A recipe has no soul. You, as the cook, must bring soul to the
+                recipe.” – Thomas Keller
             </p>
             {recipesData && <div className={styles["container-home__list--popular"]}>
                 <div>

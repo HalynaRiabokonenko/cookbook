@@ -1,0 +1,301 @@
+{
+    "recipes": [
+      {
+        "id": 1,
+        "name": "Classic Beef Chili",
+        "cuisine": "American",
+        "photoPath": "../recipes_photo/beef_chili.jpeg",
+        "ingredients": [
+          "1 lb ground beef",
+          "1 onion, chopped",
+          "3 cloves garlic, minced",
+          "1 bell pepper, diced",
+          "1 can (14.5 oz) diced tomatoes",
+          "1 can (15 oz) kidney beans, drained and rinsed",
+          "1 can (15 oz) tomato sauce",
+          "2 tablespoons chili powder",
+          "1 teaspoon ground cumin",
+          "1/2 teaspoon paprika",
+          "Salt and pepper to taste",
+          "Optional toppings: shredded cheese, sour cream, chopped green onions"
+        ],
+        "instructions": [
+          "In a large pot, cook ground beef over medium heat until browned. Drain excess fat.",
+          "Add onion, garlic, and bell pepper to the pot. Cook until vegetables are softened.",
+          "Stir in diced tomatoes, kidney beans, tomato sauce, chili powder, cumin, paprika, salt, and pepper.",
+          "Bring the chili to a simmer and let it cook for 20-30 minutes, stirring occasionally.",
+          "Taste and adjust seasoning if necessary.",
+          "Serve hot with optional toppings as desired."
+        ],
+        "description": "Classic Beef Chili is a hearty and flavorful American dish perfect for chilly days or casual gatherings. Made with ground beef, onions, bell peppers, tomatoes, and kidney beans simmered in a savory blend of spices, this chili is a comforting one-pot meal that's sure to satisfy. Top with shredded cheese, sour cream, or chopped green onions for extra flavor and enjoy the comforting warmth of this classic American favorite."
+      },
+      {
+        "id": 2,
+        "name": "Southern Fried Chicken",
+        "cuisine": "American",
+        "photoPath": "../recipes_photo/fried_chicken.jpeg",
+        "ingredients": [
+          "4 chicken thighs",
+          "4 chicken drumsticks",
+          "2 cups buttermilk",
+          "2 cups all-purpose flour",
+          "1 tablespoon salt",
+          "1 tablespoon paprika",
+          "1 tablespoon garlic powder",
+          "1 tablespoon onion powder",
+          "1 teaspoon black pepper",
+          "Vegetable oil for frying"
+        ],
+        "instructions": [
+          "Place chicken pieces in a bowl and cover with buttermilk. Let it marinate in the refrigerator for at least 1 hour, or overnight for best results.",
+          "In a shallow dish, mix together flour, salt, paprika, garlic powder, onion powder, and black pepper.",
+          "Heat vegetable oil in a deep skillet or Dutch oven to 350°F (175°C).",
+          "Remove chicken from buttermilk and dredge each piece in the seasoned flour mixture, shaking off excess.",
+          "Fry chicken pieces in batches until golden brown and cooked through, about 15-20 minutes per batch.",
+          "Transfer fried chicken to a wire rack to drain excess oil. Serve hot."
+        ],
+        "description": "Southern Fried Chicken is a beloved American classic known for its crispy golden crust and tender juicy meat. This iconic dish starts with marinating chicken pieces in buttermilk to ensure a moist and flavorful interior. The chicken is then coated in a seasoned flour mixture and fried to perfection until irresistibly crispy and delicious. Serve alongside mashed potatoes, biscuits, and coleslaw for a satisfying Southern meal that's sure to please."
+      },
+      {
+        "id": 3,
+        "name": "Macaroni and Cheese",
+        "cuisine": "American",
+        "photoPath": "../recipes_photo/mac_and_cheese.jpeg",
+        "ingredients": [
+          "8 oz elbow macaroni",
+          "4 tablespoons unsalted butter",
+          "1/4 cup all-purpose flour",
+          "2 cups whole milk",
+          "2 cups shredded sharp cheddar cheese",
+          "1/2 cup grated Parmesan cheese",
+          "1/2 teaspoon salt",
+          "1/4 teaspoon black pepper",
+          "1/4 teaspoon paprika",
+          "1/4 teaspoon garlic powder"
+        ],
+        "instructions": [
+          "Cook macaroni according to package instructions. Drain and set aside.",
+          "In a large saucepan, melt butter over medium heat. Stir in flour and cook for 1-2 minutes until lightly golden.",
+          "Gradually whisk in milk, stirring constantly until smooth and thickened.",
+          "Reduce heat to low. Stir in shredded cheddar cheese, Parmesan cheese, salt, pepper, paprika, and garlic powder until cheeses are melted and sauce is smooth.",
+          "Add cooked macaroni to the cheese sauce and stir until well coated.",
+          "Transfer macaroni and cheese to a baking dish. Sprinkle with additional cheese and breadcrumbs if desired.",
+          "Bake at 350°F (175°C) for 20-25 minutes until bubbly and golden on top.",
+          "Serve hot and enjoy!"
+        ],
+        "description": "Macaroni and Cheese is the ultimate comfort food that holds a special place in American cuisine. This creamy and cheesy dish features tender elbow macaroni coated in a luscious cheese sauce made with sharp cheddar and Parmesan cheeses. Seasoned with a hint of paprika and garlic powder, this classic dish is baked to perfection until bubbly and golden on top. Whether served as a side dish or a main course, macaroni and cheese is sure to bring joy and satisfaction to any meal."
+      },
+      {
+        "id": 4,
+        "name": "Apple Pie",
+        "cuisine": "American",
+        "photoPath": "../recipes_photo/apple_pie.jpeg",
+        "ingredients": [
+          "Pastry for double-crust pie (store-bought or homemade)",
+          "6 cups thinly sliced peeled apples (such as Granny Smith or Honeycrisp)",
+          "3/4 cup granulated sugar",
+          "2 tablespoons all-purpose flour",
+          "1 teaspoon ground cinnamon",
+          "1/4 teaspoon ground nutmeg",
+          "1 tablespoon lemon juice",
+          "2 tablespoons unsalted butter, cut into small pieces",
+          "1 egg, beaten (for egg wash)",
+          "1 tablespoon granulated sugar (for sprinkling)"
+        ],
+        "instructions": [
+          "Preheat oven to 425°F (220°C). Place one pie crust in a 9-inch pie dish and trim excess dough.",
+          "In a large bowl, toss together sliced apples, sugar, flour, cinnamon, nutmeg, and lemon juice until well combined.",
+          "Pour apple mixture into the prepared pie crust. Dot the top with pieces of butter.",
+          "Cover the filling with the second pie crust. Seal and crimp the edges, and cut slits in the top crust to vent.",
+          "Brush the top crust with beaten egg and sprinkle with sugar.",
+          "Bake in preheated oven for 45-50 minutes, or until the crust is golden brown and the filling is bubbly.",
+          "Allow the pie to cool on a wire rack before serving. Enjoy warm with a scoop of vanilla ice cream!"
+        ],
+        "description": "Apple Pie is an iconic American dessert cherished for its flaky crust and sweet, cinnamon-spiced apple filling. Made with thinly sliced apples, sugar, and warm spices, this classic pie captures the essence of comfort and tradition. Whether enjoyed on its own or with a scoop of vanilla ice cream, apple pie is a timeless treat that celebrates the abundance of autumn harvests and brings joy to any occasion."
+      },
+      {
+        "id": 5,
+        "name": "Chocolate Chip Cookies",
+        "cuisine": "American",
+        "photoPath": "../recipes_photo/chocolate_chip_cookies.jpeg",
+        "ingredients": [
+          "2 1/4 cups all-purpose flour",
+          "1 teaspoon baking soda",
+          "1 teaspoon salt",
+          "1 cup unsalted butter, softened",
+          "3/4 cup granulated sugar",
+          "3/4 cup packed brown sugar",
+          "1 teaspoon vanilla extract",
+          "2 large eggs",
+          "2 cups semisweet chocolate chips",
+          "1 cup chopped nuts (optional)"
+        ],
+        "instructions": [
+          "Preheat oven to 375°F (190°C).",
+          "In a small bowl, combine flour, baking soda, and salt. Set aside.",
+          "In a large mixing bowl, beat together softened butter, granulated sugar, brown sugar, and vanilla extract until creamy.",
+          "Add eggs one at a time, beating well after each addition.",
+          "Gradually add flour mixture to the wet ingredients, mixing until well combined.",
+          "Stir in chocolate chips and nuts (if using) until evenly distributed throughout the dough.",
+          "Drop rounded tablespoons of dough onto ungreased baking sheets.",
+          "Bake in preheated oven for 9-11 minutes or until golden brown.",
+          "Allow cookies to cool on baking sheets for 2 minutes before transferring to wire racks to cool completely.",
+          "Enjoy these delicious chocolate chip cookies with a glass of milk!"
+        ],
+        "description": "Chocolate Chip Cookies are an American classic loved by people of all ages. These soft and chewy cookies are packed with gooey semisweet chocolate chips and optional nuts for added crunch. Perfectly sweet with a hint of vanilla, these cookies are best enjoyed fresh out of the oven with a cold glass of milk. Whether baked for special occasions or simple indulgence, chocolate chip cookies are sure to bring smiles and satisfy sweet cravings."
+      },
+      {
+        "id": 6,
+        "name": "Grilled BBQ Ribs",
+        "cuisine": "American",
+        "photoPath": "../recipes_photo/bbq_ribs.jpeg",
+        "ingredients": [
+          "2 racks pork baby back ribs",
+          "1 cup barbecue sauce",
+          "2 tablespoons brown sugar",
+          "1 tablespoon paprika",
+          "1 tablespoon garlic powder",
+          "1 tablespoon onion powder",
+          "1 teaspoon black pepper",
+          "1 teaspoon salt"
+        ],
+        "instructions": [
+          "Preheat grill to medium-high heat.",
+          "In a small bowl, mix together brown sugar, paprika, garlic powder, onion powder, black pepper, and salt to make a dry rub.",
+          "Rub the dry rub all over the racks of ribs, coating evenly.",
+          "Place ribs on the preheated grill and cook for 10-15 minutes per side, or until browned and caramelized.",
+          "Brush barbecue sauce over the ribs during the last 5 minutes of cooking, turning occasionally to glaze evenly.",
+          "Remove ribs from the grill and let them rest for a few minutes before slicing and serving.",
+          "Enjoy these tender and flavorful grilled BBQ ribs with your favorite sides!"
+        ],
+        "description": "Grilled BBQ Ribs are a quintessential American dish perfect for summer cookouts and backyard barbecues. These tender and flavorful ribs are seasoned with a homemade dry rub and grilled to perfection until caramelized and charred. Basted with tangy barbecue sauce, these ribs are irresistibly sticky and delicious. Serve with cornbread, coleslaw, and baked beans for a complete barbecue feast that's sure to impress family and friends."
+      },
+      {
+        "id": 7,
+        "name": "Homestyle Meatloaf",
+        "cuisine": "American",
+        "photoPath": "../recipes_photo/meatloaf.jpeg",
+        "ingredients": [
+          "1 lb ground beef",
+          "1/2 lb ground pork",
+          "1 onion, finely chopped",
+          "2 cloves garlic, minced",
+          "1/2 cup breadcrumbs",
+          "1/4 cup milk",
+          "1/4 cup ketchup",
+          "1 egg",
+          "1 teaspoon Worcestershire sauce",
+          "1 teaspoon dried thyme",
+          "1 teaspoon dried oregano",
+          "1 teaspoon salt",
+          "1/2 teaspoon black pepper",
+          "For the glaze:",
+          "1/4 cup ketchup",
+          "2 tablespoons brown sugar",
+          "1 tablespoon Dijon mustard"
+        ],
+        "instructions": [
+          "Preheat oven to 350°F (175°C).",
+          "In a large mixing bowl, combine ground beef, ground pork, chopped onion, minced garlic, breadcrumbs, milk, ketchup, egg, Worcestershire sauce, thyme, oregano, salt, and black pepper. Mix until well combined.",
+          "Transfer the meat mixture to a loaf pan and shape into a loaf.",
+          "In a small bowl, mix together ketchup, brown sugar, and Dijon mustard to make the glaze. Spread the glaze evenly over the top of the meatloaf.",
+          "Bake in preheated oven for 1 hour or until cooked through and the internal temperature reaches 160°F (71°C).",
+          "Let the meatloaf rest for 10 minutes before slicing and serving.",
+          "Slice and serve this homestyle meatloaf with mashed potatoes and green beans for a comforting and satisfying meal!"
+        ],
+        "description": "Homestyle Meatloaf is a classic American comfort food that's hearty, flavorful, and easy to make. Made with a mixture of ground beef and pork, along with onions, garlic, breadcrumbs, and savory seasonings, this meatloaf is moist and tender with a rich, savory flavor. Topped with a tangy ketchup glaze, this homestyle favorite is baked to perfection and makes a delicious family dinner served with mashed potatoes and green beans."
+      },
+      {
+        "id": 8,
+        "name": "Buttermilk Pancakes",
+        "cuisine": "American",
+        "photoPath": "../recipes_photo/pancakes.jpeg",
+        "ingredients": [
+          "1 1/2 cups all-purpose flour",
+          "2 tablespoons granulated sugar",
+          "1 teaspoon baking powder",
+          "1/2 teaspoon baking soda",
+          "1/4 teaspoon salt",
+          "1 1/4 cups buttermilk",
+          "1/4 cup unsalted butter, melted",
+          "1 large egg",
+          "1 teaspoon vanilla extract",
+          "Butter and maple syrup for serving"
+        ],
+        "instructions": [
+          "In a large mixing bowl, whisk together flour, sugar, baking powder, baking soda, and salt.",
+          "In a separate bowl, whisk together buttermilk, melted butter, egg, and vanilla extract.",
+          "Pour the wet ingredients into the dry ingredients and stir until just combined. Do not overmix; the batter should be slightly lumpy.",
+          "Preheat a griddle or skillet over medium heat and lightly grease with butter or non-stick cooking spray.",
+          "Pour 1/4 cup of batter onto the griddle for each pancake. Cook until bubbles form on the surface, then flip and cook until golden brown on both sides.",
+          "Repeat with the remaining batter, adjusting the heat as needed to prevent burning.",
+          "Serve warm with butter and maple syrup. Enjoy these fluffy buttermilk pancakes for breakfast or brunch!"
+        ],
+        "description": "Buttermilk Pancakes are a breakfast staple loved by many for their fluffy texture and rich flavor. Made with simple ingredients like buttermilk, flour, and eggs, these pancakes are easy to whip up and perfect for weekend mornings or lazy brunches. Serve with butter and maple syrup for a classic American breakfast that's sure to please the whole family."
+      },
+      {
+        "id": 9,
+        "name": "New York Style Cheesecake",
+        "cuisine": "American",
+        "photoPath": "../recipes_photo/cheesecake.jpeg",
+        "ingredients": [
+          "For the crust:",
+          "1 1/2 cups graham cracker crumbs",
+          "1/4 cup granulated sugar",
+          "1/2 cup unsalted butter, melted",
+          "For the filling:",
+          "4 (8 oz) packages cream cheese, softened",
+          "1 1/4 cups granulated sugar",
+          "4 large eggs",
+          "1 cup sour cream",
+          "1 tablespoon vanilla extract",
+          "2 tablespoons all-purpose flour",
+          "For the topping:",
+          "1 cup sour cream",
+          "1/4 cup granulated sugar",
+          "1 teaspoon vanilla extract"
+        ],
+        "instructions": [
+          "Preheat oven to 325°F (160°C).",
+          "In a mixing bowl, combine graham cracker crumbs, sugar, and melted butter. Press the mixture into the bottom of a 9-inch springform pan.",
+          "In a large mixing bowl, beat cream cheese and sugar until smooth and creamy.",
+          "Add eggs one at a time, beating well after each addition. Stir in sour cream, vanilla extract, and flour until smooth.",
+          "Pour the filling over the crust in the springform pan.",
+          "Bake in preheated oven for 50-60 minutes, or until the center is set and the edges are lightly golden.",
+          "In a small bowl, mix together sour cream, sugar, and vanilla extract for the topping. Spread the topping over the baked cheesecake.",
+          "Return the cheesecake to the oven and bake for an additional 10 minutes.",
+          "Remove from the oven and let the cheesecake cool completely in the pan on a wire rack.",
+          "Refrigerate for at least 4 hours or overnight before serving.",
+          "Slice and serve this decadent New York Style Cheesecake with fresh berries or fruit compote."
+        ],
+        "description": "New York Style Cheesecake is a rich and creamy dessert that's synonymous with indulgence. With its velvety smooth texture and buttery graham cracker crust, this classic cheesecake is a showstopper at any gathering. Made with cream cheese, eggs, sour cream, and vanilla extract, this decadent dessert is baked to perfection and topped with a luscious sour cream topping for added richness. Serve slices of this iconic cheesecake with fresh berries or fruit compote for an elegant and unforgettable treat."
+      },
+      {
+        "id": 10,
+        "name": "Classic American Pancakes",
+        "cuisine": "American",
+        "photoPath": "../recipes_photo/pancakes2.jpeg",
+        "ingredients": [
+          "1 1/2 cups all-purpose flour",
+          "3 1/2 teaspoons baking powder",
+          "1 teaspoon salt",
+          "1 tablespoon granulated sugar",
+          "1 1/4 cups milk",
+          "1 egg",
+          "3 tablespoons unsalted butter, melted",
+          "Butter and maple syrup for serving"
+        ],
+        "instructions": [
+          "In a large mixing bowl, whisk together flour, baking powder, salt, and sugar.",
+          "In a separate bowl, beat together milk, egg, and melted butter.",
+          "Pour the wet ingredients into the dry ingredients and stir until just combined. Do not overmix; the batter should be slightly lumpy.",
+          "Preheat a griddle or skillet over medium heat and lightly grease with butter or non-stick cooking spray.",
+          "Pour 1/4 cup of batter onto the griddle for each pancake. Cook until bubbles form on the surface, then flip and cook until golden brown on both sides.",
+          "Repeat with the remaining batter, adjusting the heat as needed to prevent burning.",
+          "Serve warm with butter and maple syrup. Enjoy these classic American pancakes for breakfast or brunch!"
+        ],
+        "description": "Classic American Pancakes are a breakfast favorite loved for their fluffy texture and delicious flavor. Made with simple ingredients like flour, baking powder, milk, and eggs, these pancakes are easy to make and perfect for leisurely weekend mornings or special occasions. Serve with butter and maple syrup for a classic breakfast that's sure to delight everyone at the table."
+      }
+    ]
+  }
+  

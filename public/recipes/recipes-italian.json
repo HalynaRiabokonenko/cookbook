@@ -1,0 +1,293 @@
+{
+    "recipes": [
+      {
+        "id": 1,
+        "name": "Spaghetti Carbonara",
+        "cuisine": "Italian",
+        "photoPath": "../recipes_photo/spaghetti_carbonara.jpg",
+        "ingredients": [
+          "400g spaghetti",
+          "200g pancetta or guanciale, diced",
+          "4 large eggs",
+          "1 cup grated Pecorino Romano cheese",
+          "1/4 cup grated Parmigiano-Reggiano cheese",
+          "2 cloves garlic, minced",
+          "Salt and black pepper to taste",
+          "Chopped fresh parsley for garnish"
+        ],
+        "instructions": [
+          "Cook spaghetti according to package instructions until al dente. Reserve 1 cup of pasta water, then drain the spaghetti.",
+          "In a skillet, cook pancetta or guanciale over medium heat until crispy. Add minced garlic and cook until fragrant.",
+          "In a bowl, whisk together eggs, Pecorino Romano cheese, and Parmigiano-Reggiano cheese. Season with salt and black pepper.",
+          "Add cooked spaghetti to the skillet with pancetta/guanciale. Toss to coat evenly.",
+          "Remove skillet from heat, then quickly pour in the egg and cheese mixture, stirring vigorously to combine. If the sauce is too thick, add reserved pasta water gradually until desired consistency is reached.",
+          "Serve immediately, garnished with chopped parsley and additional grated cheese.",
+          "Enjoy this classic Italian pasta dish, Spaghetti Carbonara!"
+        ],
+        "description": "Spaghetti Carbonara is a classic Italian pasta dish known for its rich and creamy sauce. Made with spaghetti, crispy pancetta or guanciale, eggs, and cheese, this dish is simple yet incredibly flavorful. The heat from the pasta cooks the eggs, creating a creamy sauce that coats each strand of spaghetti. Garnished with fresh parsley, Spaghetti Carbonara is a comforting and satisfying meal that's perfect for any occasion."
+      },
+      {
+        "id": 2,
+        "name": "Margherita Pizza",
+        "cuisine": "Italian",
+        "photoPath": "../recipes_photo/margherita_pizza.jpg",
+        "ingredients": [
+          "Pizza dough (homemade or store-bought)",
+          "1/2 cup tomato sauce",
+          "200g fresh mozzarella cheese, sliced",
+          "Handful of fresh basil leaves",
+          "2 tablespoons extra virgin olive oil",
+          "Salt to taste"
+        ],
+        "instructions": [
+          "Preheat your oven to the highest temperature setting (usually around 500°F or 260°C).",
+          "Stretch out the pizza dough on a baking sheet or pizza stone.",
+          "Spread tomato sauce evenly over the dough, leaving a small border around the edges.",
+          "Arrange slices of fresh mozzarella cheese on top of the sauce.",
+          "Tear basil leaves and scatter them over the pizza.",
+          "Drizzle olive oil over the pizza and sprinkle with salt.",
+          "Bake in the preheated oven for 10-12 minutes, or until the crust is golden and the cheese is bubbly and slightly browned.",
+          "Remove from the oven, slice, and serve hot.",
+          "Enjoy this classic Margherita Pizza, a staple of Italian cuisine!"
+        ],
+        "description": "Margherita Pizza is a classic Italian pizza named after Queen Margherita of Italy. It features a simple yet delicious combination of tomato sauce, fresh mozzarella cheese, and basil leaves on a thin crust. Drizzled with olive oil and sprinkled with salt, this pizza is baked until the crust is golden and the cheese is bubbly and slightly browned. Margherita Pizza celebrates the flavors of fresh ingredients and is a beloved favorite around the world."
+      },
+      {
+        "id": 3,
+        "name": "Lasagna",
+        "cuisine": "Italian",
+        "photoPath": "../recipes_photo/lasagna.jpg",
+        "ingredients": [
+          "9 lasagna noodles, cooked according to package instructions",
+          "500g ground beef",
+          "1 onion, chopped",
+          "3 cloves garlic, minced",
+          "2 cups marinara sauce",
+          "1 cup ricotta cheese",
+          "1 cup shredded mozzarella cheese",
+          "1/2 cup grated Parmesan cheese",
+          "1/4 cup chopped fresh parsley",
+          "1 teaspoon dried oregano",
+          "Salt and black pepper to taste"
+        ],
+        "instructions": [
+          "Preheat your oven to 375°F (190°C).",
+          "In a skillet, cook ground beef, chopped onion, and minced garlic over medium heat until beef is browned and onion is softened. Drain excess fat.",
+          "Stir in marinara sauce, dried oregano, salt, and black pepper. Simmer for 10 minutes.",
+          "In a bowl, combine ricotta cheese, shredded mozzarella cheese, grated Parmesan cheese, chopped fresh parsley, salt, and black pepper.",
+          "Spread a thin layer of meat sauce in the bottom of a 9x13-inch baking dish.",
+          "Arrange 3 lasagna noodles over the sauce. Spread half of the cheese mixture over the noodles.",
+          "Repeat layers, ending with a layer of meat sauce on top.",
+          "Cover the baking dish with foil and bake for 25 minutes.",
+          "Remove foil and bake for an additional 25 minutes, or until lasagna is bubbly and cheese is melted and golden.",
+          "Let the lasagna rest for 10 minutes before slicing and serving.",
+          "Enjoy this classic Italian comfort food, Lasagna!"
+        ],
+        "description": "Lasagna is a classic Italian comfort food made with layers of pasta, meat sauce, and cheese. This hearty and flavorful dish is perfect for feeding a crowd or enjoying as a cozy family dinner. With its rich tomato sauce, creamy cheese filling, and tender pasta, Lasagna is sure to become a favorite in your household."
+      },
+      {
+        "id": 4,
+        "name": "Risotto ai Funghi (Mushroom Risotto)",
+        "cuisine": "Italian",
+        "photoPath": "../recipes_photo/mushroom_risotto.jpg",
+        "ingredients": [
+          "1 1/2 cups Arborio rice",
+          "4 cups chicken or vegetable broth",
+          "200g mushrooms (such as cremini or porcini), sliced",
+          "1 onion, finely chopped",
+          "2 cloves garlic, minced",
+          "1/2 cup dry white wine",
+          "1/2 cup grated Parmesan cheese",
+          "2 tablespoons butter",
+          "2 tablespoons olive oil",
+          "Salt and black pepper to taste",
+          "Chopped fresh parsley for garnish"
+        ],
+        "instructions": [
+          "In a saucepan, heat chicken or vegetable broth over low heat, keeping it warm.",
+          "In a large skillet, heat olive oil over medium heat. Add chopped onion and cook until softened.",
+          "Add minced garlic and sliced mushrooms to the skillet. Cook until mushrooms are browned and tender.",
+          "Add Arborio rice to the skillet and toast for 1-2 minutes, stirring constantly.",
+          "Pour in dry white wine and cook until it is absorbed by the rice.",
+          "Begin adding warm broth to the skillet, one ladleful at a time, stirring frequently and allowing the rice to absorb the liquid before adding more. Continue until the rice is creamy and tender, but still slightly al dente.",
+          "Stir in grated Parmesan cheese and butter until melted and creamy. Season with salt and black pepper to taste.",
+          "Garnish with chopped fresh parsley and serve hot.",
+          "Enjoy this creamy and flavorful Mushroom Risotto, a classic Italian dish!"
+        ],
+        "description": "Risotto ai Funghi, or Mushroom Risotto, is a classic Italian dish known for its creamy texture and rich flavor. Made with Arborio rice, mushrooms, onions, garlic, white wine, and Parmesan cheese, this risotto is a comforting and satisfying meal. The key to a perfect risotto is slowly adding warm broth to the rice, allowing it to absorb the liquid and release its starch, resulting in a creamy and velvety texture. Garnished with fresh parsley, Mushroom Risotto is a delicious and elegant dish that's perfect for any occasion."
+      },
+      {
+        "id": 5,
+        "name": "Tiramisu",
+        "cuisine": "Italian",
+        "photoPath": "../recipes_photo/tiramisu.jpg",
+        "ingredients": [
+          "6 egg yolks",
+          "3/4 cup granulated sugar",
+          "1 cup mascarpone cheese",
+          "1 1/2 cups heavy cream",
+          "1 teaspoon vanilla extract",
+          "2 cups brewed espresso, cooled",
+          "1/4 cup coffee liqueur (such as Kahlúa)",
+          "24 ladyfinger cookies",
+          "2 tablespoons unsweetened cocoa powder"
+        ],
+        "instructions": [
+          "In a heatproof bowl, whisk together egg yolks and granulated sugar until well combined.",
+          "Place the bowl over a pot of simmering water (double boiler) and continue to whisk until the mixture thickens and doubles in volume.",
+          "Remove the bowl from heat and whisk in mascarpone cheese until smooth and creamy. Set aside to cool slightly.",
+          "In another bowl, whip heavy cream and vanilla extract until stiff peaks form.",
+          "Gently fold the whipped cream into the mascarpone mixture until fully incorporated.",
+          "In a shallow dish, combine brewed espresso and coffee liqueur.",
+          "Quickly dip each ladyfinger into the espresso mixture, making sure not to soak them too long.",
+          "Arrange a layer of dipped ladyfingers in the bottom of a 9x13-inch dish.",
+          "Spread half of the mascarpone mixture over the ladyfingers.",
+          "Repeat layers, ending with a layer of mascarpone mixture on top.",
+          "Cover and refrigerate tiramisu for at least 4 hours, or overnight, to allow the flavors to meld.",
+          "Before serving, dust the top of the tiramisu with cocoa powder.",
+          "Enjoy this classic Italian dessert, Tiramisu!"
+        ],
+        "description": "Tiramisu is a classic Italian dessert known for its layers of espresso-soaked ladyfingers and creamy mascarpone cheese mixture. This elegant and indulgent dessert is perfect for special occasions or as a sweet ending to a delicious Italian meal. With its rich coffee flavor and velvety texture, Tiramisu is sure to impress your family and friends."
+      },
+      {
+        "id": 6,
+        "name": "Chicken Parmesan",
+        "cuisine": "Italian",
+        "photoPath": "../recipes_photo/chicken_parmesan.jpg",
+        "ingredients": [
+          "4 boneless, skinless chicken breasts",
+          "1 cup all-purpose flour",
+          "2 large eggs, beaten",
+          "1 cup breadcrumbs",
+          "1/2 cup grated Parmesan cheese",
+          "1 teaspoon dried oregano",
+          "1 teaspoon dried basil",
+          "1/2 teaspoon garlic powder",
+          "Salt and black pepper to taste",
+          "2 cups marinara sauce",
+          "1 cup shredded mozzarella cheese",
+          "2 tablespoons chopped fresh parsley"
+        ],
+        "instructions": [
+          "Preheat your oven to 375°F (190°C).",
+          "Season chicken breasts with salt and black pepper.",
+          "In three separate shallow dishes, place flour, beaten eggs, and breadcrumbs mixed with grated Parmesan cheese, dried oregano, dried basil, garlic powder, salt, and black pepper.",
+          "Dredge each chicken breast in flour, then dip in beaten eggs, and finally coat with breadcrumb mixture, pressing gently to adhere.",
+          "In a skillet, heat olive oil over medium-high heat. Add breaded chicken breasts and cook until golden brown on both sides, about 3-4 minutes per side.",
+          "Transfer browned chicken breasts to a baking dish. Spoon marinara sauce over each chicken breast and sprinkle with shredded mozzarella cheese.",
+          "Bake in the preheated oven for 25-30 minutes, or until chicken is cooked through and cheese is bubbly and golden.",
+          "Garnish with chopped fresh parsley before serving.",
+          "Enjoy this delicious and comforting Chicken Parmesan, a classic Italian favorite!"
+        ],
+        "description": "Chicken Parmesan, also known as Chicken Parmigiana, is a classic Italian-American dish loved for its crispy breaded chicken topped with marinara sauce and melted mozzarella cheese. This comforting and satisfying dish is perfect for family dinners or special occasions. With its tender chicken, flavorful tomato sauce, and gooey cheese, Chicken Parmesan is sure to become a favorite in your household."
+      },
+      {
+        "id": 7,
+        "name": "Minestrone Soup",
+        "cuisine": "Italian",
+        "photoPath": "../recipes_photo/minestrone_soup.jpg",
+        "ingredients": [
+          "2 tablespoons olive oil",
+          "1 onion, chopped",
+          "2 carrots, diced",
+          "2 celery stalks, diced",
+          "2 cloves garlic, minced",
+          "1 zucchini, diced",
+          "1 yellow squash, diced",
+          "1 potato, peeled and diced",
+          "1 can (14 oz) diced tomatoes",
+          "4 cups vegetable broth",
+          "1 cup cooked pasta (such as ditalini or elbow macaroni)",
+          "1 can (15 oz) cannellini beans, drained and rinsed",
+          "1 teaspoon dried oregano",
+          "1 teaspoon dried basil",
+          "Salt and black pepper to taste",
+          "Chopped fresh parsley for garnish",
+          "Grated Parmesan cheese for serving"
+        ],
+        "instructions": [
+          "In a large pot, heat olive oil over medium heat. Add chopped onion, diced carrots, diced celery, and minced garlic. Cook until vegetables are softened.",
+          "Add diced zucchini, diced yellow squash, diced potato, diced tomatoes, vegetable broth, dried oregano, and dried basil to the pot. Bring to a simmer and cook until vegetables are tender.",
+          "Stir in cooked pasta and cannellini beans. Season with salt and black pepper to taste.",
+          "Simmer for an additional 10-15 minutes to allow flavors to meld.",
+          "Serve hot, garnished with chopped fresh parsley and grated Parmesan cheese.",
+          "Enjoy this hearty and nutritious Minestrone Soup, a classic Italian favorite!"
+        ],
+        "description": "Minestrone Soup is a hearty and nutritious Italian soup made with a variety of vegetables, beans, and pasta. This comforting soup is perfect for chilly days and is incredibly versatile, allowing you to use whatever vegetables you have on hand. With its rich tomato broth, tender vegetables, and flavorful herbs, Minestrone Soup is a delicious and satisfying meal that's sure to warm you up from the inside out."
+      },
+      {
+        "id": 8,
+        "name": "Caprese Salad",
+        "cuisine": "Italian",
+        "photoPath": "../recipes_photo/caprese_salad.jpg",
+        "ingredients": [
+          "2 large ripe tomatoes, sliced",
+          "200g fresh mozzarella cheese, sliced",
+          "Handful of fresh basil leaves",
+          "Extra virgin olive oil",
+          "Balsamic glaze (optional)",
+          "Salt and black pepper to taste"
+        ],
+        "instructions": [
+          "Arrange sliced tomatoes and fresh mozzarella cheese on a serving platter, alternating them.",
+          "Tear basil leaves and scatter them over the tomatoes and mozzarella.",
+          "Drizzle extra virgin olive oil over the salad. If desired, drizzle with balsamic glaze for added flavor.",
+          "Season with salt and black pepper to taste.",
+          "Serve immediately and enjoy this simple and delicious Caprese Salad!"
+        ],
+        "description": "Caprese Salad is a classic Italian salad made with ripe tomatoes, fresh mozzarella cheese, basil leaves, and olive oil. This simple yet elegant salad celebrates the flavors of summer with its vibrant colors and fresh ingredients. Drizzled with extra virgin olive oil and seasoned with salt and black pepper, Caprese Salad is a refreshing and delightful appetizer or side dish that's perfect for any occasion."
+      },
+      {
+        "id": 9,
+        "name": "Panna Cotta",
+        "cuisine": "Italian",
+        "photoPath": "../recipes_photo/panna_cotta.jpg",
+        "ingredients": [
+          "2 cups heavy cream",
+          "1/2 cup granulated sugar",
+          "1 teaspoon vanilla extract",
+          "2 1/4 teaspoons unflavored gelatin powder",
+          "3 tablespoons cold water",
+          "Fresh berries for garnish",
+          "Mint leaves for garnish"
+        ],
+        "instructions": [
+          "In a saucepan, heat heavy cream and granulated sugar over medium heat until sugar is dissolved and mixture is hot but not boiling.",
+          "Remove from heat and stir in vanilla extract.",
+          "In a small bowl, sprinkle gelatin powder over cold water and let it sit for 5 minutes to bloom.",
+          "Stir bloomed gelatin mixture into the hot cream mixture until fully dissolved.",
+          "Pour the mixture into individual serving glasses or ramekins.",
+          "Cover and refrigerate for at least 4 hours, or until panna cotta is set.",
+          "Before serving, garnish with fresh berries and mint leaves.",
+          "Enjoy this creamy and elegant Italian dessert, Panna Cotta!"
+        ],
+        "description": "Panna Cotta is a classic Italian dessert known for its silky-smooth texture and delicate flavor. Made with heavy cream, sugar, and gelatin, this creamy dessert is easy to make yet incredibly elegant. Panna Cotta can be served plain or topped with fresh berries, fruit compote, or caramel sauce for added flavor. With its luxurious texture and subtle sweetness, Panna Cotta is sure to impress your guests."
+      },
+      {
+        "id": 10,
+        "name": "Bruschetta",
+        "cuisine": "Italian",
+        "photoPath": "../recipes_photo/bruschetta.jpg",
+        "ingredients": [
+          "4 large ripe tomatoes, diced",
+          "2 cloves garlic, minced",
+          "Handful of fresh basil leaves, chopped",
+          "2 tablespoons extra virgin olive oil",
+          "1 teaspoon balsamic vinegar",
+          "Salt and black pepper to taste",
+          "1 baguette, sliced",
+          "Extra virgin olive oil for brushing"
+        ],
+        "instructions": [
+          "In a bowl, combine diced tomatoes, minced garlic, chopped basil leaves, extra virgin olive oil, balsamic vinegar, salt, and black pepper. Mix well to combine.",
+          "Preheat your oven broiler.",
+          "Brush sliced baguette with extra virgin olive oil and place them on a baking sheet.",
+          "Broil the baguette slices until lightly toasted, about 1-2 minutes per side.",
+          "Remove from the oven and top each toasted baguette slice with the tomato mixture.",
+          "Serve immediately and enjoy this simple and delicious Bruschetta!"
+        ],
+        "description": "Bruschetta is a classic Italian appetizer made with toasted bread topped with a flavorful mixture of diced tomatoes, garlic, basil, and olive oil. This simple yet delicious dish is perfect for entertaining or enjoying as a light snack. With its fresh and vibrant flavors, Bruschetta is sure to be a hit at your next gathering."
+      }
+    ]
+  }
+  

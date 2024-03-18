@@ -1,0 +1,255 @@
+{
+    "recipes": [
+      {
+        "id": 1,
+        "name": "Sushi",
+        "cuisine": "Japanese",
+        "photoPath": "../recipes_photo/sushi.jpeg",
+        "ingredients": [
+          "2 cups sushi rice",
+          "2 1/2 cups water",
+          "1/2 cup rice vinegar",
+          "2 tablespoons sugar",
+          "1 teaspoon salt",
+          "Nori (seaweed sheets)",
+          "Assorted fillings such as raw fish, avocado, cucumber, and crab sticks"
+        ],
+        "instructions": [
+          "Rinse sushi rice under cold water until the water runs clear.",
+          "Combine rice and water in a rice cooker and cook according to manufacturer's instructions.",
+          "In a small saucepan, heat rice vinegar, sugar, and salt until sugar dissolves.",
+          "Transfer cooked rice to a large bowl and fold in the vinegar mixture.",
+          "Place a sheet of nori on a bamboo sushi mat.",
+          "Spread a thin layer of rice over the nori, leaving a 1-inch border at the top.",
+          "Arrange fillings in a line across the center of the rice.",
+          "Roll up the sushi tightly using the bamboo mat, then slice into individual pieces.",
+          "Serve with soy sauce, wasabi, and pickled ginger."
+        ],
+        "description": "Sushi is a traditional Japanese dish made with seasoned rice, seaweed, and assorted fillings such as raw fish, avocado, cucumber, and crab sticks. It is typically served with soy sauce, wasabi, and pickled ginger. Sushi comes in many varieties, including nigiri, maki, and sashimi, and is enjoyed around the world for its fresh flavors and beautiful presentation."
+      },
+      {
+        "id": 2,
+        "name": "Tempura",
+        "cuisine": "Japanese",
+        "photoPath": "../recipes_photo/tempura.jpeg",
+        "ingredients": [
+          "Assorted vegetables (such as bell peppers, sweet potatoes, and broccoli)",
+          "Assorted seafood (such as shrimp, fish fillets, and squid)",
+          "1 cup all-purpose flour",
+          "1 cup ice-cold water",
+          "Oil for frying",
+          "Tempura dipping sauce"
+        ],
+        "instructions": [
+          "Cut vegetables and seafood into bite-sized pieces.",
+          "In a bowl, whisk together flour and ice-cold water until just combined (do not overmix).",
+          "Heat oil in a deep fryer or large pot to 350°F (180°C).",
+          "Dip vegetables and seafood into the tempura batter, then carefully place them in the hot oil.",
+          "Fry until golden brown and crispy, about 2-3 minutes per side.",
+          "Remove from oil and drain on paper towels.",
+          "Serve hot with tempura dipping sauce."
+        ],
+        "description": "Tempura is a Japanese dish consisting of lightly battered and deep-fried vegetables and seafood. The batter is made with flour and ice-cold water to create a crispy and light texture. Tempura is typically served with a dipping sauce made from soy sauce, mirin, and dashi. It is a popular dish in Japan and is enjoyed as a main course or as a side dish with rice."
+      },
+      {
+        "id": 3,
+        "name": "Ramen",
+        "cuisine": "Japanese",
+        "photoPath": "../recipes_photo/ramen.jpeg",
+        "ingredients": [
+          "4 packs of instant ramen noodles",
+          "4 cups chicken broth",
+          "2 cups water",
+          "1 tablespoon soy sauce",
+          "1 tablespoon miso paste",
+          "1 teaspoon sesame oil",
+          "Assorted toppings such as sliced green onions, boiled eggs, sliced pork, nori, and bamboo shoots"
+        ],
+        "instructions": [
+          "In a large pot, bring chicken broth and water to a boil.",
+          "Add soy sauce, miso paste, and sesame oil to the pot and stir until well combined.",
+          "Add instant ramen noodles to the pot and cook according to package instructions.",
+          "Divide cooked noodles among bowls and ladle broth over the top.",
+          "Top with assorted toppings such as sliced green onions, boiled eggs, sliced pork, nori, and bamboo shoots.",
+          "Serve hot."
+        ],
+        "description": "Ramen is a popular Japanese noodle soup dish consisting of wheat noodles served in a flavorful broth, often flavored with soy sauce or miso. Ramen is typically topped with assorted ingredients such as sliced green onions, boiled eggs, sliced pork, nori, and bamboo shoots. It is a comforting and satisfying meal enjoyed by people of all ages in Japan and around the world."
+      },
+      {
+        "id": 4,
+        "name": "Tonkatsu",
+        "cuisine": "Japanese",
+        "photoPath": "../recipes_photo/tonkatsu.jpeg",
+        "ingredients": [
+          "4 pork loin chops, boneless",
+          "Salt and pepper to taste",
+          "1/2 cup all-purpose flour",
+          "2 eggs, beaten",
+          "1 cup panko breadcrumbs",
+          "Oil for frying",
+          "Tonkatsu sauce"
+        ],
+        "instructions": [
+          "Season pork loin chops with salt and pepper.",
+          "Dredge each pork chop in flour, shaking off any excess.",
+          "Dip pork chops into beaten eggs, then coat with panko breadcrumbs.",
+          "Heat oil in a large skillet over medium heat.",
+          "Fry pork chops until golden brown and crispy, about 5-6 minutes per side.",
+          "Remove from oil and drain on paper towels.",
+          "Serve hot with tonkatsu sauce and steamed rice."
+        ],
+        "description": "Tonkatsu is a popular Japanese dish made with breaded and deep-fried pork cutlets. The pork loin chops are seasoned, coated in flour, dipped in beaten eggs, and then coated with panko breadcrumbs before frying until golden brown and crispy. Tonkatsu is typically served with tonkatsu sauce, a tangy and sweet condiment, and steamed rice. It is a comforting and delicious dish enjoyed by many in Japan."
+      },
+      {
+        "id": 5,
+        "name": "Gyoza",
+        "cuisine": "Japanese",
+        "photoPath": "../recipes_photo/gyoza.jpeg",
+        "ingredients": [
+          "1/2 lb ground pork",
+          "2 cups cabbage, finely chopped",
+          "2 green onions, finely chopped",
+          "2 cloves garlic, minced",
+          "1 teaspoon ginger, grated",
+          "2 tablespoons soy sauce",
+          "1 tablespoon sesame oil",
+          "1/2 teaspoon sugar",
+          "1/4 teaspoon black pepper",
+          "40 gyoza wrappers",
+          "Oil for frying",
+          "Gyoza dipping sauce"
+        ],
+        "instructions": [
+          "In a large bowl, combine ground pork, cabbage, green onions, garlic, ginger, soy sauce, sesame oil, sugar, and black pepper.",
+          "Place a small spoonful of the filling in the center of a gyoza wrapper.",
+          "Moisten the edge of the wrapper with water, then fold in half and pleat the edge to seal.",
+          "Heat oil in a skillet over medium heat.",
+          "Arrange gyoza in the skillet in a single layer and cook until the bottoms are golden brown.",
+          "Add water to the skillet and cover with a lid, allowing the gyoza to steam until cooked through.",
+          "Remove the lid and continue cooking until the water has evaporated and the bottoms are crispy again.",
+          "Serve hot with gyoza dipping sauce."
+        ],
+        "description": "Gyoza are Japanese dumplings filled with a savory mixture of ground pork, cabbage, green onions, garlic, ginger, soy sauce, sesame oil, sugar, and black pepper. The dumplings are wrapped in thin dough wrappers, pleated at the edges, and then pan-fried until golden brown and crispy. Gyoza are typically served with a dipping sauce made from soy sauce, rice vinegar, and sesame oil. They are a popular appetizer or side dish in Japan."
+      },
+      {
+        "id": 6,
+        "name": "Okonomiyaki",
+        "cuisine": "Japanese",
+        "photoPath": "../recipes_photo/okonomiyaki.jpeg",
+        "ingredients": [
+          "2 cups all-purpose flour",
+          "1 cup dashi broth",
+          "2 eggs",
+          "2 cups cabbage, shredded",
+          "4 green onions, chopped",
+          "1/2 cup tenkasu (tempura scraps)",
+          "1/2 cup cooked shrimp, chopped",
+          "1/2 cup cooked octopus, chopped",
+          "1/4 cup pickled ginger, chopped",
+          "1/4 cup mayonnaise",
+          "Okonomiyaki sauce",
+          "Aonori (dried seaweed flakes)",
+          "Katsuobushi (bonito flakes)"
+        ],
+        "instructions": [
+          "In a large bowl, whisk together flour, dashi broth, and eggs until smooth.",
+          "Add cabbage, green onions, tenkasu, shrimp, octopus, and pickled ginger to the bowl and mix until well combined.",
+          "Heat oil in a large skillet over medium heat.",
+          "Pour batter into the skillet to form a large pancake, about 1 inch thick.",
+          "Cook until the bottom is golden brown, then flip and cook the other side until golden brown and cooked through.",
+          "Transfer okonomiyaki to a serving plate and drizzle with mayonnaise and okonomiyaki sauce.",
+          "Sprinkle with aonori and katsuobushi before serving."
+        ],
+        "description": "Okonomiyaki is a Japanese savory pancake made with a batter of flour, dashi broth, and eggs, mixed with shredded cabbage, green onions, tenkasu (tempura scraps), cooked shrimp, cooked octopus, and pickled ginger. The pancake is cooked on a griddle until golden brown and crispy on both sides, then topped with mayonnaise, okonomiyaki sauce, aonori (dried seaweed flakes), and katsuobushi (bonito flakes). Okonomiyaki is a popular street food in Japan and is often enjoyed at festivals and restaurants."
+      },
+      {
+        "id": 7,
+        "name": "Sashimi",
+        "cuisine": "Japanese",
+        "photoPath": "../recipes_photo/sashimi.jpeg",
+        "ingredients": [
+          "Assorted fresh raw fish (such as tuna, salmon, yellowtail, and mackerel)",
+          "Wasabi",
+          "Soy sauce"
+        ],
+        "instructions": [
+          "Slice the fresh raw fish into thin slices.",
+          "Arrange the slices on a serving platter.",
+          "Serve with wasabi and soy sauce on the side."
+        ],
+        "description": "Sashimi is a traditional Japanese dish consisting of fresh raw fish sliced into thin pieces and served with wasabi and soy sauce. The fish used for sashimi is typically of the highest quality and may include varieties such as tuna, salmon, yellowtail, and mackerel. Sashimi is prized for its fresh flavors and delicate texture and is often enjoyed as an appetizer or as part of a traditional Japanese meal."
+      },
+      {
+        "id": 8,
+        "name": "Onigiri",
+        "cuisine": "Japanese",
+        "photoPath": "../recipes_photo/onigiri.jpeg",
+        "ingredients": [
+          "2 cups cooked sushi rice",
+          "1 tablespoon soy sauce",
+          "1 teaspoon sugar",
+          "1/2 teaspoon salt",
+          "Assorted fillings such as grilled salmon, pickled plum, and seaweed"
+        ],
+        "instructions": [
+          "In a bowl, mix together cooked sushi rice, soy sauce, sugar, and salt until well combined.",
+          "Divide the rice mixture into equal portions and shape into triangular or oval balls.",
+          "Make an indentation in the center of each rice ball and fill with desired fillings such as grilled salmon, pickled plum, or seaweed.",
+          "Shape the rice around the filling to form a tight ball.",
+          "Wrap each onigiri in a strip of nori (seaweed) if desired.",
+          "Serve at room temperature or chilled."
+        ],
+        "description": "Onigiri are Japanese rice balls made with cooked sushi rice seasoned with soy sauce, sugar, and salt, and filled with assorted ingredients such as grilled salmon, pickled plum, or seaweed. The rice balls are shaped into triangles or ovals and often wrapped in nori (seaweed). Onigiri are a popular snack or light meal in Japan and are often enjoyed on-the-go or as part of a packed lunch."
+      },
+      {
+        "id": 9,
+        "name": "Miso Soup",
+        "cuisine": "Japanese",
+        "photoPath": "../recipes_photo/miso_soup.jpeg",
+        "ingredients": [
+          "4 cups dashi broth",
+          "1/4 cup miso paste",
+          "1/2 cup tofu, diced",
+          "2 green onions, thinly sliced",
+          "1 sheet nori (seaweed), cut into thin strips",
+          "1 tablespoon soy sauce (optional)"
+        ],
+        "instructions": [
+          "In a pot, bring dashi broth to a simmer.",
+          "In a small bowl, whisk together miso paste and a ladleful of hot broth until smooth.",
+          "Add the miso mixture to the pot and stir until well combined.",
+          "Add tofu and green onions to the pot and simmer for a few minutes.",
+          "Remove from heat and stir in soy sauce if desired.",
+          "Serve hot, garnished with nori strips."
+        ],
+        "description": "Miso soup is a traditional Japanese soup made with dashi broth and miso paste, along with ingredients such as tofu, green onions, and nori (seaweed). The soup is typically served as a starter to a Japanese meal and is prized for its comforting and umami-rich flavors. Miso soup can be customized with additional ingredients such as mushrooms, spinach, or clams, and is enjoyed year-round in Japan."
+      },
+      {
+        "id": 10,
+        "name": "Chirashi Sushi",
+        "cuisine": "Japanese",
+        "photoPath": "../recipes_photo/chirashi_sushi.jpeg",
+        "ingredients": [
+          "2 cups sushi rice",
+          "2 1/2 cups water",
+          "1/2 cup rice vinegar",
+          "2 tablespoons sugar",
+          "1 teaspoon salt",
+          "Assorted sashimi (such as tuna, salmon, yellowtail, and mackerel)",
+          "Assorted toppings (such as cucumber, avocado, and tamagoyaki)",
+          "Pickled ginger and wasabi for serving"
+        ],
+        "instructions": [
+          "Rinse sushi rice under cold water until the water runs clear.",
+          "Combine rice and water in a rice cooker and cook according to manufacturer's instructions.",
+          "In a small saucepan, heat rice vinegar, sugar, and salt until sugar dissolves.",
+          "Transfer cooked rice to a large bowl and fold in the vinegar mixture.",
+          "Spread seasoned rice in a large serving bowl or individual bowls.",
+          "Arrange assorted sashimi and toppings over the rice.",
+          "Serve with pickled ginger and wasabi on the side."
+        ],
+        "description": "Chirashi sushi is a Japanese dish consisting of seasoned sushi rice topped with assorted sashimi and toppings. The sushi rice is flavored with a mixture of rice vinegar, sugar, and salt, and is typically served in a large serving bowl or individual bowls. Assorted sashimi such as tuna, salmon, yellowtail, and mackerel are arranged over the rice, along with toppings such as cucumber, avocado, and tamagoyaki (Japanese rolled omelet). Chirashi sushi is a colorful and flavorful dish that is often enjoyed at celebrations and special occasions."
+      }
+    ]
+  }
+  

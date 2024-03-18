@@ -39,38 +39,46 @@ function Recipes() {
                 “A recipe has no soul. You, as the cook, must bring soul to the
                 recipe.” – Thomas Keller
             </p>
-            <div className={styles["recipes_all_list"]}>
-                <div className={styles["recipes-content__recipes-list"]}>
-                    {recipesData.map((recipe) => (
-                        <Link to={`/recipe/${recipe.id}`} key={recipe.id} className={classnames(
-                            styles["recipes-content__recipes-link"],
-                            styles[mode]
-                        )}>
-                            <div className={classnames(
-                                styles["recipes-content__recipes-list--option"],
+            <div className={styles["recipes__content"]}>
+                <aside className={styles["recipes__aside"]}>
+                    <h3 className={styles["recipes__aside-header"]}>Recipe categories</h3>
+                    <ul>
+                        <li><Link to="/recipes">All Recipes</Link></li>
+                        <li><Link to="/recipes/main-course">Main Course</Link></li>
+                        <li><Link to="/recipes/desserts">Desserts</Link></li>
+                        {/* Add more categories or filters as needed */}
+                    </ul>
+                </aside>
+                <div className={styles["recipes_all_list"]}>
+                    <div className={styles["recipes-content__recipes-list"]}>
+                        {recipesData.map((recipe) => (
+                            <Link to={`/recipe/${recipe.id}`} key={recipe.id} className={classnames(
+                                styles["recipes-content__recipes-link"],
                                 styles[mode]
                             )}>
-                                <div className={styles["recipes-content__recipes-photo-container"]}>
-                                    <img
-                                        src={recipe.photoPath}
-                                        alt={recipe.name}
-                                        className={styles["recipes-content__recipes-photo"]}
-                                    />
+                                <div className={classnames(
+                                    styles["recipes-content__recipes-list--option"],
+                                    styles[mode]
+                                )}>
+                                    <div className={styles["recipes-content__recipes-photo-container"]}>
+                                        <img
+                                            src={recipe.photoPath}
+                                            alt={recipe.name}
+                                            className={styles["recipes-content__recipes-photo"]}
+                                        />
+                                    </div>
+                                    <div className={styles["recipes-content__recipes-container"]}>
+                                        <h2 className={styles["recipes-content__recipes-name"]}>
+                                            {recipe.name}
+                                        </h2>
+                                    </div>
                                 </div>
-                                <div className={styles["recipes-content__recipes-container"]}>
-                                    <h2 className={styles["recipes-content__recipes-name"]}>
-                                        {recipe.name}
-                                    </h2>
-                                </div>
-
-
-                            </div>
-                        </Link>
-                    ))}
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </div>
         </Page>
     );
 }
-
 export default Recipes;

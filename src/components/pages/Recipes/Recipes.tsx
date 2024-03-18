@@ -7,6 +7,7 @@ import { ModeContext } from "../../../providers/mode";
 import { DocumentData, collection, onSnapshot } from 'firebase/firestore';
 import { db } from "../../../api/firebaseConfig";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
+import { Page } from "../../share_structures/Page/Page";
 
 function Recipes() {
     const { mode } = useContext(ModeContext);
@@ -30,50 +31,45 @@ function Recipes() {
     }, []);
 
     return (
-        <main className={styles["recipes-content"]}>
-            <section className={classnames(
-                styles["recipes-content__container"],
-                styles[mode]
-            )}>
-                <PageHeader mode={mode}>
-                    Most popular recipes
-                </PageHeader>
-                <p className={styles["recipes-content__paragraph"]}>
-                    “A recipe has no soul. You, as the cook, must bring soul to the
-                    recipe.” – Thomas Keller
-                </p>
-                <div className={styles["recipes_all_list"]}>
-                    <div className={styles["recipes-content__recipes-list"]}>
-                        {recipesData.map((recipe) => (
-                            <Link to={`/recipe/${recipe.id}`} key={recipe.id} className={classnames(
-                                styles["recipes-content__recipes-link"],
+        <Page>
+            <PageHeader mode={mode}>
+                Most popular recipes
+            </PageHeader>
+            <p className={styles["recipes-content__paragraph"]}>
+                “A recipe has no soul. You, as the cook, must bring soul to the
+                recipe.” – Thomas Keller
+            </p>
+            <div className={styles["recipes_all_list"]}>
+                <div className={styles["recipes-content__recipes-list"]}>
+                    {recipesData.map((recipe) => (
+                        <Link to={`/recipe/${recipe.id}`} key={recipe.id} className={classnames(
+                            styles["recipes-content__recipes-link"],
+                            styles[mode]
+                        )}>
+                            <div className={classnames(
+                                styles["recipes-content__recipes-list--option"],
                                 styles[mode]
                             )}>
-                                <div className={classnames(
-                                    styles["recipes-content__recipes-list--option"],
-                                    styles[mode]
-                                )}>
-                                    <div className={styles["recipes-content__recipes-photo-container"]}>
-                                        <img
-                                            src={recipe.photoPath}
-                                            alt={recipe.name}
-                                            className={styles["recipes-content__recipes-photo"]}
-                                        />
-                                    </div>
-                                    <div className={styles["recipes-content__recipes-container"]}>
-                                        <h2 className={styles["recipes-content__recipes-name"]}>
-                                            {recipe.name}
-                                        </h2>
-                                    </div>
-
-
+                                <div className={styles["recipes-content__recipes-photo-container"]}>
+                                    <img
+                                        src={recipe.photoPath}
+                                        alt={recipe.name}
+                                        className={styles["recipes-content__recipes-photo"]}
+                                    />
                                 </div>
-                            </Link>
-                        ))}
-                    </div>
+                                <div className={styles["recipes-content__recipes-container"]}>
+                                    <h2 className={styles["recipes-content__recipes-name"]}>
+                                        {recipe.name}
+                                    </h2>
+                                </div>
+
+
+                            </div>
+                        </Link>
+                    ))}
                 </div>
-            </section>
-        </main>
+            </div>
+        </Page>
     );
 }
 

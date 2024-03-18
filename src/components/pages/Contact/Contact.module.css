@@ -31,19 +31,6 @@
   --text-scale-value-480: 0.85;
 }
 
-.contact-content {
-  margin-top: var(--header-hight);
-  padding: 20px;
-}
-
-.contact-content__container {
-  background-color: var(--white);
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: left;
-}
-
 .contact-content__paragraph {
   margin: 30px 80px;
   text-align: justify;
@@ -225,11 +212,6 @@
     );
     box-shadow: 0 0 3px var(--modal-button-shadow-color);
   }
-}
-
-.contact-content__container.dark {
-  background-color: var(--medium-green--dark);
-  box-shadow: 0 0 10px #0000001a;
 }
 
 .contact-content__modal.dark {

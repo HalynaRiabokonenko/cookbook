@@ -17,6 +17,7 @@ import { User } from "firebase/auth";
 import SignUp from "./components/pages/SignUp/SignUp";
 import { UpButton } from "./components/share_atomic/UpButton/UppButton";
 import { Account } from "./components/pages/Account/Account";
+import { RecipesContent } from "./components/share_structures/Recipes/RecipesContent/RecipesContent";
 
 function App() {
     const [user, setUser] = useState<User | null>(null);
@@ -30,24 +31,30 @@ function App() {
                 <div className="App">
                     <Header user={user} />
                     <Routes>
-                        {user ? (<>
-                            <Route path="/recipes" element={<Recipes />} />
-                            <Route path="/about" element={<About />} />
-                            <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
-                            <Route path="/account" element={<Account />} />
-                        </>) : (<>
-                            <Route path="/sign-up" element={<SignUp />} />
-                            <Route path="/login" element={<Login />} />
-                        </>)}
-                        <Route path="*" element={<NotFound />} />
+                        {user ? (
+                            <>
+                                <Route path="/about" element={<About />} />
+                                <Route path="/account" element={<Account />} />
+                                <Route path="/recipes" element={<Recipes />} >
+                                    <Route path=":recipeSlug" element={<RecipesContent />} >
+                                        <Route path=":recipeId" element={<RecipeDetails />} />
+                                    </Route>
+                                </Route>
+                            </>
+                        ) : (
+                            <>
+                                <Route path="/sign-up" element={<SignUp />} />
+                                <Route path="/login" element={<Login />} />
+                            </>
+                        )}
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/" element={<Home user={user} />} />
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
                     <Footer user={user} />
                     <UpButton />
                 </div>
             </HashRouter>
-
         </ModeProvider>
     );
 }

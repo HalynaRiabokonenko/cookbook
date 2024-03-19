@@ -3,8 +3,8 @@ import styles from "./Recipes.module.css";
 import { ModeContext } from "../../../providers/mode";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import { Page } from "../../share_structures/Page/Page";
-import { RecipesContent } from "../../share_structures/Recipes/RecipesContent/RecipesContent";
 import { RecipesNavigation } from "../../share_structures/Recipes/RecipesNavigation/RecipesNavigation";
+import { Outlet } from "react-router-dom";
 
 function Recipes() {
     const { mode } = useContext(ModeContext);
@@ -23,7 +23,7 @@ function Recipes() {
             <div className={styles["recipes__content"]}>
                 <RecipesNavigation onSelectOption={handlerClickRecipesOption}></RecipesNavigation>
                 <div className={styles["recipes_all_list"]} >
-                    <RecipesContent type={recipesType}></RecipesContent>
+                    <Outlet context={recipesType}></Outlet>
                 </div>
             </div>
         </Page>

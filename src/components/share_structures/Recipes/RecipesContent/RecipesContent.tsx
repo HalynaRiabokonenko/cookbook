@@ -2,17 +2,20 @@ import React, { useContext, useEffect, useState } from "react";
 import { ModeContext } from "../../../../providers/mode";
 import styles from "./RecipesContent.module.css";
 import classnames from "classnames";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import { DocumentData, collection, onSnapshot } from "firebase/firestore";
 import { db } from "../../../../api/firebaseConfig";
 import RecipesContentInterface from "./RecipesContent.types";
 
-export const RecipesContent = ({ type }: { type: string }) => {
+export const RecipesContent = () => {
+    const option = useOutletContext();
+    console.log("OPTION", option)
+
     const { mode } = useContext(ModeContext);
     const [recipesData, setRecipesData] = useState<RecipesContentInterface[]>([]);
 
     const getData = (): void => {
-        const recipesCollection = collection(db, `${type}-recipes`)
+        const recipesCollection = collection(db, `${option}-recipes`)
         onSnapshot(recipesCollection, (res: { docs: DocumentData[] }) => {
             const recipes: RecipesContentInterface[] = res.docs.map(doc => ({
                 id: doc.id,
@@ -41,7 +44,7 @@ export const RecipesContent = ({ type }: { type: string }) => {
                         )}>
                             <div className={styles["recipes-content__recipes-photo-container"]}>
                                 <img
-                                    src={recipe.photoPath}
+                                    src={recipe.src}
                                     alt={recipe.name}
                                     className={styles["recipes-content__recipes-photo"]}
                                 />

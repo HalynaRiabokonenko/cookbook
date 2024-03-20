@@ -28,13 +28,13 @@ export const RecipesContent = () => {
 
     useEffect(() => {
         getData();
-    }, []);
+    }, [option]);
 
     return (
         <>
             <div className={styles["recipes-content__recipes-list"]}>
                 {recipesData.map((recipe) => (
-                    <Link to={`/recipe/${recipe.id}`} key={recipe.id} className={classnames(
+                    <Link to={`/recipes/${option}/${recipe.id}`} key={recipe.id} className={classnames(
                         styles["recipes-content__recipes-link"],
                         styles[mode]
                     )}>

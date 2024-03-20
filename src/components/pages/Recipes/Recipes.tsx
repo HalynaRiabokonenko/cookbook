@@ -22,9 +22,7 @@ function Recipes() {
             </PageHeader>
             <div className={styles["recipes__content"]}>
                 <RecipesNavigation onSelectOption={handlerClickRecipesOption}></RecipesNavigation>
-                <div className={styles["recipes_all_list"]} >
-                    <Outlet context={recipesType}></Outlet>
-                </div>
+                <Outlet context={recipesType}></Outlet>
             </div>
         </Page>
     );

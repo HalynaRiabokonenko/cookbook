@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import styles from "./RecipeDetails.module.css";
 import { ModeContext } from "../../../providers/mode";
 import classnames from "classnames";
@@ -13,7 +13,7 @@ function RecipeDetails() {
   const { mode } = useContext(ModeContext);
   const [recipe, setRecipe] = useState<RecipeInterface | null>(null);
 
-  const { recipeId } = useParams<{ recipeId: string }>();
+  const { recipeId, option } = useParams<{ recipeId: string; option: string }>();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +21,7 @@ function RecipeDetails() {
         return;
       }
 
-      const docRef = doc(db, "recipes", recipeId);
+      const docRef = doc(db, `${option}-recipes`, recipeId);
 
       try {
         const docSnap: DocumentSnapshot = await getDoc(docRef);
@@ -57,7 +57,7 @@ function RecipeDetails() {
       )}>
         <div className={styles["recipe-details-content__photo-container"]}>
           <img
-            src={recipe.photoPath}
+            src={recipe.src}
             alt={recipe.name}
             className={styles["recipe-details-content__photo"]}
           />

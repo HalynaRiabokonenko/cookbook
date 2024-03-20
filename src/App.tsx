@@ -36,10 +36,9 @@ function App() {
                                 <Route path="/about" element={<About />} />
                                 <Route path="/account" element={<Account />} />
                                 <Route path="/recipes" element={<Recipes />} >
-                                    <Route path=":option" element={<RecipesContent />} >
-                                        <Route path=":recipeId" element={<RecipeDetails />} />
-                                    </Route>
+                                    <Route path=":option" element={<RecipesContent />} />
                                 </Route>
+                                <Route path="/recipes/:option/:recipeId" element={<RecipeDetails />} />
                             </>
                         ) : (
                             <>

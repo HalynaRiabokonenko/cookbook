@@ -34,10 +34,12 @@
   color: var(--header-text-color--dark);
 }
 
-.recipes__aside-list-option:hover {
+.recipes__aside-list-option:hover,
+.recipes__aside-list-option.active {
   background-color: rgba(255, 254, 254, 0.511);
 }
 
-.recipes__aside-list-option.dark:hover {
+.recipes__aside-list-option.dark:hover,
+.recipes__aside-list-option.active.dark {
   background-color: rgba(240, 248, 255, 0.158);
 }

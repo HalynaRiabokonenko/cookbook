@@ -9,7 +9,6 @@ import RecipesContentInterface from "./RecipesContent.types";
 
 export const RecipesContent = () => {
     const option = useOutletContext();
-    console.log("OPTION", option)
 
     const { mode } = useContext(ModeContext);
     const [recipesData, setRecipesData] = useState<RecipesContentInterface[]>([]);

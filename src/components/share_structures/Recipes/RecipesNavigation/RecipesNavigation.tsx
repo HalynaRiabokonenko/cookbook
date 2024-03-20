@@ -1,12 +1,12 @@
 import React, { useContext, useCallback } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { ModeContext } from "../../../../providers/mode";
 import styles from "./RecipesNavigation.module.css";
 import classnames from "classnames";
 
 interface Recipe {
     name: string;
-    slug: string;
+    option: string;
 }
 
 interface RecipesNavigationProps {
@@ -14,15 +14,15 @@ interface RecipesNavigationProps {
 }
 
 const recipes: Recipe[] = [
-    { name: "American", slug: "american" },
-    { name: "Georgian", slug: "georgian" },
-    { name: "German", slug: "german" },
-    { name: "Indian", slug: "indian" },
-    { name: "Italian", slug: "italian" },
-    { name: "Japanese", slug: "japanese" },
-    { name: "Polish", slug: "polish" },
-    { name: "Spanish", slug: "spanish" },
-    { name: "Ukrainian", slug: "ukrainian" },
+    { name: "American", option: "american" },
+    { name: "Georgian", option: "georgian" },
+    { name: "German", option: "german" },
+    { name: "Indian", option: "indian" },
+    { name: "Italian", option: "italian" },
+    { name: "Japanese", option: "japanese" },
+    { name: "Polish", option: "polish" },
+    { name: "Spanish", option: "spanish" },
+    { name: "Ukrainian", option: "ukrainian" },
 ];
 
 export const RecipesNavigation: React.FC<RecipesNavigationProps> = ({ onSelectOption }) => {
@@ -32,6 +32,8 @@ export const RecipesNavigation: React.FC<RecipesNavigationProps> = ({ onSelectOp
         onSelectOption(option);
     }, [onSelectOption]);
 
+    const { option } = useParams<{ option: string }>();
+
     return (
         <aside className={styles["recipes__aside"]}>
             <ul className={classnames(
@@ -40,13 +42,16 @@ export const RecipesNavigation: React.FC<RecipesNavigationProps> = ({ onSelectOp
             )} >
                 {recipes.map((recipe) => (
                     <li
-                        key={recipe.slug}
-                        className={`${styles["recipes__aside-list-option"]} ${styles[mode]}`}
-                        onClick={() => handleOptionSelect(recipe.slug)}
+                        key={recipe.option}
+                        className={classnames(
+                            styles["recipes__aside-list-option"],
+                            { [styles.active]: option === recipe.option }
+                            , styles[mode])}
+                        onClick={() => handleOptionSelect(recipe.option)}
                     >
                         <NavLink
-                            className={`${styles["recipes__aside-list-option-link"]} ${styles[mode]} ${window.location.pathname.includes(`/recipes/${recipe.slug}`) && styles.active}`}
-                            to={`/recipes/${recipe.slug}`}
+                            className={`${styles["recipes__aside-list-option-link"]} ${styles[mode]} ${window.location.pathname.includes(`/recipes/${recipe.option}`) && styles.active}`}
+                            to={`/recipes/${recipe.option}`}
                         >
                             {recipe.name} Recipes
                         </NavLink>

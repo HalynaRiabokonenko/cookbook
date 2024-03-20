@@ -9,7 +9,6 @@ import { Outlet } from "react-router-dom";
 function Recipes() {
     const { mode } = useContext(ModeContext);
     const [recipesType, setRecipesType] = useState<string>("american");
-    console.log("RECIPES TYPE:", recipesType);
 
     const handlerClickRecipesOption = (option: string): void => {
         setRecipesType(option);

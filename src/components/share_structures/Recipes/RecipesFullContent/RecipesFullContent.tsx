@@ -10,33 +10,41 @@ export const RecipesFullContent = () => {
     const [recipesData, setRecipesData] = useState<RecipeInterface[]>([]);
     const unsubscribeRefs = useRef<Unsubscribe[]>([]);
 
-    const getData = (): void => {
-        recipes.forEach((option) => {
-            const recipesCollection = collection(db, `${option}-recipes`);
-            const unsubscribe = onSnapshot(recipesCollection, (res: { docs: DocumentData[] }) => {
-                const fetchedRecipes: RecipeInterface[] = res.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
-                }));
-                setRecipesData(prevState => [...prevState, ...fetchedRecipes]);
-            });
-            unsubscribeRefs.current.push(unsubscribe);
-        });
-    };
-
     useEffect(() => {
-        getData();
+        const fetchData = async () => {
+            const unsubscribeFunctions: Unsubscribe[] = [];
+            try {
+                for (const option of recipes) {
+                    const recipesCollection = collection(db, `${option}-recipes`);
+                    const unsubscribe = onSnapshot(recipesCollection, (snapshot: { docs: DocumentData[] }) => {
+                        const fetchedRecipes: RecipeInterface[] = snapshot.docs.map(doc => ({
+                            id: doc.id,
+                            ...doc.data()
+                        }));
+                        setRecipesData(prevRecipes => [...prevRecipes, ...fetchedRecipes]);
+                    });
+                    unsubscribeFunctions.push(unsubscribe);
+                }
+            } catch (error) {
+                console.error("Error fetching recipes:", error);
+            }
+            unsubscribeRefs.current = unsubscribeFunctions;
+        };
+
+        fetchData();
+
         return () => {
             unsubscribeRefs.current.forEach(unsubscribe => unsubscribe());
         };
     }, []);
 
-
     return (
         <>
-            {recipesData.map((recipe, id) => {
-                return <div key={`${id}-${recipe.id}`}><RecipeOption recipe={recipe} /></div>;
-            })}
+            {recipesData.map((recipe, index) => (
+                <div key={`${index}-${recipe.id}`}>
+                    <RecipeOption recipe={recipe} />
+                </div>
+            ))}
         </>
     );
 };

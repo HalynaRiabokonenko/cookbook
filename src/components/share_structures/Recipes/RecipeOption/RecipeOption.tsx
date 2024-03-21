@@ -6,16 +6,15 @@ import RecipeInterface from "../../../pages/Recipes/Recipes.types";
 import styles from "./RecipeOption.module.css"
 
 interface RecipeOptionTypes {
-    option: string;
     recipe: RecipeInterface;
 }
 
-export const RecipeOption = ({ option, recipe }: RecipeOptionTypes) => {
+export const RecipeOption = ({ recipe }: RecipeOptionTypes) => {
     const { mode } = useContext(ModeContext);
 
     return (
         <div className="recipe-option__container">
-            <Link to={`/recipes/${option}/${recipe.id}`} key={recipe.id} className={classnames(
+            <Link to={`/recipes/${recipe.option}/${recipe.id}`} key={recipe.id} className={classnames(
                 styles["recipes-content__recipes-link"],
                 styles[mode]
             )}>

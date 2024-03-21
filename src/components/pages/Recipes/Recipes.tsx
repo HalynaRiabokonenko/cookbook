@@ -4,11 +4,12 @@ import { ModeContext } from "../../../providers/mode";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import { Page } from "../../share_structures/Page/Page";
 import { RecipesNavigation } from "../../share_structures/Recipes/RecipesNavigation/RecipesNavigation";
-import { Outlet } from "react-router-dom";
+import { RecipesPopularContent } from "../../share_structures/Recipes/RecipesPopularContent/RecipesPopularContent";
+import { RecipesContent } from "../../share_structures/Recipes/RecipesContent/RecipesContent";
 
 function Recipes() {
     const { mode } = useContext(ModeContext);
-    const [recipesType, setRecipesType] = useState<string>("american");
+    const [recipesType, setRecipesType] = useState<string | null>();
 
     const handlerClickRecipesOption = (option: string): void => {
         setRecipesType(option);
@@ -21,7 +22,8 @@ function Recipes() {
             </PageHeader>
             <div className={styles["recipes__content"]}>
                 <RecipesNavigation onSelectOption={handlerClickRecipesOption}></RecipesNavigation>
-                <Outlet context={recipesType}></Outlet>
+                {!recipesType && <RecipesPopularContent />}
+                {recipesType && <RecipesContent option={recipesType} />}
             </div>
         </Page>
     );

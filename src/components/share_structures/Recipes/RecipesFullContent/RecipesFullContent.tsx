@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { DocumentData, collection, onSnapshot } from "firebase/firestore";
+import React, { useEffect, useState, useRef } from "react";
+import { DocumentData, collection, onSnapshot, Unsubscribe } from "firebase/firestore";
 import RecipeInterface from "../../../pages/Recipes/Recipes.types";
 import { db } from "../../../../api/firebaseConfig";
 import { RecipeOption } from "../RecipeOption/RecipeOption";
@@ -8,30 +8,43 @@ const recipes: Array<string> = ["american", "georgian", "german", "indian", "ita
 
 export const RecipesFullContent = () => {
     const [recipesData, setRecipesData] = useState<RecipeInterface[]>([]);
-
-    const getData = (): void => {
-        recipes.forEach((option) => {
-            const recipesCollection = collection(db, `${option}-recipes`);
-            onSnapshot(recipesCollection, (res: { docs: DocumentData[] }) => {
-                const fetchedRecipes: RecipeInterface[] = res.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
-                }));
-                setRecipesData(prevState => [...prevState, ...fetchedRecipes]);
-            });
-        });
-    };
+    const unsubscribeRefs = useRef<Unsubscribe[]>([]);
 
     useEffect(() => {
-        getData();
-    }, []);
+        const fetchData = async () => {
+            const unsubscribeFunctions: Unsubscribe[] = [];
+            try {
+                for (const option of recipes) {
+                    const recipesCollection = collection(db, `${option}-recipes`);
+                    const unsubscribe = onSnapshot(recipesCollection, (snapshot: { docs: DocumentData[] }) => {
+                        const fetchedRecipes: RecipeInterface[] = snapshot.docs.map(doc => ({
+                            id: doc.id,
+                            ...doc.data()
+                        }));
+                        setRecipesData(prevRecipes => [...prevRecipes, ...fetchedRecipes]);
+                    });
+                    unsubscribeFunctions.push(unsubscribe);
+                }
+            } catch (error) {
+                console.error("Error fetching recipes:", error);
+            }
+            unsubscribeRefs.current = unsubscribeFunctions;
+        };
 
+        fetchData();
+
+        return () => {
+            unsubscribeRefs.current.forEach(unsubscribe => unsubscribe());
+        };
+    }, []);
 
     return (
         <>
-            {recipesData.map((recipe) => {
-                return <div key={recipe.id}><RecipeOption recipe={recipe} /></div>;
-            })}
+            {recipesData.map((recipe, index) => (
+                <div key={`${index}-${recipe.id}`}>
+                    <RecipeOption recipe={recipe} />
+                </div>
+            ))}
         </>
     );
 };

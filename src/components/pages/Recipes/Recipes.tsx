@@ -1,3 +1,5 @@
+// Recipes.tsx
+
 import React, { useContext, useState } from "react";
 import styles from "./Recipes.module.css";
 import { ModeContext } from "../../../providers/mode";
@@ -10,23 +12,24 @@ import { useLocation } from "react-router-dom";
 
 function Recipes() {
     const { mode } = useContext(ModeContext);
-    const [recipesType, setRecipesType] = useState<string | null>();
     const location = useLocation();
+    const [selectedOption, setSelectedOption] = useState<string | undefined>(undefined); // Changed null to undefined
 
     const handlerClickRecipesOption = (option: string): void => {
-        setRecipesType(option);
-    }
+        setSelectedOption(option);
+    };
 
     return (
         <Page>
-            <PageHeader mode={mode}>
-                Most popular recipes
-            </PageHeader>
+            <PageHeader mode={mode}>Most popular recipes</PageHeader>
             <div className={styles["recipes__content"]}>
-                <RecipesNavigation onSelectOption={handlerClickRecipesOption}></RecipesNavigation>
+                <RecipesNavigation onSelectOption={handlerClickRecipesOption} />
                 <div className={styles["recipes__content-container"]}>
-                    {location.pathname === "/recipes" && <RecipesFullContent />}
-                    {recipesType && <RecipesContent option={recipesType} />}
+                    {location.pathname === "/recipes" ? (
+                        <RecipesFullContent />
+                    ) : (
+                        <RecipesContent option={selectedOption} />
+                    )}
                 </div>
             </div>
         </Page>

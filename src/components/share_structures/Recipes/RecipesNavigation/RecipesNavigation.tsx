@@ -1,3 +1,5 @@
+// RecipesNavigation.tsx
+
 import React, { useContext, useCallback } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { ModeContext } from "../../../../providers/mode";
@@ -36,21 +38,20 @@ export const RecipesNavigation: React.FC<RecipesNavigationProps> = ({ onSelectOp
 
     return (
         <aside className={styles["recipes__aside"]}>
-            <ul className={classnames(
-                styles["recipes__aside-list"],
-                styles[mode]
-            )} >
+            <ul className={classnames(styles["recipes__aside-list"], styles[mode])}>
                 {recipes.map((recipe) => (
                     <li
                         key={recipe.option}
                         className={classnames(
                             styles["recipes__aside-list-option"],
-                            { [styles.active]: option === recipe.option }
-                            , styles[mode])}
+                            { [styles.active]: option === recipe.option },
+                            styles[mode]
+                        )}
                         onClick={() => handleOptionSelect(recipe.option)}
                     >
                         <NavLink
-                            className={`${styles["recipes__aside-list-option-link"]} ${styles[mode]} ${window.location.pathname.includes(`/recipes/${recipe.option}`) && styles.active}`}
+                            className={`${styles["recipes__aside-list-option-link"]} ${styles[mode]} ${window.location.pathname.includes(`/recipes/${recipe.option}`) && styles.active
+                                }`}
                             to={`/recipes/${recipe.option}`}
                         >
                             {recipe.name} Recipes

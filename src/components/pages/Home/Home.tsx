@@ -86,9 +86,9 @@ const Home = ({ user }: HomeProps) => {
                 website.
             </p>
             {aphorismsData.length > 0 && (
-                <div className={styles["aphorism-container"]}>
-                    <p className={styles["aphorism"]}>{aphorismsData[currentAphorismIndex].text}</p>
-                    <p className={styles["aphorism-author"]}>- {aphorismsData[currentAphorismIndex].author}</p>
+                <div className={styles["home-aphorism__container"]}>
+                    <p className={styles["home-aphorism__text"]}>{aphorismsData[currentAphorismIndex].text}</p>
+                    <p className={styles["home-aphorism__author"]}>- {aphorismsData[currentAphorismIndex].author}</p>
                 </div>
             )}
             {user && <div className={styles["home-content__all-recipes-link-container"]}>

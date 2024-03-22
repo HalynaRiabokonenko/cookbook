@@ -11,6 +11,7 @@ export const RecipesFullContent = () => {
     const unsubscribeRefs = useRef<Unsubscribe[]>([]);
 
     useEffect(() => {
+
         const fetchData = async () => {
             const unsubscribeFunctions: Unsubscribe[] = [];
             try {

@@ -5,30 +5,45 @@ import RecipeInterface from "../../../pages/Recipes/Recipes.types";
 import { RecipeOption } from "../RecipeOption/RecipeOption";
 
 export const RecipesContent = ({ option }: { option?: string }) => {
-
     const [recipesData, setRecipesData] = useState<RecipeInterface[]>([]);
 
-    const getData = (): void => {
-        const recipesCollection = collection(db, `${option}-recipes`)
-        onSnapshot(recipesCollection, (res: { docs: DocumentData[] }) => {
-            const recipes: RecipeInterface[] = res.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }));
-
-            setRecipesData(recipes);
-        });
-    };
-
     useEffect(() => {
-        getData();
+        let unsubscribe: () => void;
+
+        const fetchData = async () => {
+            try {
+                const recipesCollection = collection(db, `${option}-recipes`);
+                unsubscribe = onSnapshot(recipesCollection, (snapshot: { docs: DocumentData[] }) => {
+                    const fetchedRecipes: RecipeInterface[] = snapshot.docs.map(doc => ({
+                        id: doc.id,
+                        ...doc.data()
+                    }));
+                    setRecipesData(fetchedRecipes);
+                });
+            } catch (error) {
+                console.error("Error fetching recipes:", error);
+            }
+        };
+
+        if (option) {
+            fetchData();
+        }
+
+        return () => {
+            if (unsubscribe) {
+                unsubscribe();
+            }
+            setRecipesData([]);
+        };
     }, [option]);
 
     return (
         <>
-            {recipesData.map((recipe) => (
-                <RecipeOption recipe={recipe} />
+            {recipesData.map((recipe, index) => (
+                <div key={`${index}-${recipe.id}`}>
+                    <RecipeOption recipe={recipe} />
+                </div>
             ))}
         </>
-    )
+    );
 }

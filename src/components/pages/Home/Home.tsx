@@ -9,41 +9,60 @@ import { User } from "firebase/auth";
 import { Page } from "../../share_structures/Page/Page";
 import { DocumentData, collection, onSnapshot } from "firebase/firestore";
 import { db } from "../../../api/firebaseConfig";
+
 interface HomeProps {
     user: User | null;
 }
 
 interface CuisinesInterface {
     id: string;
-    description: string
+    description: string;
+}
+
+interface AphorismsInterface {
+    id: string;
+    text: string;
+    author: string;
 }
 
 const Home = ({ user }: HomeProps) => {
     const { mode } = useContext(ModeContext);
     const [cuisinesData, setCuisinesData] = useState<CuisinesInterface[]>([]);
-
+    const [aphorismsData, setAphorismsData] = useState<AphorismsInterface[]>([]);
+    const [currentAphorismIndex, setCurrentAphorismIndex] = useState(0);
 
     useEffect(() => {
-        let unsubscribe: () => void;
+        const unsubscribeCuisines = onSnapshot(collection(db, "cuisines"), (snapshot: { docs: DocumentData[] }) => {
+            const fetchedCuisines: CuisinesInterface[] = snapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+            setCuisinesData(fetchedCuisines);
+        });
 
-        const fetchData = async () => {
-            try {
-                const recipesCollection = collection(db, "cuisines");
-                unsubscribe = onSnapshot(recipesCollection, (snapshot: { docs: DocumentData[] }) => {
-                    const fetchedRecipes: CuisinesInterface[] = snapshot.docs.map(doc => ({
-                        id: doc.id,
-                        ...doc.data()
-                    }));
-                    setCuisinesData(fetchedRecipes);
-                });
-            } catch (error) {
-                console.error("Error fetching cuisines:", error);
-            }
+        const unsubscribeAphorisms = onSnapshot(collection(db, "aphorisms"), (snapshot: { docs: DocumentData[] }) => {
+            const fetchedAphorisms: AphorismsInterface[] = snapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+            setAphorismsData(fetchedAphorisms);
+        });
+
+        return () => {
+            unsubscribeCuisines();
+            unsubscribeAphorisms();
         };
-
-        fetchData();
-
     }, []);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentAphorismIndex(prevIndex =>
+                prevIndex === aphorismsData.length - 1 ? 0 : prevIndex + 1
+            );
+        }, 5000);
+
+        return () => clearInterval(intervalId);
+    }, [aphorismsData.length]);
 
     return (
         <Page>
@@ -66,10 +85,12 @@ const Home = ({ user }: HomeProps) => {
                 and discover the magic of Ukrainian cuisine right here on our
                 website.
             </p>
-            <p className={styles["home-content__paragraph"]}>
-                “A recipe has no soul. You, as the cook, must bring soul to the
-                recipe.” – Thomas Keller
-            </p>
+            {aphorismsData.length > 0 && (
+                <div className={styles["aphorism-container"]}>
+                    <p className={styles["aphorism"]}>{aphorismsData[currentAphorismIndex].text}</p>
+                    <p className={styles["aphorism-author"]}>- {aphorismsData[currentAphorismIndex].author}</p>
+                </div>
+            )}
             {user && <div className={styles["home-content__all-recipes-link-container"]}>
                 <Link to="/recipes" >
                     <Button mode={mode}>
@@ -90,21 +111,18 @@ const Home = ({ user }: HomeProps) => {
                 </div>}
             <div className={styles["container-home__list--popular"]}>
                 <ul className={styles["home__list--popular"]}>
-                    {cuisinesData.map((cousine) => {
-                        return (
-                            <li key={cousine.id} className={classnames(
-                                styles["home-content__recipes-list--option"],
-                                styles[mode]
-                            )}>
-                                <h2 className={styles["home-content__recipes-name"]}>{cousine.id}</h2>
-                                <p className={styles["home-content__recipes-description"]}>{cousine.description}</p>
-                            </li>
-                        )
-                    })}
+                    {cuisinesData.map(cousine => (
+                        <li key={cousine.id} className={classnames(
+                            styles["home-content__recipes-list--option"],
+                            styles[mode]
+                        )}>
+                            <h2 className={styles["home-content__recipes-name"]}>{cousine.id}</h2>
+                            <p className={styles["home-content__recipes-description"]}>{cousine.description}</p>
+                        </li>
+                    ))}
                 </ul>
             </div>
         </Page>
-
     );
 }
 

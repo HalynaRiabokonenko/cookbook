@@ -12,8 +12,8 @@
 }
 
 .account-modal__list-container {
-  width: 240px;
-  min-height: 200px;
+  width: 440px;
+  /* min-height: 200px; */
 }
 
 .account-modal__list {

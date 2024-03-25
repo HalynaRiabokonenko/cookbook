@@ -28,8 +28,10 @@
 }
 
 .home-content__recipes-description {
-  font-family: Cormorant, sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin: 10px 15px;
+  text-align: justify;
 }
 
 .home-content__recipes-ingredients-container {
@@ -59,7 +61,9 @@
   list-style-type: none;
   border: 1px solid var(--light-green);
   border-radius: 8px;
-  margin: 40px 20px;
+  margin: 20px;
+  padding: 20px;
+  width: 40%;
 }
 
 .home-content__ingredients-list {
@@ -71,10 +75,9 @@
 }
 
 .home-content__recipes-name {
-  font-size: 1.4rem;
-  margin: 30px;
+  font-size: 1.2rem;
+  margin: 20px;
   text-align: center;
-  padding: 20px;
   text-transform: uppercase;
 }
 
@@ -97,4 +100,11 @@
 .home-content__recipes-list--option.dark {
   background-color: #252927;
   border: 1px solid var(--light-green--dark);
+}
+
+.home__list--popular {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }

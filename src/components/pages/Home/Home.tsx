@@ -67,9 +67,18 @@ const Home = ({ user }: HomeProps) => {
     return (
         <Page>
             <PageHeader mode={mode}>
-                Delicious Ukrainian Cuisine
+                Delicious World Cuisine
             </PageHeader>
-            <p className={styles["home-content__paragraph"]}>
+            {aphorismsData.length > 0 && (
+                <div className={styles["home-aphorism__content-container"]}>
+                    <div className={styles["home-aphorism__container"]}>
+                        <p className={styles["home-aphorism__text"]}>{aphorismsData[currentAphorismIndex].text}</p>
+                        <p className={styles["home-aphorism__author"]}>- {aphorismsData[currentAphorismIndex].author}</p>
+                    </div>
+                </div>
+
+            )}
+            {/* <p className={styles["home-content__paragraph"]}>
                 Welcome to our website, where we have gathered a treasure trove of
                 the most renowned recipes from Ukrainian cuisine. Here, you will
                 embark on a culinary journey through the heart of Ukraine, exploring
@@ -84,21 +93,15 @@ const Home = ({ user }: HomeProps) => {
                 savor the essence of Ukrainian culture one bite at a time. Dive in
                 and discover the magic of Ukrainian cuisine right here on our
                 website.
-            </p>
-            {aphorismsData.length > 0 && (
-                <div className={styles["home-aphorism__container"]}>
-                    <p className={styles["home-aphorism__text"]}>{aphorismsData[currentAphorismIndex].text}</p>
-                    <p className={styles["home-aphorism__author"]}>- {aphorismsData[currentAphorismIndex].author}</p>
-                </div>
-            )}
-            {user && <div className={styles["home-content__all-recipes-link-container"]}>
+            </p> */}
+            {/* {user && <div className={styles["home-content__all-recipes-link-container"]}>
                 <Link to="/recipes" >
                     <Button mode={mode}>
                         All recipes
                     </Button>
                 </Link>
-            </div>}
-            {!user &&
+            </div>} */}
+            {/* {!user &&
                 <div>
                     <p>Login to see all recipes</p>
                     <div className={styles["home-content__all-recipes-link-container"]}>
@@ -108,7 +111,7 @@ const Home = ({ user }: HomeProps) => {
                             </Button>
                         </Link>
                     </div>
-                </div>}
+                </div>} */}
             <div className={styles["container-home__list--popular"]}>
                 <ul className={styles["home__list--popular"]}>
                     {cuisinesData.map(cousine => (

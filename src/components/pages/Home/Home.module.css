@@ -108,3 +108,29 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.home-aphorism__content-container {
+  display: flex;
+  justify-content: right;
+}
+
+.home-aphorism__container {
+  width: 40%;
+  height: 100px;
+  margin: 10px 60px;
+}
+
+.home-aphorism__text {
+  margin: 10px 30px;
+  text-align: justify;
+  font-size: 1.1rem;
+}
+
+.home-aphorism__author {
+  margin: 10px 30px;
+  text-align: right;
+  font-family: Cormorant, sans-serif;
+  font-weight: 500;
+  color: rgb(89, 89, 89);
+  font-size: 1.2rem;
+}

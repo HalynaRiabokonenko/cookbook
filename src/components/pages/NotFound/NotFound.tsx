@@ -16,9 +16,9 @@ const NotFound = () => {
             </PageHeader>
             <div className={styles["not-found__image-container"]}>
                 {mode === "light" ? (
-                    <img src="/images/not_found/not-found--light.png" className={styles["not-found__image"]} alt="Not found image" />
+                    <img src="/images/not_found/not-found--light.png" className={styles["not-found__image"]} alt="Not found" />
                 ) : (
-                    <img src="/images/not_found/not-found--dark.png" className={styles["not-found__image"]} alt="Not found image" />
+                    <img src="/images/not_found/not-found--dark.png" className={styles["not-found__image"]} alt="Not found" />
                 )}
             </div>
 

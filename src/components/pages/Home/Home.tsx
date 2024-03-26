@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./Home.module.css";
 import { ModeContext } from "../../../providers/mode";
 import classnames from "classnames";

@@ -1,4 +1,4 @@
-import React, { FormEvent, ReactElement, useContext, useState } from "react";
+import React, { ReactElement, useContext, useState } from "react";
 import { ModeContext } from "../../../providers/mode";
 import styles from "./AuthForm.module.css";
 import classNames from "classnames";

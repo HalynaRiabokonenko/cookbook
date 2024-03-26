@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styles from "./AccountModal.module.css";
 import classnames from "classnames";
 import { ModeContext } from "../../../providers/mode";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../api/firebaseConfig";
 

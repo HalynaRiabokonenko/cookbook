@@ -1,5 +1,3 @@
-// RecipesNavigation.tsx
-
 import React, { useContext, useCallback } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { ModeContext } from "../../../../providers/mode";

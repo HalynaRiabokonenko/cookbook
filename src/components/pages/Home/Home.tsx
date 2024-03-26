@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Home.module.css";
 import { ModeContext } from "../../../providers/mode";
 import classnames from "classnames";
@@ -30,6 +30,7 @@ const Home = ({ user }: HomeProps) => {
     const [cuisinesData, setCuisinesData] = useState<CuisinesInterface[]>([]);
     const [aphorismsData, setAphorismsData] = useState<AphorismsInterface[]>([]);
     const [currentAphorismIndex, setCurrentAphorismIndex] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const unsubscribeCuisines = onSnapshot(collection(db, "cuisines"), (snapshot: { docs: DocumentData[] }) => {
@@ -63,6 +64,7 @@ const Home = ({ user }: HomeProps) => {
 
         return () => clearInterval(intervalId);
     }, [aphorismsData.length]);
+
 
     return (
         <Page>
@@ -118,7 +120,9 @@ const Home = ({ user }: HomeProps) => {
                         <li key={cousine.id} className={classnames(
                             styles["home-content__recipes-list--option"],
                             styles[mode]
-                        )}>
+                        )} onClick={() => {
+                            user ? navigate(`/recipes/${cousine.id}`) : navigate(`login`)
+                        }}>
                             <h2 className={styles["home-content__recipes-name"]}>{cousine.id}</h2>
                             <p className={styles["home-content__recipes-description"]}>{cousine.description}</p>
                         </li>

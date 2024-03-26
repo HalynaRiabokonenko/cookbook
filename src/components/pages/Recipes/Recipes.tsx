@@ -16,11 +16,11 @@ function Recipes() {
 
     const handlerClickRecipesOption = (option: string): void => {
         setSelectedOption(option);
-        navigate(`/recipes/${option}`); // Обновляем URL при выборе категории
+        navigate(`/recipes/${option}`);
     };
 
     useEffect(() => {
-        setSelectedOption(option); // Обновляем выбранную категорию при изменении параметров в URL
+        setSelectedOption(option);
     }, [option]);
 
     return (

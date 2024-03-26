@@ -3,16 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./Home.module.css";
 import { ModeContext } from "../../../providers/mode";
 import classnames from "classnames";
-import Button from "../../share_atomic/Button/Button";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
-import { User } from "firebase/auth";
 import { Page } from "../../share_structures/Page/Page";
 import { DocumentData, collection, onSnapshot } from "firebase/firestore";
 import { db } from "../../../api/firebaseConfig";
-
-interface HomeProps {
-    user: User | null;
-}
 
 interface CuisinesInterface {
     id: string;
@@ -25,7 +19,7 @@ interface AphorismsInterface {
     author: string;
 }
 
-const Home = ({ user }: HomeProps) => {
+const Home = () => {
     const { mode } = useContext(ModeContext);
     const [cuisinesData, setCuisinesData] = useState<CuisinesInterface[]>([]);
     const [aphorismsData, setAphorismsData] = useState<AphorismsInterface[]>([]);
@@ -96,24 +90,6 @@ const Home = ({ user }: HomeProps) => {
                 and discover the magic of Ukrainian cuisine right here on our
                 website.
             </p> */}
-            {/* {user && <div className={styles["home-content__all-recipes-link-container"]}>
-                <Link to="/recipes" >
-                    <Button mode={mode}>
-                        All recipes
-                    </Button>
-                </Link>
-            </div>} */}
-            {/* {!user &&
-                <div>
-                    <p>Login to see all recipes</p>
-                    <div className={styles["home-content__all-recipes-link-container"]}>
-                        <Link to="/login" >
-                            <Button mode={mode}>
-                                Login
-                            </Button>
-                        </Link>
-                    </div>
-                </div>} */}
             <div className={styles["container-home__list--popular"]}>
                 <ul className={styles["home__list--popular"]}>
                     {cuisinesData.map(cousine => (
@@ -121,7 +97,7 @@ const Home = ({ user }: HomeProps) => {
                             styles["home-content__recipes-list--option"],
                             styles[mode]
                         )} onClick={() => {
-                            user ? navigate(`/recipes/${cousine.id}`) : navigate(`login`)
+                            navigate(`/recipes/${cousine.id}`)
                         }}>
                             <h2 className={styles["home-content__recipes-name"]}>{cousine.id}</h2>
                             <p className={styles["home-content__recipes-description"]}>{cousine.description}</p>

@@ -33,12 +33,7 @@ function App() {
                     <Routes>
                         {user ? (
                             <>
-                                <Route path="/about" element={<About />} />
                                 <Route path="/account" element={<Account />} />
-                                <Route path="/recipes" element={<Recipes />} >
-                                    <Route path=":option" element={<RecipesContent />} />
-                                </Route>
-                                <Route path="/recipes/:option/:recipeId" element={<RecipeDetails />} />
                             </>
                         ) : (
                             <>
@@ -46,8 +41,13 @@ function App() {
                                 <Route path="/login" element={<Login />} />
                             </>
                         )}
+                        <Route path="/recipes" element={<Recipes />} >
+                            <Route path=":option" element={<RecipesContent />} />
+                        </Route>
+                        <Route path="/recipes/:option/:recipeId" element={<RecipeDetails />} />
+                        <Route path="/about" element={<About />} />
                         <Route path="/contact" element={<Contact />} />
-                        <Route path="/" element={<Home user={user} />} />
+                        <Route path="/" element={<Home />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                     <Footer user={user} />

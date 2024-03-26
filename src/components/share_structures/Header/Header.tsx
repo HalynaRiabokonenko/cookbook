@@ -58,7 +58,7 @@ function Header({ user }: HeaderProps) {
                                     )}>Home</div>
                                 </Link>
                             </li>
-                            {user && <li>
+                            <li>
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
@@ -72,8 +72,8 @@ function Header({ user }: HeaderProps) {
 
                                     )}>Recipes</div>
                                 </Link>
-                            </li>}
-                            {user && <li >
+                            </li>
+                            <li >
                                 <Link
                                     className={classnames(
                                         styles["global-nav__list-item-link"],
@@ -87,7 +87,7 @@ function Header({ user }: HeaderProps) {
                                         { [styles.active]: location.pathname === '/about' }
                                     )}>About us</div>
                                 </Link>
-                            </li>}
+                            </li>
                             <li>
                                 <Link
                                     className={classnames(

@@ -126,13 +126,13 @@ function Header({ user }: HeaderProps) {
 
                             className={styles["header__account-button"]}
                         >
-                            <img src="/images/account/account-light.png" className={styles["header__account-icon"]} />
+                            <img src="/images/account/account-light.png" className={styles["header__account-icon"]} alt="header account icon" />
                         </div>
                     ) : (
                         <div
                             className={styles["header__account-button"]}
                         >
-                            <img src="/images/account/account-dark.png" className={styles["header__account-icon"]} />
+                            <img src="/images/account/account-dark.png" className={styles["header__account-icon"]} alt="header account icon" />
                         </div>
                     )}
                 </div>}
@@ -142,13 +142,13 @@ function Header({ user }: HeaderProps) {
 
                             onClick={toggleMode} className={styles["global-mode__button"]}
                         >
-                            <img src="/images/mode/dark.png" className={styles["global-mode__icon"]} />
+                            <img src="/images/mode/dark.png" className={styles["global-mode__icon"]} alt="dark mode icon" />
                         </button>
                     ) : (
                         <button
                             onClick={toggleMode} className={styles["global-mode__button"]}
                         >
-                            <img src="/images/mode/light.png" className={styles["global-mode__icon"]} />
+                            <img src="/images/mode/light.png" className={styles["global-mode__icon"]} alt="light mode icon" />
                         </button>
                     )}
                 </div>

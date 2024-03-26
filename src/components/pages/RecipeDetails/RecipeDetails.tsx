@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styles from "./RecipeDetails.module.css";
 import { ModeContext } from "../../../providers/mode";
 import classnames from "classnames";
@@ -37,7 +37,7 @@ function RecipeDetails() {
     };
 
     fetchData();
-  }, [recipeId]);
+  }, [recipeId, option]);
 
   if (!recipe) {
     return <div>Recipe not found</div>;

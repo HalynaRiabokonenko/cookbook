@@ -56,14 +56,30 @@
 }
 
 .home-content__recipes-list--option {
-  background-color: #ebf1f075;
+  background-color: var(--lighter-green);
   align-items: baseline;
   list-style-type: none;
   border: 1px solid var(--light-green);
   border-radius: 8px;
   margin: 20px;
   padding: 20px;
-  width: 40%;
+  width: 43%;
+  cursor: pointer;
+}
+
+.home-content__recipes-list--option:hover {
+  background-color: var(--light-green);
+  border: 1px solid var(--light-green);
+}
+
+.home-content__recipes-list--option.dark {
+  background-color: #252927;
+  border: 1px solid var(--light-green--dark);
+}
+
+.home-content__recipes-list--option.dark:hover {
+  background-color: rgba(240, 248, 255, 0.224);
+  border: 1px solid var(--light-green--dark);
 }
 
 .home-content__ingredients-list {
@@ -97,11 +113,6 @@
   margin: 10px 0;
 }
 
-.home-content__recipes-list--option.dark {
-  background-color: #252927;
-  border: 1px solid var(--light-green--dark);
-}
-
 .home__list--popular {
   display: flex;
   flex-direction: row;
@@ -132,5 +143,6 @@
   font-family: Cormorant, sans-serif;
   font-weight: 500;
   color: rgb(89, 89, 89);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  color: var(--dark-green);
 }

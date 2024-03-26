@@ -22,7 +22,7 @@
   content: "";
   display: block;
   border-bottom: 1px solid var(--header-text-color);
-  margin: -12px 0 35px;
+  margin: -12px 100px 35px;
 }
 
 .header-text.dark {

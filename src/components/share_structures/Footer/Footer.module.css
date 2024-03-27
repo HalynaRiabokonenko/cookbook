@@ -27,13 +27,17 @@
 }
 
 /* Footer navigation links */
-.footer-links ul {
+.footer-links-list {
   list-style: none;
   padding: 0;
+  column-count: 2;
+  column-gap: 50px;
 }
 
 .footer-links li {
-  margin: 5px 0;
+  break-inside: avoid-column;
+  text-align: left;
+  margin-bottom: 10px;
 }
 
 .footer-links a {

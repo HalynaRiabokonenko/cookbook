@@ -30,19 +30,25 @@ const Footer: React.FC<Props> = ({ user }: Props) => {
                     styles["footer-links"],
                     styles[mode]
                 )}>
-                    <ul>
+                    <ul className={classnames(
+                        styles["footer-links-list"],
+                        styles[mode]
+                    )}>
                         <li>
                             <Link to="/">Home</Link>
                         </li>
-                        {user && <li>
+                        <li>
                             <Link to="/about">About Us</Link>
-                        </li>}
-                        {user && <li>
+                        </li>
+                        <li>
                             <Link to="/recipes">Recipes</Link>
-                        </li>}
+                        </li>
                         <li>
                             <Link to="/contact">Contact Us</Link>
                         </li>
+                        {user && <li>
+                            <Link to="/account">Account</Link>
+                        </li>}
                     </ul>
                 </div>
                 <div className={styles["footer-social"]} >

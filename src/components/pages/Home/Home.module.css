@@ -153,11 +153,11 @@
 .home-aphorism__author {
   margin: 10px 30px;
   text-align: right;
-  font-family: Cormorant, sans-serif;
-  font-weight: bold;
   color: rgb(89, 89, 89);
-  font-size: 1.3rem;
   color: var(--dark-green);
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: lighter;
 }
 
 .home-aphorism__author.dark {

@@ -1,7 +1,18 @@
+.about-content__paragraph-container {
+  padding: 40px;
+  font-size: 1.2rem;
+}
+
+.about-content__paragraph-container:nth-child(odd) {
+  background-color: var(--light-green);
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: lighter;
+}
+
 .about-content__paragraph {
-  margin: 30px 80px;
-  text-align: justify;
-  font-size: 1.1rem;
+  margin: 30px 280px;
+  text-align: center;
 }
 
 .about-content__paragraph--italic {

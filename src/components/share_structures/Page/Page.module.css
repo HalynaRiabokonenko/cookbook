@@ -1,17 +1,15 @@
 .page-content {
-  margin-top: var(--header-hight);
-  padding: 20px;
+  padding: 0 10px;
 }
 
 .page-content__container {
   background-color: var(--white);
-  border-radius: 8px;
   box-shadow: 0 0 10px #0000001a;
-  padding: 20px;
+  padding: 80px 0;
   text-align: left;
 }
 
 .page-content__container.dark {
-  background-color: var(--medium-green--dark);
+  background-color: var(--black);
   box-shadow: 0 0 10px #0000001a;
 }

@@ -30,6 +30,11 @@ body {
   background-color: var(--light-green);
 }
 
+body.dark {
+  color: var(--header-text-color--dark);
+  background-color: var(--medium-green--dark);
+}
+
 a {
   text-decoration: none;
 }
@@ -38,9 +43,4 @@ h1,
 h2,
 h3 {
   font-family: Montserrat, sans-serif;
-}
-
-body.dark {
-  color: var(--header-text-color--dark);
-  background-color: var(--black);
 }

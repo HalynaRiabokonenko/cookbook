@@ -11,6 +11,7 @@ import { db } from "../../../api/firebaseConfig";
 interface CuisinesInterface {
     id: string;
     description: string;
+    img: string;
 }
 
 interface AphorismsInterface {
@@ -66,30 +67,20 @@ const Home = () => {
                 Delicious World Cuisine
             </PageHeader>
             {aphorismsData.length > 0 && (
-                <div className={styles["home-aphorism__content-container"]}>
+                <div className={classnames(
+                    styles["home-aphorism__content-container"],
+                    styles[mode]
+                )}>
                     <div className={styles["home-aphorism__container"]}>
                         <p className={styles["home-aphorism__text"]}>{aphorismsData[currentAphorismIndex].text}</p>
-                        <p className={styles["home-aphorism__author"]}>- {aphorismsData[currentAphorismIndex].author}</p>
+                        <p className={classnames(
+                            styles["home-aphorism__author"],
+                            styles[mode]
+                        )}>- {aphorismsData[currentAphorismIndex].author}</p>
                     </div>
                 </div>
 
             )}
-            {/* <p className={styles["home-content__paragraph"]}>
-                Welcome to our website, where we have gathered a treasure trove of
-                the most renowned recipes from Ukrainian cuisine. Here, you will
-                embark on a culinary journey through the heart of Ukraine, exploring
-                a diverse array of flavors and traditions that define this rich
-                culinary heritage. From hearty borscht and savory pierogies to
-                delectable and heavenly holubtsi, our page is a celebration of the
-                country's most beloved dishes. Each recipe is carefully curated,
-                offering you a chance to recreate the authentic taste of Ukrainian
-                home-cooked meals in your own kitchen. Whether you are a seasoned
-                chef or a beginner, our collection is designed to inspire and guide
-                you through the preparation of these iconic dishes, allowing you to
-                savor the essence of Ukrainian culture one bite at a time. Dive in
-                and discover the magic of Ukrainian cuisine right here on our
-                website.
-            </p> */}
             <div className={styles["container-home__list--popular"]}>
                 <ul className={styles["home__list--popular"]}>
                     {cuisinesData.map(cousine => (
@@ -99,7 +90,9 @@ const Home = () => {
                         )} onClick={() => {
                             navigate(`/recipes/${cousine.id}`)
                         }}>
-                            <h2 className={styles["home-content__recipes-name"]}>{cousine.id}</h2>
+                            <div className={styles["home-content__recipes-image-container"]}>
+                                <img src={cousine.img} className={styles["home-content__recipes-image"]} />
+                            </div>
                             <p className={styles["home-content__recipes-description"]}>{cousine.description}</p>
                         </li>
                     ))}

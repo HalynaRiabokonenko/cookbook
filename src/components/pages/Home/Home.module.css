@@ -90,11 +90,16 @@
   margin: 10px 0;
 }
 
-.home-content__recipes-name {
-  font-size: 1.2rem;
-  margin: 20px;
+.home-content__recipes-image-container {
   text-align: center;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-content__recipes-image {
+  height: 80px;
+  margin: 15px;
 }
 
 .home-content__recipes-ingredients {
@@ -122,27 +127,39 @@
 
 .home-aphorism__content-container {
   display: flex;
-  justify-content: right;
+  justify-content: center;
+  align-items: center;
+  color: var(--header-text-color);
+  background-color: var(--light-green);
+  width: 100%;
+  min-height: 30vh;
+}
+
+.home-aphorism__content-container.dark {
+  color: var(--header-text-color--dark);
+  background-color: #252927;
 }
 
 .home-aphorism__container {
-  width: 40%;
   height: 100px;
-  margin: 10px 60px;
 }
 
 .home-aphorism__text {
   margin: 10px 30px;
   text-align: justify;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 
 .home-aphorism__author {
   margin: 10px 30px;
   text-align: right;
   font-family: Cormorant, sans-serif;
-  font-weight: 500;
+  font-weight: bold;
   color: rgb(89, 89, 89);
   font-size: 1.3rem;
   color: var(--dark-green);
+}
+
+.home-aphorism__author.dark {
+  color: var(--medium-green);
 }

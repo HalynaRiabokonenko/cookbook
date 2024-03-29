@@ -163,3 +163,42 @@
 .home-aphorism__author.dark {
   color: var(--medium-green);
 }
+
+.home__main-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.home__main-image {
+  width: 100%;
+}
+
+.home__main-text-header {
+  position: absolute;
+  z-index: 1;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 7rem;
+  font-weight: bold;
+  text-align: right;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.home__main-text {
+  position: absolute;
+  z-index: 1;
+  top: 70%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(61, 89, 67, 0.232);
+  padding: 10px 20px;
+}

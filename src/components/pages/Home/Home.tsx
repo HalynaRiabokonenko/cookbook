@@ -63,9 +63,21 @@ const Home = () => {
 
     return (
         <Page>
-            <PageHeader mode={mode}>
+            {/* <PageHeader mode={mode}>
                 Delicious World Cuisine
-            </PageHeader>
+            </PageHeader> */}
+            <div className={styles["home__main-container"]}>
+                <img className={styles["home__main-image"]} src="/images/pages/main.webp"
+                ></img>
+                <h3 className={classnames(
+                    styles["home__main-text-header"],
+                    styles[mode]
+                )}>Proven recipes</h3>
+                <h3 className={classnames(
+                    styles["home__main-text"],
+                    styles[mode]
+                )}>your culinary journey across the globe</h3>
+            </div>
             {aphorismsData.length > 0 && (
                 <div className={classnames(
                     styles["home-aphorism__content-container"],

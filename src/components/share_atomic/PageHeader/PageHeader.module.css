@@ -1,14 +1,12 @@
 .header-text {
-  color: var(--header-text-color);
-  font-size: 18px;
+  color: var(--dark-green);
   text-align: center;
-  letter-spacing: 0.3em;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   margin: 30px 60px 10px;
   text-transform: uppercase;
   text-align: center;
-  letter-spacing: 0.3rem;
-  word-spacing: 1rem;
+  letter-spacing: 0.2rem;
+  word-spacing: 0.8rem;
   text-align: center;
   padding: 20px;
 }
@@ -18,12 +16,12 @@
   padding: 0 25px;
 }
 
-.header-text::after {
+/* .header-text::after {
   content: "";
   display: block;
-  border-bottom: 1px solid var(--header-text-color);
-  margin: -12px 100px 35px;
-}
+  border-bottom: 1px solid var(--dark-green);
+  margin: -15px 140px 20px;
+} */
 
 .header-text.dark {
   color: var(--header-text-color--dark);

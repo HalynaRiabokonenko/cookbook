@@ -63,9 +63,6 @@ const Home = () => {
 
     return (
         <Page>
-            {/* <PageHeader mode={mode}>
-                Delicious World Cuisine
-            </PageHeader> */}
             <div className={styles["home__main-container"]}>
                 <img className={styles["home__main-image"]} src="/images/pages/main.webp"
                 ></img>

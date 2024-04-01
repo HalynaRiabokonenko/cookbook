@@ -41,7 +41,7 @@ export const ChangePassword = ({ user }: ChangePasswordProps) => {
             setSuccessMessage('Password changed successfully');
             setTimeout(() => {
                 setSuccessMessage(null);
-            }, 4000);
+            }, 3000);
         } catch (error) {
             if (typeof error === 'string') {
                 setError(error);
@@ -59,7 +59,10 @@ export const ChangePassword = ({ user }: ChangePasswordProps) => {
             <PageHeader mode={mode}>
                 Change password
             </PageHeader>
-            <div>
+            <div className={classNames(
+                styles["change-password__container"],
+                styles[mode]
+            )}>
                 <div className={classNames(
                     styles["change-password__input-container"],
                     styles[mode]
@@ -108,7 +111,7 @@ export const ChangePassword = ({ user }: ChangePasswordProps) => {
                     <label className={classNames(
                         styles["change-password__label"],
                         styles[mode]
-                    )} htmlFor="new-password-repeat">Submit new password:</label>
+                    )} htmlFor="new-password-repeat">Repeat new password:</label>
                     <input
                         className={classNames(
                             styles["change-password__input"],

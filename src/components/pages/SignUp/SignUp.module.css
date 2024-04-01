@@ -5,11 +5,10 @@
 }
 
 .sign-up__content-modal {
-  background-color: var(--medium-green);
-  color: var(--white);
+  background-color: var(--light-green);
   min-height: 280px;
   width: var(--modal-width);
-  border: 1px solid var(--medium-green);
+  border: 1px solid var(--light-green);
   border-radius: 25px;
   margin: 0 auto;
   padding-bottom: 20px;

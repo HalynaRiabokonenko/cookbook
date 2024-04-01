@@ -2,6 +2,7 @@ import React, { ReactElement, useContext, useState } from "react";
 import { ModeContext } from "../../../providers/mode";
 import styles from "./AuthForm.module.css";
 import classNames from "classnames";
+import Button from "../../share_atomic/Button/Button";
 
 interface Props {
     submitText: string;
@@ -26,47 +27,46 @@ const AuthForm = ({
 
     return (
         <form onSubmit={onSubmit} className={styles["auth__form"]}>
-            <label htmlFor="email" className={styles["auth__form-label"]}>Login</label>
-            <input
-                required
-                type="email"
-                name="email"
-                id="email"
-                value={login}
-                onChange={(e) => {
-                    setLogin(e.target.value);
-                }}
-                className={classNames(
-                    styles["auth__form-input"],
-                    styles["auth__form-input--email"],
-                    styles[mode]
+            <div className={styles["auth__form-inputs-container"]}>
+                <label htmlFor="email" className={styles["auth__form-label"]}>Login</label>
+                <input
+                    required
+                    type="email"
+                    name="email"
+                    id="email"
+                    value={login}
+                    onChange={(e) => {
+                        setLogin(e.target.value);
+                    }}
+                    className={classNames(
+                        styles["auth__form-input"],
+                        styles["auth__form-input--email"],
+                        styles[mode]
+                    )}
+                />
+                {!isPasswordHidden && (
+                    <>
+                        <label htmlFor="password" className={styles["auth__form-label"]}>Password</label>
+                        <input
+                            required
+                            type="password"
+                            name="password"
+                            id="password"
+                            value={password}
+                            onChange={(e) => {
+                                setPassword(e.target.value);
+                            }}
+                            className={classNames(
+                                styles["auth__form-input"],
+                                styles["auth__form-input--password"],
+                                styles[mode]
+                            )}
+                            minLength={6}
+                        />
+                    </>
                 )}
-            />
-            {!isPasswordHidden && (
-                <>
-                    <label htmlFor="password" className={styles["auth__form-label"]}>Password</label>
-                    <input
-                        required
-                        type="password"
-                        name="password"
-                        id="password"
-                        value={password}
-                        onChange={(e) => {
-                            setPassword(e.target.value);
-                        }}
-                        className={classNames(
-                            styles["auth__form-input"],
-                            styles["auth__form-input--password"],
-                            styles[mode]
-                        )}
-                        minLength={6}
-                    />
-                </>
-            )}
-            <button className={classNames(
-                styles["auth__form-button"],
-                styles[mode]
-            )}>{submitText}</button>
+            </div>
+            <Button>{submitText}</Button>
             {children}
         </form>
     );

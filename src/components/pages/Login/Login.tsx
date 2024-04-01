@@ -29,11 +29,6 @@ const Login = () => {
             <PageHeader mode={mode}>
                 Log in
             </PageHeader>
-            <p className={classnames(
-                styles["login__content-paragraph"],
-                styles[mode]
-            )}>Hi there! Welcome to Proven Recipes, so happy to see you!
-            </p>
             <div className={classnames(
                 styles["login__content-modal"],
                 styles[mode]

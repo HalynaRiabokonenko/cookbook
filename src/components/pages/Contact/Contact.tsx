@@ -4,6 +4,7 @@ import classnames from "classnames";
 import { ModeContext } from "../../../providers/mode";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import { Page } from "../../share_structures/Page/Page";
+import Button from "../../share_atomic/Button/Button";
 
 function ContactContent() {
     const { mode } = useContext(ModeContext);
@@ -13,14 +14,6 @@ function ContactContent() {
             <PageHeader mode={mode}>
                 Contact us
             </PageHeader>
-            <p className={styles["contact-content__paragraph"]}>
-                Dear visitors, your feedback is invaluable to us! If you have tried
-                any of our Ukrainian recipes and would like to share your thoughts, or
-                if you have any other information you'd like to send our way, please
-                feel free to use our contact form. Your input helps us improve and
-                ensures that our recipes continue to delight your taste buds. We
-                appreciate your participation and look forward to hearing from you!
-            </p>
             <div className={classnames(
                 styles["contact-content__modal"],
                 styles[mode]
@@ -80,15 +73,7 @@ function ContactContent() {
                         maxLength={500}
                         required
                     ></textarea>
-                    <input
-                        type="submit"
-                        value="Send"
-                        className={classnames(
-                            styles["contact-content__form-input"],
-                            styles["contact-content__form-input--submit"],
-                            styles[mode]
-                        )}
-                    />
+                    <Button>Send</Button>
                 </form>
             </div>
         </Page>

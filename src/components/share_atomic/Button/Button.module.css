@@ -5,7 +5,7 @@
   font-weight: bold;
   background-color: inherit;
   margin: 20px;
-  padding: 10px 20px;
+  padding: 10px 25px;
   border: 2px solid var(--medium-green);
   border-radius: 10px;
   cursor: pointer;
@@ -48,6 +48,6 @@
   box-shadow: none;
   color: var(--white);
   text-shadow: none;
-  background-color: var(--orange--dark);
-  border: 1.5px solid var(--orange--dark);
+  background-color: var(--dark-green);
+  border: 1.5px solid var(--dark-green);
 }

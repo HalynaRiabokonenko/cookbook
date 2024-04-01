@@ -31,18 +31,11 @@
   --text-scale-value-480: 0.85;
 }
 
-.contact-content__paragraph {
-  margin: 30px 80px;
-  text-align: justify;
-  font-size: 1.1rem;
-}
-
 .contact-content__modal {
-  background-color: var(--medium-green);
-  color: var(--white);
+  background-color: var(--light-green);
   height: var(--modal-height);
   width: var(--modal-width);
-  border: 1px solid var(--medium-green);
+  border: 1px solid var(--light-green);
   border-radius: 25px;
   margin: 0 auto;
   padding-bottom: 20px;
@@ -70,7 +63,7 @@
   width: 80%;
   padding: 10px;
   margin: 0 10px 6px;
-  border: 1.5px solid var(--medium-green);
+  border: 1.5px solid var(--light-green);
   border-radius: 8px;
   cursor: text;
 }
@@ -82,7 +75,7 @@
 .contact-content__form-input--text:focus,
 .contact-content__form-input--email:focus,
 .contact-content__form-input--textarea:focus {
-  background-color: var(--modal-input-bg-focus-color);
+  background-color: var(--white);
   border: 1.5px solid var(--medium-green);
   outline: none;
 }

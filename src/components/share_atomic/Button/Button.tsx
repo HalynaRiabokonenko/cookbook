@@ -4,19 +4,20 @@ import classNames from "classnames";
 import { ModeContext } from "../../../providers/mode";
 
 export interface ButtonProps {
+    children: React.ReactNode;
     onClick?: () => void;
 }
 
-const Button = (props: PropsWithChildren<ButtonProps>): ReactElement => {
+const Button = ({ onClick, children }: ButtonProps): ReactElement => {
     const { mode } = useContext(ModeContext);
 
     return (
-        <div className={classNames(
+        <button className={classNames(
             styles.button,
             styles[mode]
-        )}>
-            {props.children}
-        </div>
+        )} onClick={onClick}>
+            {children}
+        </button>
     );
 }
 

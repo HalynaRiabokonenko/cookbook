@@ -1,29 +1,93 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ModeContext } from "../../../providers/mode";
 import classnames from "classnames";
 import styles from "./Account.module.css";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
-import { auth } from "../../../api/firebaseConfig";
 import { Page } from "../../share_structures/Page/Page";
+import { User } from "firebase/auth";
+import Button from "../../share_atomic/Button/Button";
+import { useNavigate } from "react-router-dom";
 
-export const Account = () => {
+interface AccountProps {
+    user: User | null;
+}
+
+export const Account = ({ user }: AccountProps) => {
     const { mode } = useContext(ModeContext);
+    const navigate = useNavigate();
+
+    let creationTime = "";
+    let lastSignInTime = "";
+
+    if (user?.metadata.creationTime && user?.metadata.lastSignInTime) {
+        creationTime = new Date(user.metadata.creationTime).toLocaleString();
+        lastSignInTime = new Date(user.metadata.lastSignInTime).toLocaleString();
+    }
 
     return (
         <Page>
             <PageHeader mode={mode}>
                 My account
             </PageHeader>
-            <div>
+            <div className={classnames(
+                styles["account__content"],
+                styles[mode]
+            )}>
                 <div className={classnames(
-                    styles["global-nav__list-user"],
+                    styles["account__user-info-container"],
                     styles[mode]
                 )}>
                     Hello, <div className={classnames(
-                        styles["global-nav__list-user--detail"],
+                        styles["account__user-info"],
                         styles[mode]
-                    )}>{auth?.currentUser?.email}</div>
+                    )}>{user?.email}</div>
                 </div>
+                <div className={classnames(
+                    styles["account__user-details"],
+                    styles[mode]
+                )}>
+                    <div className={classnames(
+                        styles["account__user-detail-container"],
+                        styles[mode]
+                    )}>
+                        <p className={classnames(
+                            styles["account__user-detail-option"],
+                            styles[mode]
+                        )}>UID:</p>
+                        <p className={classnames(
+                            styles["account__user-detail-option-info"],
+                            styles[mode]
+                        )}> {user?.uid}</p>
+                    </div>
+                    <div className={classnames(
+                        styles["account__user-detail-container"],
+                        styles[mode]
+                    )}>
+                        <p className={classnames(
+                            styles["account__user-detail-option"],
+                            styles[mode]
+                        )}>Account created:</p>
+                        <p className={classnames(
+                            styles["account__user-detail-option-info"],
+                            styles[mode]
+                        )}> {creationTime}</p>
+                    </div>
+                    <div className={classnames(
+                        styles["account__user-detail-container"],
+                        styles[mode]
+                    )}>
+                        <p className={classnames(
+                            styles["account__user-detail-option"],
+                            styles[mode]
+                        )}>Last login:</p>
+                        <p className={classnames(
+                            styles["account__user-detail-option-info"],
+                            styles[mode]
+                        )}> {lastSignInTime}</p>
+                    </div>
+                </div>
+                <Button onClick={() => { navigate("/change-password") }}>Change Password</Button>
+                <Button>Delete account</Button>
             </div>
         </Page>
     )

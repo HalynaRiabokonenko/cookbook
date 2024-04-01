@@ -38,7 +38,12 @@ export const AccountModal = ({ setIsModalOpen }: AccountModalProps) => {
                     <li className={classnames(
                         styles["account-modal__list-option"],
                         styles[mode]
-                    )} onClick={() => { navigate("/account") }}>My account
+                    )} onClick={() => { navigate("/account") }}>Account
+                    </li>
+                    <li className={classnames(
+                        styles["account-modal__list-option"],
+                        styles[mode]
+                    )} onClick={() => { navigate("/contact") }}>Support
                     </li>
                     <li className={classnames(
                         styles["account-modal__list-option"],

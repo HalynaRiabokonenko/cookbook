@@ -1,16 +1,19 @@
-import React, { PropsWithChildren, ReactElement } from "react";
+import React, { PropsWithChildren, ReactElement, useContext } from "react";
 import styles from "./Button.module.css";
 import classNames from "classnames";
+import { ModeContext } from "../../../providers/mode";
 
 export interface ButtonProps {
-    mode: string;
+    onClick?: () => void;
 }
 
 const Button = (props: PropsWithChildren<ButtonProps>): ReactElement => {
+    const { mode } = useContext(ModeContext);
+
     return (
         <div className={classNames(
             styles.button,
-            styles[props.mode]
+            styles[mode]
         )}>
             {props.children}
         </div>

@@ -1,0 +1,31 @@
+.account__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.account__user-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.account__user-details {
+  margin: 20px;
+}
+
+.account__user-detail-container {
+  margin: 10px;
+}
+
+.account__user-info {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.account__user-detail-option {
+  text-align: center;
+  font-weight: 700;
+}

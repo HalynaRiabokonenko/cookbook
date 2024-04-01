@@ -18,6 +18,7 @@ import SignUp from "./components/pages/SignUp/SignUp";
 import { UpButton } from "./components/share_atomic/UpButton/UppButton";
 import { Account } from "./components/pages/Account/Account";
 import { RecipesContent } from "./components/share_structures/Recipes/RecipesContent/RecipesContent";
+import { ChangePassword } from "./components/pages/ChangePassword/ChangePassword";
 
 function App() {
     const [user, setUser] = useState<User | null>(null);
@@ -33,7 +34,9 @@ function App() {
                     <Routes>
                         {user ? (
                             <>
-                                <Route path="/account" element={<Account />} />
+                                <Route path="/account" element={<Account user={user} />} />
+                                <Route path="/change-password" element={<ChangePassword user={user} />} />
+                                <Route path="/contact" element={<Contact />} />
                             </>
                         ) : (
                             <>
@@ -46,7 +49,6 @@ function App() {
                         </Route>
                         <Route path="/recipes/:option/:recipeId" element={<RecipeDetails />} />
                         <Route path="/about" element={<About />} />
-                        <Route path="/contact" element={<Contact />} />
                         <Route path="/" element={<Home />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>

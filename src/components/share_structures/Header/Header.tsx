@@ -88,20 +88,6 @@ function Header({ user }: HeaderProps) {
                                     )}>About us</div>
                                 </Link>
                             </li>
-                            <li>
-                                <Link
-                                    className={classnames(
-                                        styles["global-nav__list-item-link"],
-                                        styles[mode]
-                                    )}
-                                    to="/contact"
-                                >
-                                    <div className={classnames(
-                                        styles["global-nav__list-item"],
-                                        { [styles.active]: location.pathname === '/contact' }
-                                    )}>Contact us</div>
-                                </Link>
-                            </li>
                             {!user && <li>
                                 <Link
                                     className={classnames(

@@ -24,7 +24,7 @@ const NotFound = () => {
 
             <div className={styles["not-found__link-container"]}>
                 <Link to="/">
-                    <Button mode={mode}>
+                    <Button>
                         Home Page
                     </Button>
                 </Link>

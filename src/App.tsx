@@ -36,7 +36,7 @@ function App() {
                             <>
                                 <Route path="/account" element={<Account user={user} />} />
                                 <Route path="/change-password" element={<ChangePassword user={user} />} />
-                                <Route path="/contact" element={<Contact />} />
+                                <Route path="/contact" element={<Contact user={user} />} />
                             </>
                         ) : (
                             <>

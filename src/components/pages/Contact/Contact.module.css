@@ -1,6 +1,6 @@
 :root {
   --modal-width: 500px;
-  --modal-height: 380px;
+  --modal-height: 350px;
   --modal-text-color: #9f9d9d;
   --modal-bg-color: #adc6c4;
   --modal-bg-color--dark: #294d4e;
@@ -33,7 +33,7 @@
 
 .contact-content__modal {
   background-color: var(--light-green);
-  height: var(--modal-height);
+  min-height: var(--modal-height);
   width: var(--modal-width);
   border: 1px solid var(--light-green);
   border-radius: 25px;
@@ -62,7 +62,7 @@
 .contact-content__form-input--textarea {
   width: 80%;
   padding: 10px;
-  margin: 0 10px 6px;
+  margin: 0 10px 20px;
   border: 1.5px solid var(--light-green);
   border-radius: 8px;
   cursor: text;
@@ -287,4 +287,60 @@
   ) {
   /* border: 1.5px solid var(--modal-input-invalid-color--dark); */
   box-shadow: none;
+}
+
+.contact-content__messages-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--header-text-color);
+  background-color: var(--light-green);
+  width: 100%;
+  min-height: 30vh;
+  margin: 60px 0 0;
+}
+
+.contact-content__messages-container.dark {
+  color: var(--header-text-color--dark);
+  background-color: #252927;
+}
+
+.contact-content__messages-icon-container {
+  margin: 30px 30px 30px 90px;
+}
+
+.contact-content__messages-icon {
+  height: 100px;
+}
+
+.contact-content__messages-info-container {
+  margin: 30px 90px 30px 30px;
+}
+
+.contact-content__message-info {
+  margin: 20px;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: #a5cbc434;
+  border-radius: 10px;
+  width: inherit;
+}
+
+.contact-content__message-info-option {
+  margin: 15px 0;
+}
+
+.contact-content__message-info-title {
+  font-weight: bold;
+  padding: 5px;
+}
+
+.contact-content__message-info-details {
+  background-color: #ffffff3a;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.contact-content__message-info-details.dark {
+  background-color: #00000033;
 }

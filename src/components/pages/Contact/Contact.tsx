@@ -121,7 +121,7 @@ function ContactContent({ user }: UserProps) {
                         name="message"
                         rows={4}
                         cols={50}
-                        minLength={3}
+                        minLength={1}
                         maxLength={500}
                         required
                     ></textarea>

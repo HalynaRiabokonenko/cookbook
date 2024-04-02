@@ -1,6 +1,6 @@
 :root {
   --modal-width: 500px;
-  --modal-height: 380px;
+  --modal-height: 350px;
   --modal-text-color: #9f9d9d;
   --modal-bg-color: #adc6c4;
   --modal-bg-color--dark: #294d4e;
@@ -33,7 +33,7 @@
 
 .contact-content__modal {
   background-color: var(--light-green);
-  height: var(--modal-height);
+  min-height: var(--modal-height);
   width: var(--modal-width);
   border: 1px solid var(--light-green);
   border-radius: 25px;
@@ -62,7 +62,7 @@
 .contact-content__form-input--textarea {
   width: 80%;
   padding: 10px;
-  margin: 0 10px 6px;
+  margin: 0 10px 20px;
   border: 1.5px solid var(--light-green);
   border-radius: 8px;
   cursor: text;

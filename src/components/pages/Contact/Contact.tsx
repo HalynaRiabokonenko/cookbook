@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./Contact.module.css";
 import classnames from "classnames";
 import { ModeContext } from "../../../providers/mode";
@@ -15,6 +15,7 @@ interface UserProps {
 
 function ContactContent({ user }: UserProps) {
     const { mode } = useContext(ModeContext);
+    const [message, setMessage] = useState<string | null>(null);
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -28,15 +29,23 @@ function ContactContent({ user }: UserProps) {
             return;
         }
 
+        if (!title.trim() || !message.trim()) {
+            setMessage("Title and message cannot be empty");
+            return;
+        }
+
+        const userId = user.uid;
+
         try {
-            await addDoc(collection(db, `contacts/${user.uid}/messages`), {
+            await addDoc(collection(db, `contacts/${userId}/messages`), {
                 title,
-                email: user.email, // используем email пользователя
+                email: user.email,
                 message
             });
-            console.log("Data sent successfully");
+            setMessage("Message sent successfully");
         } catch (error) {
             console.error("Error sending data: ", error);
+            setMessage("Error sending message");
         }
     };
 
@@ -88,6 +97,7 @@ function ContactContent({ user }: UserProps) {
                         maxLength={500}
                         required
                     ></textarea>
+                    {message && <div>{message}</div>}
                     <Button>Send</Button>
                 </form>
             </div>

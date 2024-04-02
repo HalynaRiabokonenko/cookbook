@@ -5,9 +5,40 @@ import { ModeContext } from "../../../providers/mode";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import { Page } from "../../share_structures/Page/Page";
 import Button from "../../share_atomic/Button/Button";
+import { User } from "firebase/auth";
+import { db } from "../../../api/firebaseConfig";
+import { collection, addDoc } from "firebase/firestore";
 
-function ContactContent() {
+interface UserProps {
+    user: User | null;
+}
+
+function ContactContent({ user }: UserProps) {
     const { mode } = useContext(ModeContext);
+
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.currentTarget);
+        const title = formData.get('title') as string;
+        const message = formData.get('message') as string;
+
+        if (!user) {
+            console.error('User is not authenticated');
+            return;
+        }
+
+        try {
+            await addDoc(collection(db, `contacts/${user.uid}/messages`), {
+                title,
+                email: user.email, // используем email пользователя
+                message
+            });
+            console.log("Data sent successfully");
+        } catch (error) {
+            console.error("Error sending data: ", error);
+        }
+    };
 
     return (
         <Page>
@@ -19,8 +50,7 @@ function ContactContent() {
                 styles[mode]
             )}>
                 <form
-                    action=""
-                    method="get"
+                    onSubmit={handleSubmit}
                     id="contact-content__form"
                     className={styles["contact-content__modal-form"]}
                 >
@@ -38,21 +68,6 @@ function ContactContent() {
                             styles[mode]
                         )}
                         minLength={3}
-                        required
-                    />
-                    <label htmlFor="email" className={styles["contact-content__form-label"]}>
-                        Email
-                    </label>
-                    <input
-                        placeholder=""
-                        type="email"
-                        id="email"
-                        name="email"
-                        className={classnames(
-                            styles["contact-content__form-input"],
-                            styles["contact-content__form-input--email"],
-                            styles[mode]
-                        )}
                         required
                     />
                     <label htmlFor="message" className={styles["contact-content__form-label"]}>

@@ -34,10 +34,11 @@
   font-size: 1.2rem;
   font-family: Montserrat, sans-serif;
   letter-spacing: 0.6rem;
+  color: var(--dark-gray);
 }
 
-.header__name.light {
-  color: var(--dark-gray);
+.header__name.dark {
+  color: var(--light-gray);
 }
 
 .logo__link__container {

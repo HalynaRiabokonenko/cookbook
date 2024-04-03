@@ -41,6 +41,11 @@ function Header({ user }: HeaderProps) {
                         </div>
                     </Link>
                 </div>
+                <div className={classnames(
+                    styles["header__name"],
+                    styles[mode])}>
+                    <p>Proven recipes</p>
+                </div>
                 <div className={styles["global-nav__container"]}>
                     <nav className={styles["global-nav"]}>
                         <ul className={styles["global-nav__list"]}>

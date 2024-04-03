@@ -63,7 +63,10 @@ const Home = () => {
 
     return (
         <Page>
-            <div className={styles["home__main-container"]}>
+            <div className={classnames(
+                styles["home__main-container"],
+                styles[mode]
+            )}>
                 <img className={styles["home__main-image"]} src="/images/pages/main.webp"
                 ></img>
                 <h3 className={classnames(

@@ -17,6 +17,23 @@
   z-index: 999;
 }
 
+.logo {
+  flex-grow: 1;
+}
+
+.header__name {
+  flex-grow: 1;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: Montserrat, sans-serif;
+  letter-spacing: 0.6rem;
+}
+
+.header__name.light {
+  color: var(--dark-gray);
+}
+
 .logo__link__container {
   display: flex;
   align-items: center;
@@ -25,7 +42,7 @@
 
 .logo__img {
   height: calc(var(--header-hight) * 0.6);
-  margin: 0 50px;
+  margin: 0 20px;
   border-radius: 50%;
 }
 
@@ -35,8 +52,8 @@
 
 /* Navigation */
 .global-nav__container {
-  width: 80%;
   height: 100%;
+  flex-grow: 4;
 }
 
 .global-nav {
@@ -107,6 +124,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
+  height: 100%;
 }
 
 .global-mode__button,

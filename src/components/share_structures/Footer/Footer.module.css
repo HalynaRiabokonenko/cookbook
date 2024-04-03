@@ -57,8 +57,9 @@
 .footer__brand-name {
   font-size: 1.1rem;
   text-transform: uppercase;
-  color: var(--light-green);
+  color: var(--lighter-green);
   margin-top: 10px;
+  letter-spacing: 0.4rem;
 }
 
 .footer-social ul {

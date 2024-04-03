@@ -171,6 +171,10 @@
   background-color: var(--light-green);
 }
 
+.home__main-container.dark {
+  background-color: #252927;
+}
+
 .home__main-image {
   width: 100%;
 }
@@ -188,6 +192,12 @@
   padding: 10px 20px;
   text-transform: uppercase;
   width: 100%;
+  letter-spacing: 0.7rem;
+}
+
+.home__main-text-header.dark {
+  color: #252927;
+  background-color: #e0e0e0a4;
 }
 
 .home__main-text {
@@ -200,6 +210,11 @@
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
-  background-color: rgba(61, 89, 67, 0.232);
+  background-color: #3d59433b;
   padding: 10px 20px;
+}
+
+.home__main-text.dark {
+  color: #252927;
+  background-color: #e0e0e0a4;
 }

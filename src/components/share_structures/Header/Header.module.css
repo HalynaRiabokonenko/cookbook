@@ -18,7 +18,13 @@
 }
 
 .logo {
-  flex-grow: 1;
+  flex-grow: 2;
+}
+
+.logo__link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .header__name {
@@ -38,6 +44,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 40px;
 }
 
 .logo__img {

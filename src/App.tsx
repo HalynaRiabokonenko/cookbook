@@ -19,6 +19,8 @@ import { UpButton } from "./components/share_atomic/UpButton/UppButton";
 import { Account } from "./components/pages/Account/Account";
 import { RecipesContent } from "./components/share_structures/Recipes/RecipesContent/RecipesContent";
 import { ChangePassword } from "./components/pages/ChangePassword/ChangePassword";
+import { DeleteAccount } from "./components/pages/DeleteAccount/DeleteAccount";
+import { Goodbye } from "./components/pages/Goodbye/Goodbye";
 
 function App() {
     const [user, setUser] = useState<User | null>(null);
@@ -37,6 +39,7 @@ function App() {
                                 <Route path="/account" element={<Account user={user} />} />
                                 <Route path="/change-password" element={<ChangePassword user={user} />} />
                                 <Route path="/contact" element={<Contact user={user} />} />
+                                <Route path="/delete-account" element={<DeleteAccount user={user} />} />
                             </>
                         ) : (
                             <>
@@ -51,6 +54,7 @@ function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/" element={<Home />} />
                         <Route path="*" element={<NotFound />} />
+                        <Route path="/goodbye" element={<Goodbye />} />
                     </Routes>
                     <Footer user={user} />
                     <UpButton />

@@ -9,13 +9,17 @@ interface Props {
     isPasswordHidden?: boolean;
     handleSubmit: (data: { login: string; password: string }) => void;
     children?: React.ReactNode;
+    error?: boolean;
+    message?: string;
 }
 
 const AuthForm = ({
     submitText,
     isPasswordHidden = false,
     handleSubmit,
-    children
+    children,
+    error,
+    message,
 }: Props): ReactElement => {
     const [login, setLogin] = useState<string>("");
     const [password, setPassword] = useState<string>("");
@@ -67,6 +71,10 @@ const AuthForm = ({
                 )}
             </div>
             <Button>{submitText}</Button>
+            {error && <div className={classNames(
+                styles["auth-form__error-message"],
+                styles[mode]
+            )}>{message}</div>}
             {children}
         </form>
     );

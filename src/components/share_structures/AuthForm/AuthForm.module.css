@@ -85,3 +85,15 @@
   background-color: var(--orange--dark);
   border: 1.5px solid var(--orange--dark);
 }
+
+.auth-form__error-message {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 15px;
+  color: var(--red-medium);
+}
+
+.auth-form__error-message.auth__form-input.dark {
+  color: var(--red-light);
+}

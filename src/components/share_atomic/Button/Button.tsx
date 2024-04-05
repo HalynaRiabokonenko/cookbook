@@ -2,10 +2,9 @@ import React, { PropsWithChildren, ReactElement, useContext } from "react";
 import styles from "./Button.module.css";
 import classNames from "classnames";
 import { ModeContext } from "../../../providers/mode";
-
 export interface ButtonProps {
     children: React.ReactNode;
-    onClick?: () => void;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement> | React.FormEvent<HTMLButtonElement>) => void;
 }
 
 const Button = ({ onClick, children }: ButtonProps): ReactElement => {

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import { ModeContext } from "../../../providers/mode";
 import { auth } from "../../../api/firebaseConfig";
@@ -11,7 +11,9 @@ import { Page } from "../../share_structures/Page/Page";
 
 const Login = () => {
     const { mode } = useContext(ModeContext);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const [errorMessage, setErrorMessage] = useState("");
+    const [error, setError] = useState(false);
 
     interface handleSubmitTypes {
         login: string;
@@ -22,6 +24,11 @@ const Login = () => {
         signInWithEmailAndPassword(auth, login, password)
             .then((e) => console.log(e))
             .then(() => navigate("/"))
+            .catch((error) => {
+                console.error("Error signing in:", error);
+                setError(true);
+                setErrorMessage("The email or password provided is incorrect");
+            });
     };
 
     return (
@@ -33,7 +40,7 @@ const Login = () => {
                 styles["login__content-modal"],
                 styles[mode]
             )}>
-                <AuthForm submitText="Log in" handleSubmit={handleSubmit} >
+                <AuthForm submitText="Log in" handleSubmit={handleSubmit} error={error} message={errorMessage}>
                     <p>Don't have account yet?
                     </p>
                     <div className={styles["login_link-container"]}>

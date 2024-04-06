@@ -20,7 +20,7 @@ import { Account } from "./components/pages/Account/Account";
 import { RecipesContent } from "./components/share_structures/Recipes/RecipesContent/RecipesContent";
 import { ChangePassword } from "./components/pages/ChangePassword/ChangePassword";
 import { DeleteAccount } from "./components/pages/DeleteAccount/DeleteAccount";
-import { Goodbye } from "./components/pages/Goodbye/Goodbye";
+import { AccountDeleted } from "./components/pages/AccountDeleted/AccountDeleted";
 
 function App() {
     const [user, setUser] = useState<User | null>(null);
@@ -54,7 +54,7 @@ function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/" element={<Home />} />
                         <Route path="*" element={<NotFound />} />
-                        <Route path="/goodbye" element={<Goodbye />} />
+                        <Route path="/account-deleted" element={<AccountDeleted />} />
                     </Routes>
                     <Footer user={user} />
                     <UpButton />

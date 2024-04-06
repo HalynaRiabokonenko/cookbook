@@ -1,0 +1,42 @@
+.account-deleted__container--content {
+  display: flex;
+  margin: 50px 80px;
+}
+
+.account-deleted__image-container {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+}
+
+.account-deleted__image {
+  width: 60%;
+}
+
+.account-deleted__text-container {
+  width: 70%;
+  margin-right: 80px;
+}
+
+.account-deleted__text--sub-header {
+  margin: 30px 0;
+  font-size: 1.6rem;
+}
+
+.account-deleted__text--paragraph {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.account-deleted__text-link,
+.account-deleted__text-link:active,
+.account-deleted__text-link:visited {
+  color: var(--medium-green);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.account-deleted__text-link:focus,
+.account-deleted__text-link:hover {
+  color: var(--dark-green);
+}

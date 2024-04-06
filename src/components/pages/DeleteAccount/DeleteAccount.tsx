@@ -27,7 +27,7 @@ export const DeleteAccount = ({ user }: DeleteAccountProps) => {
             try {
                 await deleteUser(currentUser);
                 console.log("Account deleted successfully.");
-                navigate("/goodbye");
+                navigate("/account-deleted");
             } catch (error) {
                 setError("Failed to delete account. Please try again later.");
             }
@@ -53,13 +53,13 @@ export const DeleteAccount = ({ user }: DeleteAccountProps) => {
                         className={classNames(
                             styles["change-password__label"],
                             styles[mode]
-                        )} htmlFor="key-word">Write your email</label>
+                        )} htmlFor="email">Write your email</label>
                     <input
                         className={classNames(
                             styles["change-password__input"],
                             styles[mode]
                         )}
-                        name="key-word"
+                        name="email"
                         type="text"
                         value={currentEmail}
                         onChange={(e) => setCurrentEmail(e.target.value)}

@@ -51,12 +51,12 @@ export const DeleteAccount = ({ user }: DeleteAccountProps) => {
                 )}>
                     <label
                         className={classNames(
-                            styles["change-password__label"],
+                            styles["delete-account__label"],
                             styles[mode]
                         )} htmlFor="email">Write your email</label>
                     <input
                         className={classNames(
-                            styles["change-password__input"],
+                            styles["delete-account__input"],
                             styles[mode]
                         )}
                         name="email"
@@ -65,11 +65,11 @@ export const DeleteAccount = ({ user }: DeleteAccountProps) => {
                         onChange={(e) => setCurrentEmail(e.target.value)}
                     />
                 </div>
-                <button type="reset">Reset</button>
+                <Button type="reset">Reset</Button>
                 <Button onClick={(e) => handleDeleteAccount(e)}>Submit</Button>
                 {error && <p
                     className={classNames(
-                        styles["change-password__error-message"],
+                        styles["delete-account__error-message"],
                         styles[mode]
                     )}>{error}</p>}
             </form>

@@ -5,16 +5,20 @@ import { ModeContext } from "../../../providers/mode";
 export interface ButtonProps {
     children: React.ReactNode;
     onClick?: (event: React.MouseEvent<HTMLButtonElement> | React.FormEvent<HTMLButtonElement>) => void;
+    type?: "button" | "submit" | "reset";
 }
 
-const Button = ({ onClick, children }: ButtonProps): ReactElement => {
+const Button = ({ onClick, children, type = "submit" }: ButtonProps): ReactElement => {
     const { mode } = useContext(ModeContext);
 
     return (
-        <button className={classNames(
-            styles.button,
-            styles[mode]
-        )} onClick={onClick}>
+        <button
+            className={classNames(
+                styles.button,
+                styles[mode]
+            )}
+            onClick={onClick}
+            type={type}>
             {children}
         </button>
     );

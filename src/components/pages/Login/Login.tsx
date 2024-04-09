@@ -41,19 +41,29 @@ const Login = () => {
                 styles[mode]
             )}>
                 <AuthForm submitText="Log in" handleSubmit={handleSubmit} error={error} message={errorMessage}>
-                    <p>Don't have account yet?
-                    </p>
-                    <div className={styles["login_link-container"]}>
-                        <Link to="/sign-up" className={classnames(
-                            styles["login__navigate-link"],
+                    <div className={styles["login__container--reset-password"]}>
+                        <p className={classnames(
+                            styles["login-form__reset-password-text"],
                             styles[mode]
                         )}>
-                            <div>
-                                Register
-                            </div>
-                        </Link>
+                            <Link to="/reset-password" className={classnames(
+                                styles["login__navigate-link"],
+                                styles[mode]
+                            )}>
+                                Forgot password?
+                            </Link>
+                        </p>
                     </div>
-
+                    <div className={styles["login__container--register"]}>
+                        <div className={styles["login_link-container"]}>
+                            <Link to="/sign-up" className={classnames(
+                                styles["login__navigate-link"],
+                                styles[mode]
+                            )}>
+                                Don't have account yet?
+                            </Link>
+                        </div>
+                    </div>
                 </AuthForm>
             </div>
             <div>

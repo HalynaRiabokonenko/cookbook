@@ -21,6 +21,7 @@ import { RecipesContent } from "./components/share_structures/Recipes/RecipesCon
 import { ChangePassword } from "./components/pages/ChangePassword/ChangePassword";
 import { DeleteAccount } from "./components/pages/DeleteAccount/DeleteAccount";
 import { AccountDeleted } from "./components/pages/AccountDeleted/AccountDeleted";
+import { ResetPassword } from "./components/pages/ResetPassword/ResetPassword";
 
 function App() {
     const [user, setUser] = useState<User | null>(null);
@@ -45,6 +46,7 @@ function App() {
                             <>
                                 <Route path="/sign-up" element={<SignUp />} />
                                 <Route path="/login" element={<Login />} />
+                                <Route path="/reset-password" element={<ResetPassword />} />
                             </>
                         )}
                         <Route path="/recipes" element={<Recipes />} >

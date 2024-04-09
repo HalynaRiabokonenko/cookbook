@@ -30,3 +30,9 @@
   color: var(--modal-text-color);
   border: 1px solid #252927;
 }
+
+.login__container--reset-password,
+login__container--register {
+  margin: 10px;
+  text-align: center;
+}

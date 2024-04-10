@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactElement, useContext } from "react";
+import React, { ReactElement, useContext } from "react";
 import styles from "./Button.module.css";
 import classNames from "classnames";
 import { ModeContext } from "../../../providers/mode";

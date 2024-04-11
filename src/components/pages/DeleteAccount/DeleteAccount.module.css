@@ -3,7 +3,7 @@
   width: var(--modal-width);
   border: 1px solid var(--light-green);
   border-radius: 25px;
-  margin: 0 auto;
+  margin: 50px auto 0;
   padding: 40px;
   padding-bottom: 20px;
   display: flex;
@@ -71,4 +71,9 @@
   margin: 0 60px 5px;
   font-weight: bold;
   align-self: flex-start;
+}
+
+.delete-account__buttons-container {
+  display: flex;
+  margin: 20px 0px 10px;
 }

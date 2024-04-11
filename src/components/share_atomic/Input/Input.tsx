@@ -5,9 +5,12 @@ import { ModeContext } from "../../../providers/mode";
 export interface InputProps {
     children?: React.ReactNode;
     type?: "text" | "email" | "password";
+    name?: string;
+    onChange?: (e: any) => void;
+    value?: string;
 }
 
-const Button = ({ children, type = "text" }: InputProps): ReactElement => {
+export const Input = ({ children, type = "text", name, value, onChange }: InputProps): ReactElement => {
     const { mode } = useContext(ModeContext);
 
     return (
@@ -16,12 +19,14 @@ const Button = ({ children, type = "text" }: InputProps): ReactElement => {
                 styles.input,
                 styles[mode]
             )}
-            type={type}>
+            type={type}
+            name={name}
+            value={value}
+            onChange={onChange}>
             {children}
         </input>
     );
 }
 
-export default Button;
 
 

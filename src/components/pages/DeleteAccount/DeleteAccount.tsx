@@ -3,7 +3,7 @@ import { ModeContext } from "../../../providers/mode";
 import styles from "./DeleteAccount.module.css";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import { auth } from "../../../api/firebaseConfig";
-import { User, signInWithEmailAndPassword, updatePassword, deleteUser } from "firebase/auth";
+import { User, deleteUser } from "firebase/auth";
 import classNames from "classnames";
 import Button from "../../share_atomic/Button/Button";
 import { Page } from "../../share_structures/Page/Page";
@@ -64,7 +64,7 @@ export const DeleteAccount = ({ user }: DeleteAccountProps) => {
                     styles["delete-account__buttons-container"],
                     styles[mode]
                 )}>
-                    <Button type="reset">Cancel</Button>
+                    <Button onClick={() => setCurrentEmail("")}>Cancel</Button>
                     <Button onClick={(e) => handleDeleteAccount(e)}>Submit</Button></div>
                 {error && <p
                     className={classNames(

@@ -1,0 +1,30 @@
+.input {
+  width: 100%;
+  padding: 10px;
+  margin: 0 10px 20px;
+  border-radius: 8px;
+  cursor: text;
+  resize: none;
+  padding: 9px;
+  margin: 0 10px 8px;
+  border: 1.5px solid var(--white);
+}
+
+.input.dark {
+  color: var(--white);
+  background-color: var(--medium-green--dark);
+  border: 1.5px solid #252927;
+}
+
+.input:focus {
+  background-color: var(--white);
+  border: 1.5px solid var(--medium-green);
+  outline: none;
+}
+
+.input:focus.input.dark {
+  color: var(--white);
+  background-color: var(--medium-green--dark);
+  border: 1.5px solid var(--modal-text-color);
+  outline: none;
+}

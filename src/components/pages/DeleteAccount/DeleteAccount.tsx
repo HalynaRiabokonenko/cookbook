@@ -8,6 +8,7 @@ import classNames from "classnames";
 import Button from "../../share_atomic/Button/Button";
 import { Page } from "../../share_structures/Page/Page";
 import { useNavigate } from "react-router-dom";
+import { Input } from "../../share_atomic/Input/Input";
 
 interface DeleteAccountProps {
     user: User | null;
@@ -54,19 +55,17 @@ export const DeleteAccount = ({ user }: DeleteAccountProps) => {
                             styles["delete-account__label"],
                             styles[mode]
                         )} htmlFor="email">Write your email</label>
-                    <input
-                        className={classNames(
-                            styles["delete-account__input"],
-                            styles[mode]
-                        )}
-                        name="email"
+                    <Input name="email"
                         type="text"
                         value={currentEmail}
-                        onChange={(e) => setCurrentEmail(e.target.value)}
-                    />
+                        onChange={(e) => setCurrentEmail(e.target.value)} />
                 </div>
-                <Button type="reset">Reset</Button>
-                <Button onClick={(e) => handleDeleteAccount(e)}>Submit</Button>
+                <div className={classNames(
+                    styles["delete-account__buttons-container"],
+                    styles[mode]
+                )}>
+                    <Button type="reset">Cancel</Button>
+                    <Button onClick={(e) => handleDeleteAccount(e)}>Submit</Button></div>
                 {error && <p
                     className={classNames(
                         styles["delete-account__error-message"],

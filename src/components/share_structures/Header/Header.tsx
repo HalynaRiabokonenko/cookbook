@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
 import classnames from "classnames";
@@ -18,6 +18,23 @@ function Header({ user }: HeaderProps) {
     const toggleAccountModal = (): void => {
         setIsModalOpen((prevState) => (prevState === false ? true : false));
     };
+
+    useEffect(() => {
+        function handleKeyDown(event: KeyboardEvent) {
+            if (event.key === "Escape") {
+                setIsModalOpen(false);
+            }
+        }
+
+        if (isModalOpen) {
+            window.addEventListener('keydown', handleKeyDown);
+        }
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [isModalOpen]);
+
 
     return (
         <header className={styles["header"]}>

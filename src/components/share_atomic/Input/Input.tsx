@@ -1,7 +1,7 @@
-import React, { ReactElement, useContext } from "react";
+import React, { ReactElement } from "react";
 import styles from "./Input.module.css";
 import classNames from "classnames";
-import { ModeContext } from "../../../providers/mode";
+import { useModeContext } from "../../../providers/mode";
 export interface InputProps {
     children?: React.ReactNode;
     type?: "text" | "email" | "password";
@@ -11,7 +11,7 @@ export interface InputProps {
 }
 
 export const Input = ({ children, type = "text", name, value, onChange }: InputProps): ReactElement => {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
 
     return (
         <input

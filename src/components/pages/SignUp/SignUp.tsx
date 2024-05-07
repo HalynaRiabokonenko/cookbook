@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
-import { ModeContext } from "../../../providers/mode";
+import { useModeContext } from "../../../providers/mode";
 import { auth } from "../../../api/firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import AuthForm from "../../share_structures/AuthForm/AuthForm";
@@ -10,7 +10,7 @@ import styles from "./SignUp.module.css";
 import { Page } from "../../share_structures/Page/Page";
 
 const SignUp = () => {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
     const navigate = useNavigate()
 
     interface handleSubmitTypes {

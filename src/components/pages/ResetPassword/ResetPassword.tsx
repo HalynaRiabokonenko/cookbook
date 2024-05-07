@@ -1,5 +1,5 @@
-import React, { FormEvent, useContext, useState } from "react";
-import { ModeContext } from "../../../providers/mode";
+import React, { FormEvent, useState } from "react";
+import { useModeContext } from "../../../providers/mode";
 import styles from "./ResetPassword.module.css";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import { Page } from "../../share_structures/Page/Page";
@@ -8,7 +8,7 @@ import classNames from "classnames";
 import Button from "../../share_atomic/Button/Button";
 
 export const ResetPassword = () => {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
     const [email, setEmail] = useState("");
     const auth = getAuth();
     const [successMessage, setSuccessMessage] = useState<string | null>(null);

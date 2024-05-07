@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { ModeContext } from "../../../providers/mode";
+import React from "react";
+import { useModeContext } from "../../../providers/mode";
 import styles from "./AccountDeleted.module.css";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import Button from "../../share_atomic/Button/Button";
@@ -9,7 +9,7 @@ import classNames from "classnames";
 
 
 export const AccountDeleted = () => {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
 
     return (
         <Page>

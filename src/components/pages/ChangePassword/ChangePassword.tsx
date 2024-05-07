@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { ModeContext } from "../../../providers/mode";
+import React, { useState } from "react";
+import { useModeContext } from "../../../providers/mode";
 import styles from "./ChangePassword.module.css";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import { auth } from "../../../api/firebaseConfig";
@@ -13,7 +13,7 @@ interface ChangePasswordProps {
 }
 
 export const ChangePassword = ({ user }: ChangePasswordProps) => {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
     const email = user?.email;
     const [currentPassword, setCurrentPassword] = useState<string>('');
     const [newPassword, setNewPassword] = useState<string>('');

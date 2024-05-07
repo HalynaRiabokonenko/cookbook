@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 import classnames from "classnames";
-import { ModeContext } from "../../../providers/mode";
+import { useModeContext } from "../../../providers/mode";
 import { User } from "firebase/auth";
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const Footer: React.FC<Props> = ({ user }: Props) => {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
 
     return (
         <footer className={classnames(

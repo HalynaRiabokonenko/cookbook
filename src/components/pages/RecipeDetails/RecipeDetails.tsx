@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./RecipeDetails.module.css";
-import { ModeContext } from "../../../providers/mode";
+import { useModeContext } from "../../../providers/mode";
 import classnames from "classnames";
 import { db } from "../../../api/firebaseConfig";
 import { doc, getDoc, DocumentSnapshot } from "firebase/firestore";
@@ -10,7 +10,7 @@ import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import { Page } from "../../share_structures/Page/Page";
 
 function RecipeDetails() {
-  const { mode } = useContext(ModeContext);
+  const { mode } = useModeContext();
   const [recipe, setRecipe] = useState<RecipeInterface | null>(null);
 
   const { recipeId, option } = useParams<{ recipeId: string; option: string }>();

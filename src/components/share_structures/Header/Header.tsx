@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
 import classnames from "classnames";
-import { ModeContext } from "../../../providers/mode";
+import { useModeContext } from "../../../providers/mode";
 import { User } from "firebase/auth";
 import { AccountModal } from "../AccountModal/AccountModal";
 
@@ -12,7 +12,7 @@ interface HeaderProps {
 
 function Header({ user }: HeaderProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const { mode, toggleMode } = useContext(ModeContext);
+    const { mode, toggleMode } = useModeContext();
     const location = useLocation();
 
     const toggleAccountModal = (): void => {

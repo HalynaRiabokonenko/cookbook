@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
-import { ModeContext } from "../../../providers/mode";
+import { useModeContext } from "../../../providers/mode";
 import { auth } from "../../../api/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import AuthForm from "../../share_structures/AuthForm/AuthForm";
@@ -10,7 +10,7 @@ import styles from "./Login.module.css";
 import { Page } from "../../share_structures/Page/Page";
 
 const Login = () => {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState("");
     const [error, setError] = useState(false);

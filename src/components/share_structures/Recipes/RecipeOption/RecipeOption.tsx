@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import classnames from "classnames";
-import { ModeContext } from "../../../../providers/mode";
+import { useModeContext } from "../../../../providers/mode";
 import RecipeInterface from "../../../pages/Recipes/Recipes.types";
 import styles from "./RecipeOption.module.css"
 
@@ -10,7 +10,7 @@ interface RecipeOptionTypes {
 }
 
 export const RecipeOption = ({ recipe }: RecipeOptionTypes) => {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
 
     return (
         <div className="recipe-option__container">

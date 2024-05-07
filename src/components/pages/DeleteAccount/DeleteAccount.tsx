@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { ModeContext } from "../../../providers/mode";
+import React, { useState } from "react";
+import { useModeContext } from "../../../providers/mode";
 import styles from "./DeleteAccount.module.css";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import { auth } from "../../../api/firebaseConfig";
@@ -15,7 +15,7 @@ interface DeleteAccountProps {
 }
 
 export const DeleteAccount = ({ user }: DeleteAccountProps) => {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
     const email = user?.email;
     const [currentEmail, setCurrentEmail] = useState("");
     const [error, setError] = useState("");

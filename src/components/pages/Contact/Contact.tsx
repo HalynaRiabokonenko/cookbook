@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Contact.module.css";
 import classnames from "classnames";
-import { ModeContext } from "../../../providers/mode";
+import { useModeContext } from "../../../providers/mode";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import { Page } from "../../share_structures/Page/Page";
 import Button from "../../share_atomic/Button/Button";
@@ -21,7 +21,7 @@ interface Message {
 }
 
 function ContactContent({ user }: UserProps) {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
     const [message, setMessage] = useState<string | null>(null);
     const [messages, setMessages] = useState<Message[]>([]);
 

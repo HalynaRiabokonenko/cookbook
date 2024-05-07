@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import styles from "./AccountModal.module.css";
 import classnames from "classnames";
-import { ModeContext } from "../../../providers/mode";
+import { useModeContext } from "../../../providers/mode";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../api/firebaseConfig";
@@ -11,7 +11,7 @@ interface AccountModalProps {
 }
 
 export const AccountModal = ({ setIsModalOpen }: AccountModalProps) => {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
     const navigate = useNavigate();
 
     const handlerSignOut = () => {

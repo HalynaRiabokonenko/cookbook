@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import styles from "./About.module.css";
 import classnames from "classnames";
-import { ModeContext } from "../../../providers/mode";
+import { useModeContext } from "../../../providers/mode";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import { Page } from "../../share_structures/Page/Page";
 
 const About = () => {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
 
     return (
         <Page>

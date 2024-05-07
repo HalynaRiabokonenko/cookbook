@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Recipes.module.css";
-import { ModeContext } from "../../../providers/mode";
+import { useModeContext } from "../../../providers/mode";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import { Page } from "../../share_structures/Page/Page";
 import { RecipesNavigation } from "../../share_structures/Recipes/RecipesNavigation/RecipesNavigation";
@@ -9,7 +9,7 @@ import { RecipesFullContent } from "../../share_structures/Recipes/RecipesFullCo
 import { useParams, useNavigate } from "react-router-dom";
 
 function Recipes() {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
     const navigate = useNavigate();
     const { option } = useParams<{ option: string }>();
     const [selectedOption, setSelectedOption] = useState<string | undefined>(option);

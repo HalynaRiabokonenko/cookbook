@@ -1,6 +1,6 @@
-import React, { useContext, useCallback } from "react";
+import React, { useCallback } from "react";
 import { NavLink, useParams } from "react-router-dom";
-import { ModeContext } from "../../../../providers/mode";
+import { useModeContext } from "../../../../providers/mode";
 import styles from "./RecipesNavigation.module.css";
 import classnames from "classnames";
 
@@ -26,7 +26,7 @@ const recipes: Recipe[] = [
 ];
 
 export const RecipesNavigation: React.FC<RecipesNavigationProps> = ({ onSelectOption }) => {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
 
     const handleOptionSelect = useCallback((option: string) => {
         onSelectOption(option);

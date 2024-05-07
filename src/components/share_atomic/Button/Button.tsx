@@ -1,7 +1,7 @@
 import React, { ReactElement, useContext } from "react";
 import styles from "./Button.module.css";
 import classNames from "classnames";
-import { ModeContext } from "../../../providers/mode";
+import { useModeContext } from "../../../providers/mode";
 export interface ButtonProps {
     children: React.ReactNode;
     onClick?: (event: React.MouseEvent<HTMLButtonElement> | React.FormEvent<HTMLButtonElement>) => void;
@@ -9,7 +9,7 @@ export interface ButtonProps {
 }
 
 const Button = ({ onClick, children, type = "submit" }: ButtonProps): ReactElement => {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
 
     return (
         <button

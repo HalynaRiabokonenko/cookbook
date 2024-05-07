@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Home.module.css";
-import { ModeContext } from "../../../providers/mode";
+import { useModeContext } from "../../../providers/mode";
 import classnames from "classnames";
-import PageHeader from "../../share_atomic/PageHeader/PageHeader";
 import { Page } from "../../share_structures/Page/Page";
 import { DocumentData, collection, onSnapshot } from "firebase/firestore";
 import { db } from "../../../api/firebaseConfig";
@@ -21,7 +20,7 @@ interface AphorismsInterface {
 }
 
 const Home = () => {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
     const [cuisinesData, setCuisinesData] = useState<CuisinesInterface[]>([]);
     const [aphorismsData, setAphorismsData] = useState<AphorismsInterface[]>([]);
     const [currentAphorismIndex, setCurrentAphorismIndex] = useState(0);

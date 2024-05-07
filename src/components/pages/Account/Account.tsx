@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import { ModeContext } from "../../../providers/mode";
+import React from "react";
+import { useModeContext } from "../../../providers/mode";
 import classnames from "classnames";
 import styles from "./Account.module.css";
 import PageHeader from "../../share_atomic/PageHeader/PageHeader";
@@ -13,7 +13,7 @@ interface AccountProps {
 }
 
 export const Account = ({ user }: AccountProps) => {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
     const navigate = useNavigate();
 
     let creationTime = "";

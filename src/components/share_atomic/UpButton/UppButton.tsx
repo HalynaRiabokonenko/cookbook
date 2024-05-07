@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import styles from "./UppButton.module.css"
 import classNames from "classnames";
-import { ModeContext } from "../../../providers/mode";
+import { useModeContext } from "../../../providers/mode";
 
 export const UpButton = () => {
-    const { mode } = useContext(ModeContext);
+    const { mode } = useModeContext();
     const [isVisible, setIsVisible] = useState(false);
 
     const scrollToTop = () => {

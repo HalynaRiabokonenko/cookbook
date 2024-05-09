@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useModeContext } from "../../../providers/mode";
 import styles from "./DeleteAccount.module.css";
-import PageHeader from "../../share_atomic/PageHeader/PageHeader";
+import PageHeader from "../../atomic/PageHeader/PageHeader";
 import { auth } from "../../../api/firebaseConfig";
 import { User, deleteUser } from "firebase/auth";
 import classNames from "classnames";
-import Button from "../../share_atomic/Button/Button";
-import { Page } from "../../share_structures/Page/Page";
+import Button from "../../atomic/Button/Button";
+import { Page } from "../../structures/Page/Page";
 import { useNavigate } from "react-router-dom";
-import { Input } from "../../share_atomic/Input/Input";
+import { Input } from "../../atomic/Input/Input";
 
 interface DeleteAccountProps {
     user: User | null;

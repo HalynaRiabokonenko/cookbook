@@ -1,9 +1,9 @@
 import React from "react";
 import { useModeContext } from "../../../providers/mode";
 import styles from "./AccountDeleted.module.css";
-import PageHeader from "../../share_atomic/PageHeader/PageHeader";
-import Button from "../../share_atomic/Button/Button";
-import { Page } from "../../share_structures/Page/Page";
+import PageHeader from "../../atomic/PageHeader/PageHeader";
+import Button from "../../atomic/Button/Button";
+import { Page } from "../../structures/Page/Page";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
 

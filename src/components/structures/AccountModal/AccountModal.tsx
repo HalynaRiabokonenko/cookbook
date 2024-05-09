@@ -26,7 +26,7 @@ export const AccountModal = ({ setIsModalOpen }: AccountModalProps) => {
     }
 
     return (
-        <div className={classnames(
+        <div id="account-modal__container" className={classnames(
             styles["account-modal__container"],
             styles[mode]
         )}>

@@ -6,8 +6,8 @@ import classnames from "classnames";
 import { db } from "../../../api/firebaseConfig";
 import { doc, getDoc, DocumentSnapshot } from "firebase/firestore";
 import RecipeInterface from "./RecipeDetails.types";
-import PageHeader from "../../share_atomic/PageHeader/PageHeader";
-import { Page } from "../../share_structures/Page/Page";
+import PageHeader from "../../atomic/PageHeader/PageHeader";
+import { Page } from "../../structures/Page/Page";
 
 function RecipeDetails() {
   const { mode } = useModeContext();

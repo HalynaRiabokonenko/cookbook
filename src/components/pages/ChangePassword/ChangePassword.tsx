@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useModeContext } from "../../../providers/mode";
 import styles from "./ChangePassword.module.css";
-import PageHeader from "../../share_atomic/PageHeader/PageHeader";
+import PageHeader from "../../atomic/PageHeader/PageHeader";
 import { auth } from "../../../api/firebaseConfig";
-import { Page } from "../../share_structures/Page/Page";
+import { Page } from "../../structures/Page/Page";
 import { User, signInWithEmailAndPassword, updatePassword } from "firebase/auth";
 import classNames from "classnames";
-import Button from "../../share_atomic/Button/Button";
+import Button from "../../atomic/Button/Button";
 
 interface ChangePasswordProps {
     user: User | null;

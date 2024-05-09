@@ -2,9 +2,9 @@ import React from "react";
 import { useModeContext } from "../../../providers/mode";
 import { Link } from "react-router-dom";
 import styles from "./NotFound.module.css";
-import Button from "../../share_atomic/Button/Button";
-import PageHeader from "../../share_atomic/PageHeader/PageHeader";
-import { Page } from "../../share_structures/Page/Page";
+import Button from "../../atomic/Button/Button";
+import PageHeader from "../../atomic/PageHeader/PageHeader";
+import { Page } from "../../structures/Page/Page";
 
 const NotFound = () => {
     const { mode } = useModeContext();

@@ -1,11 +1,11 @@
 import React, { FormEvent, useState } from "react";
 import { useModeContext } from "../../../providers/mode";
 import styles from "./ResetPassword.module.css";
-import PageHeader from "../../share_atomic/PageHeader/PageHeader";
-import { Page } from "../../share_structures/Page/Page";
+import PageHeader from "../../atomic/PageHeader/PageHeader";
+import { Page } from "../../structures/Page/Page";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import classNames from "classnames";
-import Button from "../../share_atomic/Button/Button";
+import Button from "../../atomic/Button/Button";
 
 export const ResetPassword = () => {
     const { mode } = useModeContext();

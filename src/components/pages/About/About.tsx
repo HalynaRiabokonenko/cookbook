@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./About.module.css";
 import classnames from "classnames";
 import { useModeContext } from "../../../providers/mode";
-import PageHeader from "../../share_atomic/PageHeader/PageHeader";
-import { Page } from "../../share_structures/Page/Page";
+import PageHeader from "../../atomic/PageHeader/PageHeader";
+import { Page } from "../../structures/Page/Page";
 
 const About = () => {
     const { mode } = useModeContext();

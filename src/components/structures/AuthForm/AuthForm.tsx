@@ -2,7 +2,7 @@ import React, { ReactElement, useState } from "react";
 import { useModeContext } from "../../../providers/mode";
 import styles from "./AuthForm.module.css";
 import classNames from "classnames";
-import Button from "../../share_atomic/Button/Button";
+import Button from "../../atomic/Button/Button";
 
 interface Props {
     submitText: string;

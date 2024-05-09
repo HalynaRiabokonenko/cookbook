@@ -14,6 +14,7 @@
 
 .account__user-details {
   margin: 20px;
+  position: relative;
 }
 
 .account__user-detail-container {
@@ -28,4 +29,164 @@
 .account__user-detail-option {
   text-align: center;
   font-weight: 700;
+}
+
+.account__container {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.account__button-container--edit {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 30px;
+  margin: 10px;
+}
+
+.account__button--edit {
+  border: none;
+  background-color: inherit;
+}
+
+.account__button--edit-icon {
+  height: 25px;
+  width: 25px;
+}
+
+.account__buttons--container {
+  display: flex;
+  margin: 30px;
+}
+
+.account__form--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.account__form--inputs-container {
+  display: flex;
+  margin: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+.account__form--label {
+  color: var(--beige-dark);
+  margin-right: 10px;
+  white-space: nowrap;
+  width: 40%;
+}
+
+.account__form--label.dark {
+  color: var(--violet-medium);
+}
+
+.account__form--input-readonly,
+.account__form--input-text {
+  background-color: inherit;
+  color: var(--violet-dark);
+  font-weight: 500;
+}
+
+.account__form--input-readonly,
+.account__form--input-text,
+.account__form--input {
+  background-color: inherit;
+  color: var(--violet-dark);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  border: none;
+}
+
+.account__form--input-readonly:focus,
+.account__form--input-readonly:active {
+  outline: none;
+  border: none;
+}
+
+.account__form--input {
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: 2px 5px;
+  border: 0.5px solid #c9c9c9;
+}
+
+.account__form--input:focus,
+.account__form--input:active {
+  outline: none;
+  border: 0.5px solid #c9c9c9;
+}
+
+.account__form--input-readonly.dark,
+.account__form--input-text.dark {
+  background-color: inherit;
+  color: var(--beige-light);
+}
+
+.account__form--input.dark {
+  background-color: var(--violet-dark);
+  color: var(--beige-light);
+  border: 0.5px solid var(--violet-dark);
+}
+
+@media only screen and (max-width: 1200px) {
+  .account__button-container--edit {
+    right: 10px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .account__container {
+    width: 80%;
+  }
+
+  .account__form--inputs-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .account__button--edit-icon {
+    height: 25px;
+    width: 25px;
+  }
+
+  .account__form--inputs-container {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .account__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .account__buttons--container {
+    flex-direction: column;
+  }
+
+  .account__container {
+    font-size: 0.9rem;
+  }
+
+  .account__button-container--edit {
+    position: absolute;
+    top: -20px;
+    right: -30px;
+  }
 }

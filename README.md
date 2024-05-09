@@ -8,13 +8,15 @@ Download the Installer from NodeJs official website. Make sure you have download
 
 ## Initialize a Node.js Project (if not already done)
 
-### `npm init`
+   ```bash
+npm init
 
 If you haven't already initialized your project as a Node.js project, you can do so by running npm init in your project directory. This command will create a package.json file, which contains metadata about your project and its dependencies.
 
 ## Install Dependencies
 
-### `npm install`
+   ```bash
+npm install
 
 If your project has dependencies listed in the package.json file, you need to install them. You can do this by running npm install. This will download and install all the dependencies listed in your package.json file.
 
@@ -22,7 +24,8 @@ If your project has dependencies listed in the package.json file, you need to in
 
 In the project directory, you can run:
 
-### `npm run dev`
+   ```bash
+npm run dev
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

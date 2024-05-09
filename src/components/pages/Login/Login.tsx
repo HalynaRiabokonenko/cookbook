@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import PageHeader from "../../share_atomic/PageHeader/PageHeader";
+import PageHeader from "../../atomic/PageHeader/PageHeader";
 import { useModeContext } from "../../../providers/mode";
 import { auth } from "../../../api/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import AuthForm from "../../share_structures/AuthForm/AuthForm";
+import AuthForm from "../../structures/AuthForm/AuthForm";
 import { Link, useNavigate } from "react-router-dom";
 import classnames from "classnames";
 import styles from "./Login.module.css";
-import { Page } from "../../share_structures/Page/Page";
+import { Page } from "../../structures/Page/Page";
 
 const Login = () => {
     const { mode } = useModeContext();

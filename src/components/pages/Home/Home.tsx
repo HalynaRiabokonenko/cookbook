@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Home.module.css";
 import { useModeContext } from "../../../providers/mode";
 import classnames from "classnames";
-import { Page } from "../../share_structures/Page/Page";
+import { Page } from "../../structures/Page/Page";
 import { DocumentData, collection, onSnapshot } from "firebase/firestore";
 import { db } from "../../../api/firebaseConfig";
 

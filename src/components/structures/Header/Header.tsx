@@ -36,6 +36,22 @@ function Header({ user }: HeaderProps) {
     }, [isModalOpen]);
 
 
+    useEffect(() => {
+        const handleClickOutsideAccountModal = (event: MouseEvent) => {
+            if (event.target && !(event.target as HTMLElement).closest("#header__account-container") &&
+                !(event.target as HTMLElement).closest("#account-modal__container")) {
+                setIsModalOpen(false);
+            }
+        };
+
+        document.body.addEventListener("click", handleClickOutsideAccountModal);
+
+        return () => {
+            document.body.removeEventListener("click", handleClickOutsideAccountModal);
+        };
+    }, []);
+
+
     return (
         <header className={styles["header"]}>
             <div className={classnames(
@@ -127,7 +143,7 @@ function Header({ user }: HeaderProps) {
                         </ul>
                     </nav>
                 </div>
-                {user && <div className={styles["header__account-container"]} onClick={toggleAccountModal}
+                {user && <div id="header__account-container" className={styles["header__account-container"]} onClick={toggleAccountModal}
                 >
                     {mode === "light" ? (
                         <div

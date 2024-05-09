@@ -126,7 +126,7 @@ export const Account = ({ user }: AccountProps) => {
                                 <img src="/images/account/edit-light.png" className={styles["account__button--edit-icon"]} />
 
                             ) : (
-                                <img src="/images/account/edit-white.png" className={styles["account__button--edit-icon"]} />
+                                <img src="/images/account/edit-dark.png" className={styles["account__button--edit-icon"]} />
                             )}
                         </button>
                     </div>}

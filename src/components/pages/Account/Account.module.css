@@ -1,8 +1,9 @@
 .account__content {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  /* flex-direction: row; */
+  justify-content: space-evenly;
   align-items: center;
+  width: 100%;
 }
 
 .account__user-info-container {
@@ -127,9 +128,17 @@
 }
 
 .account__user-photo--container {
+  align-self: flex-start;
 }
 
 .account__user-photo--content {
+}
+
+.account__user-photo,
+.account__user-icon {
+  border: var(--header-text-color) solid 1px;
+  border-radius: 50%;
+  width: 200px;
 }
 
 @media only screen and (max-width: 1200px) {

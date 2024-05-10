@@ -106,6 +106,9 @@ export const Account = ({ user }: AccountProps) => {
         }
     };
 
+    const handleChangePhoto = () => {
+        console.log("CHANGE PHOTO")
+    }
 
     return (
         <Page>
@@ -119,16 +122,22 @@ export const Account = ({ user }: AccountProps) => {
                 <div className={classnames(
                     styles["account__user-photo--container"],
                     styles[mode]
-                )}>
+                )} onClick={handleChangePhoto}>
                     <div className={classnames(
                         styles["account__user-photo--content"],
                         styles[mode]
                     )}>
                         {
                             userImage ?
-                                <img src={userImage} alt="user photo icon" />
+                                <img src={userImage} alt="user photo icon" className={classnames(
+                                    styles["account__user-photo"],
+                                    styles[mode]
+                                )} />
                                 :
-                                <img src="/images/account/user-image-light.png" alt="user photo icon" />
+                                <img src="/images/account/user-image-light.png" alt="user photo icon" className={classnames(
+                                    styles["account__user-icon"],
+                                    styles[mode]
+                                )} />
                         }
                     </div>
                 </div>

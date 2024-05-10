@@ -1,8 +1,8 @@
 .account__content {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  width: 100%;
 }
 
 .account__user-info-container {
@@ -126,6 +126,35 @@
   background-color: inherit;
 }
 
+.account__user-photo--container {
+  align-self: flex-start;
+}
+
+.account__user-photo--content {
+  /* border-radius: 50%;
+  border: 1px solid var(--light-gray); */
+}
+
+.account__user-photo,
+.account__user-icon {
+  width: 200px;
+}
+
+.account__user-photo {
+}
+
+.account__user-icon {
+  border: 1px solid var(--light-gray);
+  border-radius: 50%;
+  width: 200px;
+}
+
+.account__user-icon--error {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--red-medium);
+}
+
 @media only screen and (max-width: 1200px) {
   .account__button-container--edit {
     right: 10px;
@@ -133,6 +162,11 @@
 }
 
 @media only screen and (max-width: 900px) {
+  .account__content {
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .account__container {
     width: 80%;
   }

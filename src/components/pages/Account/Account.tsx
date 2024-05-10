@@ -7,9 +7,10 @@ import { Page } from "../../structures/Page/Page";
 import { User } from "firebase/auth";
 import Button from "../../atomic/Button/Button";
 import { useNavigate } from "react-router-dom";
-import { doc, getDoc, setDoc } from "firebase/firestore";
-import { db } from "../../../api/firebaseConfig";
-
+import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
+import { db, storage } from "../../../api/firebaseConfig";
+import { ImageUpload } from "../../structures/ImageUpload/ImageUpload";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 interface AccountProps {
     user: User | null;
 }
@@ -20,6 +21,7 @@ interface UserData {
     username: string;
     male: boolean;
     birthDate: any;
+    photo?: string;
 }
 
 export const Account = ({ user }: AccountProps) => {
@@ -34,6 +36,9 @@ export const Account = ({ user }: AccountProps) => {
         male: true,
         birthDate: ""
     });
+    const [userImageUrl, setUserImageUrl] = useState<string>("");
+    const [photo, setPhoto] = useState<File | null>(null);
+    const [imageChangeError, setImageChangeError] = useState<string | null>(null);
 
     let creationTime = "";
     let lastSignInTime = "";
@@ -55,7 +60,8 @@ export const Account = ({ user }: AccountProps) => {
                 const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {
                     setUserData(docSnap.data() as UserData);
-                    setFormData(docSnap.data() as UserData)
+                    setFormData(docSnap.data() as UserData);
+                    setUserImageUrl(docSnap.data().photo);
                 }
 
             } catch (error) {
@@ -63,7 +69,7 @@ export const Account = ({ user }: AccountProps) => {
             }
         };
         fetchUserData();
-    }, [user]);
+    }, []);
 
     const handleSaveData = async (data: UserData) => {
         try {
@@ -105,6 +111,43 @@ export const Account = ({ user }: AccountProps) => {
         }
     };
 
+    const handlePhotoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const files = event.target.files;
+        if (files && files.length > 0) {
+            setPhoto(files[0]);
+        }
+        setImageChangeError(null);
+    }
+
+    const handleSubmitPhotoChange = async () => {
+        if (!user) {
+            console.error('User is not authenticated');
+            return;
+        }
+
+        const userId = user.uid;
+
+        try {
+            let newPhotoUrl: string | null = null;
+
+            if (photo) {
+                const photoRef = ref(storage, `photos/${userId}/user_photo`);
+                await uploadBytes(photoRef, photo);
+                newPhotoUrl = await getDownloadURL(photoRef);
+            } else {
+                newPhotoUrl = userImageUrl;
+            }
+
+            await updateDoc(doc(db, `userData/${user?.uid}`), {
+                photo: newPhotoUrl
+            });
+            setUserImageUrl(newPhotoUrl);
+            setPhoto(null);
+        } catch (error) {
+            console.log(error);
+            setImageChangeError("Error changing photo");
+        }
+    };
 
     return (
         <Page>
@@ -115,7 +158,34 @@ export const Account = ({ user }: AccountProps) => {
                 styles["account__content"],
                 styles[mode]
             )}>
-
+                <div className={classnames(
+                    styles["account__user-photo--container"],
+                    styles[mode]
+                )}>
+                    <div className={classnames(
+                        styles["account__user-photo--content"],
+                        styles[mode]
+                    )}>
+                        {
+                            userImageUrl ?
+                                <img src={userImageUrl} alt="user photo icon" className={classnames(
+                                    styles["account__user-photo"],
+                                    styles[mode]
+                                )} ></img>
+                                :
+                                <img src="/images/account/user-image-light.png" alt="user photo icon" className={classnames(
+                                    styles["account__user-icon"],
+                                    styles[mode]
+                                )} />
+                        }
+                        <ImageUpload onChange={handlePhotoChange} photo={userImageUrl} />
+                        {photo && <Button onClick={handleSubmitPhotoChange}>Save</Button>}
+                        {imageChangeError && <div className={classnames(
+                            styles["account__user-icon--error"],
+                            styles[mode]
+                        )}>{imageChangeError}</div>}
+                    </div>
+                </div>
                 <div className={classnames(
                     styles["account__user-details"],
                     styles[mode]
@@ -274,9 +344,6 @@ export const Account = ({ user }: AccountProps) => {
                                     styles[mode]
                                 )}> {lastSignInTime}</p>
                             </div>
-
-
-
                         </div>
                         {!readonly && <div className={styles["account__buttons--container"]}>
                             <Button type="reset" onClick={handleReset}>Cancel</Button>
@@ -284,15 +351,13 @@ export const Account = ({ user }: AccountProps) => {
                         </div>
                         }
                     </form>}
-
+                    {
+                        readonly && <div>
+                            <Button onClick={() => { navigate("/change-password") }}>Change Password</Button>
+                            <Button onClick={() => { navigate("/delete-account") }}>Delete account</Button>
+                        </div>
+                    }
                 </div>
-                {
-                    readonly && <div>
-                        <Button onClick={() => { navigate("/change-password") }}>Change Password</Button>
-                        <Button onClick={() => { navigate("/delete-account") }}>Delete account</Button>
-                    </div>
-                }
-
             </div>
         </Page>
     )

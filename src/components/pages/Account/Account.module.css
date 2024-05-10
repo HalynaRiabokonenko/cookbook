@@ -110,7 +110,6 @@
 }
 
 .account__form--input {
-  /* background-color: var(--white); */
   border-radius: 5px;
   padding: 2px 5px;
   border: 0.5px solid #c9c9c9;
@@ -125,13 +124,6 @@
 .account__form--input-readonly.dark,
 .account__form--input-text.dark {
   background-color: inherit;
-  /* color: var(--beige-light); */
-}
-
-.account__form--input.dark {
-  /* background-color: var(--violet-dark);
-  color: var(--beige-light);
-  border: 0.5px solid var(--violet-dark); */
 }
 
 @media only screen and (max-width: 1200px) {

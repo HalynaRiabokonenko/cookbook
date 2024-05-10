@@ -4,7 +4,7 @@ import classnames from "classnames";
 import styles from "./Account.module.css";
 import PageHeader from "../../atomic/PageHeader/PageHeader";
 import { Page } from "../../structures/Page/Page";
-import { User, getIdTokenResult } from "firebase/auth";
+import { User } from "firebase/auth";
 import Button from "../../atomic/Button/Button";
 import { useNavigate } from "react-router-dom";
 import { doc, getDoc, setDoc } from "firebase/firestore";
@@ -235,6 +235,47 @@ export const Account = ({ user }: AccountProps) => {
                                 />
                             </div>
 
+                            <div className={classnames(
+                                styles["account__form--inputs-container"],
+                                styles[mode]
+                            )}>
+                                <p className={classnames(
+                                    styles["account__user-detail-option"],
+                                    styles[mode]
+                                )}>UID:</p>
+                                <p className={classnames(
+                                    styles["account__user-detail-option-info"],
+                                    styles[mode]
+                                )}> {user?.uid}</p>
+                            </div>
+                            <div className={classnames(
+                                styles["account__form--inputs-container"],
+                                styles[mode]
+                            )}>
+                                <p className={classnames(
+                                    styles["account__user-detail-option"],
+                                    styles[mode]
+                                )}>Account created:</p>
+                                <p className={classnames(
+                                    styles["account__user-detail-option-info"],
+                                    styles[mode]
+                                )}> {creationTime}</p>
+                            </div>
+                            <div className={classnames(
+                                styles["account__form--inputs-container"],
+                                styles[mode]
+                            )}>
+                                <p className={classnames(
+                                    styles["account__user-detail-option"],
+                                    styles[mode]
+                                )}>Last login:</p>
+                                <p className={classnames(
+                                    styles["account__user-detail-option-info"],
+                                    styles[mode]
+                                )}> {lastSignInTime}</p>
+                            </div>
+
+
 
                         </div>
                         {!readonly && <div className={styles["account__buttons--container"]}>
@@ -243,45 +284,7 @@ export const Account = ({ user }: AccountProps) => {
                         </div>
                         }
                     </form>}
-                    <div className={classnames(
-                        styles["account__user-detail-container"],
-                        styles[mode]
-                    )}>
-                        <p className={classnames(
-                            styles["account__user-detail-option"],
-                            styles[mode]
-                        )}>UID:</p>
-                        <p className={classnames(
-                            styles["account__user-detail-option-info"],
-                            styles[mode]
-                        )}> {user?.uid}</p>
-                    </div>
-                    <div className={classnames(
-                        styles["account__user-detail-container"],
-                        styles[mode]
-                    )}>
-                        <p className={classnames(
-                            styles["account__user-detail-option"],
-                            styles[mode]
-                        )}>Account created:</p>
-                        <p className={classnames(
-                            styles["account__user-detail-option-info"],
-                            styles[mode]
-                        )}> {creationTime}</p>
-                    </div>
-                    <div className={classnames(
-                        styles["account__user-detail-container"],
-                        styles[mode]
-                    )}>
-                        <p className={classnames(
-                            styles["account__user-detail-option"],
-                            styles[mode]
-                        )}>Last login:</p>
-                        <p className={classnames(
-                            styles["account__user-detail-option-info"],
-                            styles[mode]
-                        )}> {lastSignInTime}</p>
-                    </div>
+
                 </div>
                 {
                     readonly && <div>

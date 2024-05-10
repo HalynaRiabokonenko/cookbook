@@ -19,6 +19,8 @@
 
   --header-text-color: #595959;
   --header-text-color--dark: #cacaca;
+
+  --main-font: font-family: Montserrat, sans-serif;
 }
 
 * {

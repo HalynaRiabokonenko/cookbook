@@ -126,6 +126,12 @@
   background-color: inherit;
 }
 
+.account__user-photo--container {
+}
+
+.account__user-photo--content {
+}
+
 @media only screen and (max-width: 1200px) {
   .account__button-container--edit {
     right: 10px;

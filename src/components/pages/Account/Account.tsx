@@ -20,6 +20,7 @@ interface UserData {
     username: string;
     male: boolean;
     birthDate: any;
+    photoPath?: string;
 }
 
 export const Account = ({ user }: AccountProps) => {
@@ -115,7 +116,24 @@ export const Account = ({ user }: AccountProps) => {
                 styles["account__content"],
                 styles[mode]
             )}>
+                <div className={classnames(
+                    styles["account__user-photo--container"],
+                    styles[mode]
+                )}>
+                    <div className={classnames(
+                        styles["account__user-photo--content"],
+                        styles[mode]
+                    )}>
+                        {
+                            photoPath ?
+                                <img>
+                                </img> :
+                                <img>
+                                </img>
 
+                        }
+                    </div>
+                </div>
                 <div className={classnames(
                     styles["account__user-details"],
                     styles[mode]

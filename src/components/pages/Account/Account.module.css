@@ -26,8 +26,10 @@
   font-size: 1.1rem;
 }
 
+.account__form--label,
 .account__user-detail-option {
-  text-align: center;
+  margin-right: 10px;
+  white-space: nowrap;
   font-weight: 700;
 }
 
@@ -72,40 +74,33 @@
 
 .account__form--inputs-container {
   display: flex;
-  margin: 20px;
+  margin: 12px;
   align-items: center;
   width: 100%;
 }
 
-.account__form--label {
-  color: var(--beige-dark);
-  margin-right: 10px;
-  white-space: nowrap;
-  width: 40%;
-}
-
-.account__form--label.dark {
-  color: var(--violet-medium);
-}
-
-.account__form--input-readonly,
-.account__form--input-text {
-  background-color: inherit;
-  color: var(--violet-dark);
-  font-weight: 500;
-}
-
 .account__form--input-readonly,
 .account__form--input-text,
-.account__form--input {
+.account__form--input,
+.account__user-detail-option-info {
   background-color: inherit;
-  color: var(--violet-dark);
+  color: var(--header-text-color);
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
   border: none;
+  font-size: 1rem;
+  font-family: var(--main-font);
+}
+
+.account__form--input-readonly.dark,
+.account__form--input-text.dark,
+.account__form--input.dark,
+.account__user-detail-option-info.dark {
+  background-color: inherit;
+  color: var(--header-text-color--dark);
 }
 
 .account__form--input-readonly:focus,
@@ -115,7 +110,6 @@
 }
 
 .account__form--input {
-  background-color: var(--white);
   border-radius: 5px;
   padding: 2px 5px;
   border: 0.5px solid #c9c9c9;
@@ -130,13 +124,6 @@
 .account__form--input-readonly.dark,
 .account__form--input-text.dark {
   background-color: inherit;
-  color: var(--beige-light);
-}
-
-.account__form--input.dark {
-  background-color: var(--violet-dark);
-  color: var(--beige-light);
-  border: 0.5px solid var(--violet-dark);
 }
 
 @media only screen and (max-width: 1200px) {

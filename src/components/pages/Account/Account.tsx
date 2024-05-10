@@ -9,7 +9,6 @@ import Button from "../../atomic/Button/Button";
 import { useNavigate } from "react-router-dom";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../../../api/firebaseConfig";
-
 interface AccountProps {
     user: User | null;
 }
@@ -35,6 +34,7 @@ export const Account = ({ user }: AccountProps) => {
         male: true,
         birthDate: ""
     });
+    const [userImage, setUserImage] = useState<string | null>(null);
 
     let creationTime = "";
     let lastSignInTime = "";
@@ -125,12 +125,10 @@ export const Account = ({ user }: AccountProps) => {
                         styles[mode]
                     )}>
                         {
-                            photoPath ?
-                                <img>
-                                </img> :
-                                <img>
-                                </img>
-
+                            userImage ?
+                                <img src={userImage} alt="user photo icon" />
+                                :
+                                <img src="/images/account/user-image-light.png" alt="user photo icon" />
                         }
                     </div>
                 </div>
@@ -292,9 +290,6 @@ export const Account = ({ user }: AccountProps) => {
                                     styles[mode]
                                 )}> {lastSignInTime}</p>
                             </div>
-
-
-
                         </div>
                         {!readonly && <div className={styles["account__buttons--container"]}>
                             <Button type="reset" onClick={handleReset}>Cancel</Button>
@@ -302,14 +297,14 @@ export const Account = ({ user }: AccountProps) => {
                         </div>
                         }
                     </form>}
-
+                    {
+                        readonly && <div>
+                            <Button onClick={() => { navigate("/change-password") }}>Change Password</Button>
+                            <Button onClick={() => { navigate("/delete-account") }}>Delete account</Button>
+                        </div>
+                    }
                 </div>
-                {
-                    readonly && <div>
-                        <Button onClick={() => { navigate("/change-password") }}>Change Password</Button>
-                        <Button onClick={() => { navigate("/delete-account") }}>Delete account</Button>
-                    </div>
-                }
+
 
             </div>
         </Page>

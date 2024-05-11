@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Home.module.css";
 import { useModeContext } from "../../../providers/mode";
@@ -66,7 +66,7 @@ const Home = () => {
                 styles["home__main-container"],
                 styles[mode]
             )}>
-                <img className={styles["home__main-image"]} src="/images/pages/main.webp"
+                <img className={styles["home__main-image"]} src="/images/pages/main-image-desktop.png"
                 ></img>
                 <h3 className={classnames(
                     styles["home__main-text-header"],

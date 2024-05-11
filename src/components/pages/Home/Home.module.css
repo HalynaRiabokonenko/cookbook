@@ -182,13 +182,11 @@
 .home__main-text-header {
   position: absolute;
   z-index: 1;
-  top: 12%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
+  top: 8%;
+  color: var(--medium-green);
   font-size: 7rem;
   font-weight: bold;
-  text-align: right;
+  text-align: center;
   padding: 10px 20px;
   text-transform: uppercase;
   width: 100%;
@@ -197,24 +195,21 @@
 
 .home__main-text-header.dark {
   color: #252927;
-  background-color: #e0e0e0a4;
 }
 
 .home__main-text {
   position: absolute;
   z-index: 1;
-  top: 60%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 3rem;
+  top: 20%;
+  left: 0%;
+  right: 0%;
+  color: var(--dark-green);
+  font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
-  background-color: #3d59433b;
-  padding: 10px 20px;
+  padding: 20px;
 }
 
 .home__main-text.dark {
   color: #252927;
-  background-color: #e0e0e0a4;
 }

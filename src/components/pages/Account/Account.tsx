@@ -36,9 +36,19 @@ export const Account = ({ user }: AccountProps) => {
         male: true,
         birthDate: ""
     });
-    const [userImageUrl, setUserImageUrl] = useState<string>("");
+    const [userPhotoUrl, setUserPhotoUrl] = useState<string>("");
     const [photo, setPhoto] = useState<File | null>(null);
-    const [imageChangeError, setImageChangeError] = useState<string | null>(null);
+    const [errorPhotoChange, setErrorPhotoChange] = useState<string | null>(null);
+    const [isHoveredPhoto, setIsHoveredPhoto] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsHoveredPhoto(true);
+    };
+
+    const handleMouseLeave = () => {
+        // setIsHoveredPhoto(false);
+    };
+
 
     let creationTime = "";
     let lastSignInTime = "";
@@ -61,7 +71,7 @@ export const Account = ({ user }: AccountProps) => {
                 if (docSnap.exists()) {
                     setUserData(docSnap.data() as UserData);
                     setFormData(docSnap.data() as UserData);
-                    setUserImageUrl(docSnap.data().photo);
+                    setUserPhotoUrl(docSnap.data().photo);
                 }
 
             } catch (error) {
@@ -116,7 +126,8 @@ export const Account = ({ user }: AccountProps) => {
         if (files && files.length > 0) {
             setPhoto(files[0]);
         }
-        setImageChangeError(null);
+        setErrorPhotoChange(null);
+        setIsHoveredPhoto(false);
     }
 
     const handleSubmitPhotoChange = async () => {
@@ -135,17 +146,17 @@ export const Account = ({ user }: AccountProps) => {
                 await uploadBytes(photoRef, photo);
                 newPhotoUrl = await getDownloadURL(photoRef);
             } else {
-                newPhotoUrl = userImageUrl;
+                newPhotoUrl = userPhotoUrl;
             }
 
             await updateDoc(doc(db, `userData/${user?.uid}`), {
                 photo: newPhotoUrl
             });
-            setUserImageUrl(newPhotoUrl);
+            setUserPhotoUrl(newPhotoUrl);
             setPhoto(null);
         } catch (error) {
             console.log(error);
-            setImageChangeError("Error changing photo");
+            setErrorPhotoChange("Error changing photo");
         }
     };
 
@@ -165,27 +176,57 @@ export const Account = ({ user }: AccountProps) => {
                     <div className={classnames(
                         styles["account__user-photo--content"],
                         styles[mode]
-                    )}>
+
+                    )}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}>
                         {
-                            userImageUrl ?
-                                <img src={userImageUrl} alt="user photo icon" className={classnames(
+                            userPhotoUrl ?
+                                <img src={userPhotoUrl} alt="user photo icon" className={classnames(
                                     styles["account__user-photo"],
-                                    styles[mode]
+                                    styles[mode],
+                                    { [styles["account__user-photo--content-hovered"]]: isHoveredPhoto }
                                 )} ></img>
                                 :
                                 <img src="/images/account/user-image-light.png" alt="user photo icon" className={classnames(
                                     styles["account__user-icon"],
-                                    styles[mode]
+                                    styles[mode],
+                                    { [styles["account__user-photo--content-hovered"]]: isHoveredPhoto }
                                 )} />
                         }
-                        <ImageUpload onChange={handlePhotoChange} photo={userImageUrl} />
-                        {photo && <Button onClick={handleSubmitPhotoChange}>Save</Button>}
-                        {imageChangeError && <div className={classnames(
-                            styles["account__user-icon--error"],
-                            styles[mode]
-                        )}>{imageChangeError}</div>}
+                        {isHoveredPhoto && (
+                            <div className={classnames(
+                                styles["account__user-image--icons-container"],
+                                styles[mode]
+                            )}>
+                                <div
+                                    className={classnames(
+                                        styles["account__user-image--icon"],
+                                        styles[mode]
+                                    )}
+                                >
+                                    <ImageUpload onChange={handlePhotoChange} photo={userPhotoUrl} />
+                                </div>
+                                <div
+                                    className={classnames(
+                                        styles["account__user-image--icon"],
+                                        styles[mode]
+                                    )}
+                                // onClick={}
+                                >
+                                    Icon 2
+                                </div>
+                            </div>
+                        )}
+
                     </div>
+                    {photo && <Button onClick={handleSubmitPhotoChange}>Save</Button>}
+                    {errorPhotoChange && <div className={classnames(
+                        styles["account__user-icon--error"],
+                        styles[mode]
+                    )}>{errorPhotoChange}</div>}
                 </div>
+
                 <div className={classnames(
                     styles["account__user-details"],
                     styles[mode]
@@ -359,6 +400,6 @@ export const Account = ({ user }: AccountProps) => {
                     }
                 </div>
             </div>
-        </Page>
+        </Page >
     )
 }

@@ -75,7 +75,9 @@ const Home = () => {
                 <h3 className={classnames(
                     styles["home__main-text"],
                     styles[mode]
-                )}>your culinary journey across the globe</h3>
+                )}>
+                    your culinary journey across the globe</h3>
+
             </div>
             {aphorismsData.length > 0 && (
                 <div className={classnames(

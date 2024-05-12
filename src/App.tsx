@@ -22,7 +22,7 @@ import { ChangePassword } from "./components/pages/ChangePassword/ChangePassword
 import { DeleteAccount } from "./components/pages/DeleteAccount/DeleteAccount";
 import { AccountDeleted } from "./components/pages/AccountDeleted/AccountDeleted";
 import { ResetPassword } from "./components/pages/ResetPassword/ResetPassword";
-import { ScrollToTop } from "./components/utils/SctollToTop";
+import { ScrollToTop } from "./components/utils/ScrollToTop";
 
 function App() {
     const [user, setUser] = useState<User | null>(null);

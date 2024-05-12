@@ -132,7 +132,7 @@
   color: var(--header-text-color);
   background-color: var(--light-green);
   width: 100%;
-  min-height: 30vh;
+  height: 300px;
   margin-bottom: 60px;
 }
 
@@ -184,7 +184,7 @@
   z-index: 1;
   top: 8%;
   color: var(--medium-green);
-  font-size: 7rem;
+  font-size: 6.5rem;
   font-weight: bold;
   text-align: center;
   padding: 10px 20px;
@@ -212,4 +212,114 @@
 
 .home__main-text.dark {
   color: #252927;
+}
+
+@media only screen and (max-width: 1200px) {
+  .home__main-text-header {
+    top: 8%;
+    font-size: 5rem;
+    padding: 10px 10px;
+    width: 100%;
+    letter-spacing: 0.6rem;
+  }
+
+  .home__main-text {
+    position: absolute;
+    font-size: 2rem;
+  }
+
+  .home-aphorism__content-container {
+    height: 250px;
+  }
+
+  .home-aphorism__text {
+    font-size: 1.4rem;
+  }
+
+  .home-aphorism__author {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .home__main-text-header {
+    font-size: 4rem;
+  }
+
+  .home__main-text {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home-content__recipes-list--option {
+    margin: 20px;
+    padding: 20px;
+    width: 80%;
+    cursor: pointer;
+  }
+
+  .home__main-text-header {
+    top: 8%;
+    font-size: 3rem;
+    padding: 10px 10px;
+    width: 100%;
+    letter-spacing: 0.7rem;
+  }
+
+  .home__main-text {
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    right: 0%;
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+
+  .home-aphorism__content-container {
+    height: 200px;
+  }
+
+  .home-aphorism__text {
+    font-size: 1.2rem;
+  }
+
+  .home-aphorism__author {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .home__main-text-header {
+    font-size: 2.3rem;
+  }
+
+  .home__main-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .home__main-text-header {
+    font-size: 1.8rem;
+    letter-spacing: 0.5rem;
+  }
+
+  .home__main-text {
+    font-size: 1rem;
+  }
+
+  .home-aphorism__content-container {
+    height: 150px;
+  }
+
+  .home-aphorism__text {
+    margin: 5px 30px;
+    font-size: 1rem;
+  }
+
+  .home-aphorism__author {
+    margin: 5px 30px;
+    font-size: 0.8rem;
+  }
 }

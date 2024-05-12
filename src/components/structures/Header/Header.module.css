@@ -17,18 +17,13 @@
   z-index: 999;
 }
 
-.logo {
-  flex-grow: 2;
-}
-
-.logo__link {
+.header__logo__link {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
 .header__name {
-  flex-grow: 1;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.2rem;
@@ -54,10 +49,6 @@
   border-radius: 50%;
 }
 
-.logo__img.light {
-  background-color: var(--light-green);
-}
-
 /* Navigation */
 .global-nav__container {
   height: 100%;
@@ -81,7 +72,7 @@
 .global-nav__list-item {
   text-transform: uppercase;
   font-weight: bold;
-  min-width: 180px;
+  min-width: 150px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -161,4 +152,10 @@
 .active {
   background-color: rgba(240, 248, 255, 0.224);
   color: var(--white);
+}
+
+@media only screen and (max-width: 900px) {
+  .header__name {
+    display: none;
+  }
 }

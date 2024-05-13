@@ -92,6 +92,7 @@ function Header({ user }: HeaderProps) {
                                 >
                                     <div className={classnames(
                                         styles["global-nav__list-item"],
+                                        styles[mode],
                                         { [styles.active]: location.pathname === '/' }
                                     )}>Home</div>
                                 </Link>
@@ -106,6 +107,7 @@ function Header({ user }: HeaderProps) {
                                 >
                                     <div className={classnames(
                                         styles["global-nav__list-item"],
+                                        styles[mode],
                                         { [styles.active]: location.pathname === '/recipes' || location.pathname.includes('/recipes/') }
 
                                     )}>Recipes</div>
@@ -122,6 +124,7 @@ function Header({ user }: HeaderProps) {
                                 >
                                     <div className={classnames(
                                         styles["global-nav__list-item"],
+                                        styles[mode],
                                         { [styles.active]: location.pathname === '/about' }
                                     )}>About us</div>
                                 </Link>
@@ -136,6 +139,7 @@ function Header({ user }: HeaderProps) {
                                 >
                                     <div className={classnames(
                                         styles["global-nav__list-item"],
+                                        styles[mode],
                                         { [styles.active]: location.pathname === '/login' || location.pathname === '/sign-up' }
                                     )}>Login</div>
                                 </Link>

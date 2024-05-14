@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import { db, storage } from "../../../api/firebaseConfig";
 import { ImageUpload } from "../../structures/ImageUpload/ImageUpload";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { deleteObject, getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { Modal } from "../../atomic/Modal/Modal";
 interface AccountProps {
     user: User | null;
@@ -40,8 +40,11 @@ export const Account = ({ user }: AccountProps) => {
     const [userPhotoUrl, setUserPhotoUrl] = useState<string>("");
     const [photo, setPhoto] = useState<File | null>(null);
     const [errorPhotoChange, setErrorPhotoChange] = useState<string | null>(null);
-    const [isHoveredPhoto, setIsHoveredPhoto] = useState(false);
+    const [errorPhotoDelete, setErrorPhotoDelete] = useState<string | null>(null);
     const [isPhotoModal, setIsPhotoModal] = useState(false);
+    const [isClickedChangePhoto, setIsClickedChangePhoto] = useState(false);
+    const [isClickedDeletePhoto, setIsClickedDeletePhoto] = useState(false);
+
 
     const toggleModal = () => {
         setIsPhotoModal(!isPhotoModal);
@@ -77,6 +80,21 @@ export const Account = ({ user }: AccountProps) => {
             }
         };
         fetchUserData();
+    }, []);
+
+    useEffect(() => {
+        const handleClickOutsideAccountModal = (event: MouseEvent) => {
+            if (event.target && !(event.target as HTMLElement).closest("#modal__content--container") &&
+                !(event.target as HTMLElement).closest("#account__user-photo--content")) {
+                setIsPhotoModal(false);
+            }
+        };
+
+        document.body.addEventListener("click", handleClickOutsideAccountModal);
+
+        return () => {
+            document.body.removeEventListener("click", handleClickOutsideAccountModal);
+        };
     }, []);
 
     const handleSaveData = async (data: UserData) => {
@@ -125,7 +143,6 @@ export const Account = ({ user }: AccountProps) => {
             setPhoto(files[0]);
         }
         setErrorPhotoChange(null);
-        setIsHoveredPhoto(false);
     }
 
     const handleSubmitPhotoChange = async () => {
@@ -152,9 +169,33 @@ export const Account = ({ user }: AccountProps) => {
             });
             setUserPhotoUrl(newPhotoUrl);
             setPhoto(null);
+            setIsPhotoModal(false);
+            setIsClickedChangePhoto(false);
         } catch (error) {
             console.log(error);
             setErrorPhotoChange("Error changing photo");
+        }
+    };
+
+    const handleSubmitPhotoDelete = async () => {
+        if (!user) {
+            console.error('User is not authenticated');
+            return;
+        }
+
+        try {
+            const photoRef = ref(storage, userPhotoUrl);
+            await deleteObject(photoRef);
+            setPhoto(null);
+            setIsPhotoModal(false);
+            setUserPhotoUrl("");
+            setIsClickedDeletePhoto(false);
+            await updateDoc(doc(db, `userData/${user?.uid}`), {
+                photo: null
+            });
+        } catch (error) {
+            console.error("Error deleting photo:", error);
+            setErrorPhotoDelete("Error deleting photo")
         }
     };
 
@@ -176,53 +217,21 @@ export const Account = ({ user }: AccountProps) => {
                         styles[mode]
 
                     )}
+                        id="account__user-photo--content"
                         onClick={toggleModal}
                     >
                         {
                             userPhotoUrl ?
                                 <img src={userPhotoUrl} alt="user photo icon" className={classnames(
                                     styles["account__user-photo"],
-                                    styles[mode],
-                                    { [styles["account__user-photo--content-hovered"]]: isHoveredPhoto }
+                                    styles[mode]
                                 )} ></img>
                                 :
                                 <img src="/images/account/user-image-light.png" alt="user photo icon" className={classnames(
                                     styles["account__user-icon"],
-                                    styles[mode],
-                                    { [styles["account__user-photo--content-hovered"]]: isHoveredPhoto }
-                                )} />
+                                    styles[mode])} />
                         }
-                        {isHoveredPhoto && (
-                            <div className={classnames(
-                                styles["account__user-image--icons-container"],
-                                styles[mode]
-                            )}>
-                                <div
-                                    className={classnames(
-                                        styles["account__user-image--icon"],
-                                        styles[mode]
-                                    )}
-                                >
-                                    <ImageUpload onChange={handlePhotoChange} photo={userPhotoUrl} />
-                                </div>
-                                <div
-                                    className={classnames(
-                                        styles["account__user-image--icon"],
-                                        styles[mode]
-                                    )}
-                                // onClick={}
-                                >
-                                    Icon 2
-                                </div>
-                            </div>
-                        )}
-
                     </div>
-                    {photo && <Button onClick={handleSubmitPhotoChange}>Save</Button>}
-                    {errorPhotoChange && <div className={classnames(
-                        styles["account__user-icon--error"],
-                        styles[mode]
-                    )}>{errorPhotoChange}</div>}
                 </div>
 
                 <div className={classnames(
@@ -398,7 +407,47 @@ export const Account = ({ user }: AccountProps) => {
                     }
                 </div>
             </div>
-            {isPhotoModal && <Modal>test</Modal>}
+            {isPhotoModal &&
+                <Modal>
+                    <div className={classnames(
+                        styles["account__user-image--icons-container"],
+                        styles[mode]
+                    )}>
+                        {!isClickedDeletePhoto && <div
+                            className={classnames(
+                                styles["account__user-image--icon"],
+                                styles[mode]
+                            )}
+                            onClick={() => { setIsClickedChangePhoto(true) }}
+                        >
+                            <ImageUpload onChange={handlePhotoChange} photo={userPhotoUrl} />
+                        </div>}
+                        {!isClickedChangePhoto && userPhotoUrl &&
+                            <div
+                                className={classnames(
+                                    styles["account__user-image--icon"],
+                                    styles[mode]
+                                )}
+                                onClick={() => { setIsClickedDeletePhoto(true) }}
+                            >
+                                <div>Delete image</div>
+                            </div>}
+
+                        {isClickedChangePhoto && <Button onClick={handleSubmitPhotoChange}>Save</Button>}
+                        {isClickedDeletePhoto && <Button onClick={handleSubmitPhotoDelete}>Confirm</Button>}
+
+                        {errorPhotoChange && <div className={classnames(
+                            styles["account__user-icon--error"],
+                            styles[mode]
+                        )}>{errorPhotoChange}</div>}
+
+                        {errorPhotoDelete && <div className={classnames(
+                            styles["account__user-icon--error"],
+                            styles[mode]
+                        )}>{errorPhotoDelete}</div>}
+                    </div>
+                </Modal>
+            }
         </Page >
     )
 }

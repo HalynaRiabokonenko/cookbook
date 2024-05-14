@@ -177,7 +177,7 @@ function Header({ user }: HeaderProps) {
                 </div>
                 {user && <div id="header__account-container" className={styles["header__account-container"]} onClick={toggleAccountModal}
                 >
-                    {userPhotoUrl && <div className={styles["header__account-button"]}
+                    {userPhotoUrl && <div className={styles["header__account-photo--container"]}
                     >
                         <img src={userPhotoUrl} className={styles["header__account-photo"]} alt="header account photo" />
 

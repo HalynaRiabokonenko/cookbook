@@ -128,12 +128,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 10px;
+  margin: 0 20px;
   height: 100%;
 }
 
 .global-mode__container {
-  margin-right: 30px;
+  margin-right: 60px;
 }
 
 .global-mode__button,

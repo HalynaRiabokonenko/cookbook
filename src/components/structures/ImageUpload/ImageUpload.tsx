@@ -54,9 +54,7 @@ export const ImageUpload = ({ onChange, photo }: ImageUploadTypes) => {
                             styles[mode]
                         )} />
                     }
-
                     {selectedFile ? selectedFile.name : (photo ? 'Change image ' : 'Add image ')}
-
                 </div>
             </label>
         </div>

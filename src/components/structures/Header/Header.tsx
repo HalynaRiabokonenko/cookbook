@@ -77,9 +77,6 @@ function Header({ user }: HeaderProps) {
         fetchUserData();
     }, [user]);
 
-    console.log("userPhotoUrl:", userPhotoUrl)
-
-
     return (
         <header className={styles["header"]}>
             <div className={classnames(

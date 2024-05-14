@@ -75,7 +75,7 @@ function Header({ user }: HeaderProps) {
             }
         };
         fetchUserData();
-    }, []);
+    }, [user]);
 
     console.log("userPhotoUrl:", userPhotoUrl)
 
@@ -200,13 +200,13 @@ function Header({ user }: HeaderProps) {
 
                             onClick={toggleMode} className={styles["global-mode__button"]}
                         >
-                            <img src="/images/mode/dark.png" className={styles["global-mode__icon"]} alt="dark mode icon" />
+                            <img src="/images/mode/night-mode.png" className={styles["global-mode__icon"]} alt="dark mode icon" />
                         </button>
                     ) : (
                         <button
                             onClick={toggleMode} className={styles["global-mode__button"]}
                         >
-                            <img src="/images/mode/light.png" className={styles["global-mode__icon"]} alt="light mode icon" />
+                            <img src="/images/mode/light-mode.png" className={styles["global-mode__icon"]} alt="light mode icon" />
                         </button>
                     )}
                 </div>

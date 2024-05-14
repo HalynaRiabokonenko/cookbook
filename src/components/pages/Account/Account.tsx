@@ -11,6 +11,7 @@ import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import { db, storage } from "../../../api/firebaseConfig";
 import { ImageUpload } from "../../structures/ImageUpload/ImageUpload";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { Modal } from "../../atomic/Modal/Modal";
 interface AccountProps {
     user: User | null;
 }
@@ -40,15 +41,12 @@ export const Account = ({ user }: AccountProps) => {
     const [photo, setPhoto] = useState<File | null>(null);
     const [errorPhotoChange, setErrorPhotoChange] = useState<string | null>(null);
     const [isHoveredPhoto, setIsHoveredPhoto] = useState(false);
+    const [isPhotoModal, setIsPhotoModal] = useState(false);
 
-    const handleMouseEnter = () => {
-        setIsHoveredPhoto(true);
+    const toggleModal = () => {
+        setIsPhotoModal(!isPhotoModal);
+        document.body.style.overflow = isPhotoModal ? 'auto' : 'hidden';
     };
-
-    const handleMouseLeave = () => {
-        // setIsHoveredPhoto(false);
-    };
-
 
     let creationTime = "";
     let lastSignInTime = "";
@@ -178,8 +176,8 @@ export const Account = ({ user }: AccountProps) => {
                         styles[mode]
 
                     )}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}>
+                        onClick={toggleModal}
+                    >
                         {
                             userPhotoUrl ?
                                 <img src={userPhotoUrl} alt="user photo icon" className={classnames(
@@ -400,6 +398,7 @@ export const Account = ({ user }: AccountProps) => {
                     }
                 </div>
             </div>
+            {isPhotoModal && <Modal>test</Modal>}
         </Page >
     )
 }

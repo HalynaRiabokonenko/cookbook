@@ -5,6 +5,8 @@ import classnames from "classnames";
 import { useModeContext } from "../../../providers/mode";
 import { User } from "firebase/auth";
 import { AccountModal } from "../AccountModal/AccountModal";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../../api/firebaseConfig";
 
 interface HeaderProps {
     user: User | null;
@@ -14,6 +16,8 @@ function Header({ user }: HeaderProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { mode, toggleMode } = useModeContext();
     const location = useLocation();
+    const [userPhotoUrl, setUserPhotoUrl] = useState<string | null>(null);
+
 
     const toggleAccountModal = (): void => {
         setIsModalOpen((prevState) => (prevState === false ? true : false));
@@ -50,6 +54,30 @@ function Header({ user }: HeaderProps) {
             document.body.removeEventListener("click", handleClickOutsideAccountModal);
         };
     }, []);
+
+
+    useEffect(() => {
+        if (!user) {
+            console.error("User is empty");
+            return;
+        }
+
+        const fetchUserData = async () => {
+            try {
+                const docRef = doc(db, `userData/${user.uid}`);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    setUserPhotoUrl(docSnap.data().photo);
+                }
+
+            } catch (error) {
+                console.error("Error fetching user data:", error);
+            }
+        };
+        fetchUserData();
+    }, []);
+
+    console.log("userPhotoUrl:", userPhotoUrl)
 
 
     return (
@@ -149,20 +177,22 @@ function Header({ user }: HeaderProps) {
                 </div>
                 {user && <div id="header__account-container" className={styles["header__account-container"]} onClick={toggleAccountModal}
                 >
-                    {mode === "light" ? (
+                    {userPhotoUrl && <div className={styles["header__account-button"]}
+                    >
+                        <img src={userPhotoUrl} className={styles["header__account-photo"]} alt="header account photo" />
+
+                    </div>}
+                    {!userPhotoUrl &&
                         <div
 
                             className={styles["header__account-button"]}
                         >
-                            <img src="/images/account/account-light.png" className={styles["header__account-icon"]} alt="header account icon" />
-                        </div>
-                    ) : (
-                        <div
-                            className={styles["header__account-button"]}
-                        >
-                            <img src="/images/account/account-dark.png" className={styles["header__account-icon"]} alt="header account icon" />
-                        </div>
-                    )}
+                            {mode === "light" ?
+                                (<img src="/images/account/account-light.png" className={styles["header__account-icon"]} alt="header account icon" />)
+                                :
+                                (<img src="/images/account/account-dark.png" className={styles["header__account-icon"]} alt="header account icon" />)
+                            }
+                        </div>}
                 </div>}
                 <div className={styles["global-mode__container"]}>
                     {mode === "light" ? (

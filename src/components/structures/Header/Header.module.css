@@ -150,6 +150,13 @@
   width: 30px;
 }
 
+.header__account-photo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 0.5px solid var(--medium-green--dark);
+}
+
 .header__container.dark {
   background: var(--medium-green--dark);
   border-bottom: transparent;

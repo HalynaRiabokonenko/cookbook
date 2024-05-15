@@ -2,9 +2,9 @@ import React from "react";
 import { useModeContext } from "../../../providers/mode";
 import { Link } from "react-router-dom";
 import styles from "./NotFound.module.css";
-import Button from "../../atomic/Button/Button";
 import PageHeader from "../../atomic/PageHeader/PageHeader";
 import { Page } from "../../structures/Page/Page";
+import { Button } from '@radix-ui/themes'
 
 const NotFound = () => {
     const { mode } = useModeContext();
@@ -30,7 +30,6 @@ const NotFound = () => {
                 </Link>
             </div>
         </Page>
-
     )
 }
 

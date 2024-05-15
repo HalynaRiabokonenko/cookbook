@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PageHeader from "../../atomic/PageHeader/PageHeader";
 import { useModeContext } from "../../../providers/mode";
 import { auth } from "../../../api/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -33,40 +32,12 @@ const Login = () => {
 
     return (
         <Page>
-            <PageHeader mode={mode}>
-                Log in
-            </PageHeader>
             <div className={classnames(
                 styles["login__content-modal"],
                 styles[mode]
             )}>
-                <AuthForm submitText="Log in" handleSubmit={handleSubmit} error={error} message={errorMessage}>
-                    <div className={styles["login__container--reset-password"]}>
-                        <p className={classnames(
-                            styles["login-form__reset-password-text"],
-                            styles[mode]
-                        )}>
-                            <Link to="/reset-password" className={classnames(
-                                styles["login__navigate-link"],
-                                styles[mode]
-                            )}>
-                                Forgot password?
-                            </Link>
-                        </p>
-                    </div>
-                    <div className={styles["login__container--register"]}>
-                        <div className={styles["login_link-container"]}>
-                            <Link to="/sign-up" className={classnames(
-                                styles["login__navigate-link"],
-                                styles[mode]
-                            )}>
-                                Don't have account yet?
-                            </Link>
-                        </div>
-                    </div>
+                <AuthForm submitText="Sign in" handleSubmit={handleSubmit} error={error} message={errorMessage} authType="sign-in">
                 </AuthForm>
-            </div>
-            <div>
             </div>
         </Page>
     )

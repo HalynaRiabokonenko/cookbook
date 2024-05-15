@@ -34,7 +34,7 @@
 
 .image-upload--label {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

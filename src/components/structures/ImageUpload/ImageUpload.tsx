@@ -45,15 +45,6 @@ export const ImageUpload = ({ onChange, photo }: ImageUploadTypes) => {
                     styles["image-upload--image-container"],
                     styles[mode]
                 )}>
-                    {
-                        mode === "light" ? <img alt="upload image icon" src="/images/account/add-photo-light.png" className={classNames(
-                            styles["image-upload--image"],
-                            styles[mode]
-                        )} /> : <img alt="upload image icon" src="/images/account/add-photo-dark.png" className={classNames(
-                            styles["image-upload--image"],
-                            styles[mode]
-                        )} />
-                    }
                     {selectedFile ? selectedFile.name : (photo ? 'Change image ' : 'Add image ')}
                 </div>
             </label>

@@ -33,8 +33,21 @@
 }
 
 .modal__content--container.dark {
-  background-color: var(--indigo-medium-dark);
-  border: 1px solid var(--indigo-medium-dark);
-  box-shadow: 0 0 60px #63696f4a;
-  color: var(--beige-light);
+  color: var(--header-text-color--dark);
+  background-color: var(--medium-green--dark);
+  border: none;
+  box-shadow: none;
+}
+
+.modal-overlay.dark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000ad;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

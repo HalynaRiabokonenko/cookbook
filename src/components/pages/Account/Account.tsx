@@ -87,6 +87,8 @@ export const Account = ({ user }: AccountProps) => {
             if (event.target && !(event.target as HTMLElement).closest("#modal__content--container") &&
                 !(event.target as HTMLElement).closest("#account__user-photo--content")) {
                 setIsPhotoModal(false);
+                setIsClickedChangePhoto(false);
+                setIsClickedDeletePhoto(false);
             }
         };
 

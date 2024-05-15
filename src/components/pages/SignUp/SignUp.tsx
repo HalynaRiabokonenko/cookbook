@@ -1,5 +1,4 @@
 import React from "react";
-import PageHeader from "../../atomic/PageHeader/PageHeader";
 import { useModeContext } from "../../../providers/mode";
 import { auth } from "../../../api/firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -25,14 +24,11 @@ const SignUp = () => {
 
     return (
         <Page>
-            <PageHeader mode={mode}>
-                Register
-            </PageHeader>
             <div className={classnames(
                 styles["sign-up__content-modal"],
                 styles[mode]
             )}>
-                <AuthForm submitText="Register" handleSubmit={handleSubmit} ></AuthForm>
+                <AuthForm submitText="Register" handleSubmit={handleSubmit} authType="sign-up"></AuthForm>
             </div>
         </Page>
     )

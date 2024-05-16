@@ -1,12 +1,10 @@
 import React, { FormEvent, useState } from "react";
 import { useModeContext } from "../../../providers/mode";
 import styles from "./ResetPassword.module.css";
-import PageHeader from "../../atomic/PageHeader/PageHeader";
 import { Page } from "../../structures/Page/Page";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import classNames from "classnames";
-import Button from "../../atomic/Button/Button";
-import AuthForm from "../../structures/AuthForm/AuthForm";
+import { ResetForm } from "../../structures/ResetForm/ResetForm";
 
 export const ResetPassword = () => {
     const { mode } = useModeContext();
@@ -29,46 +27,12 @@ export const ResetPassword = () => {
 
     return (
         <Page>
-            <PageHeader mode={mode}>
-                Reset password
-            </PageHeader>
-            <form className={classNames(
-                styles["reset-password__container"],
-                styles[mode]
-            )} onSubmit={handleClickResetPassword}>
-                <label htmlFor='email' className={classNames(
-                    styles["reset-password__label"],
-                    styles[mode]
-                )}>Your email:</label>
-                <div className={classNames(
-                    styles["reset-password__input-container"],
-                    styles[mode]
-                )}>
-                    <input className={classNames(
-                        styles["reset-password__input"],
-                        styles[mode]
-                    )} type="email" name="email" required onChange={(e) => { setEmail(e.target.value) }} value={email} />
-                </div>
-                <Button type="submit">Submit</Button>
-                {errorMessage && <p
-                    className={classNames(
-                        styles["reset-password__error-message"],
-                        styles[mode]
-                    )}>{errorMessage}</p>}
-                {successMessage && <p
-                    className={classNames(
-                        styles["reset-password__success-message"],
-                        styles[mode]
-                    )}>{successMessage}</p>}
-            </form>
-
-            {/* <div className={classNames(
-                styles["login__content-modal"],
+            <div className={classNames(
+                styles["reset-password__content-modal"],
                 styles[mode]
             )}>
-                <AuthForm submitText="Sign in" handleSubmit={handleClickResetPassword} error={error} message={errorMessage} authType="reset">
-                </AuthForm>
-            </div> */}
+                <ResetForm onSubmit={handleClickResetPassword} authType="reset" submitText="Reset" isPasswordHidden successMessage={successMessage} errorMessage={errorMessage}></ResetForm>
+            </div>
         </Page>
     )
 }

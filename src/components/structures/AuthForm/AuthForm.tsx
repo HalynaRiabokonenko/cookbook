@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 interface Props {
     submitText: string;
     handleSubmit: (data: { login: string; password: string }) => void;
-    authType: "sign-in" | "sign-up" | "reset";
+    authType: "sign-in" | "sign-up";
     isPasswordHidden?: boolean;
     children?: React.ReactNode;
     error?: boolean;
@@ -96,7 +96,8 @@ const AuthForm = ({
                                             className={mode === 'dark' ? 'block px-5 w-full bg-black rounded-md border-0 py-1.5 text-lightGreen  placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6' : 'block px-5 w-full rounded-md border-0 py-1.5 text-gray-900  placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6'}
                                         />
                                     </div>
-                                </div>}
+                                </div>
+                            }
                         </div>
                         <Button
                             type="submit"
@@ -133,8 +134,6 @@ const AuthForm = ({
                 </div>
             </div>
         </div>
-
-
     );
 };
 

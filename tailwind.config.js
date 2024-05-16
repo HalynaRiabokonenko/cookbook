@@ -7,7 +7,7 @@ module.exports = {
         darkGreen: "#166563",
         darkGreenDark: "#166563",
         mediumGreen: " #88c2ac",
-        mediumGreenDark: "#111919",
+        mediumGreenDark: "#2a3a3a",
         lighterGreen: "#ebf1f0fa",
         lightGreen: "#e6ede9",
         lightGreenDark: "#122323",

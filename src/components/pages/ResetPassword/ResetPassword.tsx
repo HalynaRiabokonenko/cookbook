@@ -6,6 +6,7 @@ import { Page } from "../../structures/Page/Page";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import classNames from "classnames";
 import Button from "../../atomic/Button/Button";
+import AuthForm from "../../structures/AuthForm/AuthForm";
 
 export const ResetPassword = () => {
     const { mode } = useModeContext();
@@ -60,6 +61,14 @@ export const ResetPassword = () => {
                         styles[mode]
                     )}>{successMessage}</p>}
             </form>
+
+            {/* <div className={classNames(
+                styles["login__content-modal"],
+                styles[mode]
+            )}>
+                <AuthForm submitText="Sign in" handleSubmit={handleClickResetPassword} error={error} message={errorMessage} authType="reset">
+                </AuthForm>
+            </div> */}
         </Page>
     )
 }

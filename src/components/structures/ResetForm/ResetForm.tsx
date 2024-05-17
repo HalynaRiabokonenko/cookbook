@@ -1,10 +1,6 @@
-import React, { FormEvent, useState } from "react";
+import React, { useState } from "react";
 import { useModeContext } from "../../../providers/mode";
-import styles from "./ResetForm.module.css";
-import { getAuth, sendPasswordResetEmail } from "firebase/auth";
-import classNames from "classnames";
 import { Button } from "@radix-ui/themes";
-
 interface ResetFormTypes {
     submitText: string;
     handleSubmit: (data: { email?: string; password?: string, passwordConfirm?: string }) => void;
@@ -12,10 +8,6 @@ interface ResetFormTypes {
     isPasswordHidden?: boolean;
     isEmailHidden?: boolean;
     children?: React.ReactNode;
-    error?: boolean;
-    message?: string;
-    errorMessage?: string | null,
-    successMessage?: string | null,
 }
 
 export const ResetForm = ({
@@ -24,8 +16,6 @@ export const ResetForm = ({
     isPasswordHidden = false,
     isEmailHidden,
     handleSubmit,
-    errorMessage,
-    successMessage,
 }: ResetFormTypes) => {
     const { mode } = useModeContext();
     const [email, setEmail] = useState("");
@@ -132,16 +122,7 @@ export const ResetForm = ({
                             >
                                 {submitText}
                             </Button>
-                            {errorMessage && <div className={classNames(
-                                styles["reset-form__error-message"],
-                                styles[mode]
-                            )}>{errorMessage}</div>}
-                            {successMessage && <div className={classNames(
-                                styles["reset-form__success-message"],
-                                styles[mode]
-                            )}>{successMessage}</div>}
                         </form>
-
                     </div>
                 </div>
             </div>

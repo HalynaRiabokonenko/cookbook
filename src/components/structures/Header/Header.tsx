@@ -18,7 +18,6 @@ function Header({ user }: HeaderProps) {
     const location = useLocation();
     const [userPhotoUrl, setUserPhotoUrl] = useState<string | null>(null);
 
-
     const toggleAccountModal = (): void => {
         setIsModalOpen((prevState) => (prevState === false ? true : false));
     };
@@ -64,6 +63,7 @@ function Header({ user }: HeaderProps) {
 
         const fetchUserData = async () => {
             try {
+                setUserPhotoUrl(null);
                 const docRef = doc(db, `userData/${user.uid}`);
                 const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {

@@ -17,7 +17,6 @@ const Login = () => {
 
     const handleSubmit = ({ login, password }: handleSubmitTypes) => {
         signInWithEmailAndPassword(auth, login, password)
-            .then((e) => console.log(e))
             .then(() => navigate("/"))
             .catch((error) => {
                 console.error("Error signing in:", error);

@@ -4,9 +4,10 @@ import { Button } from "@radix-ui/themes";
 interface ResetFormTypes {
     submitText: string;
     handleSubmit: (data: { email?: string; password?: string, newPassword?: string, confirmPassword?: string }) => void;
-    authType: "reset" | "change";
+    authType: "reset" | "change" | "delete";
     isPasswordHidden?: boolean;
     isEmailHidden?: boolean;
+    isNewEmailHidden?: boolean;
     children?: React.ReactNode;
 }
 
@@ -15,6 +16,7 @@ export const ResetForm = ({
     authType,
     isPasswordHidden = false,
     isEmailHidden,
+    isNewEmailHidden,
     handleSubmit,
 }: ResetFormTypes) => {
     const { mode } = useModeContext();
@@ -43,7 +45,7 @@ export const ResetForm = ({
                             alt="Proven Recipes logo"
                         />
                         <h2 className="mt-10 text-center text-2xl font-medium leading-9 tracking-tight">
-                            {authType === "reset" ? " Reset password" : " Change password"}
+                            {submitText}
                         </h2>
                     </div>
                     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -73,7 +75,7 @@ export const ResetForm = ({
                                         <div>
                                             <div className="flex items-center justify-between mt-5">
                                                 <label htmlFor="password" className="block text-sm font-medium leading-6">
-                                                    Current password
+                                                    {isNewEmailHidden ? "Send password" : "Current password"}
                                                 </label>
                                             </div>
                                             <div className="mt-2">
@@ -90,7 +92,7 @@ export const ResetForm = ({
                                                 />
                                             </div>
                                         </div>
-                                        <div>
+                                        {!isNewEmailHidden && <><div>
                                             <div className="flex items-center justify-between mt-5">
                                                 <label htmlFor="new-password" className="block text-sm font-medium leading-6">
                                                     New password
@@ -110,27 +112,28 @@ export const ResetForm = ({
                                                 />
                                             </div>
                                         </div>
-                                        <div>
-                                            <div className="flex items-center justify-between mt-5">
-                                                <label htmlFor="confirm-password" className="block text-sm font-medium leading-6">
-                                                    Confirm new password
-                                                </label>
-                                            </div>
-                                            <div className="mt-2">
-                                                <input
+                                            <div>
+                                                <div className="flex items-center justify-between mt-5">
+                                                    <label htmlFor="confirm-password" className="block text-sm font-medium leading-6">
+                                                        Confirm new password
+                                                    </label>
+                                                </div>
+                                                <div className="mt-2">
+                                                    <input
 
-                                                    type="password"
-                                                    required
-                                                    id="confirm-password"
-                                                    value={confirmPassword}
-                                                    onChange={(e) => {
-                                                        setConfirmPassword(e.target.value);
-                                                    }}
-                                                    minLength={6}
-                                                    className={mode === 'dark' ? 'block px-5 w-full bg-black rounded-md border-0 py-1.5 text-lightGreen  placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6' : 'block px-5 w-full rounded-md border-0 py-1.5 text-gray-900  placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6'}
-                                                />
+                                                        type="password"
+                                                        required
+                                                        id="confirm-password"
+                                                        value={confirmPassword}
+                                                        onChange={(e) => {
+                                                            setConfirmPassword(e.target.value);
+                                                        }}
+                                                        minLength={6}
+                                                        className={mode === 'dark' ? 'block px-5 w-full bg-black rounded-md border-0 py-1.5 text-lightGreen  placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6' : 'block px-5 w-full rounded-md border-0 py-1.5 text-gray-900  placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6'}
+                                                    />
+                                                </div>
                                             </div>
-                                        </div>
+                                        </>}
                                     </div>
 
                                 }
@@ -143,7 +146,7 @@ export const ResetForm = ({
                                     "flex w-full justify-center rounded-md bg-inherit text-mediumGreen px-3 py-1.5 text-l font-semibold leading-6 shadow-sm border border-solid border-1.5 border-mediumGreen rounded-xl hover:bg-mediumGreen hover:text-lightGreen focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                 }
                             >
-                                {submitText}
+                                Confirm
                             </Button>
                         </form>
                     </div>

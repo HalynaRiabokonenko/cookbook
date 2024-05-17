@@ -38,9 +38,20 @@ export const ChangePassword = ({ user }: ChangePasswordProps) => {
 
     return (
         <Page>
-            <ResetForm handleSubmit={handleChangePassword} authType="change" submitText="Change" isEmailHidden />
+            <ResetForm
+                handleSubmit={handleChangePassword}
+                authType="change"
+                submitText="Change password"
+                isEmailHidden
+            />
             <ToastContainer
-                position="bottom-right" autoClose={5000} hideProgressBar closeOnClick pauseOnHover theme={mode === "dark" ? "dark" : "light"} />
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar
+                closeOnClick
+                pauseOnHover
+                theme={mode === "dark" ? "dark" : "light"}
+            />
         </Page>
     )
 }

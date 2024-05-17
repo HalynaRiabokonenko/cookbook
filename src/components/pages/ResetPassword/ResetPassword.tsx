@@ -27,8 +27,20 @@ export const ResetPassword = () => {
 
     return (
         <Page>
-            <ResetForm handleSubmit={handleClickResetPassword} authType="reset" submitText="Reset" isPasswordHidden />
-            <ToastContainer position="bottom-right" autoClose={5000} hideProgressBar closeOnClick pauseOnHover theme={mode === "dark" ? "dark" : "light"} />
+            <ResetForm
+                handleSubmit={handleClickResetPassword}
+                authType="reset"
+                submitText="Reset password"
+                isPasswordHidden
+            />
+            <ToastContainer
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar
+                closeOnClick
+                pauseOnHover
+                theme={mode === "dark" ? "dark" : "light"}
+            />
         </Page>
     );
 };

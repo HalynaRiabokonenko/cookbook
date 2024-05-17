@@ -1,74 +1,41 @@
-import React, { FormEvent, useState } from "react";
+import React from "react";
 import { useModeContext } from "../../../providers/mode";
 import styles from "./ResetPassword.module.css";
-import PageHeader from "../../atomic/PageHeader/PageHeader";
 import { Page } from "../../structures/Page/Page";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import classNames from "classnames";
-import Button from "../../atomic/Button/Button";
-import AuthForm from "../../structures/AuthForm/AuthForm";
+import { ResetForm } from "../../structures/ResetForm/ResetForm";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const ResetPassword = () => {
     const { mode } = useModeContext();
-    const [email, setEmail] = useState("");
     const auth = getAuth();
-    const [successMessage, setSuccessMessage] = useState<string | null>(null);
-    const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-    const handleClickResetPassword = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    const handleClickResetPassword = async ({ email }: { email?: string }) => {
+        if (!email) {
+            toast.error("Email is required");
+            return;
+        }
+
         try {
-            sendPasswordResetEmail(auth, email);
-            setSuccessMessage("Reset email sended");
-            setEmail("");
+            await sendPasswordResetEmail(auth, email);
+            toast.success("Reset email sent");
         } catch (error) {
-            setErrorMessage("Reset email not sended");
-            console.log("Firebase error:", error)
-        };
-    }
+            toast.error("Reset email not sent");
+            console.log("Firebase error:", error);
+        }
+    };
 
     return (
         <Page>
-            <PageHeader mode={mode}>
-                Reset password
-            </PageHeader>
-            <form className={classNames(
-                styles["reset-password__container"],
-                styles[mode]
-            )} onSubmit={handleClickResetPassword}>
-                <label htmlFor='email' className={classNames(
-                    styles["reset-password__label"],
-                    styles[mode]
-                )}>Your email:</label>
-                <div className={classNames(
-                    styles["reset-password__input-container"],
-                    styles[mode]
-                )}>
-                    <input className={classNames(
-                        styles["reset-password__input"],
-                        styles[mode]
-                    )} type="email" name="email" required onChange={(e) => { setEmail(e.target.value) }} value={email} />
-                </div>
-                <Button type="submit">Submit</Button>
-                {errorMessage && <p
-                    className={classNames(
-                        styles["reset-password__error-message"],
-                        styles[mode]
-                    )}>{errorMessage}</p>}
-                {successMessage && <p
-                    className={classNames(
-                        styles["reset-password__success-message"],
-                        styles[mode]
-                    )}>{successMessage}</p>}
-            </form>
-
-            {/* <div className={classNames(
-                styles["login__content-modal"],
+            <div className={classNames(
+                styles["reset-password__content-modal"],
                 styles[mode]
             )}>
-                <AuthForm submitText="Sign in" handleSubmit={handleClickResetPassword} error={error} message={errorMessage} authType="reset">
-                </AuthForm>
-            </div> */}
+                <ResetForm handleSubmit={handleClickResetPassword} authType="reset" submitText="Reset" isPasswordHidden />
+            </div>
+            <ToastContainer position="bottom-right" autoClose={5000} hideProgressBar closeOnClick pauseOnHover theme={mode === "dark" ? "dark" : "light"} />
         </Page>
-    )
-}
+    );
+};

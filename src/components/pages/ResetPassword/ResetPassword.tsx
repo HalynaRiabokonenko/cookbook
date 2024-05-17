@@ -1,9 +1,7 @@
 import React from "react";
 import { useModeContext } from "../../../providers/mode";
-import styles from "./ResetPassword.module.css";
 import { Page } from "../../structures/Page/Page";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
-import classNames from "classnames";
 import { ResetForm } from "../../structures/ResetForm/ResetForm";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -29,12 +27,7 @@ export const ResetPassword = () => {
 
     return (
         <Page>
-            <div className={classNames(
-                styles["reset-password__content-modal"],
-                styles[mode]
-            )}>
-                <ResetForm handleSubmit={handleClickResetPassword} authType="reset" submitText="Reset" isPasswordHidden />
-            </div>
+            <ResetForm handleSubmit={handleClickResetPassword} authType="reset" submitText="Reset" isPasswordHidden />
             <ToastContainer position="bottom-right" autoClose={5000} hideProgressBar closeOnClick pauseOnHover theme={mode === "dark" ? "dark" : "light"} />
         </Page>
     );

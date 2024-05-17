@@ -3,7 +3,7 @@ import { useModeContext } from "../../../providers/mode";
 import { Button } from "@radix-ui/themes";
 interface ResetFormTypes {
     submitText: string;
-    handleSubmit: (data: { email?: string; password?: string, passwordConfirm?: string }) => void;
+    handleSubmit: (data: { email?: string; password?: string, newPassword?: string, confirmPassword?: string }) => void;
     authType: "reset" | "change";
     isPasswordHidden?: boolean;
     isEmailHidden?: boolean;
@@ -19,16 +19,21 @@ export const ResetForm = ({
 }: ResetFormTypes) => {
     const { mode } = useModeContext();
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [passwordConfirm, setPasswordConfirm] = useState("");
+    const [password, setPassword] = useState<string>('');
+    const [newPassword, setNewPassword] = useState<string>('');
+    const [confirmPassword, setConfirmPassword] = useState<string>('');
 
     const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault();
-        handleSubmit({ email, password, passwordConfirm });
+        handleSubmit({ email, password, newPassword, confirmPassword });
+        setEmail("");
+        setPassword("");
+        setNewPassword("");
+        setConfirmPassword("");
     };
 
     return (
-        <>
+        <div className="mx-auto w-modal-width">
             <div className={mode === 'dark' ? 'bg-mediumGreenDark text-white rounded-xl mt-10' : 'bg-stone-100 text-gray-900  border border-solid border-1 border-lightGreen rounded-xl mt-10'}>
                 <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -41,7 +46,6 @@ export const ResetForm = ({
                             {authType === "reset" ? " Reset password" : " Change password"}
                         </h2>
                     </div>
-
                     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                         <form onSubmit={onSubmit} className="space-y-6">
                             <div >
@@ -69,12 +73,11 @@ export const ResetForm = ({
                                         <div>
                                             <div className="flex items-center justify-between mt-5">
                                                 <label htmlFor="password" className="block text-sm font-medium leading-6">
-                                                    Password
+                                                    Current password
                                                 </label>
                                             </div>
                                             <div className="mt-2">
                                                 <input
-
                                                     type="password"
                                                     required
                                                     id="password"
@@ -89,8 +92,28 @@ export const ResetForm = ({
                                         </div>
                                         <div>
                                             <div className="flex items-center justify-between mt-5">
-                                                <label htmlFor="password" className="block text-sm font-medium leading-6">
-                                                    Confirm password
+                                                <label htmlFor="new-password" className="block text-sm font-medium leading-6">
+                                                    New password
+                                                </label>
+                                            </div>
+                                            <div className="mt-2">
+                                                <input
+                                                    type="password"
+                                                    required
+                                                    id="new-password"
+                                                    value={newPassword}
+                                                    onChange={(e) => {
+                                                        setNewPassword(e.target.value);
+                                                    }}
+                                                    minLength={6}
+                                                    className={mode === 'dark' ? 'block px-5 w-full bg-black rounded-md border-0 py-1.5 text-lightGreen  placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6' : 'block px-5 w-full rounded-md border-0 py-1.5 text-gray-900  placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6'}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="flex items-center justify-between mt-5">
+                                                <label htmlFor="confirm-password" className="block text-sm font-medium leading-6">
+                                                    Confirm new password
                                                 </label>
                                             </div>
                                             <div className="mt-2">
@@ -98,10 +121,10 @@ export const ResetForm = ({
 
                                                     type="password"
                                                     required
-                                                    id="password"
-                                                    value={passwordConfirm}
+                                                    id="confirm-password"
+                                                    value={confirmPassword}
                                                     onChange={(e) => {
-                                                        setPasswordConfirm(e.target.value);
+                                                        setConfirmPassword(e.target.value);
                                                     }}
                                                     minLength={6}
                                                     className={mode === 'dark' ? 'block px-5 w-full bg-black rounded-md border-0 py-1.5 text-lightGreen  placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6' : 'block px-5 w-full rounded-md border-0 py-1.5 text-gray-900  placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6'}
@@ -127,6 +150,6 @@ export const ResetForm = ({
                 </div>
             </div>
 
-        </>
+        </div>
     )
 }

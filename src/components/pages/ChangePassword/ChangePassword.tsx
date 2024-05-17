@@ -15,10 +15,6 @@ export const ChangePassword = ({ user }: ChangePasswordProps) => {
 
     const handleChangePassword = async ({ password, newPassword, confirmPassword }: { email?: string, password?: string, newPassword?: string, confirmPassword?: string }) => {
         const email = user?.email;
-        console.log("email", user?.email);
-        console.log("password", password);
-        console.log("newPassword", newPassword);
-        console.log("confirmPassword", confirmPassword);
         if (!email || !password || !newPassword || !confirmPassword) {
             toast.error("Please, fill all fields");
             return;

@@ -22,6 +22,9 @@ module.exports = {
         headerText: "#595959",
         headerTextDark: "#cacaca",
       },
+      width: {
+        "modal-width": "var(--modal-width)",
+      },
     },
   },
   plugins: [],

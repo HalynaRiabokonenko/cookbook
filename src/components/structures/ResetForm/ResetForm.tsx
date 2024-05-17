@@ -7,7 +7,7 @@ import { Button } from "@radix-ui/themes";
 
 interface ResetFormTypes {
     submitText: string;
-    onSubmit: (e: FormEvent<HTMLFormElement>) => void;
+    handleSubmit: (data: { email?: string; password?: string, passwordConfirm?: string }) => void;
     authType: "reset" | "change";
     isPasswordHidden?: boolean;
     isEmailHidden?: boolean;
@@ -23,7 +23,7 @@ export const ResetForm = ({
     authType,
     isPasswordHidden = false,
     isEmailHidden,
-    onSubmit,
+    handleSubmit,
     errorMessage,
     successMessage,
 }: ResetFormTypes) => {
@@ -32,38 +32,13 @@ export const ResetForm = ({
     const [password, setPassword] = useState("");
     const [passwordConfirm, setPasswordConfirm] = useState("");
 
+    const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+        e.preventDefault();
+        handleSubmit({ email, password, passwordConfirm });
+    };
+
     return (
         <>
-            {/* <form className={classNames(
-                styles["reset-password__container"],
-                styles[mode]
-            )} onSubmit={onSubmit}>
-                <label htmlFor='email' className={classNames(
-                    styles["reset-password__label"],
-                    styles[mode]
-                )}>Your email:</label>
-                <div className={classNames(
-                    styles["reset-password__input-container"],
-                    styles[mode]
-                )}>
-                    <input className={classNames(
-                        styles["reset-password__input"],
-                        styles[mode]
-                    )} type="email" name="email" required onChange={(e) => { setEmail(e.target.value) }} value={email} />
-                </div>
-                <Button type="submit">Submit</Button>
-                {errorMessage && <p
-                    className={classNames(
-                        styles["reset-password__error-message"],
-                        styles[mode]
-                    )}>{errorMessage}</p>}
-                {successMessage && <p
-                    className={classNames(
-                        styles["reset-password__success-message"],
-                        styles[mode]
-                    )}>{successMessage}</p>}
-            </form> */}
-
             <div className={mode === 'dark' ? 'bg-mediumGreenDark text-white rounded-xl mt-10' : 'bg-stone-100 text-gray-900  border border-solid border-1 border-lightGreen rounded-xl mt-10'}>
                 <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -158,11 +133,11 @@ export const ResetForm = ({
                                 {submitText}
                             </Button>
                             {errorMessage && <div className={classNames(
-                                styles["auth-form__error-message"],
+                                styles["reset-form__error-message"],
                                 styles[mode]
                             )}>{errorMessage}</div>}
                             {successMessage && <div className={classNames(
-                                styles["auth-form__success-message"],
+                                styles["reset-form__success-message"],
                                 styles[mode]
                             )}>{successMessage}</div>}
                         </form>

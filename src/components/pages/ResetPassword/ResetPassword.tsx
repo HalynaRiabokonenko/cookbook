@@ -8,22 +8,26 @@ import { ResetForm } from "../../structures/ResetForm/ResetForm";
 
 export const ResetPassword = () => {
     const { mode } = useModeContext();
-    const [email, setEmail] = useState("");
     const auth = getAuth();
     const [successMessage, setSuccessMessage] = useState<string | null>(null);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-    const handleClickResetPassword = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    const handleClickResetPassword = async ({ email }: { email?: string }) => {
+        if (!email) {
+            setErrorMessage("Email is required");
+            setSuccessMessage(null);
+            return;
+        }
         try {
-            sendPasswordResetEmail(auth, email);
-            setSuccessMessage("Reset email sended");
-            setEmail("");
+            await sendPasswordResetEmail(auth, email);
+            setSuccessMessage("Reset email sent");
+            setErrorMessage(null);
         } catch (error) {
-            setErrorMessage("Reset email not sended");
-            console.log("Firebase error:", error)
-        };
-    }
+            setErrorMessage("Reset email not sent");
+            setSuccessMessage(null);
+            console.log("Firebase error:", error);
+        }
+    };
 
     return (
         <Page>
@@ -31,7 +35,7 @@ export const ResetPassword = () => {
                 styles["reset-password__content-modal"],
                 styles[mode]
             )}>
-                <ResetForm onSubmit={handleClickResetPassword} authType="reset" submitText="Reset" isPasswordHidden successMessage={successMessage} errorMessage={errorMessage}></ResetForm>
+                <ResetForm handleSubmit={handleClickResetPassword} authType="reset" submitText="Reset" isPasswordHidden successMessage={successMessage} errorMessage={errorMessage}></ResetForm>
             </div>
         </Page>
     )

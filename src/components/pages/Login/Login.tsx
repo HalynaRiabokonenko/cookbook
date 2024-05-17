@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useModeContext } from "../../../providers/mode";
 import { auth } from "../../../api/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import AuthForm from "../../structures/AuthForm/AuthForm";
@@ -7,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { Page } from "../../structures/Page/Page";
 
 const Login = () => {
-    const { mode } = useModeContext();
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState("");
     const [error, setError] = useState(false);

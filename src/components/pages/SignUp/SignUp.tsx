@@ -1,5 +1,4 @@
 import React from "react";
-import { useModeContext } from "../../../providers/mode";
 import { auth } from "../../../api/firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import AuthForm from "../../structures/AuthForm/AuthForm";

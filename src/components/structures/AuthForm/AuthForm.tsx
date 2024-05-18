@@ -1,7 +1,5 @@
 import React, { ReactElement, useState } from "react";
 import { useModeContext } from "../../../providers/mode";
-import styles from "./AuthForm.module.css";
-import classNames from "classnames";
 import { Button } from "@radix-ui/themes";
 import { Link } from "react-router-dom";
 
@@ -44,10 +42,8 @@ const AuthForm = ({
                         />
                         <h2 className="mt-10 text-center text-2xl font-medium leading-9 tracking-tight">
                             {authType === "sign-in" ? " Sign in to your account" : " Register account"}
-
                         </h2>
                     </div>
-
                     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                         <form onSubmit={onSubmit} className="space-y-6">
                             <div >
@@ -107,10 +103,6 @@ const AuthForm = ({
                             >
                                 {submitText}
                             </Button>
-                            {error && <div className={classNames(
-                                styles["auth-form__error-message"],
-                                styles[mode]
-                            )}>{message}</div>}
                             {children}
                         </form>
                         {authType === "sign-in" && <div className="text-sm mt-3">

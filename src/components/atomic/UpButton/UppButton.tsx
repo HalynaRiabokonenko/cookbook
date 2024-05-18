@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import styles from "./UppButton.module.css"
+import React, { useState, useEffect } from "react";
+import styles from "./UppButton.module.css";
 import classNames from "classnames";
 import { useModeContext } from "../../../providers/mode";
+import { ChevronUp } from 'react-feather';
 
 export const UpButton = () => {
     const { mode } = useModeContext();
@@ -22,7 +23,7 @@ export const UpButton = () => {
         }
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
@@ -38,15 +39,8 @@ export const UpButton = () => {
                 styles["up-button"],
                 styles[mode]
             )}>
-                {mode === "light" ? (
-                    <img src="/images/up-button/up-light.png" alt="Up icon" className={classNames(
-                        styles["up-button__img"],
-                        styles[mode])} />
-                ) : (
-                    <img src="/images/up-button/up-dark.png" alt="Up icon" className={classNames(
-                        styles["up-button__img"],
-                        styles[mode])} />
-                )}</button>
-        </div >
-    )
+                <ChevronUp className='w-6 h-6 text-white' />
+            </button>
+        </div>
+    );
 }

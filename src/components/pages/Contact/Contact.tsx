@@ -92,7 +92,6 @@ function ContactContent({ user }: UserProps) {
                 pauseOnHover
                 theme={mode === "dark" ? "dark" : "light"}
             />
-
             <div className={classnames(
                 styles["contact-content__messages-container"],
                 styles[mode]

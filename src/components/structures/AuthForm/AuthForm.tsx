@@ -1,7 +1,5 @@
 import React, { ReactElement, useState } from "react";
 import { useModeContext } from "../../../providers/mode";
-import styles from "./AuthForm.module.css";
-import classNames from "classnames";
 import { Button } from "@radix-ui/themes";
 import { Link } from "react-router-dom";
 
@@ -105,10 +103,6 @@ const AuthForm = ({
                             >
                                 {submitText}
                             </Button>
-                            {error && <div className={classNames(
-                                styles["auth-form__error-message"],
-                                styles[mode]
-                            )}>{message}</div>}
                             {children}
                         </form>
                         {authType === "sign-in" && <div className="text-sm mt-3">

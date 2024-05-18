@@ -44,10 +44,8 @@ const AuthForm = ({
                         />
                         <h2 className="mt-10 text-center text-2xl font-medium leading-9 tracking-tight">
                             {authType === "sign-in" ? " Sign in to your account" : " Register account"}
-
                         </h2>
                     </div>
-
                     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                         <form onSubmit={onSubmit} className="space-y-6">
                             <div >

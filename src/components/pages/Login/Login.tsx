@@ -27,8 +27,7 @@ const Login = () => {
 
     return (
         <Page>
-            <AuthForm submitText="Sign in" handleSubmit={handleSubmit} error={error} message={errorMessage} authType="sign-in">
-            </AuthForm>
+            <AuthForm submitText="Sign in" handleSubmit={handleSubmit} error={error} message={errorMessage} authType="sign-in" />
         </Page>
     )
 };

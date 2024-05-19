@@ -12,6 +12,9 @@ import { db, storage } from "../../../api/firebaseConfig";
 import { ImageUpload } from "../../structures/ImageUpload/ImageUpload";
 import { deleteObject, getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { Modal } from "../../atomic/Modal/Modal";
+import { CopyIcon } from '@radix-ui/react-icons';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 interface AccountProps {
     user: User | null;
 }
@@ -45,6 +48,10 @@ export const Account = ({ user }: AccountProps) => {
     const [isClickedChangePhoto, setIsClickedChangePhoto] = useState(false);
     const [isClickedDeletePhoto, setIsClickedDeletePhoto] = useState(false);
 
+    const copyToClipboard = (text: string) => {
+        navigator.clipboard.writeText(text);
+        toast.info("User ID copied to clipboard");
+    };
 
     const toggleModal = () => {
         setIsPhotoModal(!isPhotoModal);
@@ -355,18 +362,18 @@ export const Account = ({ user }: AccountProps) => {
                                 />
                             </div>
 
-                            <div className={classnames(
-                                styles["account__form--inputs-container"],
-                                styles[mode]
-                            )}>
-                                <p className={classnames(
-                                    styles["account__user-detail-option"],
-                                    styles[mode]
-                                )}>UID:</p>
-                                <p className={classnames(
-                                    styles["account__user-detail-option-info"],
-                                    styles[mode]
-                                )}> {user?.uid}</p>
+                            <div className={classnames(styles["account__form--inputs-container"], styles[mode])}>
+                                <p className={classnames(styles["account__user-detail-option"], styles[mode])}>User id:</p>
+                                <div className="flex items-center">
+                                    <p className={classnames(styles["account__user-detail-option-info"], styles[mode])}>{user?.uid}</p>
+                                    <button
+                                        className="ml-2 p-1 bg-transparent hover:bg-gray-200 rounded"
+                                        aria-label="Copy value"
+                                        onClick={() => copyToClipboard(user?.uid ?? '')}
+                                    >
+                                        <CopyIcon />
+                                    </button>
+                                </div>
                             </div>
                             <div className={classnames(
                                 styles["account__form--inputs-container"],
@@ -408,6 +415,14 @@ export const Account = ({ user }: AccountProps) => {
                         </div>
                     }
                 </div>
+                <ToastContainer
+                    position="bottom-right"
+                    autoClose={5000}
+                    hideProgressBar
+                    closeOnClick
+                    pauseOnHover
+                    theme={mode === "dark" ? "dark" : "light"}
+                />
             </div>
             {isPhotoModal &&
                 <Modal>

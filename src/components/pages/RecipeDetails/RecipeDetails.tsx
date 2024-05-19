@@ -8,6 +8,7 @@ import { doc, getDoc, DocumentSnapshot } from "firebase/firestore";
 import RecipeInterface from "./RecipeDetails.types";
 import PageHeader from "../../atomic/PageHeader/PageHeader";
 import { Page } from "../../structures/Page/Page";
+import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 
 function RecipeDetails() {
   const { mode } = useModeContext();
@@ -56,12 +57,17 @@ function RecipeDetails() {
         styles[mode]
       )}>
         <div className={styles["recipe-details-content__photo-container"]}>
-          <img
-            src={recipe.src}
-            alt={recipe.name}
-            className={styles["recipe-details-content__photo"]}
-          />
+          <div className=" w-[70%] overflow-hidden rounded-md">
+            <AspectRatio.Root ratio={5 / 4}>
+              <img
+                className="h-full w-full object-cover"
+                src={recipe.src}
+                alt={recipe.name}
+              />
+            </AspectRatio.Root>
+          </div>
         </div>
+
         <div className={styles["recipe-details-content__ingredients-container"]}>
           <h3 className={styles["recipe-details-content__recipes-ingredients"]}>
             Ingredients:

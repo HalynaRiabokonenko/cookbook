@@ -2,7 +2,7 @@
   position: absolute;
   z-index: 100;
   background-color: var(--white);
-  top: 80px;
+  top: var(--header-hight);
   right: 40px;
   border: 1px solid #ebebebb7;
   border-top: none;

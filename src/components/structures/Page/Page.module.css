@@ -1,5 +1,5 @@
 .page-content__container {
-  padding: 80px 0;
+  padding: var(--header-hight) 0;
   text-align: left;
   min-height: 100vh;
 }

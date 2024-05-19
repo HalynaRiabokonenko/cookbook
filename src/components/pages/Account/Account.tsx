@@ -12,9 +12,11 @@ import { db, storage } from "../../../api/firebaseConfig";
 import { ImageUpload } from "../../structures/ImageUpload/ImageUpload";
 import { deleteObject, getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { Modal } from "../../atomic/Modal/Modal";
-import { CopyIcon } from '@radix-ui/react-icons';
+import { CopyIcon, Pencil1Icon } from '@radix-ui/react-icons';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Tooltip, IconButton } from '@radix-ui/themes';
+import { TooltipProvider } from '@radix-ui/react-tooltip';
 interface AccountProps {
     user: User | null;
 }
@@ -249,12 +251,13 @@ export const Account = ({ user }: AccountProps) => {
                 )}>
                     {readonly && <div className={classnames(styles["account__button-container--edit"], styles[mode])}>
                         <button onClick={() => { setReadOnly(false) }} className={classnames(styles["account__button--edit"], styles[mode])}>
-                            {mode === "light" ? (
-                                <img src="/images/account/edit-light.png" className={styles["account__button--edit-icon"]} />
-
-                            ) : (
-                                <img src="/images/account/edit-dark.png" className={styles["account__button--edit-icon"]} />
-                            )}
+                            <TooltipProvider>
+                                <Tooltip content="Edit account details" className="bg-gray-900 text-white rounded-md p-2">
+                                    <IconButton radius="full" className="ml-2 p-1 bg-transparent hover:bg-gray-100 rounded">
+                                        <Pencil1Icon className="w-5 h-5" />
+                                    </IconButton>
+                                </Tooltip>
+                            </TooltipProvider>
                         </button>
                     </div>}
                     {user && <form onSubmit={handleSubmit}>
@@ -367,11 +370,16 @@ export const Account = ({ user }: AccountProps) => {
                                 <div className="flex items-center">
                                     <p className={classnames(styles["account__user-detail-option-info"], styles[mode])}>{user?.uid}</p>
                                     <button
-                                        className="ml-2 p-1 bg-transparent hover:bg-gray-200 rounded"
                                         aria-label="Copy value"
                                         onClick={() => copyToClipboard(user?.uid ?? '')}
                                     >
-                                        <CopyIcon />
+                                        <TooltipProvider>
+                                            <Tooltip content="Copy UID" className="bg-gray-900 text-white rounded-md p-2">
+                                                <IconButton radius="full" className="ml-2 p-1 bg-transparent hover:bg-gray-100 rounded">
+                                                    <CopyIcon className="w-4 h-4" />
+                                                </IconButton>
+                                            </Tooltip>
+                                        </TooltipProvider>
                                     </button>
                                 </div>
                             </div>

@@ -175,7 +175,7 @@ function Header({ user }: HeaderProps) {
                 {user && <div id="header__account-container" className={styles["header__account-container"]} onClick={toggleAccountModal}
                 >
                     {userPhotoUrl &&
-                        <Avatar className="inline-flex items-center justify-center w-16 h-16 rounded-full overflow-hidden bg-gray-200">
+                        <Avatar className="inline-flex items-center justify-center w-12 h-12 rounded-full overflow-hidden bg-gray-200">
                             <AvatarImage
                                 className="w-full h-full object-cover"
                                 src={userPhotoUrl}

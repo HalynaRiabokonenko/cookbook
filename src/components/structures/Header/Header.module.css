@@ -147,31 +147,10 @@
   align-items: center;
 }
 
-.header__account-photo--container {
-  padding: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 0.5px solid var(--medium-green--dark);
-}
-
 .global-mode__icon,
 .header__account-icon {
   height: 30px;
   width: 30px;
-}
-
-.header__account-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .header__container.dark {

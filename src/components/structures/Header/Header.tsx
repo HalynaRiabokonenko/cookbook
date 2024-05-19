@@ -7,7 +7,7 @@ import { User } from "firebase/auth";
 import { AccountModal } from "../AccountModal/AccountModal";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../api/firebaseConfig";
-
+import { Avatar, AvatarImage } from '@radix-ui/react-avatar';
 interface HeaderProps {
     user: User | null;
 }
@@ -174,11 +174,15 @@ function Header({ user }: HeaderProps) {
                 </div>
                 {user && <div id="header__account-container" className={styles["header__account-container"]} onClick={toggleAccountModal}
                 >
-                    {userPhotoUrl && <div className={styles["header__account-photo--container"]}
-                    >
-                        <img src={userPhotoUrl} className={styles["header__account-photo"]} alt="header account photo" />
-
-                    </div>}
+                    {userPhotoUrl &&
+                        <Avatar className="inline-flex items-center justify-center w-16 h-16 rounded-full overflow-hidden bg-gray-200">
+                            <AvatarImage
+                                className="w-full h-full object-cover"
+                                src={userPhotoUrl}
+                                alt="User profile picture"
+                            />
+                        </Avatar>
+                    }
                     {!userPhotoUrl &&
                         <div
 

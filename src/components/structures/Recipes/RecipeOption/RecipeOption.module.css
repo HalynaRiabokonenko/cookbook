@@ -1,16 +1,3 @@
-.recipes-content__recipes-photo-container {
-  width: 100%;
-  height: 350px;
-  overflow: hidden;
-}
-
-.recipes-content__recipes-photo {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  margin: 0;
-  width: 100%;
-}
-
 .recipes-content__recipes-list--option {
   width: 380px;
   height: 380px;

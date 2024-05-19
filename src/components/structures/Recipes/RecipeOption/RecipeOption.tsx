@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import classnames from "classnames";
 import { useModeContext } from "../../../../providers/mode";
 import RecipeInterface from "../../../pages/Recipes/Recipes.types";
-import styles from "./RecipeOption.module.css"
+import styles from "./RecipeOption.module.css";
+import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 
 interface RecipeOptionTypes {
     recipe: RecipeInterface;
@@ -22,12 +23,14 @@ export const RecipeOption = ({ recipe }: RecipeOptionTypes) => {
                     styles["recipes-content__recipes-list--option"],
                     styles[mode]
                 )}>
-                    <div className={styles["recipes-content__recipes-photo-container"]}>
-                        <img
-                            src={recipe.src}
-                            alt={recipe.name}
-                            className={styles["recipes-content__recipes-photo"]}
-                        />
+                    <div className="w-full overflow-hidden ">
+                        <AspectRatio.Root ratio={5 / 3}>
+                            <img
+                                className="h-full w-full object-cover"
+                                src={recipe.src}
+                                alt={recipe.name}
+                            />
+                        </AspectRatio.Root>
                     </div>
                     <div className={styles["recipes-content__recipes-container"]}>
                         <h2 className={styles["recipes-content__recipes-name"]}>

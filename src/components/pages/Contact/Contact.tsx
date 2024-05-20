@@ -6,9 +6,10 @@ import { Page } from "../../structures/Page/Page";
 import { User } from "firebase/auth";
 import { db } from "../../../api/firebaseConfig";
 import { collection, addDoc, query, where, getDocs, DocumentData, QueryDocumentSnapshot, Timestamp } from "firebase/firestore";
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ContactForm } from "../../structures/ContactForm/ContactForm";
+import { Toast } from "../../atomic/Toast";
 
 interface UserProps {
     user: User | null;
@@ -84,14 +85,7 @@ function ContactContent({ user }: UserProps) {
     return (
         <Page>
             <ContactForm submitText="Send" handleSubmit={handleSubmit}></ContactForm>
-            <ToastContainer
-                position="bottom-right"
-                autoClose={5000}
-                hideProgressBar
-                closeOnClick
-                pauseOnHover
-                theme={mode === "dark" ? "dark" : "light"}
-            />
+            <Toast />
             <div className={classnames(
                 styles["contact-content__messages-container"],
                 styles[mode]

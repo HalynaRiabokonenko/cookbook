@@ -1,33 +1,29 @@
 import React from "react";
 import { useModeContext } from "../../../providers/mode";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./NotFound.module.css";
+import classnames from "classnames";
 import PageHeader from "../../atomic/PageHeader/PageHeader";
 import { Page } from "../../structures/Page/Page";
 import { Button } from '@radix-ui/themes'
+import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogTitle, AlertDialogDescription, AlertDialogAction } from '@radix-ui/react-alert-dialog';
 
 const NotFound = () => {
-    const { mode } = useModeContext();
+    const navigate = useNavigate();
 
     return (
         <Page>
-            <PageHeader mode={mode}>
-                Not found
-            </PageHeader>
-            <div className={styles["not-found__image-container"]}>
-                {mode === "light" ? (
-                    <img src="/images/not_found/not-found--light.png" className={styles["not-found__image"]} alt="Not found" />
-                ) : (
-                    <img src="/images/not_found/not-found--dark.png" className={styles["not-found__image"]} alt="Not found" />
-                )}
-            </div>
+            <div className="flex items-center justify-center min-h-screen">
+                <div className="text-center">
+                    <h1 className={classnames(
+                        "text-9xl font-bold text-redMedium",
+                        styles["animate-fade-in"])}>404</h1>
+                    <p className="mt-4 text-lg text-gray-600">Page Not Found</p>
 
-            <div className={styles["not-found__link-container"]}>
-                <Link to="/">
-                    <Button>
-                        Home Page
+                    <Button onClick={() => { navigate("/") }} className="mt-6 px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700 focus:outline-none">
+                        Go Home
                     </Button>
-                </Link>
+                </div>
             </div>
         </Page>
     )

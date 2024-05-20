@@ -1,5 +1,20 @@
-.not-found__link-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fade-in {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 2s infinite;
+  }
 }

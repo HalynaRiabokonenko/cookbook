@@ -1,19 +1,18 @@
 import React from "react";
-import { useModeContext } from "../../../providers/mode";
 import { auth } from "../../../api/firebaseConfig";
 import { User, deleteUser, signInWithEmailAndPassword } from "firebase/auth";
 import { Page } from "../../structures/Page/Page";
 import { useNavigate } from "react-router-dom";
 import { ResetForm } from "../../structures/ResetForm/ResetForm";
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Toast } from "../../atomic/Toast";
 
 interface DeleteAccountProps {
     user: User | null;
 }
 
 export const DeleteAccount = ({ user }: DeleteAccountProps) => {
-    const { mode } = useModeContext();
     const navigate = useNavigate();
 
     const handleDeleteAccount = async ({ password }: { password?: string }) => {
@@ -53,14 +52,7 @@ export const DeleteAccount = ({ user }: DeleteAccountProps) => {
                 isEmailHidden
                 isNewEmailHidden
             />
-            <ToastContainer
-                position="bottom-right"
-                autoClose={5000}
-                hideProgressBar
-                closeOnClick
-                pauseOnHover
-                theme={mode === "dark" ? "dark" : "light"}
-            />
+            <Toast />
         </Page>
     );
 };

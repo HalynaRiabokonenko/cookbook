@@ -13,10 +13,11 @@ import { ImageUpload } from "../../structures/ImageUpload/ImageUpload";
 import { deleteObject, getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { Modal } from "../../atomic/Modal/Modal";
 import { CopyIcon, Pencil1Icon } from '@radix-ui/react-icons';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Tooltip, IconButton } from '@radix-ui/themes';
 import { TooltipProvider } from '@radix-ui/react-tooltip';
+import { Toast } from "../../atomic/Toast";
 interface AccountProps {
     user: User | null;
 }
@@ -423,14 +424,7 @@ export const Account = ({ user }: AccountProps) => {
                         </div>
                     }
                 </div>
-                <ToastContainer
-                    position="bottom-right"
-                    autoClose={5000}
-                    hideProgressBar
-                    closeOnClick
-                    pauseOnHover
-                    theme={mode === "dark" ? "dark" : "light"}
-                />
+                <Toast />
             </div>
             {isPhotoModal &&
                 <Modal>

@@ -1,17 +1,16 @@
 import React from "react";
-import { useModeContext } from "../../../providers/mode";
 import { auth } from "../../../api/firebaseConfig";
 import { Page } from "../../structures/Page/Page";
 import { User, signInWithEmailAndPassword, updatePassword } from "firebase/auth";
 import { ResetForm } from "../../structures/ResetForm/ResetForm";
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Toast } from "../../atomic/Toast";
 interface ChangePasswordProps {
     user: User | null;
 }
 
 export const ChangePassword = ({ user }: ChangePasswordProps) => {
-    const { mode } = useModeContext();
 
     const handleChangePassword = async ({ password, newPassword, confirmPassword }: { email?: string, password?: string, newPassword?: string, confirmPassword?: string }) => {
         const email = user?.email;
@@ -44,14 +43,7 @@ export const ChangePassword = ({ user }: ChangePasswordProps) => {
                 submitText="Change password"
                 isEmailHidden
             />
-            <ToastContainer
-                position="bottom-right"
-                autoClose={5000}
-                hideProgressBar
-                closeOnClick
-                pauseOnHover
-                theme={mode === "dark" ? "dark" : "light"}
-            />
+            <Toast />
         </Page>
     )
 }

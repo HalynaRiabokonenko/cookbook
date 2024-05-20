@@ -1,13 +1,12 @@
 import React from "react";
-import { useModeContext } from "../../../providers/mode";
 import { Page } from "../../structures/Page/Page";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { ResetForm } from "../../structures/ResetForm/ResetForm";
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Toast } from "../../atomic/Toast";
 
 export const ResetPassword = () => {
-    const { mode } = useModeContext();
     const auth = getAuth();
 
     const handleClickResetPassword = async ({ email }: { email?: string }) => {
@@ -33,14 +32,7 @@ export const ResetPassword = () => {
                 submitText="Reset password"
                 isPasswordHidden
             />
-            <ToastContainer
-                position="bottom-right"
-                autoClose={5000}
-                hideProgressBar
-                closeOnClick
-                pauseOnHover
-                theme={mode === "dark" ? "dark" : "light"}
-            />
+            <Toast />
         </Page>
     );
 };

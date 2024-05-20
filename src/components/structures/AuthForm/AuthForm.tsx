@@ -9,8 +9,6 @@ interface Props {
     authType: "sign-in" | "sign-up";
     isPasswordHidden?: boolean;
     children?: React.ReactNode;
-    error?: boolean;
-    message?: string;
 }
 
 const AuthForm = ({
@@ -19,8 +17,6 @@ const AuthForm = ({
     isPasswordHidden = false,
     handleSubmit,
     children,
-    error,
-    message,
 }: Props): ReactElement => {
     const [login, setLogin] = useState<string>("");
     const [password, setPassword] = useState<string>("");

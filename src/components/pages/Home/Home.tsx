@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Home.module.css";
 import { useModeContext } from "../../../providers/mode";
@@ -67,17 +67,16 @@ const Home = () => {
                 styles[mode]
             )}>
                 <img className={styles["home__main-image"]} src="/images/pages/main-image-desktop.png"
-                ></img>
+                />
                 <h3 className={classnames(
                     styles["home__main-text-header"],
+                    styles["tracking-in-contract"],
                     styles[mode]
                 )}>Proven recipes</h3>
                 <h3 className={classnames(
                     styles["home__main-text"],
                     styles[mode]
-                )}>
-                    your culinary journey across the globe</h3>
-
+                )}>your culinary journey across the globe</h3>
             </div>
             {aphorismsData.length > 0 && (
                 <div className={classnames(

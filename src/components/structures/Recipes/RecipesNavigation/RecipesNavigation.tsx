@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { useModeContext } from "../../../../providers/mode";
-import styles from "./RecipesNavigation.module.css";
+import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import classnames from "classnames";
 
 interface Recipe {
@@ -32,33 +32,39 @@ export const RecipesNavigation: React.FC<RecipesNavigationProps> = ({ onSelectOp
         onSelectOption(option);
     }, [onSelectOption]);
 
-    const { option } = useParams<{ option: string }>();
-
     return (
-        <aside className={styles["recipes__aside"]}>
-            <ul className={classnames(styles["recipes__aside-list"], styles[mode])}>
-                {recipes.map((recipe) => (
-                    <li
-                        key={recipe.option}
-                        className={classnames(
-                            styles["recipes__aside-list-option"],
-                            { [styles.active]: option === recipe.option },
-                            styles[mode]
-                        )}
-                        onClick={() => handleOptionSelect(recipe.option)}
-                    >
-                        <NavLink
-                            className={`${styles["recipes__aside-list-option-link"]} ${styles[mode]} ${window.location.pathname.includes(`/recipes/${recipe.option}`) && styles.active
-                                }`}
-                            to={`/recipes/${recipe.option}`}
-                        >
-                            {recipe.name} Recipes
-                        </NavLink>
-                    </li>
-                ))}
-            </ul>
+        <aside className="flex-shrink-0 w-72 mx-9">
+            <NavigationMenu.Root className={classnames(
+                "border rounded-lg p-1",
+                {
+                    "border-lightGreen bg-lighterGreen": mode === 'light',
+                    "border-lightGreenDark bg-midnightMoss": mode === 'dark',
+                }
+            )}>
+                <NavigationMenu.List className="list-none p-0 m-2">
+                    {recipes.map((recipe) => (
+                        <NavigationMenu.Item key={recipe.option} className="text-lg p-1">
+                            <NavLink
+                                className={({ isActive }) => classnames(
+                                    "block no-underline transition-colors duration-300 p-4 rounded-lg",
+                                    {
+                                        "text-headerText": mode === 'light' && !isActive,
+                                        "text-headerTextDark": mode === 'dark' && !isActive,
+                                        "bg-gray-50 text-black": mode === 'light' && isActive,
+                                        "bg-darkGray text-white": mode === 'dark' && isActive,
+                                        "hover:bg-gray-50": mode === 'light' && !isActive,
+                                        "hover:bg-darkGray": mode === 'dark' && !isActive,
+                                    }
+                                )}
+                                to={`/recipes/${recipe.option}`}
+                                onClick={() => handleOptionSelect(recipe.option)}
+                            >
+                                {recipe.name} Recipes
+                            </NavLink>
+                        </NavigationMenu.Item>
+                    ))}
+                </NavigationMenu.List>
+            </NavigationMenu.Root>
         </aside>
     );
 };
-
-export default RecipesNavigation;

@@ -241,8 +241,8 @@
 }
 
 .tracking-in-contract {
-  -webkit-animation: tracking-in-contract 0.8s ease-in-out alternate both;
-  animation: tracking-in-contract 0.8s ease-in-out alternate both;
+  -webkit-animation: tracking-in-contract 2s ease-in-out alternate both;
+  animation: tracking-in-contract 2s ease-in-out alternate both;
 }
 
 @-webkit-keyframes tracking-in-contract {

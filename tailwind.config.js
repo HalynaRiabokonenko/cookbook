@@ -21,6 +21,7 @@ module.exports = {
         redLight: "#de8c8c",
         headerText: "#595959",
         headerTextDark: "#cacaca",
+        midnightMoss: "#252927",
       },
       width: {
         "modal-width": "var(--modal-width)",

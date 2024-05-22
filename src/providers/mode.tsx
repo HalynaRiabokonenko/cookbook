@@ -12,11 +12,18 @@ export const useModeContext = (): ContextType => {
 };
 
 export const ModeProvider: React.FC<ModeProviderProps> = ({ children }: ModeProviderProps) => {
-  const [mode, setMode] = useState<Mode>("light");
+  const [mode, setMode] = useState<Mode>(Mode.Light);
 
   const toggleMode = () => {
-    setMode(mode === "light" ? "dark" : "light");
+    setMode(mode === Mode.Light ? Mode.Dark : Mode.Light);
   };
+
+  const handleSystemModeChange = (e: MediaQueryListEvent) => {
+    if (mode === Mode.System) {
+      document.body.className = e.matches ? Mode.Dark : "";
+    }
+  };
+
 
   useEffect(() => {
     const fetchModeFromLocalStorage = () => {
@@ -38,7 +45,23 @@ export const ModeProvider: React.FC<ModeProviderProps> = ({ children }: ModeProv
   }, [mode]);
 
   useEffect(() => {
-    document.body.className = mode === "dark" ? "dark" : "";
+    document.body.className = mode === Mode.Dark ? Mode.Dark : "";
+  }, [mode]);
+
+
+  useEffect(() => {
+    const systemDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+    if (mode === "system") {
+      document.body.className = systemDarkMode.matches ? Mode.Dark : "";
+    } else {
+      document.body.className = mode === Mode.Dark ? Mode.Dark : "";
+    }
+
+    systemDarkMode.addEventListener('change', handleSystemModeChange);
+
+    return () => {
+      systemDarkMode.removeEventListener('change', handleSystemModeChange);
+    };
   }, [mode]);
 
   return (

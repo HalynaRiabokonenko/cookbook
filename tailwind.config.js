@@ -29,6 +29,9 @@ module.exports = {
       width: {
         "modal-width": "var(--modal-width)",
       },
+      height: {
+        "3/5": "60%",
+      },
     },
   },
   plugins: [],

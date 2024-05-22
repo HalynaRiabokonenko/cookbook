@@ -23,6 +23,9 @@ module.exports = {
         headerTextDark: "#cacaca",
         midnightMoss: "#252927",
       },
+      margin: {
+        "60px": "60px",
+      },
       width: {
         "modal-width": "var(--modal-width)",
       },

@@ -33,7 +33,7 @@ export const RecipesNavigation: React.FC<RecipesNavigationProps> = ({ onSelectOp
     }, [onSelectOption]);
 
     return (
-        <aside className="flex-shrink-0 w-72 mx-9">
+        <aside className="flex-shrink-0 w-72 mx-9 ml-[60px]">
             <NavigationMenu.Root className={classnames(
                 "border rounded-lg p-1",
                 {

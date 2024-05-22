@@ -64,11 +64,6 @@
   width: 25px;
 }
 
-.account__buttons--container {
-  display: flex;
-  margin: 30px;
-}
-
 .account__form--container {
   display: flex;
   flex-direction: column;

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./Footer.module.css";
 import classnames from "classnames";
 import { useModeContext } from "../../../providers/mode";
 import { User } from "firebase/auth";
@@ -14,50 +13,43 @@ const Footer: React.FC<Props> = ({ user }: Props) => {
 
     return (
         <footer className={classnames(
-            styles["footer"],
-            styles[mode]
+            "h-[180px] w-full bg-darkGray text-lightGreen py-5 text-center"
         )}>
-            <div className={styles["footer-content"]}>
-                <div className={styles["footer__brand"]}>
-                    <img src="/images/logo/chef.png" alt="Proven Recipes logo" className={styles["footer__brand-logo"]} />
-                    <h2 className={styles["footer__brand-name"]}>Proven Recipes</h2>
+            <div className="flex flex-wrap justify-around items-center">
+                <div className="text-center">
+                    <img src="/images/logo/chef.png" alt="Proven Recipes logo" className="h-20 mx-auto" />
+                    <h2 className="text-lighterGreen uppercase mt-2 tracking-widest">Proven Recipes</h2>
                 </div>
-                <div className={classnames(
-                    styles["footer-links"],
-                    styles[mode]
-                )}>
-                    <ul className={classnames(
-                        styles["footer-links-list"],
-                        styles[mode]
-                    )}>
-                        <li>
-                            <Link to="/">Home</Link>
+                <div className="text-left text-lightGreen">
+                    <ul className="list-none p-0 columns-2 gap-x-12">
+                        <li className="mb-2">
+                            <Link to="/" className="text-white hover:text-orange">Home</Link>
                         </li>
-                        <li>
-                            <Link to="/about">About Us</Link>
+                        <li className="mb-2">
+                            <Link to="/about" className="text-white hover:text-orange">About Us</Link>
                         </li>
-                        <li>
-                            <Link to="/recipes">Recipes</Link>
+                        <li className="mb-2">
+                            <Link to="/recipes" className="text-white hover:text-orange">Recipes</Link>
                         </li>
-                        <li>
-                            <Link to="/contact">Contact Us</Link>
+                        <li className="mb-2">
+                            <Link to="/contact" className="text-white hover:text-orange">Contact Us</Link>
                         </li>
-                        {user && <li>
-                            <Link to="/account">Account</Link>
+                        {user && <li className="mb-2">
+                            <Link to="/account" className="text-white hover:text-orange">Account</Link>
                         </li>}
                     </ul>
                 </div>
-                <div className={styles["footer-social"]} >
-                    <p>Let's be friends!</p>
-                    <ul>
-                        <li>
+                <div className="text-center">
+                    <p className="text-lightGreen">Let's be friends!</p>
+                    <ul className="list-none p-0">
+                        <li className="inline-block mr-2">
                             <a
                                 href="https://www.instagram.com/proven.recipes"
                                 target="_blank"
                                 rel="noreferrer"
                             >
                                 <img
-                                    className={styles["footer__social-icon"]}
+                                    className="h-6 m-2"
                                     src="/images/social/instagram-icon.png"
                                     alt="Instagram icon"
                                 />
@@ -66,10 +58,8 @@ const Footer: React.FC<Props> = ({ user }: Props) => {
                     </ul>
                 </div>
             </div>
-            <div className={styles["footer__bottom"]}>
-                <p className={styles["footer__copy"]}>
-                    &copy; {new Date().getFullYear()} Proven Recipes. All rights reserved.
-                </p>
+            <div className="mt-5">
+                <p className="text-xs text-lightGreen">&copy; {new Date().getFullYear()} Proven Recipes. All rights reserved.</p>
             </div>
         </footer>
     );

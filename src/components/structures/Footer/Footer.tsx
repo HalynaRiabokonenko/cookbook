@@ -1,7 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import classnames from "classnames";
-import { useModeContext } from "../../../providers/mode";
+import { Link, useNavigate } from "react-router-dom";
 import { User } from "firebase/auth";
 
 interface Props {
@@ -9,15 +7,15 @@ interface Props {
 }
 
 const Footer: React.FC<Props> = ({ user }: Props) => {
-    const { mode } = useModeContext();
+
+    const navigate = useNavigate();
 
     return (
-        <footer className={classnames(
-            "h-[180px] w-full bg-darkGray text-lightGreen py-5 text-center"
-        )}>
+        <footer className=
+            "h-[180px] w-full bg-darkGray text-lightGreen py-5 text-center">
             <div className="flex flex-wrap justify-around items-center">
-                <div className="text-center">
-                    <img src="/images/logo/chef.png" alt="Proven Recipes logo" className="h-20 mx-auto" />
+                <div className="text-center cursor-pointer" onClick={() => { navigate("/") }}>
+                    <img src="/images/logo/chef.png" alt="Proven Recipes logo" className="h-12 mx-auto" />
                     <h2 className="text-lighterGreen uppercase mt-2 tracking-widest">Proven Recipes</h2>
                 </div>
                 <div className="text-left text-lightGreen">
@@ -58,7 +56,7 @@ const Footer: React.FC<Props> = ({ user }: Props) => {
                     </ul>
                 </div>
             </div>
-            <div className="mt-5">
+            <div className="mt-9">
                 <p className="text-xs text-lightGreen">&copy; {new Date().getFullYear()} Proven Recipes. All rights reserved.</p>
             </div>
         </footer>

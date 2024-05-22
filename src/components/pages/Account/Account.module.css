@@ -162,12 +162,6 @@
   width: 200px;
 }
 
-.account__user-icon--error {
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--red-medium);
-}
-
 .account__user-photo.account__user-photo--content-hovered,
 .account__user-icon.account__user-photo--content-hovered {
   filter: opacity(70%);

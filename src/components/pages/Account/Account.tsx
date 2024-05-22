@@ -13,7 +13,6 @@ import { deleteObject, getDownloadURL, ref, uploadBytes } from "firebase/storage
 import { Modal } from "../../atomic/Modal/Modal";
 import { CopyIcon, Pencil1Icon } from '@radix-ui/react-icons';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { Tooltip, IconButton } from '@radix-ui/themes';
 import { TooltipProvider } from '@radix-ui/react-tooltip';
 import { Toast } from "../../atomic/Toast";
@@ -46,8 +45,6 @@ export const Account = ({ user }: AccountProps) => {
     });
     const [userPhotoUrl, setUserPhotoUrl] = useState<string>("");
     const [photo, setPhoto] = useState<File | null>(null);
-    const [errorPhotoChange, setErrorPhotoChange] = useState<string | null>(null);
-    const [errorPhotoDelete, setErrorPhotoDelete] = useState<string | null>(null);
     const [isPhotoModal, setIsPhotoModal] = useState(false);
     const [isClickedChangePhoto, setIsClickedChangePhoto] = useState(false);
     const [isClickedDeletePhoto, setIsClickedDeletePhoto] = useState(false);
@@ -87,6 +84,7 @@ export const Account = ({ user }: AccountProps) => {
                 }
 
             } catch (error) {
+                toast.error("Error fetching user data");
                 console.error("Error fetching user data:", error);
             }
         };
@@ -114,8 +112,10 @@ export const Account = ({ user }: AccountProps) => {
         try {
             await setDoc(doc(db, `userData/${user?.uid}`), data);
             setUserData(data);
-            setReadOnly(true)
+            setReadOnly(true);
+            toast.success("User data was successfully saved");
         } catch (error) {
+            toast.error("Error saving user data");
             console.error("Error saving user data:", error);
         }
     };
@@ -155,7 +155,6 @@ export const Account = ({ user }: AccountProps) => {
         if (files && files.length > 0) {
             setPhoto(files[0]);
         }
-        setErrorPhotoChange(null);
     }
 
     const handleSubmitPhotoChange = async () => {
@@ -184,31 +183,30 @@ export const Account = ({ user }: AccountProps) => {
             setPhoto(null);
             setIsPhotoModal(false);
             setIsClickedChangePhoto(false);
+            toast.success("User photo was successfully changed")
         } catch (error) {
-            console.log(error);
-            setErrorPhotoChange("Error changing photo");
+            toast.error("Error changing photo");
+            console.log("Firebase error:", error);
         }
     };
 
     const handleSubmitPhotoDelete = async () => {
-        if (!user) {
-            console.error('User is not authenticated');
-            return;
-        }
-
-        try {
-            const photoRef = ref(storage, userPhotoUrl);
-            await deleteObject(photoRef);
-            setPhoto(null);
-            setIsPhotoModal(false);
-            setUserPhotoUrl("");
-            setIsClickedDeletePhoto(false);
-            await updateDoc(doc(db, `userData/${user?.uid}`), {
-                photo: null
-            });
-        } catch (error) {
-            console.error("Error deleting photo:", error);
-            setErrorPhotoDelete("Error deleting photo")
+        if (user) {
+            try {
+                const photoRef = ref(storage, userPhotoUrl);
+                await deleteObject(photoRef);
+                setPhoto(null);
+                setIsPhotoModal(false);
+                setUserPhotoUrl("");
+                setIsClickedDeletePhoto(false);
+                await updateDoc(doc(db, `userData/${user?.uid}`), {
+                    photo: null
+                });
+                toast.success("User photo was successfully deleted");
+            } catch (error) {
+                toast.error("Error deleting photo");
+                console.error("Error deleting photo:", error);
+            }
         }
     };
 
@@ -469,16 +467,6 @@ export const Account = ({ user }: AccountProps) => {
                                 <ButtonSolid onClick={handleSubmitPhotoDelete}>Confirm</ButtonSolid>
                             </div>
                         }
-
-                        {errorPhotoChange && <div className={classnames(
-                            styles["account__user-icon--error"],
-                            styles[mode]
-                        )}>{errorPhotoChange}</div>}
-
-                        {errorPhotoDelete && <div className={classnames(
-                            styles["account__user-icon--error"],
-                            styles[mode]
-                        )}>{errorPhotoDelete}</div>}
                     </div>
                 </Modal>
             }

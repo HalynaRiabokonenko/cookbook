@@ -21,19 +21,19 @@ const Footer: React.FC<Props> = ({ user }: Props) => {
                 <div className="text-left text-lightGreen">
                     <ul className="list-none p-0 columns-2 gap-x-12">
                         <li className="mb-2">
-                            <Link to="/" className="text-white hover:text-orange">Home</Link>
+                            <Link to="/" className="text-white hover:text-redLight">Home</Link>
                         </li>
                         <li className="mb-2">
-                            <Link to="/about" className="text-white hover:text-orange">About Us</Link>
+                            <Link to="/about" className="text-white hover:text-redLight">About Us</Link>
                         </li>
                         <li className="mb-2">
-                            <Link to="/recipes" className="text-white hover:text-orange">Recipes</Link>
+                            <Link to="/recipes" className="text-white hover:text-redLight">Recipes</Link>
                         </li>
                         <li className="mb-2">
-                            <Link to="/contact" className="text-white hover:text-orange">Contact Us</Link>
+                            <Link to="/contact" className="text-white hover:text-redLight">Contact Us</Link>
                         </li>
                         {user && <li className="mb-2">
-                            <Link to="/account" className="text-white hover:text-orange">Account</Link>
+                            <Link to="/account" className="text-white hover:text-redLight">Account</Link>
                         </li>}
                     </ul>
                 </div>

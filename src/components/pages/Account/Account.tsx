@@ -5,7 +5,6 @@ import styles from "./Account.module.css";
 import PageHeader from "../../atomic/PageHeader/PageHeader";
 import { Page } from "../../structures/Page/Page";
 import { User } from "firebase/auth";
-import Button from "../../atomic/Button/Button";
 import { useNavigate } from "react-router-dom";
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import { db, storage } from "../../../api/firebaseConfig";
@@ -18,6 +17,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Tooltip, IconButton } from '@radix-ui/themes';
 import { TooltipProvider } from '@radix-ui/react-tooltip';
 import { Toast } from "../../atomic/Toast";
+import { ButtonOutline } from "../../atomic/ButtonOutline";
+import { ButtonSolid } from "../../atomic/ButtonSolid";
 interface AccountProps {
     user: User | null;
 }
@@ -211,6 +212,11 @@ export const Account = ({ user }: AccountProps) => {
         }
     };
 
+    const handleCancelChangeImage = () => {
+        setIsPhotoModal(false);
+        setPhoto(null);
+    };
+
     return (
         <Page>
             <PageHeader mode={mode}>
@@ -365,7 +371,6 @@ export const Account = ({ user }: AccountProps) => {
                                     }
                                 />
                             </div>
-
                             <div className={classnames(styles["account__form--inputs-container"], styles[mode])}>
                                 <p className={classnames(styles["account__user-detail-option"], styles[mode])}>User id:</p>
                                 <div className="flex items-center">
@@ -411,16 +416,16 @@ export const Account = ({ user }: AccountProps) => {
                                 )}> {lastSignInTime}</p>
                             </div>
                         </div>
-                        {!readonly && <div className={styles["account__buttons--container"]}>
-                            <Button type="reset" onClick={handleReset}>Cancel</Button>
-                            <Button type="submit">Submit</Button>
+                        {!readonly && <div className="flex m-2 justify-center">
+                            <ButtonOutline onClick={handleReset}>Cancel</ButtonOutline>
+                            <ButtonSolid >Submit</ButtonSolid>
                         </div>
                         }
                     </form>}
                     {
-                        readonly && <div>
-                            <Button onClick={() => { navigate("/change-password") }}>Change Password</Button>
-                            <Button onClick={() => { navigate("/delete-account") }}>Delete account</Button>
+                        readonly && <div className="flex flex-col">
+                            <ButtonOutline onClick={() => { navigate("/change-password") }}>Change password</ButtonOutline>
+                            <ButtonOutline onClick={() => { navigate("/delete-account") }}>Delete account</ButtonOutline>
                         </div>
                     }
                 </div>
@@ -452,8 +457,18 @@ export const Account = ({ user }: AccountProps) => {
                                 <div>Delete image</div>
                             </div>}
 
-                        {isClickedChangePhoto && <Button onClick={handleSubmitPhotoChange}>Save</Button>}
-                        {isClickedDeletePhoto && <Button onClick={handleSubmitPhotoDelete}>Confirm</Button>}
+                        {isClickedChangePhoto &&
+                            <div className="flex">
+                                <ButtonOutline onClick={handleCancelChangeImage}>Cancel</ButtonOutline>
+                                <ButtonSolid onClick={handleSubmitPhotoChange}>Save</ButtonSolid>
+                            </div>
+                        }
+                        {isClickedDeletePhoto &&
+                            <div className="flex">
+                                <ButtonOutline onClick={() => { setIsPhotoModal(false) }}>Cancel</ButtonOutline>
+                                <ButtonSolid onClick={handleSubmitPhotoDelete}>Confirm</ButtonSolid>
+                            </div>
+                        }
 
                         {errorPhotoChange && <div className={classnames(
                             styles["account__user-icon--error"],

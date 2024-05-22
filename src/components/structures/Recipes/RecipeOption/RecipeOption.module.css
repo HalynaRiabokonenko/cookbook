@@ -1,6 +1,6 @@
 .recipes-content__recipes-list--option {
-  width: 380px;
-  height: 380px;
+  width: 300px;
+  height: 300px;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--light-green);
@@ -26,12 +26,18 @@
   padding: 10px;
 }
 
+.recipes-content__recipes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+}
+
 .recipes-content__recipes-name {
-  font-size: 1.1em;
+  font-size: 0.9rem;
   margin-bottom: 10px;
   text-align: center;
   text-transform: uppercase;
-  margin: 20px;
   font-weight: 500;
 }
 

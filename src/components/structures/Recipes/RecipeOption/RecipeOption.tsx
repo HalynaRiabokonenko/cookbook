@@ -23,7 +23,7 @@ export const RecipeOption = ({ recipe }: RecipeOptionTypes) => {
                     styles["recipes-content__recipes-list--option"],
                     styles[mode]
                 )}>
-                    <div className="w-full overflow-hidden ">
+                    <div className="w-full h-[60%] overflow-hidden ">
                         <AspectRatio.Root ratio={5 / 3}>
                             <img
                                 className="h-full w-full object-cover"

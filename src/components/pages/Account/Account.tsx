@@ -49,9 +49,13 @@ export const Account = ({ user }: AccountProps) => {
     const [isClickedChangePhoto, setIsClickedChangePhoto] = useState(false);
     const [isClickedDeletePhoto, setIsClickedDeletePhoto] = useState(false);
 
-    const copyToClipboard = (text: string) => {
-        navigator.clipboard.writeText(text);
-        toast.info("User ID copied to clipboard");
+    const copyToClipboard = async (text: string) => {
+        try {
+            await navigator.clipboard.writeText(text);
+            toast.info("User ID copied to clipboard");
+        } catch (err) {
+            toast.error("Failed to copy User ID to clipboard");
+        }
     };
 
     const toggleModal = () => {

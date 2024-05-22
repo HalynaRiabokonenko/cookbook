@@ -18,6 +18,13 @@ export const ModeProvider: React.FC<ModeProviderProps> = ({ children }: ModeProv
     setMode(mode === "light" ? "dark" : "light");
   };
 
+  const handleSystemModeChange = (e: MediaQueryListEvent) => {
+    if (mode === "system") {
+      document.body.className = e.matches ? "dark" : "";
+    }
+  };
+
+
   useEffect(() => {
     const fetchModeFromLocalStorage = () => {
       try {
@@ -39,6 +46,22 @@ export const ModeProvider: React.FC<ModeProviderProps> = ({ children }: ModeProv
 
   useEffect(() => {
     document.body.className = mode === "dark" ? "dark" : "";
+  }, [mode]);
+
+
+  useEffect(() => {
+    const systemDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+    if (mode === "system") {
+      document.body.className = systemDarkMode.matches ? "dark" : "";
+    } else {
+      document.body.className = mode === "dark" ? "dark" : "";
+    }
+
+    systemDarkMode.addEventListener('change', handleSystemModeChange);
+
+    return () => {
+      systemDarkMode.removeEventListener('change', handleSystemModeChange);
+    };
   }, [mode]);
 
   return (

@@ -1,12 +1,14 @@
 .recipes__content {
   display: flex;
   flex-direction: row;
+  margin-right: 60px;
 }
 
 .recipes__content-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  row-gap: 10px;
-  column-gap: 10px;
+  row-gap: 20px;
+  column-gap: 20px;
+  justify-content: space-evenly;
 }

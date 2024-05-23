@@ -10,12 +10,11 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ContactForm } from "../../structures/ContactForm/ContactForm";
 import { Toast } from "../../atomic/Toast";
-
+import { ContactMessages } from "../../structures/ContactMessages/ContactMessages";
 interface UserProps {
     user: User | null;
 }
-
-interface Message {
+interface MessageType {
     id: string;
     title: string;
     message: string;
@@ -24,7 +23,8 @@ interface Message {
 
 function ContactContent({ user }: UserProps) {
     const { mode } = useModeContext();
-    const [messages, setMessages] = useState<Message[]>([]);
+    const [messages, setMessages] = useState<MessageType[]>([]);
+    const [isMessageOpen, setIsMessageOpen] = useState<boolean>(false);
 
     useEffect(() => {
         if (!user || !user.email) return;
@@ -39,7 +39,7 @@ function ContactContent({ user }: UserProps) {
                 const fetchedMessages = querySnapshot.docs.map((doc: QueryDocumentSnapshot<DocumentData>) => ({
                     id: doc.id,
                     ...doc.data(),
-                })) as Message[];
+                })) as MessageType[];
                 setMessages(fetchedMessages);
             } catch (error) {
                 console.error("Error fetching messages: ", error);
@@ -84,62 +84,23 @@ function ContactContent({ user }: UserProps) {
 
     return (
         <Page>
-            <ContactForm submitText="Send" handleSubmit={handleSubmit}></ContactForm>
+            <ContactForm submitText="Send" handleSubmit={handleSubmit} isMessageOpen={isMessageOpen} setIsMessageOpen={setIsMessageOpen}></ContactForm>
             <Toast />
-            <div className={classnames(
+            {isMessageOpen && <div className={classnames(
                 styles["contact-content__messages-container"],
                 styles[mode]
             )}>
-                {mode === "light" ? (
-                    <div className={styles["contact-content__messages-icon-container"]}>
-                        <img src="/images/contact/chat-light.png" className={styles["contact-content__messages-icon"]} alt="messages icon" />
-                    </div>
-                ) : (
-                    <div className={styles["contact-content__messages-icon-container"]}>
-                        <img src="/images/contact/chat-dark.png" className={styles["contact-content__messages-icon"]} alt="messages icon" />
-                    </div>
-                )}
-
                 <div className={styles["contact-content__messages-info-container"]}>
                     {messages.map((msg) => (
                         <div className={classnames(
-                            styles["contact-content__message-info"],
+                            "m-5 py-2.5 px-5 w-full rounded-lg",
                             styles[mode])}
                             key={msg.id}>
-                            <div className={styles["contact-content__message-info-option"]}>
-                                <p className={classnames(
-                                    styles["contact-content__message-info-title"],
-                                    styles[mode]
-                                )}>Title:</p>
-                                <p className={classnames(
-                                    styles["contact-content__message-info-details"],
-                                    styles[mode]
-                                )}>{msg.title}</p>
-                            </div>
-                            <div className={styles["contact-content__message-info-option"]}>
-                                <p className={classnames(
-                                    styles["contact-content__message-info-title"],
-                                    styles[mode]
-                                )}>Message:</p>
-                                <p className={classnames(
-                                    styles["contact-content__message-info-details"],
-                                    styles[mode]
-                                )}>{msg.message}</p>
-                            </div>
-                            <div className={styles["contact-content__message-info-option"]}>
-                                <p className={classnames(
-                                    styles["contact-content__message-info-title"],
-                                    styles[mode]
-                                )}>Sent at:</p>
-                                <p className={classnames(
-                                    styles["contact-content__message-info-details"],
-                                    styles[mode]
-                                )}>{msg.timestamp.toDate().toString()}</p>
-                            </div>
+                            <ContactMessages messageObj={msg} />
                         </div>
                     ))}
                 </div>
-            </div>
+            </div>}
         </Page>
     );
 }

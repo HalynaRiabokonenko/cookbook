@@ -1,15 +1,18 @@
-import React, { ReactElement, useState } from "react";
+import React, { Dispatch, ReactElement, SetStateAction, useState } from "react";
 import { useModeContext } from "../../../providers/mode";
-import { Button } from "@radix-ui/themes";
+import { Button, IconButton } from "@radix-ui/themes";
+import { EnvelopeClosedIcon, EnvelopeOpenIcon } from "@radix-ui/react-icons";
 
 interface Props {
     submitText: string;
     handleSubmit: ({ title, message }: { title?: string; message?: string; }) => Promise<void>;
+    isMessageOpen: boolean;
+    setIsMessageOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 export const ContactForm = ({
     submitText,
-    handleSubmit
+    handleSubmit, isMessageOpen, setIsMessageOpen
 }: Props): ReactElement => {
     const [title, setTitle] = useState<string>("");
     const [message, setMessage] = useState<string>("");
@@ -20,9 +23,13 @@ export const ContactForm = ({
         handleSubmit({ title, message });
     };
 
+    const toggleIsMessageOpen = () => {
+        setIsMessageOpen(!isMessageOpen);
+    };
+
     return (
         <div className="mx-auto w-modal-width">
-            <div className={mode === 'dark' ? 'bg-mediumGreenDark text-white rounded-xl mt-10' : 'bg-stone-100 text-gray-900  border border-solid border-1 border-lightGreen rounded-xl mt-10'}>
+            <div className={mode === 'dark' ? 'relative bg-mediumGreenDark text-white rounded-xl mt-10' : 'relative bg-stone-100 text-gray-900  border border-solid border-1 border-lightGreen rounded-xl mt-10'}>
                 <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                         <img
@@ -79,6 +86,13 @@ export const ContactForm = ({
                         </form>
                     </div>
                 </div>
+                <IconButton className="absolute bottom-0 right-0 p-3" onClick={toggleIsMessageOpen}>
+                    {isMessageOpen ?
+                        <EnvelopeOpenIcon width="18" height="18" />
+                        :
+                        <EnvelopeClosedIcon width="18" height="18" />
+                    }
+                </IconButton>
             </div>
         </div>
     );

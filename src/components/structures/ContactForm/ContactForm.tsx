@@ -16,7 +16,6 @@ export const ContactForm = ({
 }: Props): ReactElement => {
     const [title, setTitle] = useState<string>("");
     const [message, setMessage] = useState<string>("");
-
     const { mode } = useModeContext();
     const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault();

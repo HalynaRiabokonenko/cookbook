@@ -4,6 +4,7 @@ import { Timestamp } from "firebase/firestore";
 import { CopyIcon } from "@radix-ui/react-icons";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useModeContext } from "../../../providers/mode";
 
 interface MessageType {
     id: string;
@@ -13,6 +14,8 @@ interface MessageType {
 }
 
 export const ContactMessages = ({ messageObj }: { messageObj: MessageType }) => {
+    const { mode } = useModeContext();
+
     const copyToClipboard = async (text: string) => {
         try {
             await navigator.clipboard.writeText(text);
@@ -22,21 +25,25 @@ export const ContactMessages = ({ messageObj }: { messageObj: MessageType }) => 
         }
     };
 
+    const dataListValueClass = mode === 'dark' ? 'text-white' : 'text-gray-700';
+
     return (
-        <DataList.Root className="bg-white rounded-lg shadow-lg p-4">
+        <DataList.Root className={`bg-${mode === 'dark' ? 'midnightMoss' : 'white'} rounded-lg drop-shadow-2xl p-4`}>
             <DataList.Item className="flex justify-between py-2">
                 <DataList.Label className="min-w-[88px] font-medium">Title</DataList.Label>
-                <DataList.Value className="text-gray-700 break-words break-all">{messageObj.title}</DataList.Value>
+                <DataList.Value className={`break-words break-all ${dataListValueClass}`}>
+                    {messageObj.title}
+                </DataList.Value>
             </DataList.Item>
             <DataList.Item className="flex justify-between py-2">
                 <DataList.Label className="min-w-[88px] font-medium">Message</DataList.Label>
-                <DataList.Value className="text-gray-700 break-words break-all">
+                <DataList.Value className={`break-words break-all ${dataListValueClass}`}>
                     {messageObj.message}
                 </DataList.Value>
             </DataList.Item>
             <DataList.Item className="flex justify-between py-2">
                 <DataList.Label className="min-w-[88px] font-medium">Time</DataList.Label>
-                <DataList.Value className="text-gray-700 break-words break-all">
+                <DataList.Value className={`break-words break-all ${dataListValueClass}`}>
                     {messageObj.timestamp.toDate().toString()}
                 </DataList.Value>
             </DataList.Item>
@@ -45,7 +52,7 @@ export const ContactMessages = ({ messageObj }: { messageObj: MessageType }) => 
                 <DataList.Value>
                     <Flex align="center" gap="2" className="flex items-center gap-2">
                         <span
-                            className="text-gray-500 cursor-pointer break-words break-all"
+                            className={`cursor-pointer break-words break-all ${dataListValueClass}`}
                             onClick={() => copyToClipboard(messageObj.id)}
                         >
                             {messageObj.id}

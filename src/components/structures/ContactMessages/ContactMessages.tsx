@@ -28,7 +28,7 @@ export const ContactMessages = ({ messageObj }: { messageObj: MessageType }) => 
     const dataListValueClass = mode === 'dark' ? 'text-white' : 'text-gray-700';
 
     return (
-        <DataList.Root className={`bg-${mode === 'dark' ? 'midnightMoss' : 'white'} rounded-lg drop-shadow-2xl p-4`}>
+        <DataList.Root className={`bg-${mode === 'dark' ? 'midnightMoss' : 'white'} rounded-lg shadow-2xl p-4`}>
             <DataList.Item className="flex justify-between py-2">
                 <DataList.Label className="min-w-[88px] font-medium">Title</DataList.Label>
                 <DataList.Value className={`break-words break-all ${dataListValueClass}`}>

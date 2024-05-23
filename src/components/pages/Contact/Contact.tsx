@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styles from "./Contact.module.css";
-import classnames from "classnames";
-import { useModeContext } from "../../../providers/mode";
 import { Page } from "../../structures/Page/Page";
 import { User } from "firebase/auth";
 import { db } from "../../../api/firebaseConfig";
@@ -22,7 +19,6 @@ interface MessageType {
 }
 
 function ContactContent({ user }: UserProps) {
-    const { mode } = useModeContext();
     const [messages, setMessages] = useState<MessageType[]>([]);
     const [isMessageOpen, setIsMessageOpen] = useState<boolean>(false);
 
@@ -86,15 +82,11 @@ function ContactContent({ user }: UserProps) {
         <Page>
             <ContactForm submitText="Send" handleSubmit={handleSubmit} isMessageOpen={isMessageOpen} setIsMessageOpen={setIsMessageOpen}></ContactForm>
             <Toast />
-            {isMessageOpen && <div className={classnames(
-                styles["contact-content__messages-container"],
-                styles[mode]
-            )}>
-                <div className={styles["contact-content__messages-info-container"]}>
+            {isMessageOpen && <div className="flex justify-center w-full min-h-screen-30">
+                <div className="m-1">
                     {messages.map((msg) => (
-                        <div className={classnames(
-                            "m-5 py-2.5 px-5 w-full rounded-lg",
-                            styles[mode])}
+                        <div
+                            className="m-5 py-2.5 px-5 w-full rounded-lg"
                             key={msg.id}>
                             <ContactMessages messageObj={msg} />
                         </div>

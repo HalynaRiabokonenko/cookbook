@@ -28,7 +28,7 @@ export const ContactForm = ({
     };
 
     return (
-        <div className="mx-auto w-modal-width">
+        <div className="mx-auto w-modal-width w-fill">
             <div className={mode === 'dark' ? 'relative bg-mediumGreenDark text-white rounded-xl mt-10' : 'relative bg-stone-100 text-gray-900  border border-solid border-1 border-lightGreen rounded-xl mt-10'}>
                 <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">

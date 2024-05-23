@@ -22,6 +22,37 @@
   --header-text-color--dark: #cacaca;
 
   --main-font: font-family: Montserrat, sans-serif;
+
+  --modal-width: 500px;
+  --modal-height: 350px;
+  --modal-text-color: #9f9d9d;
+  --modal-bg-color: #adc6c4;
+  --modal-bg-color--dark: #294d4e;
+  --modal-border-color: #ccc;
+  --modal-label-text-font-size: 1.1rem;
+  --modal-input-bg-focus-color: #eff6f6fc;
+  --modal-input-border-focus-color: #a5adb5;
+  --modal-input-valid-color: #70ceab;
+  --modal-input-invalid-color: #e98f8f;
+  --modal-input-invalid-color--dark: #9c0404;
+  --modal-button-text-font-size: 1.1rem;
+  --modal-button-bg-color--hover: #93bcbb;
+  --modal-button-shadow-color: #617d7c;
+  --modal-button-text-color: #777575;
+  --modal-button-text-color-hover: #fff;
+
+  /* SCALING VALUES */
+  /* 1024px */
+  --modal-scale-with-value-1024: 0.9;
+  --modal-scale-height-value-768: 0.9;
+  /* 768px */
+  --modal-scale-with-value-768: 0.8;
+  --modal-scale-height-value-768: 0.96;
+  --text-scale-value-768: 0.92;
+  /* 480px */
+  --modal-scale-with-value-480: 0.6;
+  --modal-scale-height-value-480: 0.92;
+  --text-scale-value-480: 0.85;
 }
 
 * {

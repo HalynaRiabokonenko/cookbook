@@ -53,6 +53,9 @@
   --modal-scale-with-value-480: 0.6;
   --modal-scale-height-value-480: 0.92;
   --text-scale-value-480: 0.85;
+
+  --header-hight: 70px;
+  --header-width: 100%;
 }
 
 * {

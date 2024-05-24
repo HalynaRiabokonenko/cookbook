@@ -6,24 +6,17 @@
   margin: 30px 40px;
 }
 
-.about-image-container {
-  width: 50%;
-  margin: 10px 20px;
-}
-
 .about-content__text-container {
   width: 50%;
   margin: 30px 20px;
-}
-
-.about-image {
-  height: 400px;
 }
 
 .about-content__sub-header {
   text-transform: uppercase;
   text-align: center;
   margin: 40px;
+  font-weight: 500;
+  font-size: 1.3rem;
 }
 
 .about-content__paragraph {

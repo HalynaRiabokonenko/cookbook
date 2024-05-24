@@ -110,9 +110,6 @@ const About = () => {
                         styles["about-content__text-container"],
                         styles[mode]
                     )}>
-                        <div className={styles["about-image-container"]}>
-                            <img src="" className={styles["about-image"]} alt="" />
-                        </div>
                         <h2 className={classnames(
                             styles["about-content__sub-header"],
                             styles[mode]

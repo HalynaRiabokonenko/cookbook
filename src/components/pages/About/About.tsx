@@ -4,6 +4,7 @@ import classnames from "classnames";
 import { useModeContext } from "../../../providers/mode";
 import PageHeader from "../../atomic/PageHeader/PageHeader";
 import { Page } from "../../structures/Page/Page";
+import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 
 const About = () => {
     const { mode } = useModeContext();
@@ -18,8 +19,14 @@ const About = () => {
                     styles["about-content__option-container"],
                     styles[mode]
                 )}>
-                    <div className={styles["about-image-container"]}>
-                        <img src="/images/about/food-2.avif" className={styles["about-image"]} alt="food and spices" />
+                    <div className="overflow-hidden rounded-md w-1/2 mt-2.5 mb-2.5 ml-5 mr-5">
+                        <AspectRatio.Root ratio={5 / 3}>
+                            <img
+                                className="h-full w-full object-cover"
+                                src="/images/about/food-2.avif"
+                                alt="food and spices"
+                            />
+                        </AspectRatio.Root>
                     </div>
                     <div className={classnames(
                         styles["about-content__text-container"],
@@ -52,16 +59,28 @@ const About = () => {
                             styles[mode]
                         )}>Our mission is simple yet profound: to bring the authentic tastes of different cultures directly to your kitchen. Each recipe we feature has been carefully selected and tested to ensure it captures the essence of its cultural origin. From street food favorites to gourmet classics, we're dedicated to making international cuisine accessible to everyone, one recipe at a time.</p>
                     </div>
-                    <div className={styles["about-image-container"]}>
-                        <img src="/images/about/globe-pins.avif" className={styles["about-image"]} alt="globe with pins" />
+                    <div className="overflow-hidden rounded-md w-1/2 mt-2.5 mb-2.5 ml-5 mr-5">
+                        <AspectRatio.Root ratio={5 / 3}>
+                            <img
+                                className="h-full w-full object-cover"
+                                src="/images/about/globe-pins.avif"
+                                alt="globe with pins"
+                            />
+                        </AspectRatio.Root>
                     </div>
                 </div>
                 <div className={classnames(
                     styles["about-content__option-container"],
                     styles[mode]
                 )}>
-                    <div className={styles["about-image-container"]}>
-                        <img src="/images/about/food-3.avif" className={styles["about-image"]} alt="man hands preparing food" />
+                    <div className="overflow-hidden rounded-md w-1/2 mt-2.5 mb-2.5 ml-5 mr-5">
+                        <AspectRatio.Root ratio={5 / 3}>
+                            <img
+                                className="h-full w-full object-cover"
+                                src="/images/about/food-3.avif"
+                                alt="man hands preparing food"
+                            />
+                        </AspectRatio.Root>
                     </div>
                     <div className={classnames(
                         styles["about-content__text-container"],
@@ -95,24 +114,33 @@ const About = () => {
                             styles[mode]
                         )}>What sets us apart is our unwavering commitment to authenticity. Every recipe undergoes meticulous research and testing to ensure it stays true to its cultural heritage. From sourcing the right ingredients to perfecting cooking methods, we leave no stone unturned in our quest to deliver an authentic culinary experience that honors the flavors and traditions of each region.</p>
                     </div>
-                    <div className={styles["about-image-container"]}>
-                        <img src="/images/about/spices.avif" className={styles["about-image"]} alt="spices" />
+                    <div className="overflow-hidden rounded-md w-1/2 mt-2.5 mb-2.5 ml-5 mr-5">
+                        <AspectRatio.Root ratio={5 / 3}>
+                            <img
+                                className="h-full w-full object-cover"
+                                src="/images/about/spices.avif"
+                                alt="spices"
+                            />
+                        </AspectRatio.Root>
                     </div>
                 </div>
                 <div className={classnames(
                     styles["about-content__option-container"],
                     styles[mode]
                 )}>
-                    <div className={styles["about-image-container"]}>
-                        <img src="/images/about/cooking.avif" className={styles["about-image"]} alt="men are cooking together" />
+                    <div className="overflow-hidden rounded-md w-1/2 mt-2.5 mb-2.5 ml-5 mr-5">
+                        <AspectRatio.Root ratio={5 / 3}>
+                            <img
+                                className="h-full w-full object-cover"
+                                src="/images/about/cooking.avif"
+                                alt="men are cooking together"
+                            />
+                        </AspectRatio.Root>
                     </div>
                     <div className={classnames(
                         styles["about-content__text-container"],
                         styles[mode]
                     )}>
-                        <div className={styles["about-image-container"]}>
-                            <img src="" className={styles["about-image"]} alt="" />
-                        </div>
                         <h2 className={classnames(
                             styles["about-content__sub-header"],
                             styles[mode]
@@ -140,16 +168,28 @@ const About = () => {
                             styles[mode]
                         )}>Embark on a culinary journey like no other with Proven Recipes as your guide. Whether you're looking to expand your culinary repertoire or simply seeking inspiration for your next meal, we're here to help you explore the delicious world of international cuisine. So roll up your sleeves, sharpen your knives, and get ready to discover a world of flavors right in your own kitchen.</p>
                     </div>
-                    <div className={styles["about-image-container"]}>
-                        <img src="/images/about/journey.avif" className={styles["about-image"]} alt="suitcase with clothes" />
+                    <div className="overflow-hidden rounded-md w-1/2 mt-2.5 mb-2.5 ml-5 mr-5">
+                        <AspectRatio.Root ratio={5 / 3}>
+                            <img
+                                className="h-full w-full object-cover"
+                                src="/images/about/journey.avif"
+                                alt="suitcase with clothes"
+                            />
+                        </AspectRatio.Root>
                     </div>
                 </div>
                 <div className={classnames(
                     styles["about-content__option-container"],
                     styles[mode]
                 )}>
-                    <div className={styles["about-image-container"]}>
-                        <img src="/images/about/enjoy-2.avif" className={styles["about-image"]} alt="family eats food" />
+                    <div className="overflow-hidden rounded-md w-1/2 mt-2.5 mb-2.5 ml-5 mr-5">
+                        <AspectRatio.Root ratio={5 / 3}>
+                            <img
+                                className="h-full w-full object-cover"
+                                src="/images/about/enjoy-2.avif"
+                                alt="family eats food"
+                            />
+                        </AspectRatio.Root>
                     </div>
                     <div className={classnames(
                         styles["about-content__text-container"],

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import classnames from "classnames";
 import { useModeContext } from "../../../providers/mode";
@@ -8,6 +8,7 @@ import { AccountModal } from "../AccountModal/AccountModal";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../api/firebaseConfig";
 import { Avatar, AvatarImage } from '@radix-ui/react-avatar';
+import { HeaderNavbar } from "../HeaderNavbar/HeaderNavbar";
 interface HeaderProps {
     user: User | null;
 }
@@ -15,7 +16,6 @@ interface HeaderProps {
 function Header({ user }: HeaderProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { mode, toggleMode } = useModeContext();
-    const location = useLocation();
     const [userPhotoUrl, setUserPhotoUrl] = useState<string | null>(null);
 
     const toggleAccountModal = (): void => {
@@ -104,74 +104,7 @@ function Header({ user }: HeaderProps) {
                         </div>
                     </Link>
                 </div>
-                <div className={styles["global-nav__container"]}>
-                    <nav className={styles["global-nav"]}>
-                        <ul className={styles["global-nav__list"]}>
-                            <li>
-                                <Link
-                                    className={classnames(
-                                        styles["global-nav__list-item-link"],
-                                        styles["global-nav__list-item-link--home"],
-                                        styles[mode])}
-                                    to="/"
-                                >
-                                    <div className={classnames(
-                                        styles["global-nav__list-item"],
-                                        styles[mode],
-                                        { [styles.active]: location.pathname === '/' }
-                                    )}>Home</div>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    className={classnames(
-                                        styles["global-nav__list-item-link"],
-                                        styles[mode]
-                                    )}
-                                    to="/recipes"
-                                >
-                                    <div className={classnames(
-                                        styles["global-nav__list-item"],
-                                        styles[mode],
-                                        { [styles.active]: location.pathname === '/recipes' || location.pathname.includes('/recipes/') }
-
-                                    )}>Recipes</div>
-                                </Link>
-                            </li>
-                            <li >
-                                <Link
-                                    className={classnames(
-                                        styles["global-nav__list-item-link"],
-                                        styles["global-nav__list-item-link--about"],
-                                        styles[mode]
-                                    )}
-                                    to="/about"
-                                >
-                                    <div className={classnames(
-                                        styles["global-nav__list-item"],
-                                        styles[mode],
-                                        { [styles.active]: location.pathname === '/about' }
-                                    )}>About us</div>
-                                </Link>
-                            </li>
-                            {!user && <li>
-                                <Link
-                                    className={classnames(
-                                        styles["global-nav__list-item-link"],
-                                        styles[mode]
-                                    )}
-                                    to="/login"
-                                >
-                                    <div className={classnames(
-                                        styles["global-nav__list-item"],
-                                        styles[mode],
-                                        { [styles.active]: location.pathname === '/login' || location.pathname === '/sign-up' }
-                                    )}>Login</div>
-                                </Link>
-                            </li>}
-                        </ul>
-                    </nav>
-                </div>
+                <HeaderNavbar user={user} />
                 {user && <div id="header__account-container" className={styles["header__account-container"]} onClick={toggleAccountModal}
                 >
                     {userPhotoUrl &&

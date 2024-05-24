@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import styles from "./Header.module.css";
+import styles from "./HeaderNavbar.module.css";
 import classnames from "classnames";
 import { useModeContext } from "../../../providers/mode";
 import { User } from "firebase/auth";

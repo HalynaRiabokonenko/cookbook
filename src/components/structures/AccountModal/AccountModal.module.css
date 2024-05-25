@@ -8,7 +8,7 @@
   border-top: none;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  box-shadow: 0 20px 40px -20px #0e474436;
+  box-shadow: 0 20px 40px -20px #0e484536;
 }
 
 .account-modal__list-container {
@@ -34,15 +34,15 @@
 }
 
 .account-modal__list-option:hover {
-  background-color: rgba(68, 68, 68, 0.069);
+  background-color: var(--option-hover);
 }
 
 .account-modal__list-option.dark:hover {
-  background-color: rgba(190, 190, 190, 0.113);
+  background-color: var(--option-hover--dark);
 }
 
 .account-modal__container.dark {
   background-color: #252927;
   border: 1px solid #252927;
-  box-shadow: 0 0 60px rgba(91, 105, 118, 0.138);
+  box-shadow: 0 0 60px #5b697623;
 }

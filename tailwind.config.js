@@ -22,6 +22,8 @@ module.exports = {
         headerText: "#595959",
         headerTextDark: "#cacaca",
         midnightMoss: "#252927",
+        optionHover: "#44444412",
+        optionHoverDark: "#bebebe1d",
       },
       margin: {
         "60px": "60px",

@@ -11,7 +11,7 @@
   position: fixed;
   z-index: 999;
   border-bottom: 0.5px solid var(--dark-green);
-  position: relative;
+  /* position: relative; */
 }
 
 .header__logo__link {

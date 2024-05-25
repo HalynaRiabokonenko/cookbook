@@ -9,6 +9,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../api/firebaseConfig";
 import { Avatar, AvatarImage } from '@radix-ui/react-avatar';
 import { HeaderNavbar } from "../HeaderNavbar/HeaderNavbar";
+import { HeaderHamburgerMenu } from "../HamburgerMenu.tsx/HeaderHamburgerMenu";
 interface HeaderProps {
     user: User | null;
 }
@@ -17,6 +18,7 @@ function Header({ user }: HeaderProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { mode, toggleMode } = useModeContext();
     const [userPhotoUrl, setUserPhotoUrl] = useState<string | null>(null);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
 
     const toggleAccountModal = (): void => {
         setIsModalOpen((prevState) => (prevState === false ? true : false));
@@ -77,6 +79,17 @@ function Header({ user }: HeaderProps) {
         fetchUserData();
     }, [user]);
 
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 600);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <header className={styles["header"]}>
             <div className={classnames(
@@ -104,8 +117,8 @@ function Header({ user }: HeaderProps) {
                         </div>
                     </Link>
                 </div>
-                <HeaderNavbar user={user} />
-                {user && <div id="header__account-container" className={styles["header__account-container"]} onClick={toggleAccountModal}
+                {!isMobile && <HeaderNavbar user={user} />}
+                {user && !isMobile && <div id="header__account-container" className={styles["header__account-container"]} onClick={toggleAccountModal}
                 >
                     {userPhotoUrl &&
                         <Avatar className="inline-flex items-center justify-center w-12 h-12 rounded-full overflow-hidden bg-gray-200">
@@ -144,6 +157,7 @@ function Header({ user }: HeaderProps) {
                         </button>
                     )}
                 </div>
+                {isMobile && <HeaderHamburgerMenu />}
                 {isModalOpen && <AccountModal setIsModalOpen={setIsModalOpen}></AccountModal>}
             </div>
         </header >

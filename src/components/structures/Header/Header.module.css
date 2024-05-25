@@ -72,8 +72,8 @@
 
 .global-mode__icon,
 .header__account-icon {
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
 }
 
 .header__container.dark {

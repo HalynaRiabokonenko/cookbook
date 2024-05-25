@@ -11,6 +11,7 @@
   position: fixed;
   z-index: 999;
   border-bottom: 0.5px solid var(--dark-green);
+  position: relative;
 }
 
 .header__logo__link {
@@ -72,8 +73,8 @@
 
 .global-mode__icon,
 .header__account-icon {
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
 }
 
 .header__container.dark {
@@ -118,5 +119,20 @@
 
   .logo__img {
     margin: 0 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header__logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .header__container {
+    align-items: center;
+    justify-content: end;
+    padding-right: 30px;
   }
 }

@@ -20,6 +20,8 @@
 
   --header-text-color: #595959;
   --header-text-color--dark: #cacaca;
+  --option-hover: #44444412;
+  --option-hover--dark: #bebebe1d;
 
   --main-font: font-family: Montserrat, sans-serif;
 

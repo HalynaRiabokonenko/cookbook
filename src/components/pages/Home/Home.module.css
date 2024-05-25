@@ -181,7 +181,6 @@
 
 .home__main-text-header {
   position: absolute;
-  z-index: 1;
   top: 8%;
   color: var(--medium-green);
   font-size: 6.5rem;
@@ -198,7 +197,6 @@
 
 .home__main-text {
   position: absolute;
-  z-index: 1;
   top: 20%;
   left: 0%;
   right: 0%;

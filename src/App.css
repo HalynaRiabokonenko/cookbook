@@ -41,19 +41,6 @@
   --modal-button-text-color: #777575;
   --modal-button-text-color-hover: #fff;
 
-  /* SCALING VALUES */
-  /* 1024px */
-  --modal-scale-with-value-1024: 0.9;
-  --modal-scale-height-value-768: 0.9;
-  /* 768px */
-  --modal-scale-with-value-768: 0.8;
-  --modal-scale-height-value-768: 0.96;
-  --text-scale-value-768: 0.92;
-  /* 480px */
-  --modal-scale-with-value-480: 0.6;
-  --modal-scale-height-value-480: 0.92;
-  --text-scale-value-480: 0.85;
-
   --header-hight: 70px;
   --header-width: 100%;
 }

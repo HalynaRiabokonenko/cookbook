@@ -110,3 +110,13 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 756px) {
+  .global-mode__container {
+    margin-right: 20px;
+  }
+
+  .logo__img {
+    margin: 0 10px;
+  }
+}

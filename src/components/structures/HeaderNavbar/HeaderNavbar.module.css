@@ -101,3 +101,16 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .global-nav__list-item {
+    min-width: 120px;
+  }
+}
+
+@media screen and (max-width: 756px) {
+  .global-nav__list-item {
+    min-width: 100px;
+    font-size: 1rem;
+  }
+}

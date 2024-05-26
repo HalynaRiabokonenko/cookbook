@@ -160,7 +160,6 @@
 .account__user-icon {
   border: 1px solid var(--light-gray);
   border-radius: 50%;
-  width: 200px;
 }
 
 .account__user-photo.account__user-photo--content-hovered,
@@ -213,6 +212,16 @@
   .account__form--inputs-container {
     width: 100%;
   }
+
+  .account__user-photo--content {
+    width: 150px;
+    height: 150px;
+  }
+
+  .account__user-photo,
+  .account__user-icon {
+    width: 150px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -248,5 +257,15 @@
     position: absolute;
     top: -20px;
     right: -30px;
+  }
+
+  .account__user-photo--content {
+    width: 100px;
+    height: 100px;
+  }
+
+  .account__user-photo,
+  .account__user-icon {
+    width: 100px;
   }
 }

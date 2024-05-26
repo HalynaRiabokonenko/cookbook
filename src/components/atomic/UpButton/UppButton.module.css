@@ -25,17 +25,23 @@
 }
 
 .up-button.dark {
-  background-color: rgba(189, 189, 189, 0.546);
+  background-color: #bdbdbd8b;
 }
 
 .up-button.dark:hover {
-  background-color: rgba(189, 189, 189, 0.722);
+  background-color: #bdbdbdb8;
 }
 
 .up-button:hover {
-  background-color: rgba(0, 0, 0, 0.372);
+  background-color: #0000005f;
 }
 
 .up-button__img {
   height: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .up-button-container {
+    display: none;
+  }
 }

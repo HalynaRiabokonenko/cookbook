@@ -25,7 +25,7 @@ function Recipes() {
 
     return (
         <Page>
-            <PageHeader mode={mode}>Most popular recipes</PageHeader>
+            <PageHeader>Most popular recipes</PageHeader>
             <div className={styles["recipes__content"]}>
                 <RecipesNavigation onSelectOption={handlerClickRecipesOption} />
                 <div className={styles["recipes__content-container"]}>

@@ -46,7 +46,7 @@ function RecipeDetails() {
 
   return (
     <Page>
-      <PageHeader mode={mode}>
+      <PageHeader>
         {recipe.name}
       </PageHeader>
       <p className={styles["recipe-details-content__description"]}>

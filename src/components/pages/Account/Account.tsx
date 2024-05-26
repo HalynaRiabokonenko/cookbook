@@ -221,7 +221,7 @@ export const Account = ({ user }: AccountProps) => {
 
     return (
         <Page>
-            <PageHeader mode={mode}>
+            <PageHeader>
                 My account
             </PageHeader>
             <div className={classnames(

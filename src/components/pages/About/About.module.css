@@ -29,3 +29,16 @@
   font-size: 1.4rem;
   text-transform: uppercase;
 }
+
+@media screen and (max-width: 600px) {
+  .about-content__option-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    margin: 20px 0px;
+  }
+
+  .about-content__text-container {
+    width: 100%;
+  }
+}

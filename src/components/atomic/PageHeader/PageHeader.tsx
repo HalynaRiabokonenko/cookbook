@@ -11,7 +11,7 @@ const PageHeader = ({ children }: PageHeader): ReactElement => {
 
     return (
         <div className={classNames(
-            "text-darkGreen text-center lg:text-5xl md:text-4xl text-3xl uppercase py-20 tracking-wide",
+            "text-darkGreen text-center lg:text-5xl md:text-4xl text-3xl uppercase py-10 tracking-wide",
             mode === "dark" ? "text-headerTextDark" : ""
         )}>
             <h1>

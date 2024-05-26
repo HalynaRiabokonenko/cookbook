@@ -1,7 +1,7 @@
 .recipes__content {
   display: flex;
   flex-direction: row;
-  margin-right: 60px;
+  margin: 30px 40px;
 }
 
 .recipes__content-container {

@@ -1,6 +1,6 @@
 .recipes__content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 10px;
   margin-right: 40px;
 }
@@ -12,6 +12,7 @@
   row-gap: 20px;
   column-gap: 20px;
   justify-content: space-evenly;
+  margin-top: 70px;
 }
 
 @media only screen and (max-width: 768px) {

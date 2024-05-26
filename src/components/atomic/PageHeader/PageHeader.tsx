@@ -1,22 +1,24 @@
 import React, { PropsWithChildren, ReactElement } from "react";
 import styles from "./PageHeader.module.css";
 import classNames from "classnames";
-
-export interface PageHeaderProps {
-    mode: string;
+import { useModeContext } from "../../../providers/mode";
+interface PageHeader {
+    children: string;
 }
 
-const PageHeader = (props: PropsWithChildren<PageHeaderProps>): ReactElement => {
+const PageHeader = ({ children }: PageHeader): ReactElement => {
+    const { mode } = useModeContext();
+
     return (
         <div className={classNames(
             styles["header-container"],
-            styles[props.mode]
+            styles[mode]
         )}>
             <h1 className={classNames(
                 styles["header-text"],
-                styles[props.mode]
+                styles[mode]
             )}>
-                <span>{props.children}</span>
+                <span>{children}</span>
             </h1>
         </div>
     );

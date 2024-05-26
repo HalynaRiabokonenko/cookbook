@@ -18,7 +18,7 @@ function Header({ user }: HeaderProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { mode, toggleMode } = useModeContext();
     const [userPhotoUrl, setUserPhotoUrl] = useState<string | null>(null);
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
 
     const toggleAccountModal = (): void => {
         setIsModalOpen((prevState) => (prevState === false ? true : false));
@@ -81,7 +81,7 @@ function Header({ user }: HeaderProps) {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth < 600);
+            setIsMobile(window.innerWidth <= 600);
         };
 
         window.addEventListener('resize', handleResize);

@@ -5,11 +5,26 @@ import { RecipesContent } from "../../structures/Recipes/RecipesContent/RecipesC
 import { RecipesFullContent } from "../../structures/Recipes/RecipesFullContent/RecipesFullContent";
 import { useParams, useNavigate } from "react-router-dom";
 import RecipesNavbar from "../../structures/RecipesNavbar/RecipesNavbar";
+import { RecipesHamburgerMenu } from "../../structures/RecipesHamburgerMenu.tsx/RecipesHamburgerMenu";
 
-function Recipes() {
+const MOBILE_WIDTH = 1024;
+
+export const Recipes = () => {
     const navigate = useNavigate();
     const { option } = useParams<{ option: string }>();
     const [selectedOption, setSelectedOption] = useState<string | undefined>(option);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= MOBILE_WIDTH);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= MOBILE_WIDTH);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const handlerClickRecipesOption = (option: string): void => {
         setSelectedOption(option);
@@ -23,7 +38,11 @@ function Recipes() {
     return (
         <Page>
             <div className={styles["recipes__content"]}>
-                <RecipesNavbar onSelectOption={handlerClickRecipesOption} />
+                {isMobile ?
+                    <RecipesHamburgerMenu onSelectOption={handlerClickRecipesOption} />
+                    :
+                    <RecipesNavbar onSelectOption={handlerClickRecipesOption} />
+                }
                 <div className={styles["recipes__content-container"]}>
                     {selectedOption ? (
                         <RecipesContent option={selectedOption} />
@@ -35,4 +54,3 @@ function Recipes() {
         </Page>
     );
 }
-export default Recipes;

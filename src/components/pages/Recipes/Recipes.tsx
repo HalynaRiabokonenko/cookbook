@@ -7,7 +7,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import RecipesNavbar from "../../structures/RecipesNavbar/RecipesNavbar";
 import { RecipesHamburgerMenu } from "../../structures/RecipesHamburgerMenu.tsx/RecipesHamburgerMenu";
 
-const MOBILE_WIDTH = 1024;
+const MOBILE_WIDTH = 756;
 
 export const Recipes = () => {
     const navigate = useNavigate();

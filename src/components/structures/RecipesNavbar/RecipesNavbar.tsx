@@ -35,10 +35,10 @@ const RecipesNavbar: React.FC<RecipesNavbarProps> = ({ onSelectOption }) => {
                                 onClick={() => onSelectOption(recipe.option)}
                             >
                                 <Link
-                                    className={`h-full ${mode === 'dark' ? 'text-headerTextDark' : 'text-darkGreen'} hover:${mode === 'dark' ? 'text-orangeDark' : 'text-mediumGreen'} active:text-orange`}
+                                    className={`h-full ${mode === 'dark' ? 'text-headerTextDark' : 'text-darkGreen'} hover:${mode === 'dark' ? 'text-orangeDark' : 'text-mediumGreen'}`}
                                     to={`/recipes/${recipe.option}`}
                                 >
-                                    <div className={`relative flex flex-row items-center justify-center  h-full ${location.pathname === `/recipes/${recipe.option}` ? styles.active : ''}`}>
+                                    <div className={`relative flex flex-row items-center justify-center h-full ${location.pathname === `/recipes/${recipe.option}` ? `${styles.active} ${styles[mode]}` : ''}`}>
                                         {recipe.name}
                                     </div>
                                 </Link>

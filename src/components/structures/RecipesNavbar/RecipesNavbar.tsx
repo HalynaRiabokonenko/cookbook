@@ -25,13 +25,13 @@ const RecipesNavbar: React.FC<RecipesNavbarProps> = ({ onSelectOption }) => {
 
     return (
         <div className={`h-[50px] flex flex-row top-0 right-0 items-center justify-center w-full fixed z-[999] border-b-[0.5px] border-darkGreen mt-[70px] ${mode === 'dark' ? 'bg-black' : 'bg-white'}`}>
-            <div className="h-full flex-grow-4 flex flex-row items-center justify-center h-full">
-                <nav className="flex w-full h-full justify-center items-center">
+            <div className="h-full flex-grow-4">
+                <nav className="w-full h-full">
                     <ul className="list-none flex h-full space-x-2">
                         {recipes.map((recipe) => (
                             <li
                                 key={recipe.option}
-                                className="text-uppercase font-bold min-w-[100px] h-full flex justify-center items-center cursor-pointer"
+                                className="text-uppercase font-bold min-w-[90px] h-full flex justify-center items-center cursor-pointer"
                                 onClick={() => onSelectOption(recipe.option)}
                             >
                                 <Link

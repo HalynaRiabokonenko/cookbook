@@ -13,6 +13,10 @@
   animation: underline 0.6s forwards;
 }
 
+.active.dark::after {
+  background-color: var(--header-text-color--dark);
+}
+
 @keyframes underline {
   to {
     width: 100%;

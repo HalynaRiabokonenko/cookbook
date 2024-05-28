@@ -45,7 +45,7 @@ export const DeleteAccount = ({ user }: DeleteAccountProps) => {
 
     return (
         <Page>
-            <div className="flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-center justify-start px-4 sm:px-6 lg:px-8">
                 <div className="w-full max-w-md space-y-8">
                     <ResetForm
                         handleSubmit={handleDeleteAccount}

@@ -24,7 +24,7 @@ const RecipesNavbar: React.FC<RecipesNavbarProps> = ({ onSelectOption }) => {
     const location = useLocation();
 
     return (
-        <div className={`h-[50px] flex flex-row top-0 right-0 items-center justify-center w-full fixed z-[999] border-b-[0.5px] border-darkGreen mt-[70px] ${mode === 'dark' ? 'bg-black' : 'bg-white'}`}>
+        <div className={`h-[50px] flex flex-row top-0 right-0 items-center justify-center w-full fixed z-[4] border-b-[0.5px] border-darkGreen mt-[70px] ${mode === 'dark' ? 'bg-black' : 'bg-white'}`}>
             <div className="h-full flex-grow-4">
                 <nav className="w-full h-full">
                     <ul className="list-none flex h-full space-x-2">

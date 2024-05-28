@@ -45,14 +45,18 @@ export const DeleteAccount = ({ user }: DeleteAccountProps) => {
 
     return (
         <Page>
-            <ResetForm
-                handleSubmit={handleDeleteAccount}
-                authType="delete"
-                submitText="Delete account"
-                isEmailHidden
-                isNewEmailHidden
-            />
-            <Toast />
+            <div className="flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
+                <div className="w-full max-w-md space-y-8">
+                    <ResetForm
+                        handleSubmit={handleDeleteAccount}
+                        authType="delete"
+                        submitText="Delete account"
+                        isEmailHidden
+                        isNewEmailHidden
+                    />
+                    <Toast />
+                </div>
+            </div>
         </Page>
     );
 };

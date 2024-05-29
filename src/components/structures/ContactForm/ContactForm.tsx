@@ -53,7 +53,11 @@ export const ContactForm = ({
                                         onChange={(e) => {
                                             setTitle(e.target.value);
                                         }}
-                                        className={mode === 'dark' ? 'block w-full bg-black rounded-md border-0 py-1.5 text-lightGreen placeholder-gray-400 outline-none sm:text-sm sm:leading-6' : 'block w-full rounded-md border-0 py-1.5 text-gray-900 placeholder-gray-400 outline-none sm:text-sm sm:leading-6'}
+                                        className={mode === 'dark' ?
+                                            'block w-full bg-black rounded-md border-0 py-1.5 px-2 text-lightGreen placeholder-gray-400 outline-none sm:text-sm sm:leading-6'
+                                            :
+                                            'block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 placeholder-gray-400 outline-none sm:text-sm sm:leading-6'
+                                        }
                                     />
                                 </div>
                             </div>
@@ -69,7 +73,11 @@ export const ContactForm = ({
                                         }}
                                         rows={4}
                                         maxLength={500}
-                                        className={mode === 'dark' ? 'resize-none block w-full bg-black rounded-md border-0 py-1.5 text-lightGreen placeholder-gray-400 outline-none sm:text-sm sm:leading-6' : 'resize-none block w-full rounded-md border-0 py-1.5 text-gray-900 placeholder-gray-400 outline-none sm:text-sm sm:leading-6'}
+                                        className={mode === 'dark' ?
+                                            'resize-none block w-full bg-black rounded-md border-0 py-1.5 px-2 text-lightGreen placeholder-gray-400 outline-none sm:text-sm sm:leading-6'
+                                            :
+                                            'resize-none block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 placeholder-gray-400 outline-none sm:text-sm sm:leading-6'
+                                        }
                                     />
                                 </div>
                             </div>
@@ -78,7 +86,8 @@ export const ContactForm = ({
                                 className={mode === 'dark' ?
                                     "flex w-full justify-center rounded-md bg-inherit text-mediumGreen px-3 py-1.5 text-l font-semibold leading-6 shadow-sm border border-solid border-1.5 border-mediumGreen rounded-xl hover:bg-mediumGreen hover:text-mediumGreenDark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                     :
-                                    "flex w-full justify-center rounded-md bg-inherit text-mediumGreen px-3 py-1.5 text-l font-semibold leading-6 shadow-sm border border-solid border-1.5 border-mediumGreen rounded-xl hover:bg-mediumGreen hover:text-lightGreen focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"}
+                                    "flex w-full justify-center rounded-md bg-inherit text-mediumGreen px-3 py-1.5 text-l font-semibold leading-6 shadow-sm border border-solid border-1.5 border-mediumGreen rounded-xl hover:bg-mediumGreen hover:text-lightGreen focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                }
                             >
                                 {submitText}
                             </Button>

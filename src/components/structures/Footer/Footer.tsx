@@ -19,7 +19,7 @@ const Footer: React.FC<Props> = ({ user }: Props) => {
                     <h2 className="text-lighterGreen uppercase mt-2 tracking-widest">Proven Recipes</h2>
                 </div>
                 <div className="w-full sm:w-auto text-center md:text-left text-lightGreen">
-                    <ul className="list-none p-0 space-y-2 md:space-y-0 md:columns-2 md:gap-x-10">
+                    <ul className="list-none p-0 grid gap-y-1 md:grid-cols-2 md:gap-x-10">
                         <li className="mb-2">
                             <Link to="/" className="text-white hover:text-redLight">Home</Link>
                         </li>

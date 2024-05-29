@@ -82,10 +82,6 @@
   box-shadow: 0 20px 40px -20px #00000081;
 }
 
-.global-nav__list-item-link.dark:hover {
-  color: var(--orange--dark);
-}
-
 .active {
   position: relative;
 }
@@ -105,18 +101,25 @@
   background-color: var(--header-text-color--dark);
 }
 
+@media only screen and (max-width: 1200px) {
+  .global-mode__container {
+    margin-right: 30px;
+  }
+}
+
 @media only screen and (max-width: 900px) {
   .header__name {
     display: none;
   }
 }
 
-@media screen and (max-width: 756px) {
-  .global-mode__container {
-    margin-right: 20px;
+@media screen and (max-width: 768x) {
+  .logo__img {
+    margin: 0 10px;
   }
 
-  .logo__img {
+  .global-mode__container,
+  .header__account-container {
     margin: 0 10px;
   }
 }

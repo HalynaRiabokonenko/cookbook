@@ -102,14 +102,15 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
   .global-nav__list-item {
-    min-width: 120px;
+    min-width: 110px;
   }
 }
 
-@media screen and (max-width: 756px) {
+@media screen and (max-width: 768px) {
   .global-nav__list-item {
+    justify-content: start;
     min-width: 100px;
     font-size: 1rem;
   }

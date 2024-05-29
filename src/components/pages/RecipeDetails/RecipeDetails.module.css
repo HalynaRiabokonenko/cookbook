@@ -53,8 +53,12 @@
   text-decoration: underline;
 }
 
+.recipe-details-content__instructions-list {
+  list-style: decimal;
+}
+
 .recipe-details-content__instructions-list--option {
-  margin: 10px 0;
+  margin: 10px 15px;
 }
 
 .recipe-details-content__container-recipe-details.dark {

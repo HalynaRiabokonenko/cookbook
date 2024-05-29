@@ -54,7 +54,7 @@ const AuthForm = ({
                                         onChange={(e) => {
                                             setLogin(e.target.value);
                                         }}
-                                        className={mode === 'dark' ? 'block w-full bg-black rounded-md border-0 py-1.5 text-lightGreen placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6' : 'block w-full rounded-md border-0 py-1.5 text-gray-900 placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6'}
+                                        className={mode === 'dark' ? 'block w-full bg-black rounded-md border-0 py-1.5 px-2 text-lightGreen placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6' : 'block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6'}
                                     />
                                 </div>
                                 {!isPasswordHidden &&
@@ -84,7 +84,7 @@ const AuthForm = ({
                                                     setPassword(e.target.value);
                                                 }}
                                                 minLength={6}
-                                                className={mode === 'dark' ? 'block w-full bg-black rounded-md border-0 py-1.5 text-lightGreen placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6' : 'block w-full rounded-md border-0 py-1.5 text-gray-900 placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6'}
+                                                className={mode === 'dark' ? 'block w-full bg-black rounded-md border-0 py-1.5 px-2 text-lightGreen placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6' : 'block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6'}
                                             />
                                         </div>
                                     </div>

@@ -13,11 +13,11 @@ const Footer: React.FC<Props> = ({ user }: Props) => {
     return (
         <footer className="w-full bg-darkGray text-lightGreen py-5 text-center">
             <div className="flex flex-wrap justify-evenly items-center gap-8 md:gap-16">
-                <div className="text-center cursor-pointer" onClick={() => { navigate("/") }}>
+                <div className="w-full md:w-auto text-center cursor-pointer" onClick={() => { navigate("/") }}>
                     <img src="/images/logo/chef.png" alt="Proven Recipes logo" className="h-12 mx-auto" />
                     <h2 className="text-lighterGreen uppercase mt-2 tracking-widest">Proven Recipes</h2>
                 </div>
-                <div className="text-center md:text-left text-lightGreen">
+                <div className="w-full md:w-auto  text-center md:text-left text-lightGreen">
                     <ul className="list-none p-0 space-y-2 md:space-y-0 md:columns-2 md:gap-x-10">
                         <li className="mb-2">
                             <Link to="/" className="text-white hover:text-redLight">Home</Link>

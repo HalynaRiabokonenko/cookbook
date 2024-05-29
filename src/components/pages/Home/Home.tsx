@@ -19,11 +19,14 @@ interface AphorismsInterface {
     author: string;
 }
 
+const MOBILE_WIDTH = 900;
+
 const Home = () => {
     const { mode } = useModeContext();
     const [cuisinesData, setCuisinesData] = useState<CuisinesInterface[]>([]);
     const [aphorismsData, setAphorismsData] = useState<AphorismsInterface[]>([]);
     const [currentAphorismIndex, setCurrentAphorismIndex] = useState(0);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= MOBILE_WIDTH);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -59,6 +62,17 @@ const Home = () => {
         return () => clearInterval(intervalId);
     }, [aphorismsData.length]);
 
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= MOBILE_WIDTH);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
 
     return (
         <Page>
@@ -66,8 +80,10 @@ const Home = () => {
                 styles["home__main-container"],
                 styles[mode]
             )}>
-                <img className={styles["home__main-image"]} src="/images/pages/main-image-desktop.png"
-                />
+                {!isMobile && < img className={styles["home__main-image"]} src="/images/pages/main-image-desktop.png"
+                />}
+                {isMobile && < img className={styles["home__main-image"]} src="/images/pages/main-image.png"
+                />}
                 <h3 className={classnames(
                     styles["home__main-text-header"],
                     styles["tracking-in-contract"],

@@ -55,7 +55,6 @@ function App() {
                                 <Route path=":option" element={<RecipesContent />} />
                             </Route>
                             <Route path="/recipes/:option/:recipeId" element={<RecipeDetails />} />
-                            <Route path="/about" element={<About />} />
                             <Route path="/" element={<Home />} />
                             <Route path="*" element={<NotFound />} />
                             <Route path="/account-deleted" element={<AccountDeleted />} />

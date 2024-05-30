@@ -6,6 +6,7 @@ import classnames from "classnames";
 import { Page } from "../../structures/Page/Page";
 import { DocumentData, collection, onSnapshot } from "firebase/firestore";
 import { db } from "../../../api/firebaseConfig";
+import { About } from "../../structures/About/About";
 
 interface CuisinesInterface {
     id: string;
@@ -109,6 +110,7 @@ const Home = () => {
                 </div>
 
             )}
+            <About />
             <div className={styles["container-home__list--popular"]}>
                 <ul className={styles["home__list--popular"]}>
                     {cuisinesData.map(cousine => (

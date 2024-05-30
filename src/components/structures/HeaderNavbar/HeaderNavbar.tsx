@@ -47,22 +47,6 @@ export const HeaderNavbar = ({ user }: HeaderNavbar) => {
                             )}>Recipes</div>
                         </Link>
                     </li>
-                    <li >
-                        <Link
-                            className={classnames(
-                                styles["global-nav__list-item-link"],
-                                styles["global-nav__list-item-link--about"],
-                                styles[mode]
-                            )}
-                            to="/about"
-                        >
-                            <div className={classnames(
-                                styles["global-nav__list-item"],
-                                styles[mode],
-                                { [styles.active]: location.pathname === '/about' }
-                            )}>About us</div>
-                        </Link>
-                    </li>
                     {!user && <li>
                         <Link
                             className={classnames(

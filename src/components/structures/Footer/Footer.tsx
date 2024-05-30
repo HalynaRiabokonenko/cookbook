@@ -24,9 +24,6 @@ const Footer: React.FC<Props> = ({ user }: Props) => {
                             <Link to="/" className="text-white hover:text-redLight">Home</Link>
                         </li>
                         <li className="mb-2">
-                            <Link to="/about" className="text-white hover:text-redLight">About</Link>
-                        </li>
-                        <li className="mb-2">
                             <Link to="/recipes" className="text-white hover:text-redLight">Recipes</Link>
                         </li>
                         {user && <>

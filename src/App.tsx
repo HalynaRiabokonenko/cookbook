@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Routes, Route, HashRouter } from "react-router-dom";
 import "./App.css";
 import { Recipes } from "./components/pages/Recipes/Recipes";
-import About from "./components/pages/About/About";
 import Contact from "./components/pages/Contact/Contact";
 import RecipeDetails from "./components/pages/RecipeDetails/RecipeDetails";
 import Header from "./components/structures/Header/Header";

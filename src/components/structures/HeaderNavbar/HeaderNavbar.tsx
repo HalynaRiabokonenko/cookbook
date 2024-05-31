@@ -16,7 +16,7 @@ export const HeaderNavbar = ({ user }: HeaderNavbarProps) => {
     const navigate = useNavigate();
 
     return (
-        <div className={classnames(styles["global-nav__container"], "flex items-center h-16")}>
+        <div className={styles["global-nav__container"]}>
             <nav className={styles["global-nav"]}>
                 <ul className={styles["global-nav__list"]}>
                     <li>

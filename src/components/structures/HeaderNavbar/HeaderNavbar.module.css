@@ -1,6 +1,9 @@
 .global-nav__container {
   height: 100%;
   flex-grow: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .global-nav {
@@ -110,7 +113,6 @@
 
 @media screen and (max-width: 768px) {
   .global-nav__list-item {
-    justify-content: start;
     min-width: 100px;
     font-size: 1rem;
   }

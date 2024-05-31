@@ -4,7 +4,6 @@ import styles from "./HeaderNavbar.module.css";
 import classnames from "classnames";
 import { useModeContext } from "../../../providers/mode";
 import { User } from "firebase/auth";
-import { ButtonOutline } from "../../atomic/ButtonOutline";
 import { Button } from "@radix-ui/themes";
 
 interface HeaderNavbarProps {

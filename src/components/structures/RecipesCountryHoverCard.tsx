@@ -15,7 +15,7 @@ interface RecipesListProps {
 }
 
 
-export const RecipesList = ({ cuisinesData }): RecipesListProps => {
+export const RecipesList = ({ cuisinesData }: RecipesListProps) => {
     const { mode } = useModeContext();
     const navigate = useNavigate();
 

@@ -10,8 +10,11 @@ interface Cuisine {
     description: string;
 }
 
+interface RecipesListProps {
+    cuisine: Cuisine;
+}
 
-export const RecipesList = ({ cuisine }: Cuisine) => {
+export const RecipesList: React.FC<RecipesListProps> = ({ cuisine }) => {
     const { mode } = useModeContext();
     const navigate = useNavigate();
 
@@ -43,4 +46,4 @@ export const RecipesList = ({ cuisine }: Cuisine) => {
             </ul>
         </div>
     );
-}
+};

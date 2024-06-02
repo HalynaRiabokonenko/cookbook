@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import styles from "./Home.module.css";
 import { useModeContext } from "../../../providers/mode";
 import classnames from "classnames";
@@ -24,21 +23,11 @@ const MOBILE_WIDTH = 900;
 
 const Home = () => {
     const { mode } = useModeContext();
-    const [cuisinesData, setCuisinesData] = useState<CuisinesInterface[]>([]);
     const [aphorismsData, setAphorismsData] = useState<AphorismsInterface[]>([]);
     const [currentAphorismIndex, setCurrentAphorismIndex] = useState(0);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= MOBILE_WIDTH);
-    const navigate = useNavigate();
 
     useEffect(() => {
-        const unsubscribeCuisines = onSnapshot(collection(db, "cuisines"), (snapshot: { docs: DocumentData[] }) => {
-            const fetchedCuisines: CuisinesInterface[] = snapshot.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }));
-            setCuisinesData(fetchedCuisines);
-        });
-
         const unsubscribeAphorisms = onSnapshot(collection(db, "aphorisms"), (snapshot: { docs: DocumentData[] }) => {
             const fetchedAphorisms: AphorismsInterface[] = snapshot.docs.map(doc => ({
                 id: doc.id,
@@ -48,7 +37,6 @@ const Home = () => {
         });
 
         return () => {
-            unsubscribeCuisines();
             unsubscribeAphorisms();
         };
     }, []);
@@ -111,23 +99,6 @@ const Home = () => {
 
             )}
             <About />
-            <div className={styles["container-home__list--popular"]}>
-                <ul className={styles["home__list--popular"]}>
-                    {cuisinesData.map(cousine => (
-                        <li key={cousine.id} className={classnames(
-                            styles["home-content__recipes-list--option"],
-                            styles[mode]
-                        )} onClick={() => {
-                            navigate(`/recipes/${cousine.id}`)
-                        }}>
-                            <div className={styles["home-content__recipes-image-container"]}>
-                                <img src={cousine.img} className={styles["home-content__recipes-image"]} />
-                            </div>
-                            <p className={styles["home-content__recipes-description"]}>{cousine.description}</p>
-                        </li>
-                    ))}
-                </ul>
-            </div>
         </Page>
     );
 }

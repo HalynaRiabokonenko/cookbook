@@ -59,8 +59,8 @@ const RecipesNavbar: React.FC<RecipesNavbarProps> = ({ onSelectOption }) => {
                                         </Link>
                                     </HoverCardTrigger>
                                     <HoverCardContent className={`max-w-[300px] p-4 shadow-lg rounded-lg ${mode === 'dark' ? 'bg-midnightMoss' : 'bg-white'}`}>
-                                        <div className="flex items-center space-x-4 h-full">
-                                            <div className="h-full w-full">
+                                        <div className="flex items-start space-x-4 h-full">
+                                            <div className="h-full w-full flex flex-col items-start ml-3">
                                                 <Avatar
                                                     size="3"
                                                     fallback="R"
@@ -70,7 +70,7 @@ const RecipesNavbar: React.FC<RecipesNavbarProps> = ({ onSelectOption }) => {
                                                 />
                                             </div>
                                             <Box className="flex flex-col items-start h-full">
-                                                <Text as="div" size="1" className="font-light text-sm">
+                                                <Text as="div" size="1" className="font-light text-sm text-justify mr-3">
                                                     {cuisine.description}
                                                 </Text>
                                             </Box>

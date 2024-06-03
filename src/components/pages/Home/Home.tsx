@@ -7,12 +7,6 @@ import { DocumentData, collection, onSnapshot } from "firebase/firestore";
 import { db } from "../../../api/firebaseConfig";
 import { About } from "../../structures/About/About";
 
-interface CuisinesInterface {
-    id: string;
-    description: string;
-    img: string;
-}
-
 interface AphorismsInterface {
     id: string;
     text: string;

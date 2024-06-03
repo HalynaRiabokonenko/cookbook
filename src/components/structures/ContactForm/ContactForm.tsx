@@ -1,7 +1,8 @@
 import React, { Dispatch, ReactElement, SetStateAction, useState } from "react";
 import { useModeContext } from "../../../providers/mode";
-import { Button, IconButton } from "@radix-ui/themes";
+import { Button, IconButton, Tooltip } from "@radix-ui/themes";
 import { EnvelopeClosedIcon, EnvelopeOpenIcon } from "@radix-ui/react-icons";
+import { TooltipProvider } from "@radix-ui/react-tooltip";
 
 interface Props {
     submitText: string;
@@ -94,13 +95,19 @@ export const ContactForm = ({
                         </form>
                     </div>
                 </div>
-                <IconButton className="absolute bottom-0 right-0 p-3" onClick={toggleIsMessageOpen}>
-                    {isMessageOpen ?
-                        <EnvelopeOpenIcon width="18" height="18" />
-                        :
-                        <EnvelopeClosedIcon width="18" height="18" />
-                    }
-                </IconButton>
+                <TooltipProvider>
+                    <Tooltip content="Open sended messages" className="bg-gray-900 text-white rounded-md p-2">
+                        <IconButton onClick={toggleIsMessageOpen} className={`absolute bottom-1 right-1 p-2 bg-transparent rounded-md ${mode === "dark" ? "hover:bg-optionHoverDark" : "hover:bg-optionHover"}`}>
+                            {isMessageOpen ?
+                                <EnvelopeOpenIcon width="18" height="18" />
+                                :
+                                <EnvelopeClosedIcon width="18" height="18" />
+                            }
+                        </IconButton>
+                    </Tooltip>
+                </TooltipProvider>
+
+
             </div>
         </div>
     );

@@ -262,7 +262,7 @@ export const Account = ({ user }: AccountProps) => {
                         <button onClick={() => { setReadOnly(false) }} className={classnames(styles["account__button--edit"], styles[mode])}>
                             <TooltipProvider>
                                 <Tooltip content="Edit account details" className="bg-gray-900 text-white rounded-md p-2">
-                                    <IconButton radius="full" className="ml-2 p-1 bg-transparent hover:bg-gray-100 rounded">
+                                    <IconButton radius="full" className={`ml-2 p-1 bg-transparent rounded ${mode === "dark" ? "hover:bg-optionHoverDark" : "hover:bg-optionHover"}`}>
                                         <Pencil1Icon className="w-5 h-5" />
                                     </IconButton>
                                 </Tooltip>
@@ -383,7 +383,7 @@ export const Account = ({ user }: AccountProps) => {
                                     >
                                         <TooltipProvider>
                                             <Tooltip content="Copy UID" className="bg-gray-900 text-white rounded-md p-2">
-                                                <IconButton radius="full" className="ml-2 p-1 bg-transparent hover:bg-gray-100 rounded">
+                                                <IconButton radius="full" className={`ml-2 p-2 bg-transparent  rounded ${mode === "dark" ? "hover:bg-optionHoverDark" : "hover:bg-optionHover"}`}>
                                                     <CopyIcon className="w-4 h-4" />
                                                 </IconButton>
                                             </Tooltip>

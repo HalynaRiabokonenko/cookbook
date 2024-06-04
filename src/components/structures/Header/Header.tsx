@@ -91,14 +91,14 @@ function Header({ user }: HeaderProps) {
     }, []);
 
     return (
-        <header className={styles["header"]}>
+        <header>
             <div className={classnames(
                 styles["header__container"],
                 styles[mode]
             )}>
                 <div className={styles["header__logo"]}>
-                    <Link className={styles["header__logo__link"]} to="/">
-                        <div className={styles["logo__link__container"]}>
+                    <Link className="flex flex-row items-center" to="/">
+                        <div className="flex items-center justify-center mx-[40px]">
                             {mode === "light" ? (
                                 <img src="/images/logo/chef-dark.png" alt="Proven Recipes logo" className={classnames(
                                     styles["logo__img"],

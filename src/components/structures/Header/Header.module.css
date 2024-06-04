@@ -13,10 +13,10 @@
   border-bottom: 0.5px solid var(--dark-green);
 }
 
-.header__logo__link {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.header__container.dark {
+  background: var(--medium-green--dark);
+  border-bottom: transparent;
+  box-shadow: 0 20px 40px -20px #00000081;
 }
 
 .header__name {
@@ -30,13 +30,6 @@
 
 .header__name.dark {
   color: var(--light-gray);
-}
-
-.logo__link__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 40px;
 }
 
 .logo__img {
@@ -74,12 +67,6 @@
 .header__account-icon {
   height: 35px;
   width: 35px;
-}
-
-.header__container.dark {
-  background: var(--medium-green--dark);
-  border-bottom: transparent;
-  box-shadow: 0 20px 40px -20px #00000081;
 }
 
 .active {

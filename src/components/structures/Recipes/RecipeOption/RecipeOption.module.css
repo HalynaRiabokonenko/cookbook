@@ -12,6 +12,19 @@
   background-color: #ebf1f075;
 }
 
+.recipes-content__recipes-list--option.dark {
+  background-color: #252927;
+  border: 1px solid var(--light-green--dark);
+}
+
+.recipes-content__recipes-list--option:hover {
+  background-color: var(--light-green);
+}
+
+.recipes-content__recipes-list--option.dark:hover {
+  background-color: var(--light-green--dark);
+}
+
 .recipes-content__recipes-link,
 .recipes-content__recipes-link:link,
 .recipes-content__recipes-link:visited {
@@ -58,11 +71,6 @@
 .recipes-content__instructions-list--option {
   margin-bottom: 10px;
   padding: 10px;
-}
-
-.recipes-content__recipes-list--option.dark {
-  background-color: #252927;
-  border: 1px solid var(--light-green--dark);
 }
 
 .recipes-content__recipes-link.dark,

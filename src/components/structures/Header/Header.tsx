@@ -25,7 +25,7 @@ export const Header = ({ user }: HeaderProps) => {
     };
 
     useEffect(() => {
-        function handleKeyDown(event: KeyboardEvent) {
+        const handleKeyDown = (event: KeyboardEvent) => {
             if (event.key === "Escape") {
                 setIsModalOpen(false);
             }

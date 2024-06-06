@@ -10,7 +10,7 @@ import { Page } from "../../structures/Page/Page";
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 import { Recipe } from "../../../commons/types/Recipe";
 
-export function RecipeDetails() {
+export const RecipeDetails = () => {
   const { mode } = useModeContext();
   const [recipe, setRecipe] = useState<Recipe | null>(null);
 

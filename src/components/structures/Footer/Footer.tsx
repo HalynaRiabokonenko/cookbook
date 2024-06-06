@@ -8,7 +8,7 @@ interface Props {
     user: User | null;
 }
 
-const Footer: React.FC<Props> = ({ user }: Props) => {
+export const Footer: React.FC<Props> = ({ user }: Props) => {
     const navigate = useNavigate();
 
     return (
@@ -61,5 +61,3 @@ const Footer: React.FC<Props> = ({ user }: Props) => {
         </footer>
     );
 }
-
-export default Footer;

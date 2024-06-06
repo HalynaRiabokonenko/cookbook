@@ -14,7 +14,7 @@ interface HeaderProps {
     user: User | null;
 }
 
-function Header({ user }: HeaderProps) {
+export const Header = ({ user }: HeaderProps) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { mode, toggleMode } = useModeContext();
     const [userPhotoUrl, setUserPhotoUrl] = useState<string | null>(null);
@@ -25,7 +25,7 @@ function Header({ user }: HeaderProps) {
     };
 
     useEffect(() => {
-        function handleKeyDown(event: KeyboardEvent) {
+        const handleKeyDown = (event: KeyboardEvent) => {
             if (event.key === "Escape") {
                 setIsModalOpen(false);
             }
@@ -163,5 +163,3 @@ function Header({ user }: HeaderProps) {
         </header >
     );
 }
-
-export default Header;

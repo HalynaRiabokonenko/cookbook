@@ -6,7 +6,7 @@ import { Page } from "../../structures/Page/Page";
 import { useModeContext } from "../../../providers/mode";
 import { ButtonOutline } from "../../atomic/ButtonOutline";
 
-const NotFound = () => {
+export const NotFound = () => {
     const { mode } = useModeContext();
     const navigate = useNavigate();
 
@@ -34,5 +34,4 @@ const NotFound = () => {
         </Page>
     )
 }
-export default NotFound;
 

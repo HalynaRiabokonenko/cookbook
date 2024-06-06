@@ -18,7 +18,7 @@ interface MessageType {
     timestamp: Timestamp;
 }
 
-function ContactContent({ user }: UserProps) {
+export const Contact = ({ user }: UserProps) => {
     const [messages, setMessages] = useState<MessageType[]>([]);
     const [isMessageOpen, setIsMessageOpen] = useState<boolean>(false);
 
@@ -96,5 +96,3 @@ function ContactContent({ user }: UserProps) {
         </Page>
     );
 }
-
-export default ContactContent;

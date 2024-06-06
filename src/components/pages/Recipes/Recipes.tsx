@@ -4,7 +4,7 @@ import { Page } from "../../structures/Page/Page";
 import { RecipesContent } from "../../structures/Recipes/RecipesContent/RecipesContent";
 import { RecipesFullContent } from "../../structures/Recipes/RecipesFullContent/RecipesFullContent";
 import { useParams, useNavigate } from "react-router-dom";
-import RecipesNavbar from "../../structures/RecipesNavbar/RecipesNavbar";
+import { RecipesNavbar } from "../../structures/RecipesNavbar/RecipesNavbar";
 import { RecipesHamburgerMenu } from "../../structures/RecipesHamburgerMenu.tsx/RecipesHamburgerMenu";
 
 const MOBILE_WIDTH = 900;

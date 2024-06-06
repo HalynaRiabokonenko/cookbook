@@ -1,14 +1,14 @@
 import React from "react";
 import { auth } from "../../../api/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import AuthForm from "../../structures/AuthForm/AuthForm";
+import { AuthForm } from "../../structures/AuthForm/AuthForm";
 import { useNavigate } from "react-router-dom";
 import { Page } from "../../structures/Page/Page";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Toast } from "../../atomic/Toast";
 
-const Login = () => {
+export const Login = () => {
     const navigate = useNavigate();
     interface handleSubmitTypes {
         login: string;
@@ -31,5 +31,3 @@ const Login = () => {
         </Page>
     )
 };
-
-export default Login;

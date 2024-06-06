@@ -5,12 +5,12 @@ import { useModeContext } from "../../../providers/mode";
 import classnames from "classnames";
 import { db } from "../../../api/firebaseConfig";
 import { doc, getDoc, DocumentSnapshot } from "firebase/firestore";
-import PageHeader from "../../atomic/PageHeader/PageHeader";
+import { PageHeader } from "../../atomic/PageHeader/PageHeader";
 import { Page } from "../../structures/Page/Page";
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 import { Recipe } from "../../../commons/types/Recipe";
 
-function RecipeDetails() {
+export const RecipeDetails = () => {
   const { mode } = useModeContext();
   const [recipe, setRecipe] = useState<Recipe | null>(null);
 
@@ -103,5 +103,3 @@ function RecipeDetails() {
 
   );
 }
-
-export default RecipeDetails;

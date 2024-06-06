@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import { Routes, Route, HashRouter } from "react-router-dom";
 import "./App.css";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import { Recipes } from "./components/pages/Recipes/Recipes";
-import Contact from "./components/pages/Contact/Contact";
-import RecipeDetails from "./components/pages/RecipeDetails/RecipeDetails";
-import Header from "./components/structures/Header/Header";
-import Footer from "./components/structures/Footer/Footer";
-import Home from "./components/pages/Home/Home";
+import { Contact } from "./components/pages/Contact/Contact";
+import { RecipeDetails } from "./components/pages/RecipeDetails/RecipeDetails";
+import { Header } from "./components/structures/Header/Header";
+import { Footer } from "./components/structures/Footer/Footer";
+import { Home } from "./components/pages/Home/Home";
 import { ModeProvider } from "./providers/mode";
-import NotFound from "./components/pages/NotFound/NotFound";
-import Login from "./components/pages/Login/Login";
+import { NotFound } from "./components/pages/NotFound/NotFound";
+import { Login } from "./components/pages/Login/Login";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../src/api/firebaseConfig";
 import { User } from "firebase/auth";
-import SignUp from "./components/pages/SignUp/SignUp";
+import { SignUp } from "./components/pages/SignUp/SignUp";
 import { UpButton } from "./components/atomic/UpButton/UppButton";
 import { Account } from "./components/pages/Account/Account";
 import { RecipesContent } from "./components/structures/Recipes/RecipesContent/RecipesContent";
@@ -23,7 +23,7 @@ import { AccountDeleted } from "./components/pages/AccountDeleted/AccountDeleted
 import { ResetPassword } from "./components/pages/ResetPassword/ResetPassword";
 import { ScrollToTop } from "./components/utils/ScrollToTop";
 
-function App() {
+export const App = () => {
     const [user, setUser] = useState<User | null>(null);
     onAuthStateChanged(auth, (res) => {
         setUser(res);
@@ -66,5 +66,3 @@ function App() {
         </ModeProvider>
     );
 }
-
-export default App;

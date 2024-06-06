@@ -18,17 +18,9 @@ import { TooltipProvider } from '@radix-ui/react-tooltip';
 import { Toast } from "../../atomic/Toast";
 import { ButtonOutline } from "../../atomic/ButtonOutline";
 import { ButtonSolid } from "../../atomic/ButtonSolid";
+import { UserData } from "../../../commons/types/UserData";
 interface AccountProps {
     user: User | null;
-}
-
-interface UserData {
-    name: string;
-    surname: string;
-    username: string;
-    male: boolean;
-    birthDate: any;
-    photo?: string;
 }
 
 export const Account = ({ user }: AccountProps) => {

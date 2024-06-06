@@ -6,15 +6,10 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from '@radix-ui/react-h
 import { DocumentData, collection, onSnapshot } from "firebase/firestore";
 import { db } from "../../../api/firebaseConfig";
 import { Avatar, Box, Text } from "@radix-ui/themes";
+import { Cuisine } from "../../../commons/types/Cuisine";
 
 interface RecipesNavbarProps {
     onSelectOption: (option: string) => void;
-}
-
-interface Cuisine {
-    id: string;
-    img: string;
-    description: string;
 }
 
 const RecipesNavbar: React.FC<RecipesNavbarProps> = ({ onSelectOption }) => {

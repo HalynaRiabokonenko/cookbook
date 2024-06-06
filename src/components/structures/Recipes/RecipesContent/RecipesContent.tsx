@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { DocumentData, collection, onSnapshot } from "firebase/firestore";
 import { db } from "../../../../api/firebaseConfig";
-import RecipeInterface from "../../../pages/Recipes/Recipes.types";
 import { RecipeOption } from "../RecipeOption/RecipeOption";
+import { Recipe } from "../../../../commons/types/Recipe";
 
 export const RecipesContent = ({ option }: { option?: string }) => {
-    const [recipesData, setRecipesData] = useState<RecipeInterface[]>([]);
+    const [recipesData, setRecipesData] = useState<Recipe[]>([]);
 
     useEffect(() => {
         let unsubscribe: () => void;
@@ -14,7 +14,7 @@ export const RecipesContent = ({ option }: { option?: string }) => {
             try {
                 const recipesCollection = collection(db, `${option}-recipes`);
                 unsubscribe = onSnapshot(recipesCollection, (snapshot: { docs: DocumentData[] }) => {
-                    const fetchedRecipes: RecipeInterface[] = snapshot.docs.map(doc => ({
+                    const fetchedRecipes: Recipe[] = snapshot.docs.map(doc => ({
                         id: doc.id,
                         ...doc.data()
                     }));

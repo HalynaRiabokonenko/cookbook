@@ -1,13 +1,4 @@
-interface RecipeInterface {
-    id: number;
-    name: string;
-    cuisine: string;
-    photoPath: string;
-    ingredients: string[];
-    instructions: string[];
-    description: string;
-}
-
+import { Recipe } from "../../../commons/types/Recipe";
 export default interface RecipesDataInterface {
-    recipes: Array<RecipeInterface>;
+    recipes: Array<Recipe>;
 }

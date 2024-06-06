@@ -1,4 +1,4 @@
-export default interface RecipeInterface {
+export interface Recipe {
     id: string;
     name: string;
     cuisine: string;

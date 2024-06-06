@@ -5,14 +5,14 @@ import { useModeContext } from "../../../providers/mode";
 import classnames from "classnames";
 import { db } from "../../../api/firebaseConfig";
 import { doc, getDoc, DocumentSnapshot } from "firebase/firestore";
-import RecipeInterface from "./RecipeDetails.types";
 import PageHeader from "../../atomic/PageHeader/PageHeader";
 import { Page } from "../../structures/Page/Page";
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
+import { Recipe } from "../../../commons/types/Recipe";
 
 function RecipeDetails() {
   const { mode } = useModeContext();
-  const [recipe, setRecipe] = useState<RecipeInterface | null>(null);
+  const [recipe, setRecipe] = useState<Recipe | null>(null);
 
   const { recipeId, option } = useParams<{ recipeId: string; option: string }>();
 
@@ -28,7 +28,7 @@ function RecipeDetails() {
         const docSnap: DocumentSnapshot = await getDoc(docRef);
 
         if (docSnap.exists()) {
-          setRecipe(docSnap.data() as RecipeInterface);
+          setRecipe(docSnap.data() as Recipe);
         } else {
           console.log("No such document!");
         }

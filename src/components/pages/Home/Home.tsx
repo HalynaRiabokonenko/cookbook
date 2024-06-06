@@ -15,7 +15,7 @@ interface AphorismsInterface {
 
 const MOBILE_WIDTH = 900;
 
-const Home = () => {
+export const Home = () => {
     const { mode } = useModeContext();
     const [aphorismsData, setAphorismsData] = useState<AphorismsInterface[]>([]);
     const [currentAphorismIndex, setCurrentAphorismIndex] = useState(0);
@@ -96,5 +96,3 @@ const Home = () => {
         </Page>
     );
 }
-
-export default Home;

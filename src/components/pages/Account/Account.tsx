@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useModeContext } from "../../../providers/mode";
 import classnames from "classnames";
 import styles from "./Account.module.css";
-import PageHeader from "../../atomic/PageHeader/PageHeader";
+import { PageHeader } from "../../atomic/PageHeader/PageHeader";
 import { Page } from "../../structures/Page/Page";
 import { User } from "firebase/auth";
 import { useNavigate } from "react-router-dom";

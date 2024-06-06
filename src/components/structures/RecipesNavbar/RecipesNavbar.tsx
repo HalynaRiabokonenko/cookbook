@@ -12,7 +12,7 @@ interface RecipesNavbarProps {
     onSelectOption: (option: string) => void;
 }
 
-const RecipesNavbar: React.FC<RecipesNavbarProps> = ({ onSelectOption }) => {
+export const RecipesNavbar: React.FC<RecipesNavbarProps> = ({ onSelectOption }) => {
     const { mode } = useModeContext();
     const location = useLocation();
     const [cuisinesData, setCuisinesData] = useState<Cuisine[]>([]);
@@ -80,5 +80,3 @@ const RecipesNavbar: React.FC<RecipesNavbarProps> = ({ onSelectOption }) => {
         </div>
     );
 }
-
-export default RecipesNavbar;

@@ -6,7 +6,7 @@ interface PageHeader {
     children: string;
 }
 
-const PageHeader = ({ children }: PageHeader): ReactElement => {
+export const PageHeader = ({ children }: PageHeader): ReactElement => {
     const { mode } = useModeContext();
 
     return (
@@ -20,5 +20,3 @@ const PageHeader = ({ children }: PageHeader): ReactElement => {
         </div>
     );
 }
-
-export default PageHeader;

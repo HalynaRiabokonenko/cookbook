@@ -11,7 +11,7 @@ interface Props {
     children?: React.ReactNode;
 }
 
-const AuthForm = ({
+export const AuthForm = ({
     submitText,
     authType,
     isPasswordHidden = false,
@@ -143,5 +143,3 @@ const AuthForm = ({
         </div>
     );
 };
-
-export default AuthForm;

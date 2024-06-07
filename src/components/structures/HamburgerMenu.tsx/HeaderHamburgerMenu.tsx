@@ -50,9 +50,6 @@ export const HeaderHamburgerMenu = ({ user }: HeaderHamburgerMenu) => {
                         <DropdownMenu.Item onClick={() => { navigate("/recipes") }} className={`text-xl group rounded-[3px] flex items-center h-[40px] px-[5px] relative pl-[25px] select-none outline-none ${isDarkMode ? 'hover:bg-optionHoverDark' : 'hover:bg-optionHover'}`}>
                             Recipes
                         </DropdownMenu.Item>
-                        <DropdownMenu.Item onClick={() => { navigate("/about") }} className={`text-xl group rounded-[3px] flex items-center h-[40px] px-[5px] relative pl-[25px] select-none outline-none ${isDarkMode ? 'hover:bg-optionHoverDark' : 'hover:bg-optionHover'}`}>
-                            About us
-                        </DropdownMenu.Item>
 
                         <DropdownMenu.Separator className={`text-xl h-[1px] ${isDarkMode ? 'bg-gray-600' : 'bg-gray-200'} m-[5px]`} />
 

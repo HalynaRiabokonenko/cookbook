@@ -35,7 +35,17 @@ export const HeaderNavbar = ({ user }: HeaderNavbarProps) => {
                                     { [styles.active]: location.pathname === '/' }
                                 )}
                             >
-                                Home
+                                <div className={classnames(
+                                    "uppercase rounded px-9 py-2.5 rounded-xl bg-inherit text-l font-semibold leading-6",
+                                    {
+                                        "hover:bg-optionHoverDark":
+                                            mode === 'dark',
+                                        "hover:bg-optionHover":
+                                            mode !== 'dark',
+                                    }
+                                )}>
+                                    Home
+                                </div>
                             </div>
                         </Link>
                     </li>
@@ -56,7 +66,17 @@ export const HeaderNavbar = ({ user }: HeaderNavbarProps) => {
                                     }
                                 )}
                             >
-                                Recipes
+                                <div className={classnames(
+                                    "uppercase rounded px-9 py-2.5 rounded-xl bg-inherit text-l font-semibold leading-6",
+                                    {
+                                        "hover:bg-optionHoverDark":
+                                            mode === 'dark',
+                                        "hover:bg-optionHover":
+                                            mode !== 'dark',
+                                    }
+                                )}>
+                                    Recipes
+                                </div>
                             </div>
                         </Link>
                     </li>
@@ -64,7 +84,7 @@ export const HeaderNavbar = ({ user }: HeaderNavbarProps) => {
                         <li className="flex items-center h-full">
                             <Button
                                 className={classnames(
-                                    "uppercase mx-4 rounded px-9 py-2 rounded-xl bg-inherit text-l font-semibold leading-6 shadow-sm border border-solid",
+                                    "uppercase mx-2 rounded px-9 py-2 rounded-xl bg-inherit text-l font-semibold leading-6 shadow-sm border border-solid",
                                     {
                                         "text-mediumGreen border-mediumGreen hover:bg-mediumGreen hover:text-mediumGreenDark":
                                             mode === 'dark',

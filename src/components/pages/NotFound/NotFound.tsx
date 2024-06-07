@@ -4,7 +4,7 @@ import styles from "./NotFound.module.css";
 import classnames from "classnames";
 import { Page } from "../../structures/Page/Page";
 import { useModeContext } from "../../../providers/mode";
-import { ButtonOutline } from "../../atomic/ButtonOutline";
+import { ButtonOutline } from "../../atomic/Buttons/ButtonOutline";
 
 export const NotFound = () => {
     const { mode } = useModeContext();

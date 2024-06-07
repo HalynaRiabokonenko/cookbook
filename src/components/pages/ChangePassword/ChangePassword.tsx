@@ -5,7 +5,7 @@ import { User, signInWithEmailAndPassword, updatePassword } from "firebase/auth"
 import { ResetForm } from "../../structures/ResetForm/ResetForm";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Toast } from "../../atomic/Toast";
+import { Toast } from "../../atomic/Toast/Toast";
 interface ChangePasswordProps {
     user: User | null;
 }

@@ -6,7 +6,7 @@ import { collection, addDoc, query, where, getDocs, DocumentData, QueryDocumentS
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ContactForm } from "../../structures/ContactForm/ContactForm";
-import { Toast } from "../../atomic/Toast";
+import { Toast } from "../../atomic/Toast/Toast";
 import { ContactMessages } from "../../structures/ContactMessages/ContactMessages";
 interface UserProps {
     user: User | null;

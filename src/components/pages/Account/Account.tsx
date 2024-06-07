@@ -15,9 +15,9 @@ import { CopyIcon, Pencil1Icon } from '@radix-ui/react-icons';
 import { toast } from 'react-toastify';
 import { Tooltip, IconButton } from '@radix-ui/themes';
 import { TooltipProvider } from '@radix-ui/react-tooltip';
-import { Toast } from "../../atomic/Toast";
-import { ButtonOutline } from "../../atomic/ButtonOutline";
-import { ButtonSolid } from "../../atomic/ButtonSolid";
+import { Toast } from "../../atomic/Toast/Toast";
+import { ButtonOutline } from "../../atomic/Buttons/ButtonOutline";
+import { ButtonSolid } from "../../atomic/Buttons/ButtonSolid";
 import { UserData } from "../../../commons/types/UserData";
 interface AccountProps {
     user: User | null;

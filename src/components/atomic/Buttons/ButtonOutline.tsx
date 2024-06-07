@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@radix-ui/themes";
-import { useModeContext } from "../../providers/mode";
+import { useModeContext } from "../../../providers/mode";
 
 export interface ButtonOutlineProps {
     children: React.ReactNode;

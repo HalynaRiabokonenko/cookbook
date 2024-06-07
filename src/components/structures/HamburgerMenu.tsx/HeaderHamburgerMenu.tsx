@@ -6,7 +6,7 @@ import { User, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../../api/firebaseConfig';
 import { toast } from 'react-toastify';
-import { Toast } from "../../atomic/Toast";
+import { Toast } from "../../atomic/Toast/Toast";
 interface HeaderHamburgerMenu {
     user: User | null;
 }

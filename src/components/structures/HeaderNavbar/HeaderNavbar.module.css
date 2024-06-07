@@ -21,7 +21,6 @@
 }
 
 .global-nav__list-item {
-  text-transform: uppercase;
   font-weight: bold;
   min-width: 150px;
   height: 100%;
@@ -66,6 +65,7 @@
 
 .global-nav__list-item-link:hover {
   color: var(--medium-green);
+  background-color: var(--option-hover);
 }
 
 .global-nav__list-item-link:active {
@@ -113,7 +113,7 @@
 
 @media screen and (max-width: 768px) {
   .global-nav__list-item {
-    min-width: 100px;
+    min-width: 90px;
     font-size: 1rem;
   }
 }

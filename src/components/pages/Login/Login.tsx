@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Page } from "../../structures/Page/Page";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Toast } from "../../atomic/Toast";
+import { Toast } from "../../atomic/Toast/Toast";
 
 export const Login = () => {
     const navigate = useNavigate();

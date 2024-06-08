@@ -41,13 +41,6 @@
   padding: 10px;
 }
 
-.recipes-content__recipes-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10%;
-}
-
 .recipes-content__recipes-name {
   font-size: 0.9rem;
   margin-bottom: 10px;

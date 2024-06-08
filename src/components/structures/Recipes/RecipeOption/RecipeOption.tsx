@@ -25,8 +25,8 @@ export const RecipeOption = ({ recipe }: RecipeOptionTypes) => {
                 const data = doc.data();
                 return {
                     id: doc.id,
-                    img: data.img || '', // Убедитесь, что есть значение по умолчанию
-                    description: data.description || '', // Убедитесь, что есть значение по умолчанию
+                    img: data.img || '',
+                    description: data.description || '',
                 };
             });
             setCuisinesData(fetchedCuisines);
@@ -36,8 +36,6 @@ export const RecipeOption = ({ recipe }: RecipeOptionTypes) => {
             unsubscribeCuisines();
         };
     }, []);
-
-    console.log("CUISINES DATA:", cuisinesData);
 
     let cuisineSrc = (cuisineOption: string) => {
         const cuisine = cuisinesData.find(el => el.id === cuisineOption);

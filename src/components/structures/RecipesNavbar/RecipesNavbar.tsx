@@ -2,10 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useModeContext } from "../../../providers/mode";
 import styles from "./RecipeNavbar.module.css";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '@radix-ui/react-hover-card';
 import { DocumentData, collection, onSnapshot } from "firebase/firestore";
 import { db } from "../../../api/firebaseConfig";
-import { Avatar, Box, Text } from "@radix-ui/themes";
 import { Cuisine } from "../../../commons/types/Cuisine";
 
 interface RecipesNavbarProps {
@@ -42,36 +40,21 @@ export const RecipesNavbar: React.FC<RecipesNavbarProps> = ({ onSelectOption }) 
                                 className="text-uppercase font-bold min-w-[90px] h-full flex justify-center items-center cursor-pointer"
                                 onClick={() => onSelectOption(cuisine.id)}
                             >
-                                <HoverCard>
-                                    <HoverCardTrigger asChild>
-                                        <Link
-                                            className={`h-full ${mode === 'dark' ? 'text-headerTextDark' : 'text-darkGreen'} hover:${mode === 'dark' ? 'text-orangeDark' : 'text-mediumGreen'}`}
-                                            to={`/recipes/${cuisine.id}`}
-                                        >
-                                            <div className={`relative capitalize flex flex-row items-center justify-center h-full ${location.pathname === `/recipes/${cuisine.id}` ? `${styles.active} ${styles[mode]}` : ''}`}>
-                                                {cuisine.id}
-                                            </div>
-                                        </Link>
-                                    </HoverCardTrigger>
-                                    <HoverCardContent className={`max-w-[300px] p-4 shadow-lg rounded-lg ${mode === 'dark' ? 'bg-midnightMoss' : 'bg-white'}`}>
-                                        <div className="flex items-start space-x-4 h-full">
-                                            <div className="h-full w-full flex flex-col items-start ml-3">
-                                                <Avatar
-                                                    size="3"
-                                                    fallback="R"
-                                                    radius="full"
-                                                    src={cuisine.img}
-                                                    alt={cuisine.id}
-                                                />
-                                            </div>
-                                            <Box className="flex flex-col items-start h-full">
-                                                <Text as="div" size="1" className="font-light text-sm text-justify mr-3">
-                                                    {cuisine.description}
-                                                </Text>
-                                            </Box>
-                                        </div>
-                                    </HoverCardContent>
-                                </HoverCard>
+                                <Link
+                                    className={`h-full`}
+                                    to={`/recipes/${cuisine.id}`}
+                                >
+                                    <div
+                                        className={`relative capitalize flex flex-row items-center justify-center h-full 
+                                    ${location.pathname === `/recipes/${cuisine.id}` ? `${styles.active} ${styles[mode]}` : ''}`}>
+                                        <p className={` rounded px-3 py-2 rounded-xl bg-inherit text-l font-semibold leading-6 
+                                        ${mode === 'dark' ? 'text-headerTextDark' : 'text-darkGreen'} hover:${mode === 'dark' ? 'bg-optionHoverDark' : 'bg-optionHover'}`}>
+                                            {cuisine.id}
+                                        </p>
+
+                                    </div>
+                                </Link>
+
                             </li>
                         ))}
                     </ul>

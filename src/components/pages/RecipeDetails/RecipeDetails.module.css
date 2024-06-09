@@ -7,7 +7,7 @@
 .recipe-details-content__container-recipe-details {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: #ebf1f075;
+  background-color: var(--fair-green);
   align-items: baseline;
   list-style-type: none;
   border: 1px solid var(--light-green);
@@ -70,7 +70,7 @@
   .recipe-details-content__container-recipe-details {
     display: grid;
     grid-template-columns: 1fr;
-    background-color: #ebf1f075;
+    background-color: var(--fair-green);
     align-items: start;
     list-style-type: none;
     border: 1px solid var(--light-green);

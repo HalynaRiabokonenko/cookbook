@@ -64,11 +64,11 @@ export const RecipeOption = ({ recipe }: RecipeOptionTypes) => {
                     <div className="flex justify-center items-center h-[10%] z-[999] relative">
                         <HoverCard>
                             <HoverCardTrigger asChild>
-                                <div className={`relative capitalize flex flex-row items-center justify-center h-full`}>
+                                <div className={`relative capitalize flex flex-row items-center justify-center h-full hover:underline`}>
                                     {recipe.name}
                                 </div>
                             </HoverCardTrigger>
-                            <HoverCardContent className={`max-w-[300px] p-4 shadow-lg rounded-lg ${mode === 'dark' ? 'bg-midnightMoss' : 'bg-white'}`}>
+                            <HoverCardContent className={`max-w-[400px] p-4 shadow-lg rounded-lg ${mode === 'dark' ? 'bg-midnightMoss' : 'bg-white'}`}>
                                 <div className="flex items-start space-x-4 h-full">
                                     <div className="h-full w-full flex flex-col items-start ml-3">
                                         <Avatar

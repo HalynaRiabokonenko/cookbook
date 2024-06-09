@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #ebf1f075;
+  background-color: var(--fair-green);
 }
 
 .recipes-content__recipes-list--option.dark {

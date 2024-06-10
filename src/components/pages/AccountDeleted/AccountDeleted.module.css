@@ -1,6 +1,6 @@
 .account-deleted__container--content {
   display: flex;
-  margin: 50px 80px;
+  margin: 50px 60px;
 }
 
 .account-deleted__image-container {
@@ -15,7 +15,7 @@
 
 .account-deleted__text-container {
   width: 70%;
-  margin-right: 80px;
+  margin-right: 60px;
 }
 
 .account-deleted__text--sub-header {
@@ -26,6 +26,7 @@
 .account-deleted__text--paragraph {
   font-size: 1.2rem;
   margin: 10px 0;
+  text-align: justify;
 }
 
 .account-deleted__text-link,
@@ -39,4 +40,30 @@
 .account-deleted__text-link:focus,
 .account-deleted__text-link:hover {
   color: var(--dark-green);
+}
+
+@media only screen and (max-width: 1200px) {
+  .account-deleted__image-container {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+  }
+
+  .account-deleted__image {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .account-deleted__container--content {
+    flex-direction: column;
+    margin: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .account-deleted__text-container {
+    width: 100%;
+    margin-right: 50px;
+  }
 }

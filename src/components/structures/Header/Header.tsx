@@ -10,6 +10,7 @@ import { db } from "../../../api/firebaseConfig";
 import { Avatar, AvatarImage } from '@radix-ui/react-avatar';
 import { HeaderNavbar } from "../HeaderNavbar/HeaderNavbar";
 import { HeaderHamburgerMenu } from "../HamburgerMenu.tsx/HeaderHamburgerMenu";
+import { MoonIcon, PersonIcon, SunIcon } from "@radix-ui/react-icons";
 interface HeaderProps {
     user: User | null;
 }
@@ -134,11 +135,7 @@ export const Header = ({ user }: HeaderProps) => {
 
                             className={styles["header__account-button"]}
                         >
-                            {mode === "light" ?
-                                (<img src="/images/account/account-light.png" className={styles["header__account-icon"]} alt="header account icon" />)
-                                :
-                                (<img src="/images/account/account-dark.png" className={styles["header__account-icon"]} alt="header account icon" />)
-                            }
+                            <PersonIcon width="25" height="25" />
                         </div>}
                 </div>}
                 <div className={styles["global-mode__container"]}>
@@ -147,13 +144,13 @@ export const Header = ({ user }: HeaderProps) => {
 
                             onClick={toggleMode} className={styles["global-mode__button"]}
                         >
-                            <img src="/images/mode/night-mode.png" className={styles["global-mode__icon"]} alt="dark mode icon" />
+                            <MoonIcon width="25" height="25" />
                         </button>
                     ) : (
                         <button
                             onClick={toggleMode} className={styles["global-mode__button"]}
                         >
-                            <img src="/images/mode/light-mode.png" className={styles["global-mode__icon"]} alt="light mode icon" />
+                            <SunIcon width="25" height="25" />
                         </button>
                     )}
                 </div>

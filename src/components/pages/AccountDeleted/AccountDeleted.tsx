@@ -1,10 +1,10 @@
 import React from "react";
 import { useModeContext } from "../../../providers/mode";
 import styles from "./AccountDeleted.module.css";
-import { PageHeader } from "../../atomic/PageHeader/PageHeader";
 import { Page } from "../../structures/Page/Page";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
+import { PageHeader } from "../../atomic/PageHeader/PageHeader";
 
 
 export const AccountDeleted = () => {

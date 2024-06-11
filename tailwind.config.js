@@ -30,7 +30,10 @@ module.exports = {
         "60px": "60px",
       },
       width: {
-        "modal-width": "var(--modal-width)",
+        modalWidth: "500px",
+      },
+      height: {
+        headerHeight: "70px",
       },
       spacing: {
         "180px": "180px",

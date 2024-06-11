@@ -133,7 +133,14 @@ export const Header = ({ user }: HeaderProps) => {
                     {!userPhotoUrl &&
                         <div
 
-                            className={styles["header__account-button"]}
+                            className={classnames("p-0 border-none bg-none cursor-pointer flex justify-center items-center rounded p-2.5 rounded-xl bg-inherit leading-6",
+                                {
+                                    "hover:bg-optionHoverDark":
+                                        mode === 'dark',
+                                    "hover:bg-optionHover":
+                                        mode !== 'dark',
+                                }
+                            )}
                         >
                             <PersonIcon width="25" height="25" />
                         </div>}
@@ -142,13 +149,13 @@ export const Header = ({ user }: HeaderProps) => {
                     {mode === "light" ? (
                         <button
 
-                            onClick={toggleMode} className={styles["global-mode__button"]}
+                            onClick={toggleMode} className="border-none bg-none cursor-pointer flex justify-center items-center hover:bg-optionHover rounded p-2.5 rounded-xl bg-inherit leading-6"
                         >
                             <MoonIcon width="25" height="25" />
                         </button>
                     ) : (
                         <button
-                            onClick={toggleMode} className={styles["global-mode__button"]}
+                            onClick={toggleMode} className="border-none bg-none cursor-pointer flex justify-center items-center hover:bg-optionHoverDark rounded p-2.5 rounded-xl bg-inherit leading-6"
                         >
                             <SunIcon width="25" height="25" />
                         </button>

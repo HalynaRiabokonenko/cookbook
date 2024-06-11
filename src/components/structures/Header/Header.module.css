@@ -44,23 +44,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 15px;
   height: 100%;
 }
 
 .global-mode__container {
   margin-right: 60px;
-}
-
-.global-mode__button,
-.header__account-button {
-  padding: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .global-mode__icon,
@@ -102,11 +90,6 @@
 
 @media screen and (max-width: 768x) {
   .logo__img {
-    margin: 0 10px;
-  }
-
-  .global-mode__container,
-  .header__account-container {
     margin: 0 10px;
   }
 }

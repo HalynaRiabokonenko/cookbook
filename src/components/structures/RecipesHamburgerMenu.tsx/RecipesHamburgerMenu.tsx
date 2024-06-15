@@ -24,7 +24,7 @@ export const RecipesHamburgerMenu = ({ onSelectOption }: RecipesHamburgerMenu) =
     const isDarkMode = mode === 'dark';
 
     return (
-        <div className="flex justify-end w-full p-2">
+        <div className="flex justify-end w-full px-8 py-4">
             <DropdownMenu.Root>
                 <DropdownMenu.Trigger asChild>
                     <button

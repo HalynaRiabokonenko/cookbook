@@ -4,10 +4,10 @@ import { Page } from "../../structures/Page/Page";
 import { RecipesContent } from "../../structures/Recipes/RecipesContent/RecipesContent";
 import { RecipesFullContent } from "../../structures/Recipes/RecipesFullContent/RecipesFullContent";
 import { useParams, useNavigate } from "react-router-dom";
-import { RecipesNavbar } from "../../structures/RecipesNavbar/RecipesNavbar";
 import { RecipesHamburgerMenu } from "../../structures/RecipesHamburgerMenu.tsx/RecipesHamburgerMenu";
+import { PageHeader } from "../../atomic/PageHeader/PageHeader";
 
-const MOBILE_WIDTH = 900;
+const MOBILE_WIDTH = 600;
 
 export const Recipes = () => {
     const navigate = useNavigate();
@@ -37,12 +37,13 @@ export const Recipes = () => {
 
     return (
         <Page>
+            {isMobile &&
+                <RecipesHamburgerMenu onSelectOption={handlerClickRecipesOption} />
+            }
+            <PageHeader>
+                {selectedOption ? `${selectedOption} recipes` : 'All recipes'}
+            </PageHeader>
             <div className={styles["recipes__content"]}>
-                {isMobile ?
-                    <RecipesHamburgerMenu onSelectOption={handlerClickRecipesOption} />
-                    :
-                    <RecipesNavbar onSelectOption={handlerClickRecipesOption} />
-                }
                 <div className={styles["recipes__content-container"]}>
                     {selectedOption ? (
                         <RecipesContent option={selectedOption} />

@@ -2,11 +2,10 @@
   height: var(--header-hight);
   background: var(--white);
   display: flex;
-  flex-direction: row;
   top: 0;
   right: 0;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: var(--header-width);
   position: fixed;
   z-index: 999;

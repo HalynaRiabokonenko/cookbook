@@ -118,49 +118,52 @@ export const Header = ({ user }: HeaderProps) => {
                         </div>
                     </Link>
                 </div>
-                {!isMobile && <HeaderNavbar user={user} />}
-                {user && !isMobile && <div id="header__account-container" className={styles["header__account-container"]} onClick={toggleAccountModal}
-                >
-                    {userPhotoUrl &&
-                        <Avatar className="inline-flex items-center justify-center w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                            <AvatarImage
-                                className="w-full h-full object-cover"
-                                src={userPhotoUrl}
-                                alt="User profile picture"
-                            />
-                        </Avatar>
-                    }
-                    {!userPhotoUrl &&
-                        <div
+                <div className="flex">
+                    {!isMobile && <HeaderNavbar user={user} />}
+                    {user && !isMobile && <div id="header__account-container" className={styles["header__account-container"]} onClick={toggleAccountModal}
+                    >
+                        {userPhotoUrl &&
+                            <Avatar className="inline-flex items-center justify-center w-12 h-12 rounded-full overflow-hidden bg-gray-200">
+                                <AvatarImage
+                                    className="w-full h-full object-cover"
+                                    src={userPhotoUrl}
+                                    alt="User profile picture"
+                                />
+                            </Avatar>
+                        }
+                        {!userPhotoUrl &&
+                            <div
 
-                            className={classnames("p-0 border-none bg-none cursor-pointer flex justify-center items-center rounded p-2.5 rounded-xl bg-inherit leading-6",
-                                {
-                                    "hover:bg-optionHoverDark":
-                                        mode === 'dark',
-                                    "hover:bg-optionHover":
-                                        mode !== 'dark',
-                                }
-                            )}
-                        >
-                            <PersonIcon width="25" height="25" />
-                        </div>}
-                </div>}
-                <div className={styles["global-mode__container"]}>
-                    {mode === "light" ? (
-                        <button
+                                className={classnames("p-0 border-none bg-none cursor-pointer flex justify-center items-center rounded p-2.5 rounded-xl bg-inherit leading-6",
+                                    {
+                                        "hover:bg-optionHoverDark":
+                                            mode === 'dark',
+                                        "hover:bg-optionHover":
+                                            mode !== 'dark',
+                                    }
+                                )}
+                            >
+                                <PersonIcon width="25" height="25" />
+                            </div>}
+                    </div>}
+                    <div className={styles["global-mode__container"]}>
+                        {mode === "light" ? (
+                            <button
 
-                            onClick={toggleMode} className="border-none bg-none cursor-pointer flex justify-center items-center hover:bg-optionHover rounded p-2.5 rounded-xl bg-inherit leading-6"
-                        >
-                            <MoonIcon width="25" height="25" />
-                        </button>
-                    ) : (
-                        <button
-                            onClick={toggleMode} className="border-none bg-none cursor-pointer flex justify-center items-center hover:bg-optionHoverDark rounded p-2.5 rounded-xl bg-inherit leading-6"
-                        >
-                            <SunIcon width="25" height="25" />
-                        </button>
-                    )}
+                                onClick={toggleMode} className="border-none bg-none cursor-pointer flex justify-center items-center hover:bg-optionHover rounded p-2.5 rounded-xl bg-inherit leading-6"
+                            >
+                                <MoonIcon width="25" height="25" />
+                            </button>
+                        ) : (
+                            <button
+                                onClick={toggleMode} className="border-none bg-none cursor-pointer flex justify-center items-center hover:bg-optionHoverDark rounded p-2.5 rounded-xl bg-inherit leading-6"
+                            >
+                                <SunIcon width="25" height="25" />
+                            </button>
+                        )}
+                    </div>
                 </div>
+
                 {isMobile && <HeaderHamburgerMenu user={user} />}
                 {isModalOpen && <AccountModal setIsModalOpen={setIsModalOpen}></AccountModal>}
             </div>

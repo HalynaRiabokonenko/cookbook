@@ -40,13 +40,9 @@ export const Recipes = () => {
             {isMobile &&
                 <RecipesHamburgerMenu onSelectOption={handlerClickRecipesOption} />
             }
-            {selectedOption ? (
-                <PageHeader> recipes</PageHeader>
-
-            ) : (
-                <PageHeader>All recipes</PageHeader>
-
-            )}
+            <PageHeader>
+                {selectedOption ? `${selectedOption} recipes` : 'All recipes'}
+            </PageHeader>
             <div className={styles["recipes__content"]}>
                 <div className={styles["recipes__content-container"]}>
                     {selectedOption ? (

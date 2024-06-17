@@ -4,13 +4,10 @@ import styles from "./Header.module.css";
 import classnames from "classnames";
 import { useModeContext } from "../../../providers/mode";
 import { User } from "firebase/auth";
-import { AccountModal } from "../AccountModal/AccountModal";
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../../api/firebaseConfig";
-import { Avatar, AvatarImage } from '@radix-ui/react-avatar';
 import { HeaderNavbar } from "../HeaderNavbar/HeaderNavbar";
 import { HeaderHamburgerMenu } from "../HamburgerMenu.tsx/HeaderHamburgerMenu";
-import { MoonIcon, PersonIcon, SunIcon } from "@radix-ui/react-icons";
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { HeaderUserMenu } from "../HeaderUserMenu/HeaderUserMenu";
 interface HeaderProps {
     user: User | null;
 }
@@ -18,7 +15,6 @@ interface HeaderProps {
 export const Header = ({ user }: HeaderProps) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { mode, toggleMode } = useModeContext();
-    const [userPhotoUrl, setUserPhotoUrl] = useState<string | null>(null);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
 
     const toggleAccountModal = (): void => {
@@ -57,29 +53,6 @@ export const Header = ({ user }: HeaderProps) => {
         };
     }, []);
 
-
-    useEffect(() => {
-        if (!user) {
-            console.error("User is empty");
-            return;
-        }
-
-        const fetchUserData = async () => {
-            try {
-                setUserPhotoUrl(null);
-                const docRef = doc(db, `userData/${user.uid}`);
-                const docSnap = await getDoc(docRef);
-                if (docSnap.exists()) {
-                    setUserPhotoUrl(docSnap.data().photo);
-                }
-
-            } catch (error) {
-                console.error("Error fetching user data:", error);
-            }
-        };
-        fetchUserData();
-    }, [user]);
-
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 600);
@@ -114,39 +87,19 @@ export const Header = ({ user }: HeaderProps) => {
                         <div className={classnames(
                             styles["header__name"],
                             styles[mode])}>
-                            <p>Proven recipes</p>
+                            Proven recipes
                         </div>
                     </Link>
                 </div>
                 <div className="flex">
                     {!isMobile && <HeaderNavbar user={user} />}
-                    {user && !isMobile && <div id="header__account-container" className={styles["header__account-container"]} onClick={toggleAccountModal}
-                    >
-                        {userPhotoUrl &&
-                            <Avatar className="inline-flex items-center justify-center w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                                <AvatarImage
-                                    className="w-full h-full object-cover"
-                                    src={userPhotoUrl}
-                                    alt="User profile picture"
-                                />
-                            </Avatar>
-                        }
-                        {!userPhotoUrl &&
-                            <div
-
-                                className={classnames("p-0 border-none bg-none cursor-pointer flex justify-center items-center rounded p-2.5 rounded-xl bg-inherit leading-6",
-                                    {
-                                        "hover:bg-optionHoverDark":
-                                            mode === 'dark',
-                                        "hover:bg-optionHover":
-                                            mode !== 'dark',
-                                    }
-                                )}
-                            >
-                                <PersonIcon width="25" height="25" />
-                            </div>}
-                    </div>}
-                    <div className={styles["global-mode__container"]}>
+                    {user && !isMobile &&
+                        <div id="header__account-container" className="m-auto flex justify-center items-center h-full" onClick={toggleAccountModal}
+                        >
+                            <HeaderUserMenu user={user} />
+                        </div>
+                    }
+                    <div className="m-auto flex justify-center items-center h-full mr-2 sm:mr-9">
                         {mode === "light" ? (
                             <button
 
@@ -165,7 +118,6 @@ export const Header = ({ user }: HeaderProps) => {
                 </div>
 
                 {isMobile && <HeaderHamburgerMenu user={user} />}
-                {isModalOpen && <AccountModal setIsModalOpen={setIsModalOpen}></AccountModal>}
             </div>
         </header >
     );

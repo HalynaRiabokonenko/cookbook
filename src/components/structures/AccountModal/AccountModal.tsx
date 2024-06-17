@@ -1,16 +1,11 @@
 import React from "react";
-import styles from "./AccountModal.module.css";
 import classnames from "classnames";
 import { useModeContext } from "../../../providers/mode";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../api/firebaseConfig";
 
-interface AccountModalProps {
-    setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export const AccountModal = ({ setIsModalOpen }: AccountModalProps) => {
+export const AccountModal = () => {
     const { mode } = useModeContext();
     const navigate = useNavigate();
 
@@ -26,31 +21,43 @@ export const AccountModal = ({ setIsModalOpen }: AccountModalProps) => {
     }
 
     return (
-        <div id="account-modal__container" className={classnames(
-            styles["account-modal__container"],
-            styles[mode]
-        )}>
-            <div className={classnames(
-                styles["account-modal__list-container"],
-                styles[mode]
-            )}>
-                <ul className={styles["account-modal__list"]} onClick={() => setIsModalOpen(false)}>
-                    <li className={classnames(
-                        styles["account-modal__list-option"],
-                        styles[mode]
-                    )} onClick={() => { navigate("/account") }}>Account
-                    </li>
-                    <li className={classnames(
-                        styles["account-modal__list-option"],
-                        styles[mode]
-                    )} onClick={() => { navigate("/contact") }}>Support
-                    </li>
-                    <li className={classnames(
-                        styles["account-modal__list-option"],
-                        styles[mode]
-                    )} onClick={handlerSignOut}>Sign out</li>
-                </ul>
-            </div>
-        </div>
+        <ul className="m-0  px-9 list-none w-full my-4" >
+            <li
+                className={classnames("capitalize text-lg rounded-md font-normal h-full w-full flex justify-center items-center cursor-pointer py-2 px-10",
+                    {
+                        "hover:bg-optionHoverDark":
+                            mode === 'dark',
+                        "hover:bg-optionHover":
+                            mode !== 'dark',
+                    }
+                )}
+                onClick={() => { navigate("/account") }}>
+                Account
+            </li>
+            <li
+                className={classnames("capitalize text-lg rounded-md font-normal h-full w-full flex justify-center items-center cursor-pointer py-2 px-9",
+                    {
+                        "hover:bg-optionHoverDark":
+                            mode === 'dark',
+                        "hover:bg-optionHover":
+                            mode !== 'dark',
+                    }
+                )}
+                onClick={() => { navigate("/contact") }}>
+                Support
+            </li>
+            <li
+                className={classnames("capitalize text-lg rounded-md font-normal h-full w-full flex justify-center items-center cursor-pointer py-2 px-9",
+                    {
+                        "hover:bg-optionHoverDark":
+                            mode === 'dark',
+                        "hover:bg-optionHover":
+                            mode !== 'dark',
+                    }
+                )}
+                onClick={handlerSignOut}>
+                Sign out
+            </li>
+        </ul>
     )
 }

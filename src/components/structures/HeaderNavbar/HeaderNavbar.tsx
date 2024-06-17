@@ -57,7 +57,7 @@ export const HeaderNavbar = ({ user }: HeaderNavbarProps) => {
                         </Button>
                     </NavigationMenu.Trigger>
                     <NavigationMenu.Content
-                        className={classnames("absolute z-[3] top-[70px] left-0 w-full sm:w-auto rounded-md",
+                        className={classnames("absolute z-[3] top-headerHeight left-0 w-full sm:w-auto rounded-md",
                             {
                                 "bg-mediumGreenDark":
                                     mode === 'dark',

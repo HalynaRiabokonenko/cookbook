@@ -37,19 +37,6 @@
   border-radius: 50%;
 }
 
-.global-mode__container,
-.header__account-container {
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.global-mode__container {
-  margin-right: 60px;
-}
-
 .global-mode__icon,
 .header__account-icon {
   height: 35px;
@@ -73,12 +60,6 @@
 
 .active.dark::after {
   background-color: var(--header-text-color--dark);
-}
-
-@media only screen and (max-width: 1200px) {
-  .global-mode__container {
-    margin-right: 20px;
-  }
 }
 
 @media only screen and (max-width: 900px) {

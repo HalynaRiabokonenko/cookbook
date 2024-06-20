@@ -61,7 +61,7 @@ export const RecipeOption = ({ recipe }: RecipeOptionTypes) => {
                             />
                         </AspectRatio.Root>
                     </div>
-                    <div className="flex justify-center items-center h-[10%] z-[999] relative">
+                    <div className="flex justify-center items-center h-[10%] relative">
                         <HoverCard>
                             <HoverCardTrigger asChild>
                                 <div className={`relative capitalize flex flex-row items-center justify-center h-full hover:underline`}>

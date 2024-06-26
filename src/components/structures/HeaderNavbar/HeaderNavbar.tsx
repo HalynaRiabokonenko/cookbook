@@ -14,7 +14,6 @@ interface HeaderNavbarProps {
     user: User | null;
 }
 
-
 export const HeaderNavbar = ({ user }: HeaderNavbarProps) => {
     const { mode } = useModeContext();
     const location = useLocation();
@@ -86,6 +85,28 @@ export const HeaderNavbar = ({ user }: HeaderNavbarProps) => {
                         </ul>
                     </NavigationMenu.Content>
                 </NavigationMenu.Item>
+                {user &&
+                    <NavigationMenu.Item className={location.pathname === '/favorites' ? styles.active : ''}>
+                        <NavigationMenu.Trigger className="h-headerHeight group flex select-none items-center rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none outline-none" >
+                            <Button
+                                className={classnames("uppercase border-none bg-none cursor-pointer flex justify-center items-center rounded py-2.5 px-7 rounded-xl bg-inherit leading-6 font-semibold",
+                                    {
+                                        "hover:bg-optionHoverDark":
+                                            mode === 'dark',
+                                        "hover:bg-optionHover":
+                                            mode !== 'dark',
+                                    }
+                                )}
+                                onClick={() => {
+                                    navigate("/favorites");
+                                }}
+                            >
+                                Favorites
+                            </Button>
+                        </NavigationMenu.Trigger>
+                    </NavigationMenu.Item>
+                }
+
                 {!user && (
                     <NavigationMenu.Item>
                         <NavigationMenu.Trigger>

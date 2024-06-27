@@ -13,7 +13,7 @@
 .input.dark {
   color: var(--white);
   background-color: var(--medium-green--dark);
-  border: 1.5px solid #252927;
+  border: 1.5px solid var(--midnight-moss);
 }
 
 .input:focus {

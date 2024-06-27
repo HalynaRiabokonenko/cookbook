@@ -106,8 +106,6 @@ export const ContactForm = ({
                         </IconButton>
                     </Tooltip>
                 </TooltipProvider>
-
-
             </div>
         </div>
     );

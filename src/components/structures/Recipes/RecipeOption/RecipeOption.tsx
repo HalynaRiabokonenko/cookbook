@@ -9,8 +9,7 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from '@radix-ui/react-h
 import { Avatar, Box, Text } from "@radix-ui/themes";
 import { DocumentData, collection, onSnapshot } from "firebase/firestore";
 import { Cuisine } from "../../../../commons/types/Cuisine";
-import { db } from "../../../../api/firebaseConfig";
-
+import { db } from "../../../../api/firebaseConfig"
 interface RecipeOptionTypes {
     recipe: Recipe;
 }

@@ -7,13 +7,14 @@ import { PageHeader } from "../../atomic/PageHeader/PageHeader";
 import { Page } from "../../structures/Page/Page";
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 import { Recipe } from "../../../commons/types/Recipe";
-import { HeartIcon } from '@radix-ui/react-icons';
+
 import { User } from "firebase/auth";
 import { Tooltip, TooltipProvider, TooltipTrigger, TooltipContent } from "@radix-ui/react-tooltip";
 import { IconButton } from "@radix-ui/themes";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Toast } from "../../atomic/Toast/Toast";
+import { HeartIcon } from "@radix-ui/react-icons";
 
 interface RecipeDetailsProps {
   user: User | null;
@@ -27,17 +28,22 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (!recipeId) {
+      if (!recipeId || !option) {
         return;
       }
 
-      const docRef = doc(db, `${option}-recipes`, recipeId);
+      const docRef = doc(db, `recipes`, option);
 
       try {
         const docSnap: DocumentSnapshot = await getDoc(docRef);
 
         if (docSnap.exists()) {
-          setRecipe(docSnap.data() as Recipe);
+          const data = docSnap.data();
+          if (data && data[recipeId]) {
+            setRecipe(data[recipeId] as Recipe);
+          } else {
+            console.log("No such recipe!");
+          }
         } else {
           console.log("No such document!");
         }
@@ -92,12 +98,9 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
       </div>
       <div className={
         `relative 
-        grid grid-cols-1 md:grid-cols-2 items-center list-none border rounded-lg m-10 md:m-5 relative",
-        ${mode === "dark" ?
-          "bg-midnightMoss border-midnightMoss" :
-          "bg-fairGreen border-lightGreen"
-        }
-      `}>
+        grid grid-cols-1 md:grid-cols-2 items-center list-none border rounded-lg m-10 md:m-5 relative 
+        ${mode === "dark" ? "bg-midnightMoss border-midnightMoss" : "bg-fairGreen border-lightGreen"}`
+      }>
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>

@@ -6,5 +6,4 @@ export interface Recipe {
     ingredients: string[];
     instructions: string[];
     description: string;
-    option: string
 }

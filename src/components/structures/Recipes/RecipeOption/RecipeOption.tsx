@@ -43,7 +43,7 @@ export const RecipeOption = ({ recipe }: RecipeOptionTypes) => {
 
     return (
         <div className="recipe-option__container">
-            <Link to={`/recipes/${recipe.option}/${recipe.id}`} className={classnames(
+            <Link to={`/recipes/${recipe.cuisine}/${recipe.id}`} className={classnames(
                 styles["recipes-content__recipes-link"],
                 styles[mode]
             )}>
@@ -74,7 +74,7 @@ export const RecipeOption = ({ recipe }: RecipeOptionTypes) => {
                                             size="3"
                                             fallback="R"
                                             radius="full"
-                                            src={cuisineSrc(recipe.option)}
+                                            src={cuisineSrc(recipe.cuisine)}
                                             alt={recipe.name}
                                         />
                                     </div>

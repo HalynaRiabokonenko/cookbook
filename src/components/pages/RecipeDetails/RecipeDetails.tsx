@@ -59,7 +59,7 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
       const cuisine = recipe.cuisine;
 
       try {
-        const docRef = doc(db, `userFavorites/${userId}/${cuisine}`);
+        const docRef = doc(db, `userFavorites/${userId}/cuisines/${cuisine}`);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
@@ -91,7 +91,8 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
         {recipe.description}
       </div>
       <div className={
-        `grid grid-cols-1 md:grid-cols-2 items-center list-none border rounded-lg m-10 md:m-5 relative",
+        `relative 
+        grid grid-cols-1 md:grid-cols-2 items-center list-none border rounded-lg m-10 md:m-5 relative",
         ${mode === "dark" ?
           "bg-midnightMoss border-midnightMoss" :
           "bg-fairGreen border-lightGreen"

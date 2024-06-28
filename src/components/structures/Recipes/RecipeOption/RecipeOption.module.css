@@ -13,7 +13,7 @@
 }
 
 .recipes-content__recipes-list--option.dark {
-  background-color: #252927;
+  background-color: var(--midnight-moss);
   border: 1px solid var(--light-green--dark);
 }
 

@@ -73,7 +73,7 @@
 }
 
 .home-content__recipes-list--option.dark {
-  background-color: #252927;
+  background-color: var(--midnight-moss);
   border: 1px solid var(--light-green--dark);
 }
 
@@ -138,7 +138,7 @@
 
 .home-aphorism__content-container.dark {
   color: var(--header-text-color--dark);
-  background-color: #252927;
+  background-color: var(--midnight-moss);
 }
 
 .home-aphorism__container {
@@ -173,7 +173,7 @@
 }
 
 .home__main-container.dark {
-  background-color: #252927;
+  background-color: var(--midnight-moss);
 }
 
 .home__main-image {
@@ -193,7 +193,7 @@
 }
 
 .home__main-text-header.dark {
-  color: #252927;
+  color: var(--midnight-moss);
 }
 
 .home__main-text {
@@ -209,7 +209,7 @@
 }
 
 .home__main-text.dark {
-  color: #252927;
+  color: var(--midnight-moss);
 }
 
 @media only screen and (max-width: 1200px) {

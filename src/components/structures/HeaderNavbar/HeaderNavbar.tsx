@@ -68,7 +68,7 @@ export const HeaderNavbar = ({ user }: HeaderNavbarProps) => {
                         <ul className="m-0  px-9 list-none w-full my-4">
                             {cuisinesData.map((cuisine) => (
                                 <li
-                                    key={cuisine.id}
+                                    key={Math.floor(Math.random() * Date.now())}
                                     className={classnames("capitalize text-lg rounded-md font-normal h-full w-full flex justify-center items-center cursor-pointer py-2 px-9",
                                         {
                                             "hover:bg-optionHoverDark":

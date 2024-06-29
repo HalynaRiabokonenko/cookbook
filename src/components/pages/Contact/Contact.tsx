@@ -87,7 +87,7 @@ export const Contact = ({ user }: UserProps) => {
                     {messages.map((msg) => (
                         <div
                             className="m-5 py-2.5 px-5 w-full rounded-lg"
-                            key={msg.id}>
+                            key={Math.floor(Math.random() * Date.now())}>
                             <ContactMessages messageObj={msg} />
                         </div>
                     ))}

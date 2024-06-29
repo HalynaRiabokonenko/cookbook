@@ -134,7 +134,7 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
           <ul className="list-none">
             {recipe.ingredients.map((ingredient, index) => (
               <li
-                key={index}
+                key={Math.floor(Math.random() * Date.now())}
                 className="my-2.5"
               >
                 {ingredient}
@@ -149,7 +149,7 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
           <ol className="list-decimal">
             {recipe.instructions.map((instruction, index) => (
               <li
-                key={index}
+                key={Math.floor(Math.random() * Date.now())}
                 className="my-2.5 mx-4"
               >
                 {instruction}

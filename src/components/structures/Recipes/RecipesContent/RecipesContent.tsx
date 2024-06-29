@@ -50,7 +50,7 @@ export const RecipesContent = ({ option }: { option?: string }) => {
     return (
         <>
             {recipesData.map((recipe) => (
-                <div key={recipe.id}>
+                <div key={Math.floor(Math.random() * Date.now())}>
                     <RecipeOption recipe={recipe} />
                 </div>
             ))}

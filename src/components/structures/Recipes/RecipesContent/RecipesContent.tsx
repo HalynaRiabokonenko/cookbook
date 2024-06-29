@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { DocumentData, collection, onSnapshot } from "firebase/firestore";
+import { DocumentData, collection, onSnapshot, QuerySnapshot } from "firebase/firestore";
 import { db } from "../../../../api/firebaseConfig";
 import { RecipeOption } from "../RecipeOption/RecipeOption";
 import { Recipe } from "../../../../commons/types/Recipe";
@@ -12,12 +12,22 @@ export const RecipesContent = ({ option }: { option?: string }) => {
 
         const fetchData = async () => {
             try {
-                const recipesCollection = collection(db, `${option}-recipes`);
-                unsubscribe = onSnapshot(recipesCollection, (snapshot: { docs: DocumentData[] }) => {
-                    const fetchedRecipes: Recipe[] = snapshot.docs.map(doc => ({
-                        id: doc.id,
-                        ...doc.data()
-                    }));
+                const recipesCollection = collection(db, `recipes`);
+                unsubscribe = onSnapshot(recipesCollection, (snapshot: QuerySnapshot<DocumentData>) => {
+                    const fetchedRecipes: Recipe[] = [];
+                    snapshot.docs.forEach(doc => {
+                        const data = doc.data();
+                        if (doc.id === option) {
+                            Object.keys(data).forEach((key) => {
+                                if (key !== "id") {
+                                    fetchedRecipes.push({
+                                        id: key,
+                                        ...data[key]
+                                    });
+                                }
+                            });
+                        }
+                    });
                     setRecipesData(fetchedRecipes);
                 });
             } catch (error) {
@@ -39,11 +49,11 @@ export const RecipesContent = ({ option }: { option?: string }) => {
 
     return (
         <>
-            {recipesData.map((recipe, index) => (
-                <div key={`${index}-${recipe.id}`}>
+            {recipesData.map((recipe) => (
+                <div key={Math.floor(Math.random() * Date.now())}>
                     <RecipeOption recipe={recipe} />
                 </div>
             ))}
         </>
     );
-}
+};

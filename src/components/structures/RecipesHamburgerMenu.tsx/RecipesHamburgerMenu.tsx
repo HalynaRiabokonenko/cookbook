@@ -42,7 +42,7 @@ export const RecipesHamburgerMenu = ({ onSelectOption }: RecipesHamburgerMenu) =
                     >
                         <ul>
                             {recipes.map((recipe) => (
-                                <li key={recipe.option} onClick={() => onSelectOption(recipe.option)}>
+                                <li key={Math.floor(Math.random() * Date.now())} onClick={() => onSelectOption(recipe.option)}>
                                     <DropdownMenu.Item className={`text-xl group rounded-[3px] flex items-center h-[40px] px-[5px] relative pl-[25px] select-none outline-none ${isDarkMode ? 'hover:bg-optionHoverDark' : 'hover:bg-optionHover'}`}>
                                         {recipe.name}
                                     </DropdownMenu.Item>

@@ -36,7 +36,7 @@ export const RecipesNavbar: React.FC<RecipesNavbarProps> = ({ onSelectOption }) 
                     <ul className="list-none flex h-full space-x-2">
                         {cuisinesData.map((cuisine) => (
                             <li
-                                key={cuisine.id}
+                                key={Math.floor(Math.random() * Date.now())}
                                 className="text-uppercase font-bold min-w-[90px] h-full flex justify-center items-center cursor-pointer"
                                 onClick={() => onSelectOption(cuisine.id)}
                             >

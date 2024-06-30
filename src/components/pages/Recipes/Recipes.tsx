@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styles from "./Recipes.module.css";
 import { Page } from "../../structures/Page/Page";
 import { RecipesContent } from "../../structures/Recipes/RecipesContent/RecipesContent";
 import { RecipesFullContent } from "../../structures/Recipes/RecipesFullContent/RecipesFullContent";
@@ -43,8 +42,8 @@ export const Recipes = () => {
             <PageHeader>
                 {selectedOption ? `${selectedOption} recipes` : 'All recipes'}
             </PageHeader>
-            <div className={styles["recipes__content"]}>
-                <div className={styles["recipes__content-container"]}>
+            <div className="flex flex-col m-8">
+                <div className="flex flex-wrap justify-evenly gap-5">
                     {selectedOption ? (
                         <RecipesContent option={selectedOption} />
                     ) : (

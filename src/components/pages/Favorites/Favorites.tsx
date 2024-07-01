@@ -83,14 +83,18 @@ export const Favorites = ({ user }: FavoritesProps) => {
     return (
         <Page>
             <PageHeader>Favorite Recipes</PageHeader>
-            <div className="flex flex-col m-8">
+            <div className="flex flex-col m-2">
                 <div className="flex flex-wrap justify-evenly gap-5">
                     {recipesData.length > 0 ? (
                         recipesData.map((recipe) => (
                             <RecipeOption key={Math.floor(Math.random() * Date.now())} recipe={recipe} />
                         ))
                     ) : (
-                        <div className='flex w-full items-center justify-center'>No favorite recipes found.</div>
+                        <div className='flex flex-col'>
+                            <div className='flex w-full items-center justify-center text-2xl'>No favorite recipes found</div>
+                            <img src="/images/recipes/empty.png" alt="user photo icon" />
+                        </div>
+
                     )}
                 </div>
             </div>

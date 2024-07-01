@@ -8,6 +8,7 @@ import { HeaderNavbar } from "../HeaderNavbar/HeaderNavbar";
 import { HeaderHamburgerMenu } from "../HamburgerMenu.tsx/HeaderHamburgerMenu";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { HeaderUserMenu } from "../HeaderUserMenu/HeaderUserMenu";
+
 interface HeaderProps {
     user: User | null;
 }

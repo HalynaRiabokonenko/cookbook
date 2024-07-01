@@ -42,7 +42,7 @@ export const Recipes = () => {
             <PageHeader>
                 {selectedOption ? `${selectedOption} recipes` : 'All recipes'}
             </PageHeader>
-            <div className="flex flex-col m-8">
+            <div className="flex flex-col m-2">
                 <div className="flex flex-wrap justify-evenly gap-5">
                     {selectedOption ? (
                         <RecipesContent option={selectedOption} />

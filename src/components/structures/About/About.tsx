@@ -33,10 +33,10 @@ export const About = () => {
                     </p>
                 </div>
                 <div className="overflow-hidden rounded-md w-full lg:w-1/2 mt-2.5 mb-2.5">
-                    <AspectRatio.Root ratio={5 / 3}>
+                    <AspectRatio.Root ratio={1 / 1}>
                         <img
                             className="h-full w-full object-cover"
-                            src="/images/about/globe-pins.avif"
+                            src="/images/pages/world-food.png"
                             alt="globe with pins"
                         />
                     </AspectRatio.Root>
@@ -44,10 +44,10 @@ export const About = () => {
             </div>
             <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-10 my-10 px-8 lg:mx-10">
                 <div className="overflow-hidden rounded-md w-full lg:w-1/2 mt-2.5 mb-2.5">
-                    <AspectRatio.Root ratio={5 / 3}>
+                    <AspectRatio.Root ratio={1 / 1}>
                         <img
                             className="h-full w-full object-cover"
-                            src="/images/about/food-3.avif"
+                            src="/images/pages/food.png"
                             alt="man hands preparing food"
                         />
                     </AspectRatio.Root>
@@ -109,10 +109,10 @@ export const About = () => {
                     </p>
                 </div>
                 <div className="overflow-hidden rounded-md w-full lg:w-1/2 mt-2.5 mb-2.5">
-                    <AspectRatio.Root ratio={5 / 3}>
+                    <AspectRatio.Root ratio={1 / 1}>
                         <img
                             className="h-full w-full object-cover"
-                            src="/images/about/journey.avif"
+                            src="/images/pages/travel.png"
                             alt="suitcase with clothes"
                         />
                     </AspectRatio.Root>

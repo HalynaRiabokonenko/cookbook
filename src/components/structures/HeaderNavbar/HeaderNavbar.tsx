@@ -5,27 +5,27 @@ import { useModeContext } from "../../../providers/mode";
 import { User } from "firebase/auth";
 import { Button } from "@radix-ui/themes";
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
-import { DocumentData, collection, onSnapshot } from "firebase/firestore";
+import { DocumentData, collection, onSnapshot, QuerySnapshot } from "firebase/firestore";
 import { db } from "../../../api/firebaseConfig";
 import { Cuisine } from "../../../commons/types/Cuisine";
-import styles from "./HeaderNavbar.module.css"
-
+import styles from "./HeaderNavbar.module.css";
+import { HeartIcon } from "@radix-ui/react-icons";
 interface HeaderNavbarProps {
     user: User | null;
 }
 
-export const HeaderNavbar = ({ user }: HeaderNavbarProps) => {
+export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ user }) => {
     const { mode } = useModeContext();
     const location = useLocation();
     const navigate = useNavigate();
     const [cuisinesData, setCuisinesData] = useState<Cuisine[]>([]);
 
     useEffect(() => {
-        const unsubscribeCuisines = onSnapshot(collection(db, "cuisines"), (snapshot: { docs: DocumentData[] }) => {
+        const unsubscribeCuisines = onSnapshot(collection(db, "cuisines"), (snapshot: QuerySnapshot<DocumentData>) => {
             const fetchedCuisines: Cuisine[] = snapshot.docs.map(doc => ({
                 id: doc.id,
                 ...doc.data()
-            }));
+            }) as Cuisine);
             setCuisinesData(fetchedCuisines);
         });
 
@@ -37,15 +37,13 @@ export const HeaderNavbar = ({ user }: HeaderNavbarProps) => {
     return (
         <NavigationMenu.Root className="relative z-[3] flex justify-end">
             <NavigationMenu.List className="m-0 flex items-center justify-center list-none rounded-[6px] p-1">
-                <NavigationMenu.Item className={location.pathname === '/recipes' || location.pathname.includes('/recipes/') ? styles.active : ''}>
-                    <NavigationMenu.Trigger className="h-headerHeight group flex select-none items-center rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none outline-none" >
+                <NavigationMenu.Item className={classnames({ [styles.active]: location.pathname === '/recipes' || location.pathname.includes('/recipes/') }, styles[mode])}>
+                    <NavigationMenu.Trigger className="h-headerHeight group flex select-none items-center rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none outline-none">
                         <Button
                             className={classnames("uppercase border-none bg-none cursor-pointer flex justify-center items-center rounded py-2.5 px-7 rounded-xl bg-inherit leading-6 font-semibold",
                                 {
-                                    "hover:bg-optionHoverDark":
-                                        mode === 'dark',
-                                    "hover:bg-optionHover":
-                                        mode !== 'dark',
+                                    "hover:bg-optionHoverDark": mode === 'dark',
+                                    "hover:bg-optionHover": mode !== 'dark',
                                 }
                             )}
                             onClick={() => {
@@ -58,23 +56,19 @@ export const HeaderNavbar = ({ user }: HeaderNavbarProps) => {
                     <NavigationMenu.Content
                         className={classnames("absolute z-[3] top-headerHeight left-0 w-full sm:w-auto rounded-md",
                             {
-                                "bg-mediumGreenDark":
-                                    mode === 'dark',
-                                "bg-white shadow-xl":
-                                    mode !== 'dark',
+                                "bg-mediumGreenDark": mode === 'dark',
+                                "bg-white shadow-xl": mode !== 'dark',
                             })
                         }
                     >
-                        <ul className="m-0  px-9 list-none w-full my-4">
+                        <ul className="m-0 px-9 list-none w-full my-4">
                             {cuisinesData.map((cuisine) => (
                                 <li
                                     key={Math.floor(Math.random() * Date.now())}
                                     className={classnames("capitalize text-lg rounded-md font-normal h-full w-full flex justify-center items-center cursor-pointer py-2 px-9",
                                         {
-                                            "hover:bg-optionHoverDark":
-                                                mode === 'dark',
-                                            "hover:bg-optionHover":
-                                                mode !== 'dark',
+                                            "hover:bg-optionHoverDark": mode === 'dark',
+                                            "hover:bg-optionHover": mode !== 'dark',
                                         }
                                     )}
                                     onClick={() => navigate(`/recipes/${cuisine.id}`)}
@@ -86,23 +80,21 @@ export const HeaderNavbar = ({ user }: HeaderNavbarProps) => {
                     </NavigationMenu.Content>
                 </NavigationMenu.Item>
                 {user &&
-                    <NavigationMenu.Item className={location.pathname === '/favorites' ? styles.active : ''}>
-                        <NavigationMenu.Trigger className="h-headerHeight group flex select-none items-center rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none outline-none" >
-                            <Button
-                                className={classnames("uppercase border-none bg-none cursor-pointer flex justify-center items-center rounded py-2.5 px-7 rounded-xl bg-inherit leading-6 font-semibold",
+                    <NavigationMenu.Item className={classnames({ [styles.active]: location.pathname === '/favorites' }, styles[mode])}>
+                        <NavigationMenu.Trigger className="h-headerHeight group flex select-none items-center font-medium leading-none outline-none" >
+                            <button
+                                className={classnames("uppercase border-none bg-none cursor-pointer flex justify-center items-center rounded p-2.5 rounded-xl bg-inherit leading-6 font-semibold",
                                     {
-                                        "hover:bg-optionHoverDark":
-                                            mode === 'dark',
-                                        "hover:bg-optionHover":
-                                            mode !== 'dark',
+                                        "hover:bg-optionHoverDark": mode === 'dark',
+                                        "hover:bg-optionHover": mode !== 'dark',
                                     }
                                 )}
                                 onClick={() => {
                                     navigate("/favorites");
                                 }}
                             >
-                                Favorites
-                            </Button>
+                                <HeartIcon width="25" height="25" />
+                            </button>
                         </NavigationMenu.Trigger>
                     </NavigationMenu.Item>
                 }
@@ -114,10 +106,8 @@ export const HeaderNavbar = ({ user }: HeaderNavbarProps) => {
                                 className={classnames(
                                     "uppercase mx-4 rounded px-9 py-2 rounded-xl bg-inherit text-l font-semibold leading-6 shadow-sm border border-solid",
                                     {
-                                        "text-mediumGreen border-mediumGreen hover:bg-mediumGreen hover:text-mediumGreenDark":
-                                            mode === 'dark',
-                                        "text-red-400 border-red-300 hover:bg-red-300 hover:text-white":
-                                            mode !== 'dark',
+                                        "text-mediumGreen border-mediumGreen hover:bg-mediumGreen hover:text-mediumGreenDark": mode === 'dark',
+                                        "text-red-400 border-red-300 hover:bg-red-300 hover:text-white": mode !== 'dark',
                                     }
                                 )}
                                 onClick={() => {
@@ -131,7 +121,7 @@ export const HeaderNavbar = ({ user }: HeaderNavbarProps) => {
                 )}
             </NavigationMenu.List>
 
-        </NavigationMenu.Root >
-    );
+        </NavigationMenu.Root>
 
+    );
 };

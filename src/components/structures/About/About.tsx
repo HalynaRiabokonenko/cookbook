@@ -3,9 +3,9 @@ import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 
 export const About = () => {
     return (
-        <div className=" lg:space-y-0 lg:px-10 lg:py-10 lg:my-10">
+        <div className="lg:space-y-0 lg:px-10 lg:py-10 lg:my-10">
             <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-10 px-8 lg:mx-10">
-                <div className="overflow-hidden rounded-md w-full lg:w-1/2 mt-2.5 mb-2.5">
+                <div className="overflow-hidden rounded-md w-1/2 lg:w-1/4 mt-2.5 mb-2.5 mx-auto">
                     <AspectRatio.Root ratio={1 / 1}>
                         <img
                             className="h-full w-full object-cover"
@@ -14,7 +14,7 @@ export const About = () => {
                         />
                     </AspectRatio.Root>
                 </div>
-                <div className="w-full lg:w-1/2 mt-5 mb-5">
+                <div className="w-full lg:w-3/4 mt-5 mb-5">
                     <h2 className="uppercase text-center my-5 text-xl font-semibold">
                         Welcome to Proven Recipes
                     </h2>
@@ -24,7 +24,7 @@ export const About = () => {
                 </div>
             </div>
             <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-10 my-10 px-8 lg:mx-10">
-                <div className="w-full lg:w-1/2 mt-5 mb-5">
+                <div className="w-full lg:w-3/4 mt-5 mb-5">
                     <h2 className="uppercase text-center my-5 text-xl font-semibold">
                         Our Mission
                     </h2>
@@ -32,7 +32,7 @@ export const About = () => {
                         Our mission is simple yet profound: to bring the authentic tastes of different cultures directly to your kitchen. Each recipe we feature has been carefully selected and tested to ensure it captures the essence of its cultural origin. From street food favorites to gourmet classics, we're dedicated to making international cuisine accessible to everyone, one recipe at a time.
                     </p>
                 </div>
-                <div className="overflow-hidden rounded-md w-full lg:w-1/2 mt-2.5 mb-2.5">
+                <div className="overflow-hidden rounded-md w-1/2 lg:w-1/4 mt-2.5 mb-2.5 mx-auto">
                     <AspectRatio.Root ratio={1 / 1}>
                         <img
                             className="h-full w-full object-cover"
@@ -43,7 +43,7 @@ export const About = () => {
                 </div>
             </div>
             <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-10 my-10 px-8 lg:mx-10">
-                <div className="overflow-hidden rounded-md w-full lg:w-1/2 mt-2.5 mb-2.5">
+                <div className="overflow-hidden rounded-md w-1/2 lg:w-1/4 mt-2.5 mb-2.5 mx-auto">
                     <AspectRatio.Root ratio={1 / 1}>
                         <img
                             className="h-full w-full object-cover"
@@ -52,7 +52,7 @@ export const About = () => {
                         />
                     </AspectRatio.Root>
                 </div>
-                <div className="w-full lg:w-1/2 mt-5 mb-5">
+                <div className="w-full lg:w-3/4 mt-5 mb-5">
                     <h2 className="uppercase text-center my-5 text-xl font-semibold">
                         Founded with Passion
                     </h2>
@@ -62,7 +62,7 @@ export const About = () => {
                 </div>
             </div>
             <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-10 my-10 px-8 lg:mx-10">
-                <div className="w-full lg:w-1/2 mt-5 mb-5">
+                <div className="w-full lg:w-3/4 mt-5 mb-5">
                     <h2 className="uppercase text-center my-5 text-xl font-semibold">
                         Commitment to Authenticity
                     </h2>
@@ -70,7 +70,7 @@ export const About = () => {
                         What sets us apart is our unwavering commitment to authenticity. Every recipe undergoes meticulous research and testing to ensure it stays true to its cultural heritage. From sourcing the right ingredients to perfecting cooking methods, we leave no stone unturned in our quest to deliver an authentic culinary experience that honors the flavors and traditions of each region.
                     </p>
                 </div>
-                <div className="overflow-hidden rounded-md w-full lg:w-1/2 mt-2.5 mb-2.5">
+                <div className="overflow-hidden rounded-md w-1/2 lg:w-1/4 mt-2.5 mb-2.5 mx-auto">
                     <AspectRatio.Root ratio={1 / 1}>
                         <img
                             className="h-full w-full object-cover"
@@ -81,16 +81,16 @@ export const About = () => {
                 </div>
             </div>
             <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-10 my-10 px-8 lg:mx-10">
-                <div className="overflow-hidden rounded-md w-full lg:w-1/2 mt-2.5 mb-2.5">
+                <div className="overflow-hidden rounded-md w-1/2 lg:w-1/4 mt-2.5 mb-2.5 mx-auto">
                     <AspectRatio.Root ratio={1 / 1}>
                         <img
                             className="h-full w-full object-cover"
-                            src="/images/pages/group.png"
+                            src="/images/pages/communication.png"
                             alt="men are cooking together"
                         />
                     </AspectRatio.Root>
                 </div>
-                <div className="w-full lg:w-1/2 mt-5 mb-5">
+                <div className="w-full lg:w-3/4 mt-5 mb-5">
                     <h2 className="uppercase text-center my-5 text-xl font-semibold">
                         Building a Community
                     </h2>
@@ -100,7 +100,7 @@ export const About = () => {
                 </div>
             </div>
             <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-10 my-10 px-8 lg:mx-10">
-                <div className="w-full lg:w-1/2 mt-5 mb-5">
+                <div className="w-full lg:w-3/4 mt-5 mb-5">
                     <h2 className="uppercase text-center my-5 text-xl font-semibold">
                         Embark on a Culinary Journey
                     </h2>
@@ -108,7 +108,7 @@ export const About = () => {
                         Embark on a culinary journey like no other with Proven Recipes as your guide. Whether you're looking to expand your culinary repertoire or simply seeking inspiration for your next meal, we're here to help you explore the delicious world of international cuisine. So roll up your sleeves, sharpen your knives, and get ready to discover a world of flavors right in your own kitchen.
                     </p>
                 </div>
-                <div className="overflow-hidden rounded-md w-full lg:w-1/2 mt-2.5 mb-2.5">
+                <div className="overflow-hidden rounded-md w-1/2 lg:w-1/4 mt-2.5 mb-2.5 mx-auto">
                     <AspectRatio.Root ratio={1 / 1}>
                         <img
                             className="h-full w-full object-cover"
@@ -119,7 +119,7 @@ export const About = () => {
                 </div>
             </div>
             <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-10 my-10 px-8 lg:mx-10">
-                <div className="overflow-hidden rounded-md w-full lg:w-1/2 mt-2.5 mb-2.5">
+                <div className="overflow-hidden rounded-md w-1/2 lg:w-1/4 mt-2.5 mb-2.5 mx-auto">
                     <AspectRatio.Root ratio={1 / 1}>
                         <img
                             className="h-full w-full object-cover"
@@ -128,7 +128,7 @@ export const About = () => {
                         />
                     </AspectRatio.Root>
                 </div>
-                <div className="w-full lg:w-1/2 mt-5 mb-5">
+                <div className="w-full lg:w-3/4 mt-5 mb-5">
                     <h2 className="uppercase text-center my-5 text-xl font-semibold">
                         Explore and Enjoy
                     </h2>

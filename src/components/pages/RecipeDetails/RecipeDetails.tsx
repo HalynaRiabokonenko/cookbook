@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useModeContext } from "../../../providers/mode";
 import { db } from "../../../api/firebaseConfig";
-import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove, collection, onSnapshot, getDocs } from "firebase/firestore";
+import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove, collection, getDocs } from "firebase/firestore";
 import { PageHeader } from "../../atomic/PageHeader/PageHeader";
 import { Page } from "../../structures/Page/Page";
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
@@ -54,31 +54,32 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
 
   useEffect(() => {
     const fetchFavorites = async () => {
-      if (!user || !recipeId) return;
+      if (!user || !recipeId || !recipe) return;
 
       const userId = user.uid;
+      const cuisine = recipe.cuisine;
 
       try {
-        const favoritesRef = collection(db, `userFavorites/${userId}/cuisines`);
-        const snapshot = await getDocs(favoritesRef);
+        const docRef = doc(db, `userFavorites/${userId}/cuisines/${cuisine}`);
+        const docSnap = await getDoc(docRef);
 
-        let isFavorite = false;
-
-        snapshot.forEach((doc) => {
-          const data = doc.data();
+        if (docSnap.exists()) {
+          const data = docSnap.data();
           if (data.recipes && data.recipes.includes(recipeId)) {
-            isFavorite = true;
+            setIsAddedToFavorite(true);
+          } else {
+            setIsAddedToFavorite(false);
           }
-        });
-
-        setIsAddedToFavorite(isFavorite);
+        } else {
+          setIsAddedToFavorite(false);
+        }
       } catch (error) {
         console.error('Error fetching favorites:', error);
       }
     };
 
     fetchFavorites();
-  }, [user, recipeId]);
+  }, [user, recipeId, recipe]);
 
   const toggleFavorite = async () => {
     if (user && recipeId && recipe) {
@@ -90,7 +91,8 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
-          if (docSnap.data().recipes.includes(recipeId)) {
+          const data = docSnap.data();
+          if (data.recipes && data.recipes.includes(recipeId)) {
             await updateDoc(docRef, {
               recipes: arrayRemove(recipeId)
             });
@@ -186,7 +188,7 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
             Instructions:
           </h3>
           <ol className="list-decimal">
-            {recipe.instructions.map((instruction, index) => (
+            {recipe.instructions.map((instruction) => (
               <li
                 key={Math.floor(Math.random() * Date.now())}
                 className="my-2.5 mx-4"

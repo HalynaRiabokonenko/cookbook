@@ -2,19 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useModeContext } from "../../../providers/mode";
 import { db } from "../../../api/firebaseConfig";
-import { doc, getDoc, setDoc, updateDoc, arrayUnion, DocumentSnapshot } from "firebase/firestore";
+import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove, collection, onSnapshot, getDocs } from "firebase/firestore";
 import { PageHeader } from "../../atomic/PageHeader/PageHeader";
 import { Page } from "../../structures/Page/Page";
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 import { Recipe } from "../../../commons/types/Recipe";
-
 import { User } from "firebase/auth";
 import { Tooltip, TooltipProvider, TooltipTrigger, TooltipContent } from "@radix-ui/react-tooltip";
 import { IconButton } from "@radix-ui/themes";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Toast } from "../../atomic/Toast/Toast";
-import { HeartIcon } from "@radix-ui/react-icons";
+import { HeartFilledIcon, HeartIcon } from "@radix-ui/react-icons";
 
 interface RecipeDetailsProps {
   user: User | null;
@@ -23,19 +22,17 @@ interface RecipeDetailsProps {
 export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
   const { mode } = useModeContext();
   const [recipe, setRecipe] = useState<Recipe | null>(null);
-
+  const [isAddedToFavorite, setIsAddedToFavorite] = useState<boolean>(false);
   const { recipeId, option } = useParams<{ recipeId: string; option: string }>();
 
   useEffect(() => {
     const fetchData = async () => {
-      if (!recipeId || !option) {
-        return;
-      }
+      if (!recipeId || !option) return;
 
       const docRef = doc(db, `recipes`, option);
 
       try {
-        const docSnap: DocumentSnapshot = await getDoc(docRef);
+        const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
           const data = docSnap.data();
@@ -55,12 +52,36 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
     fetchData();
   }, [recipeId, option]);
 
-  if (!recipe) {
-    return <div>Recipe not found</div>;
-  }
+  useEffect(() => {
+    const fetchFavorites = async () => {
+      if (!user || !recipeId) return;
 
-  const saveToFavorites = async () => {
-    if (user && recipeId) {
+      const userId = user.uid;
+
+      try {
+        const favoritesRef = collection(db, `userFavorites/${userId}/cuisines`);
+        const snapshot = await getDocs(favoritesRef);
+
+        let isFavorite = false;
+
+        snapshot.forEach((doc) => {
+          const data = doc.data();
+          if (data.recipes && data.recipes.includes(recipeId)) {
+            isFavorite = true;
+          }
+        });
+
+        setIsAddedToFavorite(isFavorite);
+      } catch (error) {
+        console.error('Error fetching favorites:', error);
+      }
+    };
+
+    fetchFavorites();
+  }, [user, recipeId]);
+
+  const toggleFavorite = async () => {
+    if (user && recipeId && recipe) {
       const userId = user.uid;
       const cuisine = recipe.cuisine;
 
@@ -69,24 +90,38 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
-          await updateDoc(docRef, {
-            recipes: arrayUnion(recipeId)
-          });
+          if (docSnap.data().recipes.includes(recipeId)) {
+            await updateDoc(docRef, {
+              recipes: arrayRemove(recipeId)
+            });
+            setIsAddedToFavorite(false);
+            toast.success("Removed from favorites");
+          } else {
+            await updateDoc(docRef, {
+              recipes: arrayUnion(recipeId)
+            });
+            setIsAddedToFavorite(true);
+            toast.success("Added to favorites");
+          }
         } else {
           await setDoc(docRef, {
-            recipes: arrayUnion(recipeId)
+            recipes: [recipeId]
           });
+          setIsAddedToFavorite(true);
+          toast.success("Added to favorites");
         }
-
-        toast.success("Added to favorites successfully");
       } catch (error) {
-        console.error("Error adding to favorites:", error);
-        toast.error("Error adding to favorites");
+        console.error("Error changing favorites status:", error);
+        toast.error("Error changing favorites status");
       }
     } else {
-      console.error("User is not authenticated or recipeId is missing");
+      console.error("Something went wrong");
     }
   };
+
+  if (!recipe) {
+    return <div>Recipe not found</div>;
+  }
 
   return (
     <Page>
@@ -105,14 +140,18 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
           <Tooltip>
             <TooltipTrigger asChild>
               <IconButton
-                onClick={saveToFavorites}
+                onClick={toggleFavorite}
                 className={`absolute top-4 right-4 p-2 bg-transparent rounded-md ${mode === "dark" ? "hover:bg-optionHoverDark" : "hover:bg-optionHover"}`}
               >
-                <HeartIcon width="18" height="18" />
+                {isAddedToFavorite ?
+                  <HeartFilledIcon width="18" height="18" />
+                  :
+                  <HeartIcon width="18" height="18" />
+                }
               </IconButton>
             </TooltipTrigger>
             <TooltipContent className="bg-gray-900 text-white rounded-md p-2">
-              Add to favorites
+              {isAddedToFavorite ? "Remove from favorites" : "Add to favorites"}
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>

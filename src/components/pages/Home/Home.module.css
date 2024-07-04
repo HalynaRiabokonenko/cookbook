@@ -247,32 +247,32 @@
 @-webkit-keyframes tracking-in-contract {
   0% {
     color: var(--light-green);
-    letter-spacing: 1rem;
+    letter-spacing: 0.7rem;
     opacity: 0;
   }
 
   100% {
     color: var(--medium-green);
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.4rem;
     opacity: 1;
   }
 }
 @keyframes tracking-in-contract {
   0% {
     color: var(--light-green);
-    letter-spacing: 1rem;
+    letter-spacing: 0.7rem;
   }
 
   100% {
     color: var(--medium-green);
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.4rem;
     opacity: 1;
   }
 }
 
 @media only screen and (max-width: 1000px) {
   .home__main-text-header {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   .home__main-text {
@@ -290,7 +290,7 @@
 
   .home__main-text-header {
     top: 8%;
-    font-size: 3rem;
+    font-size: 2.8rem;
     padding: 10px 10px;
     width: 100%;
   }
@@ -319,7 +319,7 @@
 
 @media only screen and (max-width: 650px) {
   .home__main-text-header {
-    font-size: 2.3rem;
+    font-size: 2rem;
   }
 
   .home__main-text {
@@ -354,7 +354,7 @@
 
 @media only screen and (max-width: 500px) {
   .home__main-text-header {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     letter-spacing: 0.5rem;
   }
 }

@@ -97,20 +97,17 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
               recipes: arrayRemove(recipeId)
             });
             setIsAddedToFavorite(false);
-            toast.success("Removed from favorites");
           } else {
             await updateDoc(docRef, {
               recipes: arrayUnion(recipeId)
             });
             setIsAddedToFavorite(true);
-            toast.success("Added to favorites");
           }
         } else {
           await setDoc(docRef, {
             recipes: [recipeId]
           });
           setIsAddedToFavorite(true);
-          toast.success("Added to favorites");
         }
       } catch (error) {
         console.error("Error changing favorites status:", error);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useModeContext } from "../../../providers/mode";
 import { db } from "../../../api/firebaseConfig";
 import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove, collection, getDocs } from "firebase/firestore";
@@ -14,6 +14,9 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Toast } from "../../atomic/Toast/Toast";
 import { HeartFilledIcon, HeartIcon } from "@radix-ui/react-icons";
+import * as AlertDialog from '@radix-ui/react-alert-dialog';
+import { ButtonSolid } from "../../atomic/Buttons/ButtonSolid";
+import { ButtonOutline } from "../../atomic/Buttons/ButtonOutline";
 
 interface RecipeDetailsProps {
   user: User | null;
@@ -24,6 +27,7 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
   const [recipe, setRecipe] = useState<Recipe | null>(null);
   const [isAddedToFavorite, setIsAddedToFavorite] = useState<boolean>(false);
   const { recipeId, option } = useParams<{ recipeId: string; option: string }>();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -113,8 +117,9 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
         console.error("Error changing favorites status:", error);
         toast.error("Error changing favorites status");
       }
-    } else {
+    } else if (user) {
       console.error("Something went wrong");
+      toast.error("Something went wrong");
     }
   };
 
@@ -135,19 +140,53 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
         grid grid-cols-1 md:grid-cols-2 items-center list-none border rounded-lg m-10 md:m-5 relative 
         ${mode === "dark" ? "bg-midnightMoss border-midnightMoss" : "bg-fairGreen border-lightGreen"}`
       }>
+
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <IconButton
-                onClick={toggleFavorite}
-                className={`absolute top-4 right-4 p-2 bg-transparent rounded-md ${mode === "dark" ? "hover:bg-optionHoverDark" : "hover:bg-optionHover"}`}
-              >
-                {isAddedToFavorite ?
-                  <HeartFilledIcon width="18" height="18" />
-                  :
-                  <HeartIcon width="18" height="18" />
-                }
-              </IconButton>
+              <AlertDialog.Root>
+                <AlertDialog.Trigger asChild>
+                  <IconButton
+                    onClick={toggleFavorite}
+                    className={`absolute top-4 right-4 p-2 bg-transparent rounded-md 
+                      ${mode === "dark" ?
+                        "hover:bg-optionHoverDark" :
+                        "hover:bg-optionHover"
+                      }`
+                    }
+                  >
+                    {isAddedToFavorite ?
+                      <HeartFilledIcon width="18" height="18" />
+                      :
+                      <HeartIcon width="18" height="18" />
+                    }
+                  </IconButton>
+                </AlertDialog.Trigger>
+                {!user && <AlertDialog.Portal>
+                  <AlertDialog.Overlay className="bg-blackA6 data-[state=open]:animate-overlayShow fixed inset-0" />
+                  <AlertDialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[500px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none">
+                    <AlertDialog.Title className="text-mauve12 m-0 text-[17px] font-medium">
+                      This function available only for logged users
+                    </AlertDialog.Title>
+                    <AlertDialog.Description className="text-mauve11 mt-4 mb-5 text-[15px] leading-normal">
+                      You have to login to your account
+                    </AlertDialog.Description>
+                    <div className="flex justify-end gap-[25px]">
+                      <AlertDialog.Cancel asChild>
+                        <ButtonOutline>
+                          Cancel
+                        </ButtonOutline>
+                      </AlertDialog.Cancel>
+                      <AlertDialog.Action asChild>
+                        <ButtonSolid onClick={() => { navigate("/login") }}>
+                          Go to login page
+                        </ButtonSolid>
+                      </AlertDialog.Action>
+                    </div>
+                  </AlertDialog.Content>
+                </AlertDialog.Portal>}
+              </AlertDialog.Root>
+
             </TooltipTrigger>
             <TooltipContent className="bg-gray-900 text-white rounded-md p-2">
               {isAddedToFavorite ? "Remove from favorites" : "Add to favorites"}

@@ -28,10 +28,13 @@ export const Footer: React.FC<Props> = ({ user }: Props) => {
                         </li>
                         {user && <>
                             <li className="mb-2">
-                                <Link to="/contact" className="text-white hover:text-redLight">Contact</Link>
+                                <Link to="/account" className="text-white hover:text-redLight">Account</Link>
                             </li>
                             <li className="mb-2">
-                                <Link to="/account" className="text-white hover:text-redLight">Account</Link>
+                                <Link to="/favorites" className="text-white hover:text-redLight">Favorites</Link>
+                            </li>
+                            <li className="mb-2">
+                                <Link to="/contact" className="text-white hover:text-redLight">Contact</Link>
                             </li>
                         </>
                         }

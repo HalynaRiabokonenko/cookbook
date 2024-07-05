@@ -9,7 +9,6 @@
   font-size: 1.1rem;
 }
 
-/* grid containers --->*/
 .home-content__recipes-content {
   display: grid;
   grid-template-columns: 1fr 1fr;

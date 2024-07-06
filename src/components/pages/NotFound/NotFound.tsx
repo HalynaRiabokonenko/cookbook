@@ -12,11 +12,11 @@ export const NotFound = () => {
 
     return (
         <Page>
-            <div className="flex items-center justify-center content-center min-h-screen -mt-9">
+            <div className="flex items-center justify-center content-center min-h-screen -mt-9 mx-5">
                 <div className="text-center flex">
                     <div>
                         <h1 className={classnames(
-                            "text-[14rem] font-bold text-redMedium",
+                            "text-9xl font-bold text-redMedium my-8",
                             styles["animate-fade-in"])}>404</h1>
                         <p className={classnames("mt-4 text-lg", mode === "dark" ? "text-gray-300" : "text-gray-600")}>
                             Oops! The page you are looking for does not exist.

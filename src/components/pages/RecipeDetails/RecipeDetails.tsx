@@ -180,18 +180,18 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
                     <AlertDialog.Title className="m-0 text-[17px] font-medium">
                       This function available only for logged users
                     </AlertDialog.Title>
-                    <AlertDialog.Description className="mt-4 mb-5 text-[15px] leading-normal">
-                      You have to login to your account
+                    <AlertDialog.Description className="mt-4 text-[15px] leading-normal">
+                      Do you want to navigate to login page?
                     </AlertDialog.Description>
                     <div className="flex justify-end gap-[25px]">
                       <AlertDialog.Cancel asChild>
                         <ButtonOutline>
-                          Cancel
+                          No
                         </ButtonOutline>
                       </AlertDialog.Cancel>
                       <AlertDialog.Action asChild>
                         <ButtonSolid onClick={() => { navigate("/login") }}>
-                          Go to login page
+                          Yes
                         </ButtonSolid>
                       </AlertDialog.Action>
                     </div>

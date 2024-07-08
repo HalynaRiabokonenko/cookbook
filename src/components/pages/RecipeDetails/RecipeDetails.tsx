@@ -137,7 +137,6 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
         grid grid-cols-1 md:grid-cols-2 items-center list-none border rounded-lg m-10 md:m-5 relative 
         ${mode === "dark" ? "bg-midnightMoss border-midnightMoss" : "bg-fairGreen border-lightGreen"}`
       }>
-
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>

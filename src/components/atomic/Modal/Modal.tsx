@@ -10,7 +10,7 @@ export const Modal = ({ children }: { children: React.ReactNode; }) => {
             ${mode === "dark" ?
                 "bg-opacity-60"
                 :
-                "bg-opacity-15"
+                "bg-opacity-25"
             }`
         }>
             <div id="modal__content--container" className={

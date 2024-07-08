@@ -21,20 +21,22 @@ export const ModalAlertLogin = ({ children, user }: ModalAlertLoginProps) => {
                 {children}
             </AlertDialog.Trigger>
             {!user && <AlertDialog.Portal>
-                <AlertDialog.Overlay className={`bg-blackA6 data-[state=open]:animate-overlayShow fixed inset-0
-            ${mode === "dark" ?
-                        ""
-                        :
-                        ""
-                    }
-          `} />
-                <AlertDialog.Content className={`data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[500px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white p-[25px] shadow-2xl focus:outline-none
-            ${mode === "dark" ?
-                        "text-headerTextDark bg-mediumGreenDark border-none shadow-none"
-                        :
-                        "bg-white border border-gray-200 shadow-2xl"
-                    }
-            `}>
+                <AlertDialog.Overlay
+                    className={`bg-black fixed inset-0
+                        ${mode === "dark" ?
+                            "bg-opacity-60"
+                            :
+                            "bg-opacity-25"
+                        }`
+                    } />
+                <AlertDialog.Content
+                    className={`fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[500px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] p-[25px] shadow-2xl focus:outline-none
+                        ${mode === "dark" ?
+                            "text-headerTextDark bg-mediumGreenDark border-none shadow-none"
+                            :
+                            "bg-white border border-gray-200 shadow-2xl"
+                        }`
+                    }>
                     <AlertDialog.Title className="m-0 text-[17px] font-medium">
                         This function available only for logged users
                     </AlertDialog.Title>

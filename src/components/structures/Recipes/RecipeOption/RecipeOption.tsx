@@ -59,9 +59,6 @@ export const RecipeOption: React.FC<RecipeOptionTypes> = ({ recipe, user, isAdde
                 console.error("Error changing favorites status:", error);
                 toast.error("Error changing favorites status");
             }
-        } else if (!user) {
-            console.error("User is not logged in");
-            toast.error("You need to log in to change favorites status");
         } else {
             console.error("Something went wrong");
             toast.error("Something went wrong");

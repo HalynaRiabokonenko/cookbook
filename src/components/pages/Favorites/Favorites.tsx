@@ -13,6 +13,7 @@ interface FavoritesProps {
 
 export const Favorites = ({ user }: FavoritesProps) => {
     const [recipesData, setRecipesData] = useState<Recipe[]>([]);
+    const [favoritesMap, setFavoritesMap] = useState<{ [key: string]: boolean }>({});
 
     useEffect(() => {
         const fetchFavorites = async () => {
@@ -25,6 +26,8 @@ export const Favorites = ({ user }: FavoritesProps) => {
                 const snapshot = await getDocs(favoritesRef);
 
                 const favorites: Recipe[] = [];
+                const favMap: { [key: string]: boolean } = {};
+
                 snapshot.forEach((doc) => {
                     const cuisine = doc.id;
                     const data = doc.data() as DocumentData;
@@ -34,6 +37,7 @@ export const Favorites = ({ user }: FavoritesProps) => {
                                 cuisine: cuisine,
                                 id: data[key].toString(),
                             } as Recipe);
+                            favMap[data[key].toString()] = true;
                         }
                     });
                 });
@@ -59,6 +63,7 @@ export const Favorites = ({ user }: FavoritesProps) => {
                                 });
                             });
                             setRecipesData(fetchedRecipes);
+                            setFavoritesMap(favMap);
                         });
                     } catch (error) {
                         console.error("Error fetching recipes:", error);
@@ -73,7 +78,7 @@ export const Favorites = ({ user }: FavoritesProps) => {
                     }
                 };
             } catch (error) {
-                console.error('Error fetching favorites:', error);
+                console.error("Error fetching favorites:", error);
             }
         };
 
@@ -87,14 +92,18 @@ export const Favorites = ({ user }: FavoritesProps) => {
                 <div className="flex flex-wrap justify-evenly gap-5">
                     {recipesData.length > 0 ? (
                         recipesData.map((recipe) => (
-                            <RecipeOption user={user} key={Math.floor(Math.random() * Date.now())} recipe={recipe} />
+                            <RecipeOption
+                                user={user}
+                                key={Math.floor(Math.random() * Date.now())}
+                                recipe={recipe}
+                                isAddedToFavorite={favoritesMap[recipe.id]}
+                            />
                         ))
                     ) : (
                         <div className='flex flex-col'>
                             <div className='flex w-full items-center justify-center text-2xl'>No favorite recipes found</div>
                             <img src="/images/recipes/empty.png" alt="user photo icon" />
                         </div>
-
                     )}
                 </div>
             </div>

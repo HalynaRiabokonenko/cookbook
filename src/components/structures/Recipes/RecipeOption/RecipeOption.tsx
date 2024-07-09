@@ -14,7 +14,8 @@ import { ModalAlertLogin } from "../../ModalAlertLogin/ModalAlertLogin";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip";
 import { HeartFilledIcon, HeartIcon } from "@radix-ui/react-icons";
 import { User } from "firebase/auth";
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
+import { Toast } from "../../../atomic/Toast/Toast";
 
 interface RecipeOptionTypes {
     recipe: Recipe;
@@ -26,8 +27,7 @@ export const RecipeOption: React.FC<RecipeOptionTypes> = ({ recipe, user, isAdde
     const { mode } = useModeContext();
     const [cuisinesData, setCuisinesData] = useState<Cuisine[]>([]);
 
-    const toggleFavorite = async (event: React.MouseEvent) => {
-        event.stopPropagation();
+    const toggleFavorite = async () => {
         if (user && recipe.id && recipe) {
             const userId = user.uid;
             const cuisine = recipe.cuisine;
@@ -92,7 +92,7 @@ export const RecipeOption: React.FC<RecipeOptionTypes> = ({ recipe, user, isAdde
     };
 
     return (
-        <div className="recipe-option__container">
+        <div className="relative">
             <Link to={`/recipes/${recipe.cuisine}/${recipe.id}`} className={classnames(
                 styles["recipes-content__recipes-link"],
                 styles[mode]
@@ -137,34 +137,35 @@ export const RecipeOption: React.FC<RecipeOptionTypes> = ({ recipe, user, isAdde
                             </HoverCardContent>
                         </HoverCard>
                     </div>
-                    <TooltipProvider>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <ModalAlertLogin user={user}>
-                                    <IconButton
-                                        onClick={toggleFavorite}
-                                        className={`absolute bottom-2 right-2 p-2 bg-transparent rounded-md 
-                                            ${mode === "dark" ?
-                                                "hover:bg-optionHoverDark" :
-                                                "hover:bg-optionHover"
-                                            }`
-                                        }
-                                    >
-                                        {isAddedToFavorite ?
-                                            <HeartFilledIcon width="14" height="14" />
-                                            :
-                                            <HeartIcon width="14" height="14" />
-                                        }
-                                    </IconButton>
-                                </ModalAlertLogin>
-                            </TooltipTrigger>
-                            <TooltipContent className="bg-gray-900 text-white rounded-md p-2">
-                                {isAddedToFavorite ? "Remove from favorites" : "Add to favorites"}
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
                 </div>
             </Link>
+            <TooltipProvider>
+                <Tooltip>
+                    <TooltipTrigger asChild>
+                        <ModalAlertLogin user={user}>
+                            <IconButton
+                                onClick={toggleFavorite}
+                                className={`absolute bottom-2 right-2 p-2 bg-transparent rounded-md 
+                                            ${mode === "dark" ?
+                                        "hover:bg-optionHoverDark" :
+                                        "hover:bg-optionHover"
+                                    }`
+                                }
+                            >
+                                {isAddedToFavorite ?
+                                    <HeartFilledIcon width="14" height="14" />
+                                    :
+                                    <HeartIcon width="14" height="14" />
+                                }
+                            </IconButton>
+                        </ModalAlertLogin>
+                    </TooltipTrigger>
+                    <TooltipContent className="bg-gray-900 text-white rounded-md p-2">
+                        {isAddedToFavorite ? "Remove from favorites" : "Add to favorites"}
+                    </TooltipContent>
+                </Tooltip>
+            </TooltipProvider>
+            <Toast />
         </div>
     );
 };

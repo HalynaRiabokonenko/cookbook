@@ -52,8 +52,8 @@ export const App = () => {
                                     <Route path="/reset-password" element={<ResetPassword />} />
                                 </>
                             )}
-                            <Route path="/recipes" element={<Recipes />} >
-                                <Route path=":option" element={<RecipesContent />} />
+                            <Route path="/recipes" element={<Recipes user={user} />} >
+                                <Route path=":option" element={<RecipesContent user={user} />} />
                             </Route>
                             <Route path="/recipes/:option/:recipeId" element={<RecipeDetails user={user} />} />
                             <Route path="/" element={<Home />} />

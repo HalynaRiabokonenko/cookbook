@@ -87,7 +87,7 @@ export const Favorites = ({ user }: FavoritesProps) => {
                 <div className="flex flex-wrap justify-evenly gap-5">
                     {recipesData.length > 0 ? (
                         recipesData.map((recipe) => (
-                            <RecipeOption key={Math.floor(Math.random() * Date.now())} recipe={recipe} />
+                            <RecipeOption user={user} key={Math.floor(Math.random() * Date.now())} recipe={recipe} />
                         ))
                     ) : (
                         <div className='flex flex-col'>

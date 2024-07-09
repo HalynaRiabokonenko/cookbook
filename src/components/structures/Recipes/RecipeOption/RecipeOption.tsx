@@ -6,17 +6,67 @@ import styles from "./RecipeOption.module.css";
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 import { Recipe } from "../../../../commons/types/Recipe";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@radix-ui/react-hover-card';
-import { Avatar, Box, Text } from "@radix-ui/themes";
-import { DocumentData, collection, onSnapshot } from "firebase/firestore";
+import { Avatar, Box, IconButton, Text } from "@radix-ui/themes";
+import { DocumentData, collection, onSnapshot, doc, getDoc, setDoc, updateDoc, arrayRemove, arrayUnion } from "firebase/firestore";
 import { Cuisine } from "../../../../commons/types/Cuisine";
-import { db } from "../../../../api/firebaseConfig"
+import { db } from "../../../../api/firebaseConfig";
+import { ModalAlertLogin } from "../../ModalAlertLogin/ModalAlertLogin";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip";
+import { HeartFilledIcon, HeartIcon } from "@radix-ui/react-icons";
+import { User } from "firebase/auth";
+import { toast } from "react-toastify";
+
 interface RecipeOptionTypes {
     recipe: Recipe;
+    user: User | null;
+    isAddedToFavorite?: boolean;
 }
 
-export const RecipeOption = ({ recipe }: RecipeOptionTypes) => {
+export const RecipeOption: React.FC<RecipeOptionTypes> = ({ recipe, user, isAddedToFavorite = false }) => {
     const { mode } = useModeContext();
     const [cuisinesData, setCuisinesData] = useState<Cuisine[]>([]);
+
+    const toggleFavorite = async (event: React.MouseEvent) => {
+        event.stopPropagation();
+        if (user && recipe.id && recipe) {
+            const userId = user.uid;
+            const cuisine = recipe.cuisine;
+
+            try {
+                const docRef = doc(db, `userFavorites/${userId}/cuisines/${cuisine}`);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    if (data.recipes && data.recipes.includes(recipe.id)) {
+                        await updateDoc(docRef, {
+                            recipes: arrayRemove(recipe.id)
+                        });
+                        toast.success("Removed from favorites");
+                    } else {
+                        await updateDoc(docRef, {
+                            recipes: arrayUnion(recipe.id)
+                        });
+                        toast.success("Added to favorites");
+                    }
+                } else {
+                    await setDoc(docRef, {
+                        recipes: [recipe.id]
+                    });
+                    toast.success("Added to favorites");
+                }
+            } catch (error) {
+                console.error("Error changing favorites status:", error);
+                toast.error("Error changing favorites status");
+            }
+        } else if (!user) {
+            console.error("User is not logged in");
+            toast.error("You need to log in to change favorites status");
+        } else {
+            console.error("Something went wrong");
+            toast.error("Something went wrong");
+        }
+    };
 
     useEffect(() => {
         const unsubscribeCuisines = onSnapshot(collection(db, "cuisines"), (snapshot) => {
@@ -36,7 +86,7 @@ export const RecipeOption = ({ recipe }: RecipeOptionTypes) => {
         };
     }, []);
 
-    let cuisineSrc = (cuisineOption: string) => {
+    const cuisineSrc = (cuisineOption: string) => {
         const cuisine = cuisinesData.find(el => el.id === cuisineOption);
         return cuisine ? cuisine.img : '';
     };
@@ -87,6 +137,32 @@ export const RecipeOption = ({ recipe }: RecipeOptionTypes) => {
                             </HoverCardContent>
                         </HoverCard>
                     </div>
+                    <TooltipProvider>
+                        <Tooltip>
+                            <TooltipTrigger asChild>
+                                <ModalAlertLogin user={user}>
+                                    <IconButton
+                                        onClick={toggleFavorite}
+                                        className={`absolute bottom-2 right-2 p-2 bg-transparent rounded-md 
+                                            ${mode === "dark" ?
+                                                "hover:bg-optionHoverDark" :
+                                                "hover:bg-optionHover"
+                                            }`
+                                        }
+                                    >
+                                        {isAddedToFavorite ?
+                                            <HeartFilledIcon width="14" height="14" />
+                                            :
+                                            <HeartIcon width="14" height="14" />
+                                        }
+                                    </IconButton>
+                                </ModalAlertLogin>
+                            </TooltipTrigger>
+                            <TooltipContent className="bg-gray-900 text-white rounded-md p-2">
+                                {isAddedToFavorite ? "Remove from favorites" : "Add to favorites"}
+                            </TooltipContent>
+                        </Tooltip>
+                    </TooltipProvider>
                 </div>
             </Link>
         </div>

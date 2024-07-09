@@ -3,8 +3,14 @@ import { DocumentData, collection, onSnapshot, QuerySnapshot } from "firebase/fi
 import { db } from "../../../../api/firebaseConfig";
 import { RecipeOption } from "../RecipeOption/RecipeOption";
 import { Recipe } from "../../../../commons/types/Recipe";
+import { User } from "firebase/auth";
 
-export const RecipesContent = ({ option }: { option?: string }) => {
+interface RecipesContentProps {
+    user: User | null;
+    option?: string
+}
+
+export const RecipesContent = ({ user, option }: RecipesContentProps) => {
     const [recipesData, setRecipesData] = useState<Recipe[]>([]);
 
     useEffect(() => {
@@ -51,7 +57,7 @@ export const RecipesContent = ({ option }: { option?: string }) => {
         <>
             {recipesData.map((recipe) => (
                 <div key={Math.floor(Math.random() * Date.now())}>
-                    <RecipeOption recipe={recipe} />
+                    <RecipeOption recipe={recipe} user={user} />
                 </div>
             ))}
         </>

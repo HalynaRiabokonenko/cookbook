@@ -5,10 +5,15 @@ import { RecipesFullContent } from "../../structures/Recipes/RecipesFullContent/
 import { useParams, useNavigate } from "react-router-dom";
 import { RecipesHamburgerMenu } from "../../structures/RecipesHamburgerMenu.tsx/RecipesHamburgerMenu";
 import { PageHeader } from "../../atomic/PageHeader/PageHeader";
+import { User } from "firebase/auth";
 
 const MOBILE_WIDTH = 600;
 
-export const Recipes = () => {
+interface RecipesProps {
+    user: User | null;
+}
+
+export const Recipes = ({ user }: RecipesProps) => {
     const navigate = useNavigate();
     const { option } = useParams<{ option: string }>();
     const [selectedOption, setSelectedOption] = useState<string | undefined>(option);
@@ -45,9 +50,9 @@ export const Recipes = () => {
             <div className="flex flex-col m-2">
                 <div className="flex flex-wrap justify-evenly gap-5">
                     {selectedOption ? (
-                        <RecipesContent option={selectedOption} />
+                        <RecipesContent option={selectedOption} user={user} />
                     ) : (
-                        <RecipesFullContent />
+                        <RecipesFullContent user={user} />
                     )}
                 </div>
             </div>

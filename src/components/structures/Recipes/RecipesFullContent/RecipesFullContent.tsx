@@ -3,8 +3,13 @@ import { collection, onSnapshot, DocumentData } from "firebase/firestore";
 import { db } from "../../../../api/firebaseConfig";
 import { RecipeOption } from "../RecipeOption/RecipeOption";
 import { Recipe } from "../../../../commons/types/Recipe";
+import { User } from "firebase/auth";
 
-export const RecipesFullContent = () => {
+interface RecipesFullContentProps {
+    user: User | null;
+}
+
+export const RecipesFullContent = ({ user }: RecipesFullContentProps) => {
     const [recipesData, setRecipesData] = useState<Recipe[]>([]);
 
     useEffect(() => {
@@ -33,7 +38,7 @@ export const RecipesFullContent = () => {
         <>
             {recipesData.map((recipe) => (
                 <div key={Math.floor(Math.random() * Date.now())}>
-                    <RecipeOption recipe={recipe} />
+                    <RecipeOption recipe={recipe} user={user} />
                 </div>
             ))}
         </>

@@ -19,10 +19,10 @@ import { toast } from "react-toastify";
 interface RecipeOptionTypes {
     recipe: Recipe;
     user: User | null;
-    isAddedToFavorite?: boolean;
+    isAddedToFavorite: boolean;
 }
 
-export const RecipeOption: React.FC<RecipeOptionTypes> = ({ recipe, user, isAddedToFavorite = false }) => {
+export const RecipeOption: React.FC<RecipeOptionTypes> = ({ recipe, user, isAddedToFavorite }) => {
     const { mode } = useModeContext();
     const [cuisinesData, setCuisinesData] = useState<Cuisine[]>([]);
 

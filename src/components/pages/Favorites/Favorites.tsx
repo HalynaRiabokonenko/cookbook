@@ -25,30 +25,33 @@ export const Favorites = ({ user }: FavoritesProps) => {
                 const favoritesRef = collection(db, `userFavorites/${userId}/cuisines`);
                 const snapshot = await getDocs(favoritesRef);
 
-                const favorites: Recipe[] = [];
+                const favorites: { cuisine: string; id: string }[] = [];
                 const favMap: { [key: string]: boolean } = {};
 
                 snapshot.forEach((doc) => {
                     const cuisine = doc.id;
                     const data = doc.data() as DocumentData;
-                    Object.keys(data).forEach((key) => {
-                        if (key !== "id") {
-                            favorites.push({
-                                cuisine: cuisine,
-                                id: data[key].toString(),
-                            } as Recipe);
-                            favMap[data[key].toString()] = true;
-                        }
-                    });
+                    if (data.recipes && Array.isArray(data.recipes)) {
+                        data.recipes.forEach((recipeId: string) => {
+                            favorites.push({ cuisine, id: recipeId });
+                            favMap[recipeId] = true;
+                        });
+                    }
                 });
+
+                console.log('Favorites:', favorites);
+                console.log('Favorites Map:', favMap);
 
                 const fetchData = () => {
                     try {
                         const recipesCollection = collection(db, `recipes`);
                         return onSnapshot(recipesCollection, (snapshot: QuerySnapshot<DocumentData>) => {
                             const fetchedRecipes: Recipe[] = [];
+
                             snapshot.docs.forEach(doc => {
                                 const data = doc.data();
+                                console.log('Processing cuisine:', doc.id, 'data:', data);
+
                                 favorites.forEach(option => {
                                     if (doc.id === option.cuisine) {
                                         Object.keys(data).forEach((key) => {
@@ -62,6 +65,8 @@ export const Favorites = ({ user }: FavoritesProps) => {
                                     }
                                 });
                             });
+
+                            console.log('Fetched Recipes:', fetchedRecipes);
                             setRecipesData(fetchedRecipes);
                             setFavoritesMap(favMap);
                         });
@@ -81,7 +86,6 @@ export const Favorites = ({ user }: FavoritesProps) => {
                 console.error("Error fetching favorites:", error);
             }
         };
-
         fetchFavorites();
     }, [user]);
 
@@ -91,10 +95,10 @@ export const Favorites = ({ user }: FavoritesProps) => {
             <div className="flex flex-col m-2">
                 <div className="flex flex-wrap justify-evenly gap-5">
                     {recipesData.length > 0 ? (
-                        recipesData.map((recipe) => (
+                        recipesData.map((recipe, index) => (
                             <RecipeOption
                                 user={user}
-                                key={Math.floor(Math.random() * Date.now())}
+                                key={`${recipe.id}-${index}`}
                                 recipe={recipe}
                                 isAddedToFavorite={favoritesMap[recipe.id]}
                             />
@@ -107,7 +111,6 @@ export const Favorites = ({ user }: FavoritesProps) => {
                     )}
                 </div>
             </div>
-
         </Page>
     );
 };

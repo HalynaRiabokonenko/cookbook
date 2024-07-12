@@ -11,6 +11,7 @@ interface RecipesFullContentProps {
 
 export const RecipesFullContent = ({ user }: RecipesFullContentProps) => {
     const [recipesData, setRecipesData] = useState<Recipe[]>([]);
+    const [favoritesMap, setFavoritesMap] = useState<{ [key: string]: boolean }>({});
 
     useEffect(() => {
         const unsubscribe = onSnapshot(collection(db, "recipes"), (snapshot) => {
@@ -38,7 +39,11 @@ export const RecipesFullContent = ({ user }: RecipesFullContentProps) => {
         <>
             {recipesData.map((recipe) => (
                 <div key={Math.floor(Math.random() * Date.now())}>
-                    <RecipeOption recipe={recipe} user={user} />
+                    <RecipeOption
+                        recipe={recipe}
+                        user={user}
+                        isAddedToFavorite={favoritesMap[recipe.id]}
+                    />
                 </div>
             ))}
         </>

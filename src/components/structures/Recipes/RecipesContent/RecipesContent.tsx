@@ -12,6 +12,7 @@ interface RecipesContentProps {
 
 export const RecipesContent = ({ user, option }: RecipesContentProps) => {
     const [recipesData, setRecipesData] = useState<Recipe[]>([]);
+    const [favoritesMap, setFavoritesMap] = useState<{ [key: string]: boolean }>({});
 
     useEffect(() => {
         let unsubscribe: () => void;
@@ -57,7 +58,11 @@ export const RecipesContent = ({ user, option }: RecipesContentProps) => {
         <>
             {recipesData.map((recipe) => (
                 <div key={Math.floor(Math.random() * Date.now())}>
-                    <RecipeOption recipe={recipe} user={user} />
+                    <RecipeOption
+                        recipe={recipe}
+                        user={user}
+                        isAddedToFavorite={favoritesMap[recipe.id]}
+                    />
                 </div>
             ))}
         </>

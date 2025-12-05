@@ -102,7 +102,7 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ user }) => {
                 {!user && (
                     <NavigationMenu.Item>
                         <NavigationMenu.Trigger>
-                            <Button
+                            <Button data-testId='header-button-login'
                                 className={classnames(
                                     "uppercase mx-4 rounded px-9 py-2 rounded-xl bg-inherit text-l font-semibold leading-6 shadow-sm border border-solid",
                                     {

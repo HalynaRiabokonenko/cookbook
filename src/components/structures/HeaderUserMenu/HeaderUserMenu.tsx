@@ -40,7 +40,7 @@ export const HeaderUserMenu = ({ user }: HeaderProps) => {
     }, [user]);
 
     return (
-        <NavigationMenu.Root className="relative z-[3] flex justify-end">
+        <NavigationMenu.Root data-testId='header-navigation-menu' className="relative z-[3] flex justify-end">
             <NavigationMenu.List className="m-0 flex items-center justify-center list-none rounded-[6px] p-1">
                 <NavigationMenu.Item >
                     <NavigationMenu.Trigger className="h-headerHeight group flex select-none items-center rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none outline-none" >

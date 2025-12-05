@@ -27,7 +27,7 @@ export const AuthForm = ({
     };
 
     return (
-        <div className="mx-auto w-full max-w-lg px-4 sm:px-6 lg:px-8">
+        <div data-testId='login-form' className="mx-auto w-full max-w-lg px-4 sm:px-6 lg:px-8">
             <div className={mode === 'dark' ?
                 'bg-mediumGreenDark text-white rounded-xl mt-10'
                 :

@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('login page test', () => {
   //Arrange
-  const url = '/login';
+  const url = '/#/login';
 
   test('get started link', async ({ page }) => {
     //Act
@@ -17,7 +17,7 @@ test.describe('login page test', () => {
   test('login success', async ({ page }) => {
 
     //Arrange
-    const url = '/login';
+    const url = '/#/login';
     const username = process.env.E2E_USERNAME;
     const password = process.env.E2E_PASSWORD;
 

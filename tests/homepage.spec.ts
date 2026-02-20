@@ -5,7 +5,7 @@ test.describe('home page tests', () => {
 
   test('has title', async ({ page }) => {
     //Arrange
-    const url = 'https://cookbook-34a7d.web.app/';
+    const url = '/';
     const title = /Proven Recipes - Delicious World cuisine/;
 
     //Act
@@ -17,7 +17,7 @@ test.describe('home page tests', () => {
 
   test('get started link', async ({ page }) => {
     //Arrange
-    const url = 'https://cookbook-34a7d.web.app/';
+    const url = '/';
 
     //Act
     await page.goto(url);

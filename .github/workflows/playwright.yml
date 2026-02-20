@@ -1,34 +1,30 @@
-# Updated Playwright Workflow
-
-name: Playwright CI
-
+name: Playwright Tests
 on:
   push:
-    branches:
-      - main
+    branches: [main, master]
   pull_request:
-    branches:
-      - main
-
+    branches: [main, master]
 jobs:
-  build:
+  test:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '14'
-
+          node-version: lts/*
       - name: Install dependencies
-        run: |
-          npm install
-
+        run: npm ci
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
       - name: Run Playwright tests
         env:
-          E2E_USERNAME: ${{ vars.E2E_USERNAME }}
-          E2E_PASSWORD: ${{ vars.E2E_PASSWORD }}
-        run: |
-          npm run test
+          E2E_USERNAME: ${{ secrets.E2E_USERNAME }}
+          E2E_PASSWORD: ${{ secrets.E2E_PASSWORD }}
+        run: npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30

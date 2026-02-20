@@ -57,6 +57,7 @@ export const AuthForm = ({
                                         type="email"
                                         name="email"
                                         id="email"
+                                        data-testid="input-email"
                                         value={login}
                                         onChange={(e) => {
                                             setLogin(e.target.value);
@@ -92,6 +93,7 @@ export const AuthForm = ({
                                                 type="password"
                                                 name="password"
                                                 id="password"
+                                                data-testid="input-password"
                                                 value={password}
                                                 onChange={(e) => {
                                                     setPassword(e.target.value);
@@ -109,6 +111,7 @@ export const AuthForm = ({
                             </div>
                             <Button
                                 type="submit"
+                                data-testid="button-submit"
                                 className={mode === 'dark' ?
                                     "flex w-full justify-center rounded-md bg-inherit text-mediumGreen px-3 py-1.5 text-l font-semibold leading-6 shadow-sm border border-solid border-1.5 border-mediumGreen rounded-xl hover:bg-mediumGreen hover:text-mediumGreenDark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                     :

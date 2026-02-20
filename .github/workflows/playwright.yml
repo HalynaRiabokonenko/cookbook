@@ -1,15 +1,22 @@
+# Updated Playwright Workflow
+
 name: Playwright CI
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  e2e:
+  build:
     runs-on: ubuntu-latest
-
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
@@ -19,13 +26,9 @@ jobs:
         run: |
           npm install
 
-      - name: Install Playwright browsers
-        run: |
-          npx playwright install
-
       - name: Run Playwright tests
         env:
           E2E_USERNAME: ${{ vars.E2E_USERNAME }}
           E2E_PASSWORD: ${{ vars.E2E_PASSWORD }}
         run: |
-          npx playwright test
+          npm run test

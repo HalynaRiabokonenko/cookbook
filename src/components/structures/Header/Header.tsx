@@ -95,7 +95,7 @@ export const Header = ({ user }: HeaderProps) => {
                 <div className="flex">
                     {!isMobile && <HeaderNavbar user={user} />}
                     {user && !isMobile &&
-                        <div id="header__account-container" className="m-auto flex justify-center items-center h-full" onClick={toggleAccountModal}
+                        <div id="header__account-container" data-testid="header__account-container" className="m-auto flex justify-center items-center h-full" onClick={toggleAccountModal}
                         >
                             <HeaderUserMenu user={user} />
                         </div>

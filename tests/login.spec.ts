@@ -37,5 +37,24 @@ test.describe('login page test', () => {
     //Assert
     await expect(page.getByTestId('header__account-container')).toBeVisible();
   });
-});
 
+  test('login fail', async ({ page }) => {
+    //Arrange
+    const url = '/#/login';
+    const invalidUsername = 'invalid-user@example.com';
+    const invalidPassword = 'invalid-password';
+
+    //Act
+    await page.goto(url);
+    await page.getByTestId('header-button-login').click();
+    await page.waitForLoadState('domcontentloaded');
+    await page.getByTestId('input-email').fill(invalidUsername);
+    await page.getByTestId('input-password').fill(invalidPassword);
+    await page.getByTestId('button-submit').click();
+
+    //Assert
+    await expect(page.locator('.Toastify__toast-icon')).toBeVisible();
+    await expect(page.getByText('Incorrect credentials')).toBeVisible();
+    await expect(page.getByTestId('header__account-container')).not.toBeVisible();
+  });
+});

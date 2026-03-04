@@ -1,17 +1,19 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
-import { ContextType, Mode, ModeProviderProps } from "./mode.types";
+import React, { useState, useEffect, createContext, useContext } from 'react';
+import { ContextType, Mode, ModeProviderProps } from './mode.types';
 
 const ModeContext = createContext<ContextType | undefined>(undefined);
 
 export const useModeContext = (): ContextType => {
   const context = useContext(ModeContext);
   if (!context) {
-    throw new Error("useModeContext has to be used within a ModeProvider");
+    throw new Error('useModeContext has to be used within a ModeProvider');
   }
   return context;
 };
 
-export const ModeProvider: React.FC<ModeProviderProps> = ({ children }: ModeProviderProps) => {
+export const ModeProvider: React.FC<ModeProviderProps> = ({
+  children,
+}: ModeProviderProps) => {
   const [mode, setMode] = useState<Mode>(Mode.Light);
 
   const toggleMode = () => {
@@ -20,20 +22,21 @@ export const ModeProvider: React.FC<ModeProviderProps> = ({ children }: ModeProv
 
   const handleSystemModeChange = (e: MediaQueryListEvent) => {
     if (mode === Mode.System) {
-      document.body.className = e.matches ? Mode.Dark : "";
+      document.body.className = e.matches ? Mode.Dark : '';
     }
   };
-
 
   useEffect(() => {
     const fetchModeFromLocalStorage = () => {
       try {
-        const modeData: Mode | null = JSON.parse(localStorage.getItem('mode') || 'null');
+        const modeData: Mode | null = JSON.parse(
+          localStorage.getItem('mode') || 'null',
+        );
         if (modeData && mode !== modeData) {
           setMode(modeData);
         }
       } catch (error) {
-        console.error("Error accessing local storage:", error);
+        console.error('Error accessing local storage:', error);
       }
     };
 
@@ -45,16 +48,15 @@ export const ModeProvider: React.FC<ModeProviderProps> = ({ children }: ModeProv
   }, [mode]);
 
   useEffect(() => {
-    document.body.className = mode === Mode.Dark ? Mode.Dark : "";
+    document.body.className = mode === Mode.Dark ? Mode.Dark : '';
   }, [mode]);
 
-
   useEffect(() => {
-    const systemDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
-    if (mode === "system") {
-      document.body.className = systemDarkMode.matches ? Mode.Dark : "";
+    const systemDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mode === 'system') {
+      document.body.className = systemDarkMode.matches ? Mode.Dark : '';
     } else {
-      document.body.className = mode === Mode.Dark ? Mode.Dark : "";
+      document.body.className = mode === Mode.Dark ? Mode.Dark : '';
     }
 
     systemDarkMode.addEventListener('change', handleSystemModeChange);

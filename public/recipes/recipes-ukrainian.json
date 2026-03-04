@@ -231,32 +231,32 @@
       "name": "Ukrainian Apple Cake",
       "cuisine": "Ukrainian",
       "photoPath": "../recipes_photo/apple_cake.jpeg",
-        "ingredients": [
-          "2 cups all-purpose flour",
-          "1 1/2 teaspoons baking powder",
-          "1/2 teaspoon baking soda",
-          "1/2 teaspoon salt",
-          "1/2 cup unsalted butter, softened",
-          "1 cup sugar",
-          "2 eggs",
-          "1 teaspoon vanilla extract",
-          "1/2 cup sour cream",
-          "2 cups peeled, cored, and sliced apples",
-          "1/2 teaspoon ground cinnamon",
-          "Powdered sugar for dusting"
-        ],
-        "instructions": [
-          "Preheat oven to 175°C (350°F). Grease and flour a 9-inch round cake pan.",
-          "In a bowl, whisk together flour, baking powder, baking soda, and salt.",
-          "In another bowl, cream together butter and sugar until light and fluffy.",
-          "Beat in eggs, one at a time. Stir in vanilla extract.",
-          "Gradually add the flour mixture, alternating with sour cream. Mix until just combined.",
-          "Spread half of the batter into the prepared pan. Layer apples over the batter and sprinkle with cinnamon.",
-          "Spread the remaining batter over the apples.",
-          "Bake for 45-50 minutes or until a toothpick inserted into the center comes out clean.",
-          "Cool in the pan on a wire rack. Dust with powdered sugar before serving."
-        ],
-        "description": "Ukrainian Apple Cake is a delectable dessert that captures the essence of fresh apples in every bite. This moist and flavorful cake features layers of tender cake batter intertwined with slices of sweet and tart apples, creating a delightful contrast of textures. The cake is subtly spiced with cinnamon, enhancing the natural sweetness of the apples. Baked to golden perfection, this cake is a testament to Ukrainian baking traditions, celebrated for its homely warmth and irresistible aroma. Dust with powdered sugar for a finishing touch and savor the comforting flavors of this Ukrainian classic."
-      }
-    ]
+      "ingredients": [
+        "2 cups all-purpose flour",
+        "1 1/2 teaspoons baking powder",
+        "1/2 teaspoon baking soda",
+        "1/2 teaspoon salt",
+        "1/2 cup unsalted butter, softened",
+        "1 cup sugar",
+        "2 eggs",
+        "1 teaspoon vanilla extract",
+        "1/2 cup sour cream",
+        "2 cups peeled, cored, and sliced apples",
+        "1/2 teaspoon ground cinnamon",
+        "Powdered sugar for dusting"
+      ],
+      "instructions": [
+        "Preheat oven to 175°C (350°F). Grease and flour a 9-inch round cake pan.",
+        "In a bowl, whisk together flour, baking powder, baking soda, and salt.",
+        "In another bowl, cream together butter and sugar until light and fluffy.",
+        "Beat in eggs, one at a time. Stir in vanilla extract.",
+        "Gradually add the flour mixture, alternating with sour cream. Mix until just combined.",
+        "Spread half of the batter into the prepared pan. Layer apples over the batter and sprinkle with cinnamon.",
+        "Spread the remaining batter over the apples.",
+        "Bake for 45-50 minutes or until a toothpick inserted into the center comes out clean.",
+        "Cool in the pan on a wire rack. Dust with powdered sugar before serving."
+      ],
+      "description": "Ukrainian Apple Cake is a delectable dessert that captures the essence of fresh apples in every bite. This moist and flavorful cake features layers of tender cake batter intertwined with slices of sweet and tart apples, creating a delightful contrast of textures. The cake is subtly spiced with cinnamon, enhancing the natural sweetness of the apples. Baked to golden perfection, this cake is a testament to Ukrainian baking traditions, celebrated for its homely warmth and irresistible aroma. Dust with powdered sugar for a finishing touch and savor the comforting flavors of this Ukrainian classic."
+    }
+  ]
 }

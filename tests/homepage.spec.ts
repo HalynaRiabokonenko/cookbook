@@ -1,8 +1,6 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('home page tests', () => {
-
-
   test('has title', async ({ page }) => {
     //Arrange
     const url = '/';
@@ -28,4 +26,3 @@ test.describe('home page tests', () => {
     await expect(page).toHaveURL(/.*login/);
   });
 });
-

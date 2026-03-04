@@ -1,22 +1,24 @@
-import React, { ReactElement } from "react";
-import classNames from "classnames";
-import { useModeContext } from "../../../providers/mode";
+import React, { ReactElement } from 'react';
+import classNames from 'classnames';
+import { useModeContext } from '../../../providers/mode';
 
 interface PageHeader {
-    children: string;
+  children: string;
 }
 
 export const PageHeader = ({ children }: PageHeader): ReactElement => {
-    const { mode } = useModeContext();
+  const { mode } = useModeContext();
 
-    return (
-        <div className={classNames(
-            "text-darkGreen text-center lg:text-5xl md:text-4xl text-3xl uppercase py-10 tracking-wide",
-            mode === "dark" ? "text-headerTextDark" : ""
-        )}>
-            <h1>
-                <span className="px-25">{children}</span>
-            </h1>
-        </div>
-    );
-}
+  return (
+    <div
+      className={classNames(
+        'text-darkGreen text-center lg:text-5xl md:text-4xl text-3xl uppercase py-10 tracking-wide',
+        mode === 'dark' ? 'text-headerTextDark' : '',
+      )}
+    >
+      <h1>
+        <span className="px-25">{children}</span>
+      </h1>
+    </div>
+  );
+};

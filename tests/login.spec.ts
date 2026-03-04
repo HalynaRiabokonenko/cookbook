@@ -15,7 +15,6 @@ test.describe('login page test', () => {
   });
 
   test('login success', async ({ page }) => {
-
     //Arrange
     const url = '/#/login';
     const username = process.env.E2E_USERNAME;
@@ -55,6 +54,8 @@ test.describe('login page test', () => {
     //Assert
     await expect(page.locator('.Toastify__toast-icon')).toBeVisible();
     await expect(page.getByText('Incorrect credentials')).toBeVisible();
-    await expect(page.getByTestId('header__account-container')).not.toBeVisible();
+    await expect(
+      page.getByTestId('header__account-container'),
+    ).not.toBeVisible();
   });
 });

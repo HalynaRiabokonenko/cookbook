@@ -1,7 +1,7 @@
 import 'styled-components';
 
 declare module 'styled-components' {
-    export interface DefaultTheme {
-        [key: string]: any;
-    }
+  export interface DefaultTheme {
+    [key: string]: any;
+  }
 }

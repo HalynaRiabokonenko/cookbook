@@ -1,20 +1,32 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useModeContext } from "../../../providers/mode";
-import { db } from "../../../api/firebaseConfig";
-import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
-import { PageHeader } from "../../atomic/PageHeader/PageHeader";
-import { Page } from "../../structures/Page/Page";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { useModeContext } from '../../../providers/mode';
+import { db } from '../../../api/firebaseConfig';
+import {
+  doc,
+  getDoc,
+  setDoc,
+  updateDoc,
+  arrayUnion,
+  arrayRemove,
+} from 'firebase/firestore';
+import { PageHeader } from '../../atomic/PageHeader/PageHeader';
+import { Page } from '../../structures/Page/Page';
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
-import { Recipe } from "../../../commons/types/Recipe";
-import { User } from "firebase/auth";
-import { Tooltip, TooltipProvider, TooltipTrigger, TooltipContent } from "@radix-ui/react-tooltip";
-import { IconButton } from "@radix-ui/themes";
+import { Recipe } from '../../../commons/types/Recipe';
+import { User } from 'firebase/auth';
+import {
+  Tooltip,
+  TooltipProvider,
+  TooltipTrigger,
+  TooltipContent,
+} from '@radix-ui/react-tooltip';
+import { IconButton } from '@radix-ui/themes';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Toast } from "../../atomic/Toast/Toast";
-import { HeartFilledIcon, HeartIcon } from "@radix-ui/react-icons";
-import { ModalAlertLogin } from "../../structures/ModalAlertLogin/ModalAlertLogin";
+import { Toast } from '../../atomic/Toast/Toast';
+import { HeartFilledIcon, HeartIcon } from '@radix-ui/react-icons';
+import { ModalAlertLogin } from '../../structures/ModalAlertLogin/ModalAlertLogin';
 
 interface RecipeDetailsProps {
   user: User | null;
@@ -24,7 +36,10 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
   const { mode } = useModeContext();
   const [recipe, setRecipe] = useState<Recipe | null>(null);
   const [isAddedToFavorite, setIsAddedToFavorite] = useState<boolean>(false);
-  const { recipeId, option } = useParams<{ recipeId: string; option: string }>();
+  const { recipeId, option } = useParams<{
+    recipeId: string;
+    option: string;
+  }>();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,13 +55,13 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
           if (data && data[recipeId]) {
             setRecipe(data[recipeId] as Recipe);
           } else {
-            console.log("No such recipe!");
+            console.log('No such recipe!');
           }
         } else {
-          console.log("No such document!");
+          console.log('No such document!');
         }
       } catch (error) {
-        console.error("Error fetching recipe:", error);
+        console.error('Error fetching recipe:', error);
       }
     };
 
@@ -95,28 +110,28 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
           const data = docSnap.data();
           if (data.recipes && data.recipes.includes(recipeId)) {
             await updateDoc(docRef, {
-              recipes: arrayRemove(recipeId)
+              recipes: arrayRemove(recipeId),
             });
             setIsAddedToFavorite(false);
           } else {
             await updateDoc(docRef, {
-              recipes: arrayUnion(recipeId)
+              recipes: arrayUnion(recipeId),
             });
             setIsAddedToFavorite(true);
           }
         } else {
           await setDoc(docRef, {
-            recipes: [recipeId]
+            recipes: [recipeId],
           });
           setIsAddedToFavorite(true);
         }
       } catch (error) {
-        console.error("Error changing favorites status:", error);
-        toast.error("Error changing favorites status");
+        console.error('Error changing favorites status:', error);
+        toast.error('Error changing favorites status');
       }
     } else if (user) {
-      console.error("Something went wrong");
-      toast.error("Something went wrong");
+      console.error('Something went wrong');
+      toast.error('Something went wrong');
     }
   };
 
@@ -126,17 +141,15 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
 
   return (
     <Page>
-      <PageHeader>
-        {recipe.name}
-      </PageHeader>
+      <PageHeader>{recipe.name}</PageHeader>
       <div className="text-lg mx-14 my-2.5 text-justify">
         {recipe.description}
       </div>
-      <div className={
-        `relative 
+      <div
+        className={`relative 
         grid grid-cols-1 md:grid-cols-2 items-center list-none border rounded-lg m-10 md:m-5 relative 
-        ${mode === "dark" ? "bg-midnightMoss border-midnightMoss" : "bg-fairGreen border-lightGreen"}`
-      }>
+        ${mode === 'dark' ? 'bg-midnightMoss border-midnightMoss' : 'bg-fairGreen border-lightGreen'}`}
+      >
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -144,22 +157,22 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
                 <IconButton
                   onClick={toggleFavorite}
                   className={`absolute top-4 right-4 p-2 bg-transparent rounded-md 
-                      ${mode === "dark" ?
-                      "hover:bg-optionHoverDark" :
-                      "hover:bg-optionHover"
-                    }`
-                  }
+                      ${
+                        mode === 'dark'
+                          ? 'hover:bg-optionHoverDark'
+                          : 'hover:bg-optionHover'
+                      }`}
                 >
-                  {isAddedToFavorite ?
+                  {isAddedToFavorite ? (
                     <HeartFilledIcon width="18" height="18" />
-                    :
+                  ) : (
                     <HeartIcon width="18" height="18" />
-                  }
+                  )}
                 </IconButton>
               </ModalAlertLogin>
             </TooltipTrigger>
             <TooltipContent className="bg-gray-900 text-white rounded-md p-2">
-              {isAddedToFavorite ? "Remove from favorites" : "Add to favorites"}
+              {isAddedToFavorite ? 'Remove from favorites' : 'Add to favorites'}
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
@@ -175,9 +188,7 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
           </div>
         </div>
         <div className="m-7 md:grid-col-2 md:grid-row-1">
-          <h3 className="capitalize font-semibold underline">
-            Ingredients:
-          </h3>
+          <h3 className="capitalize font-semibold underline">Ingredients:</h3>
           <ul className="list-none">
             {recipe.ingredients.map((ingredient, index) => (
               <li
@@ -190,9 +201,7 @@ export const RecipeDetails = ({ user }: RecipeDetailsProps) => {
           </ul>
         </div>
         <div className="m-7 md:mx-14 md:my-2.5 md:col-span-full md:row-start-2">
-          <h3 className="capitalize font-semibold underline">
-            Instructions:
-          </h3>
+          <h3 className="capitalize font-semibold underline">Instructions:</h3>
           <ol className="list-decimal">
             {recipe.instructions.map((instruction) => (
               <li
